@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>TheoMedia | Custom Enterprise Websites, CRM, POS & Mobile Apps (Europe)</title>
+  <meta name="description" content="We engineer bespoke, secure websites, cloud CRM databases, custom POS billing systems, and mobile apps. Tailored digital compliance systems for high-growth ventures across the UK, Switzerland, and Europe.">
+  <meta name="keywords" content="Bespoke Software Agency, Custom Websites, CRM Systems, POS Billing Software, WhatsApp Invoicing API, Android Developer UK, GDPR Compliant Web Apps, Europe Software Developers">
+  <meta name="author" content="TheoMedia Engineering">
+  
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="TheoMedia | Custom Enterprise Websites, CRM, POS & Apps">
+  <meta property="og:description" content="Premium, bespoke digital ecosystems replacing fragile spreadsheets, automating client billing via WhatsApp, and scaling operations globally.">
+  <meta property="og:image" content="https://theomedia.vercel.app/assets/og-image.jpg">
+  <meta property="og:url" content="https://theomedia.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Style Sheets and Fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+
+  <!-- Sophisticated Magnetic Jelly Physics Cursor (Desktop Only) -->
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+  <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+  <!-- Floating Apple-style Communication Capsule -->
+  <div class="comms-sidebar" aria-label="Quick Communication Channels">
+    <!-- FaceTime Link -->
+    <a href="facetime://+353852258004" class="comms-item facetime-item" title="FaceTime Call">
+      <span class="comms-icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 16H5V8h9v8z"/></svg>
+      </span>
+      <span class="comms-label">FaceTime (+353 85 225 8004)</span>
+    </a>
+    
+    <div class="comms-divider"></div>
+    
+    <!-- WhatsApp Link -->
+    <a href="https://wa.me/353852258004" target="_blank" class="comms-item whatsapp-item" title="WhatsApp Chat">
+      <span class="comms-icon">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.335 4.978L2 22l5.197-1.361a9.938 9.938 0 004.814 1.246h.004c5.506 0 9.99-4.478 9.992-9.984A9.998 9.998 0 0012.012 2zm4.78 13.064c-.263.738-1.503 1.348-2.072 1.408-.57.06-1.129.239-3.666-.762-3.242-1.282-5.326-4.57-5.486-4.782-.16-.213-1.285-1.706-1.285-3.255 0-1.55.811-2.31 1.101-2.61.29-.3.64-.374.85-.374s.422-.004.606.006c.19.01.442-.073.693.532.251.605.859 2.09.934 2.24.075.15.125.325.025.525-.1.2-.15.325-.3.5-.15.175-.315.39-.45.522-.15.147-.306.307-.132.605.175.297.777 1.282 1.666 2.072.13.117.262.242.4.364 1.144 1.018 2.023 1.283 2.378 1.433.356.15.56.126.77-.116.21-.242.91-1.059 1.153-1.423.243-.364.485-.303.818-.182.333.121 2.115 1.002 2.478 1.182.364.18.607.27.697.422.09.15.09.873-.173 1.611z"/></svg>
+      </span>
+      <span class="comms-label">WhatsApp (+353 85 225 8004)</span>
+    </a>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">TheoMedia<span>.</span></a>
+      
+      <nav aria-label="Main Navigation">
+        <a href="#services" class="nav-link" data-translate="nav-services">Solutions</a>
+        <a href="#configurator-section" class="nav-link" data-translate="nav-pos">Solution Configurator</a>
+        <a href="#templates" class="nav-link" data-translate="nav-templates">Visual Systems</a>
+        <a href="#pricing" class="nav-link" data-translate="nav-pricing">Pricing</a>
+        <a href="#compliance-section" class="nav-link" data-translate="nav-compliance">Europe Hubs</a>
+        <a href="#faq" class="nav-link" data-translate="nav-faq">Q&A</a>
+      </nav>
+
+      <div class="header-controls">
+        <!-- Language Selector -->
+        <div class="dropdown-wrapper language-selector" id="lang-selector-div">
+          <button class="dropdown-trigger" id="lang-trigger" aria-haspopup="true" aria-expanded="false">
+            <span class="flag-icon">🇬🇧</span> <span class="lang-text">EN</span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="lang-trigger">
+            <li role="menuitem" data-lang="en">🇬🇧 English</li>
+            <li role="menuitem" data-lang="de">🇩🇪 Deutsch</li>
+            <li role="menuitem" data-lang="fr">🇫🇷 Français</li>
+            <li role="menuitem" data-lang="es">🇪🇸 Español</li>
+          </ul>
+        </div>
+
+        <!-- Currency Selector -->
+        <div class="dropdown-wrapper currency-selector" id="curr-selector-div">
+          <button class="dropdown-trigger" id="curr-trigger" aria-haspopup="true" aria-expanded="false">
+            <span class="curr-symbol">£</span> <span class="curr-text">GBP</span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="curr-trigger">
+            <li role="menuitem" data-currency="gbp">£ GBP</li>
+            <li role="menuitem" data-currency="eur">€ EUR</li>
+            <li role="menuitem" data-currency="usd">$ USD</li>
+            <li role="menuitem" data-currency="chf">₣ CHF</li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="btn-header" data-translate="btn-get-started">Get Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="badge scroll-reveal">
+        <span class="pulse-dot"></span> <span data-translate="hero-badge-text">Custom Software & Web Engineering — Europe & Global</span>
+      </div>
+      <h1 class="scroll-reveal">
+        <span data-translate="hero-title-part1">Your Custom Digital Ecosystem:</span><br>
+        <span class="dark-accent-text" data-translate="hero-title-part2">Websites, CRM, POS & Apps</span>
+      </h1>
+      <p class="scroll-reveal" data-translate="hero-desc-text">
+        At TheoMedia, we engineer sleek, bespoke software architectures that replace fragile legacy sheets, automate billing through integrated cloud APIs, and run physical checkout networks with pixel-perfect responsive excellence.
+      </p>
+      <div class="cta-group scroll-reveal">
+        <a href="#configurator-section" class="btn-primary" data-translate="hero-cta-primary">Solution Configurator</a>
+        <a href="#contact" class="btn-secondary" data-translate="hero-cta-secondary">Get a Free Proposal</a>
+      </div>
+    </div>
+
+    <!-- Minimal Scroll Indicator -->
+    <div class="scroll-down-arrow">
+      <span class="arrow-icon">↓</span>
+    </div>
+  </section>
+
+  <!-- Credibility Ticker -->
+  <div class="ticker-container scroll-reveal">
+    <p class="ticker-title" data-translate="marquee-title">COMPLIANT INTEGRATION CAPABILITIES & TRUSTED BY TECH-FORWARD VENTURES</p>
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <span class="ticker-item highlight">Stripe Payments <span class="dot"></span></span>
+        <span class="ticker-item">WhatsApp API <span class="dot"></span></span>
+        <span class="ticker-item highlight">GDPR Compliance <span class="dot"></span></span>
+        <span class="ticker-item">AWS Cloud <span class="dot"></span></span>
+        <span class="ticker-item highlight">PostgreSQL DB <span class="dot"></span></span>
+        <span class="ticker-item">Docker Devops <span class="dot"></span></span>
+        <span class="ticker-item highlight">Swiss FinSA <span class="dot"></span></span>
+        <span class="ticker-item">Google Play SDK <span class="dot"></span></span>
+        <span class="ticker-item highlight">NextJS Engines <span class="dot"></span></span>
+        <span class="ticker-item">UK Data Protection Act <span class="dot"></span></span>
+        
+        <!-- Duplicated Group -->
+        <span class="ticker-item highlight">Stripe Payments <span class="dot"></span></span>
+        <span class="ticker-item">WhatsApp API <span class="dot"></span></span>
+        <span class="ticker-item highlight">GDPR Compliance <span class="dot"></span></span>
+        <span class="ticker-item">AWS Cloud <span class="dot"></span></span>
+        <span class="ticker-item highlight">PostgreSQL DB <span class="dot"></span></span>
+        <span class="ticker-item">Docker Devops <span class="dot"></span></span>
+        <span class="ticker-item highlight">Swiss FinSA <span class="dot"></span></span>
+        <span class="ticker-item">Google Play SDK <span class="dot"></span></span>
+        <span class="ticker-item highlight">NextJS Engines <span class="dot"></span></span>
+        <span class="ticker-item">UK Data Protection Act <span class="dot"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- What We Deliver (Services) -->
+  <section id="services" class="scroll-reveal">
+    <div class="section-header">
+      <div class="micro-badge" data-translate="services-micro">BESPOKE PRODUCTS</div>
+      <h2 data-translate="services-title">Bespoke Enterprise Solutions</h2>
+      <p data-translate="services-desc">We compile secure, fast-loading visual ecosystems structured to handle heavy data, cross-border traffic, and strict compliance targets.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Websites -->
+      <div class="service-card">
+        <h3 data-translate="serv-web-title">Websites & E-Commerce</h3>
+        <p class="service-subtitle" data-translate="serv-web-sub">High-Performance Frontends</p>
+        <p class="service-desc" data-translate="serv-web-desc">Responsive layouts, elegant visuals, and blazing fast on-page SEO frameworks designed to hook global audiences and rank perfectly on search engines.</p>
+        
+        <div class="service-best-for">
+          <span data-translate="serv-best">BEST FOR</span>
+          <p data-translate="serv-web-best">B2B exporters, luxury services, boutique developers, and localized content hubs in Europe.</p>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="check-icon">✓</span> <span data-translate="serv-web-feat1">Fully responsive on phones & tablets</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-web-feat2">GDPR compliant cookie & user setups</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-web-feat3">Dynamic language files localization</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-web-feat4">Instant loading with headless CMS links</span></li>
+        </ul>
+      </div>
+
+      <!-- ERP/CRM Web Apps -->
+      <div class="service-card highlighted-card">
+        <div class="popular-badge" data-translate="serv-popular">RECOMMENDED</div>
+        <h3 data-translate="serv-app-title">Web Applications (ERP/CRM)</h3>
+        <p class="service-subtitle" data-translate="serv-app-sub">Bespoke Operations Dashboards</p>
+        <p class="service-desc" data-translate="serv-app-desc">Private operations hubs running natively in secure web browsers, integrating database synchronization, inventory alerts, and instant invoicing portals.</p>
+        
+        <div class="service-best-for">
+          <span data-translate="serv-best">BEST FOR</span>
+          <p data-translate="serv-app-best">Replacing spreadsheets, staff management, invoicing counters, and complex supply tracking.</p>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="check-icon">✓</span> <span data-translate="serv-app-feat1">Real-time live multi-branch inventory sync</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-app-feat2">Automated WhatsApp bill & receipt dispatches</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-app-feat3">Multiple currency invoicing (GBP, EUR, CHF)</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-app-feat4">Secure administrative authorization modules</span></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Apps -->
+      <div class="service-card">
+        <h3 data-translate="serv-mob-title">Mobile Applications</h3>
+        <p class="service-subtitle" data-translate="serv-mob-sub">Direct App Store Deployment</p>
+        <p class="service-desc" data-translate="serv-mob-desc">Dedicated native mobile tools engineered for tactile performance, high-speed graphics, offline cache frameworks, and smart push alert interfaces.</p>
+        
+        <div class="service-best-for">
+          <span data-translate="serv-best">BEST FOR</span>
+          <p data-translate="serv-mob-best">Client loyalty programs, field team utilities, custom ordering platforms, and smart notification campaigns.</p>
+        </div>
+
+        <ul class="service-features">
+          <li><span class="check-icon">✓</span> <span data-translate="serv-mob-feat1">Smooth native hardware performance</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-mob-feat2">Smart targeted screen push alerts</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-mob-feat3">Full offline database operations cache</span></li>
+          <li><span class="check-icon">✓</span> <span data-translate="serv-mob-feat4">Hassle-free submission support on Play Store</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sober Solution Configurator Section -->
+  <section id="configurator-section" class="scroll-reveal">
+    <div class="section-header">
+      <div class="micro-badge" data-translate="pos-micro">INTERACTIVE CONFIGURATOR</div>
+      <h2 data-translate="pos-title">Solution Configurator</h2>
+      <p data-translate="pos-desc">Customize your software package in real time. Select the operational modules below to compile your enterprise package. Watch the system compute subtotals, VAT, and generate invoices instantly.</p>
+    </div>
+
+    <div class="configurator-container">
+      
+      <!-- Selections (Left) -->
+      <div class="config-selection-panel">
+        <h4 data-translate="pos-input-title">Select Services to Add:</h4>
+        <div class="config-modules-list">
+          
+          <button class="config-item-btn" data-item-id="website" data-price-gbp="950" data-price-eur="1100" data-price-usd="1250" data-price-chf="1150">
+            <span class="config-item-name" data-translate="pos-item-web">Standard Web System</span>
+            <span class="config-item-price" data-currency-item="gbp">£950</span>
+            <span class="config-item-action">+ ADD</span>
+          </button>
+
+          <button class="config-item-btn" data-item-id="crm" data-price-gbp="750" data-price-eur="850" data-price-usd="980" data-price-chf="900">
+            <span class="config-item-name" data-translate="pos-item-crm">Client CRM Portal</span>
+            <span class="config-item-price" data-currency-item="gbp">£750</span>
+            <span class="config-item-action">+ ADD</span>
+          </button>
+
+          <button class="config-item-btn" data-item-id="stock" data-price-gbp="450" data-price-eur="520" data-price-usd="580" data-price-chf="550">
+            <span class="config-item-name" data-translate="pos-item-stock">Real-time Stock Module</span>
+            <span class="config-item-price" data-currency-item="gbp">£450</span>
+            <span class="config-item-action">+ ADD</span>
+          </button>
+
+          <button class="config-item-btn" data-item-id="whatsapp" data-price-gbp="300" data-price-eur="350" data-price-usd="400" data-price-chf="360">
+            <span class="config-item-name" data-translate="pos-item-whatsapp">WhatsApp Messaging Hook</span>
+            <span class="config-item-price" data-currency-item="gbp">£300</span>
+            <span class="config-item-action">+ ADD</span>
+          </button>
+
+          <button class="config-item-btn" data-item-id="android" data-price-gbp="1500" data-price-eur="1750" data-price-usd="1950" data-price-chf="1800">
+            <span class="config-item-name" data-translate="pos-item-android">Native Android App Wrapper</span>
+            <span class="config-item-price" data-currency-item="gbp">£1,500</span>
+            <span class="config-item-action">+ ADD</span>
+          </button>
+
+          <button class="config-item-btn" data-item-id="support" data-price-gbp="400" data-price-eur="460" data-price-usd="520" data-price-chf="480">
+            <span class="config-item-name" data-translate="pos-item-support">3-Year Hypercare SLA</span>
+            <span class="config-item-price" data-currency-item="gbp">£400</span>
+            <span class="config-item-action">+ ADD</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Invoice Summary (Right) -->
+      <div class="config-summary-panel">
+        <div class="summary-card">
+          <div class="summary-header">
+            <h4 data-translate="term-title">THEOMEDIA PROPOSAL ESTIMATE</h4>
+            <span class="status-node" data-translate="term-status-node">NODE: EU-WEST-2</span>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-items-list" id="config-items-stream">
+            <div class="empty-summary-text" id="empty-cart-text" data-translate="term-empty-cart">No items selected. Select active modules on the left to start compiling your custom package proposal.</div>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-math-block">
+            <div class="math-row">
+              <span data-translate="term-subtotal">SUBTOTAL:</span>
+              <span id="term-subtotal-val">£0.00</span>
+            </div>
+            <div class="math-row">
+              <span data-translate="term-vat">ESTIMATED TAX (20%):</span>
+              <span id="term-tax-val">£0.00</span>
+            </div>
+            <div class="summary-divider thin"></div>
+            <div class="math-row total-row">
+              <span data-translate="term-grandtotal">TOTAL NET ESTIMATE:</span>
+              <span id="term-total-val" class="highlight-blue">£0.00</span>
+            </div>
+          </div>
+
+          <!-- Invoicing dispatch banner alert -->
+          <div class="invoicing-dispatch-alert" id="config-whatsapp-alert">
+            <div class="wa-alert-inner">
+              <span class="wa-check-icon">✓</span>
+              <div class="wa-text-col">
+                <strong data-translate="wa-title">WhatsApp Invoice Sent</strong>
+                <p><span data-translate="wa-body">Bespoke Contract Invoice PDF pushed to your European business line. Ref:</span> <span id="wa-random-ref">#TM-8201</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-actions">
+            <button id="config-btn-checkout" class="btn-checkout" disabled data-translate="term-checkout">DISPATCH PROPOSAL</button>
+            <button id="config-btn-clear" class="btn-clear" data-translate="term-clear">CLEAR SELECTION</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean Visual Blueprint Systems Showcase -->
+  <section id="templates" class="templates-section scroll-reveal">
+    <div class="section-header">
+      <div class="micro-badge" data-translate="templates-micro">UI & CRAFT</div>
+      <h2 data-translate="templates-title">Elite Web Visual Systems</h2>
+      <p data-translate="templates-desc">Witness our dynamic frontend blueprints designed to establish immediate credibility, load instantly on 3G networks, and captivate international commerce.</p>
+    </div>
+    
+    <div class="templates-grid">
+      <!-- Nano Banana -->
+      <div class="template-card">
+        <div class="template-preview banana-preview">
+          <span class="template-badge" data-translate="temp-badge-award">DESIGN AWARD NOMINEE</span>
+          <span class="temp-icon">🍌</span>
+        </div>
+        <div class="template-info">
+          <h3>Nano Banana</h3>
+          <p data-translate="temp-banana-desc">Bespoke framework tailored for premium organic exporters, agricultural distributors, and next-gen food supply networks trading across Germany, UK, and Spain.</p>
+          <a href="#contact" class="template-link">
+            <span data-translate="temp-btn-demo">Request Framework Demo</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Zurich Pay -->
+      <div class="template-card">
+        <div class="template-preview pay-preview">
+          <span class="template-badge" data-translate="temp-badge-concept">FINTECH PLATFORM</span>
+          <span class="temp-icon">💳</span>
+        </div>
+        <div class="template-info">
+          <h3>Zurich Pay</h3>
+          <p data-translate="temp-zurich-desc">High-security payment landing systems, featuring modular ledger updates, compliance nodes tracking, and multi-currency exchange triggers optimized for Swiss francs.</p>
+          <a href="#contact" class="template-link">
+            <span data-translate="temp-btn-demo">Request Framework Demo</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sober Continental Compliance & Hubs Registry (Tabular Representation) -->
+  <section id="compliance-section" class="scroll-reveal">
+    <div class="section-header">
+      <div class="micro-badge" data-translate="map-micro">EUROPE COMPLIANCE & REACH</div>
+      <h2 data-translate="map-title">International Business Hubs</h2>
+      <p data-translate="map-desc">Our software compliance engines are calibrated to fit UK, European Union, and Swiss data privacy legislation.</p>
+    </div>
+
+    <!-- Tabular compliance registry layout -->
+    <div class="compliance-registry-grid">
+      
+      <!-- Card 1: London -->
+      <div class="compliance-registry-card" data-hub-id="london">
+        <div class="registry-card-header">
+          <h3>London Headquarters</h3>
+          <span class="region-badge">United Kingdom</span>
+        </div>
+        <p data-translate="map-desc-london">Our primary engineering office coordinates international architecture delivery, structures compliance guidelines, and manages cloud operations for the European grid.</p>
+        <div class="registry-specs">
+          <div class="spec-row">
+            <span data-translate="map-regulatory">REGULATORY ALIGNMENT</span>
+            <strong>UK Data Protection Act, GDPR</strong>
+          </div>
+          <div class="spec-row">
+            <span data-translate="map-currency">DEFAULT ISO CURRENCY</span>
+            <strong>GBP (£), EUR (€)</strong>
+          </div>
+          <div class="spec-row">
+            <span data-translate="map-support">DEDICATED HELPDESK</span>
+            <strong>24/7 SLA Hotline Active</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Zurich -->
+      <div class="compliance-registry-card" data-hub-id="zurich">
+        <div class="registry-card-header">
+          <h3>Zurich Swiss Office</h3>
+          <span class="region-badge">Switzerland</span>
+        </div>
+        <p>Specialized in banking-grade encryption compliance, Swiss FinSA security algorithms, and high-fidelity enterprise financial database systems.</p>
+        <div class="registry-specs">
+          <div class="spec-row">
+            <span data-translate="map-regulatory">REGULATORY ALIGNMENT</span>
+            <strong>Swiss DSG, FinSA Compliance Ready</strong>
+          </div>
+          <div class="spec-row">
+            <span data-translate="map-currency">DEFAULT ISO CURRENCY</span>
+            <strong>CHF (₣), EUR (€)</strong>
+          </div>
+          <div class="spec-row">
+            <span data-translate="map-support">DEDICATED HELPDESK</span>
+            <strong>24/7 Premium Enterprise SLA</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Dublin -->
+      <div class="compliance-registry-card" data-hub-id="dublin">
+        <div class="registry-card-header">
+          <h3>Dublin Compliance Hub</h3>
+          <span class="region-badge">Republic of Ireland</span>
+        </div>
+        <p>Core taxation and EU customer data administration operations are based here, specializing in strict GDPR isolation rules and cross-border software licensing frameworks.</p>
+        <div class="registry-specs">
+          <div class="spec-row">
+            <span data-translate="map-regulatory">REGULATORY ALIGNMENT</span>
+            <strong>GDPR, EU e-Privacy Directives</strong>
+          </div>
+          <div class="spec-row">
+            <span data-translate="map-currency">DEFAULT ISO CURRENCY</span>
+            <strong>EUR (€)</strong>
+          </div>
+          <div class="spec-row">
+            <span data-translate="map-support">DEDICATED HELPDESK</span>
+            <strong>8:00 - 18:00 GMT Helpdesk</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Transparent Pricing Calculator -->
+  <section id="pricing" class="scroll-reveal">
+    <div class="section-header">
+      <div class="micro-badge" data-translate="pricing-micro">UPFRONT VALUES</div>
+      <h2 data-translate="pricing-title">Clear Contract Pricing</h2>
+      <p data-translate="pricing-desc">Configure your engineering system. Transparent, contract-based quotes calculated to comply with local financial guidelines.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Websites -->
+      <div class="pricing-card">
+        <div class="price-header">
+          <h3 data-translate="plan-web-name">Standard Website</h3>
+          <p class="plan-desc" data-translate="plan-web-desc">Perfect for establishing an immediate modern online credibility, capturing search volume and customer leads.</p>
+        </div>
+        <div class="price-box">
+          <span class="price-currency">£</span>
+          <span class="price-value" id="price-web">950</span>
+          <span class="price-period" data-translate="plan-upfront"> upfront</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="feat-check">✓</span> <span data-translate="plan-web-f1">Custom visual design & assets</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-web-f2">Fully responsive UI framework</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-web-f3">Basic on-page Google SEO setup</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-web-f4">Integrated contact channels & maps</span></li>
+        </ul>
+        <a href="#contact" class="btn-plan-secondary" data-translate="plan-cta">Configure Website</a>
+      </div>
+
+      <!-- Web Apps (Popular) -->
+      <div class="pricing-card active-pricing-card">
+        <div class="pricing-card-badge" data-translate="plan-popular-tag">MOST POPULAR</div>
+        <div class="price-header">
+          <h3 data-translate="plan-app-name">Web Applications</h3>
+          <p class="plan-desc" data-translate="plan-app-desc">Bespoke operational tools running securely in web browsers to automate operations and manage CRM tracking.</p>
+        </div>
+        <div class="price-box">
+          <span class="price-currency">£</span>
+          <span class="price-value" id="price-app">2,450</span>
+          <span class="price-period" data-translate="plan-upfront"> upfront</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="feat-check">✓</span> <span data-translate="plan-app-f1">Full POS register & billing screen</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-app-f2">WhatsApp dispatch API integration</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-app-f3">Live database stock sync counts</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-app-f4">Role-based administrative logins</span></li>
+        </ul>
+        <a href="#contact" class="btn-plan-primary" data-translate="plan-cta">Configure Web App</a>
+      </div>
+
+      <!-- Mobile Systems -->
+      <div class="pricing-card">
+        <div class="price-header">
+          <h3 data-translate="plan-mob-name">Mobile Apps</h3>
+          <p class="plan-desc" data-translate="plan-mob-desc">Tactile, touchscreen-native apps optimized for Android platforms, offline databases, and push alerts.</p>
+        </div>
+        <div class="price-box">
+          <span class="price-currency">£</span>
+          <span class="price-value" id="price-mob">3,950</span>
+          <span class="price-period" data-translate="plan-upfront"> upfront</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="feat-check">✓</span> <span data-translate="plan-mob-f1">Touch-optimized fluid gestures layout</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-mob-f2">Direct native push notifications</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-mob-f3">Offline local cache framework support</span></li>
+          <li><span class="feat-check">✓</span> <span data-translate="plan-mob-f4">App Store launch pipeline setup</span></li>
+        </ul>
+        <a href="#contact" class="btn-plan-secondary" data-translate="plan-cta">Configure Mobile App</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q&A (FAQ) Section -->
+  <section id="faq" class="scroll-reveal">
+    <div class="section-header">
+      <div class="micro-badge" data-translate="faq-micro">FAQ</div>
+      <h2 data-translate="faq-title">Questions & Answers</h2>
+      <p data-translate="faq-desc">Clear answers regarding code licensing, global server systems, and deployment timelines across Europe.</p>
+    </div>
+
+    <div class="faq-list">
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-translate="faq-q1">Who owns the custom code once the project is finished?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-translate="faq-a1">You do. Upon clearing final milestone invoices, we transfer 100% intellectual property, repository coordinates, cloud setups, and database schemas directly to you. No ongoing operational royalties or mandatory vendor lock-in agreements exist.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-translate="faq-q2">How does the integrated WhatsApp dispatch engine operate?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-translate="faq-a2">We hook your administrative CRM portal to official cloud gateways (e.g. Meta Cloud API). Whenever sales registers execute a transaction, a structured bill formats dynamically and pushes straight to the client's verified mobile terminal as a branded PDF file link, minimizing paper overhead.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-translate="faq-q3">Can you link my web applications to customized domains?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-translate="faq-a3">Absolutely. We handle secure DNS mapping for localized suffixes (.co.uk, .ch, .de, .fr, .ie, .com) and coordinate automatic SSL certificates renewal setups at zero extra monthly surcharge.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-translate="faq-q4">What compliance measures do you build in for European trade?</span>
+          <span class="faq-icon-arrow">+</span>
+        </button>
+        <div class="faq-answer">
+          <p data-translate="faq-a4">We integrate comprehensive GDPR protocols, including isolated SQLite/Postgres databases, cryptographic client records, automated data export mechanisms, and cookie controls. We also design dynamic VAT reporting tools mapped to country-specific taxation bands.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="scroll-reveal">
+    <div class="contact-card-container">
+      
+      <!-- Contact Info -->
+      <div class="contact-info-panel">
+        <div class="micro-badge" data-translate="contact-micro">PROJECT HUB</div>
+        <h3 data-translate="contact-title">Start Your Custom Ecosystem</h3>
+        <p data-translate="contact-desc">Talk directly with our core engineering department. We structure solutions from raw wireframes to secure, responsive live production grids.</p>
+        
+        <div class="contact-channels">
+          <div class="channel-row">
+            <div class="channel-text">
+              <h4 data-translate="contact-email-title">Direct Inquiries</h4>
+              <p>hello@theomedia.co.uk</p>
+            </div>
+          </div>
+
+          <div class="channel-row">
+            <div class="channel-text">
+              <h4 data-translate="contact-hq-title">European Operational Hubs</h4>
+              <p>London, UK | Dublin, Ireland | Zurich, CH | Dubai, UAE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Form -->
+      <div class="contact-form-panel">
+        <div id="form-inner-wrapper">
+          <form id="contact-form" class="cyber-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="client-name" data-translate="form-label-name">Full Name / Organisation</label>
+                <input type="text" id="client-name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="client-email" data-translate="form-label-email">Email Address</label>
+                <input type="email" id="client-email" placeholder="john@mybusiness.eu" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="client-service" data-translate="form-label-solution">Requested Engineering Scope</label>
+              <select id="client-service" required>
+                <option value="" disabled selected data-translate="form-opt-select">Select active scope...</option>
+                <option value="website" data-translate="form-opt-web">Bespoke Visual Website</option>
+                <option value="webapp" data-translate="form-opt-app">Browser Web App (POS, CRM, ERP)</option>
+                <option value="android" data-translate="form-opt-mob">Native Touchscreen Mobile App</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="client-message" data-translate="form-label-desc">Project Brief & Invoicing Target</label>
+              <textarea id="client-message" rows="4" placeholder="Detail your system requirements and compliance bottlenecks..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btn-submit-form" data-translate="form-submit">COMPILE PROJECT INQUIRY</button>
+          </form>
+        </div>
+
+        <!-- Success Card -->
+        <div id="success-card" class="success-glass-card">
+          <div class="success-icon-globe">✓</div>
+          <h3 data-translate="form-success-title">Connection Encrypted!</h3>
+          <p data-translate="form-success-text">Thank you. Your project parameters have been uploaded. An engineering manager from TheoMedia will connect with you via email or phone within 12 hours.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>TheoMedia<span>.</span></h3>
+        <p data-translate="foot-brand-desc">Designing, programming, and deploying customized visual systems, cloud ERP databases, checkout registers, and mobile apps for international commerce.</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 data-translate="foot-solutions">Solutions</h4>
+        <ul>
+          <li><a href="#services" data-translate="foot-sol-web">Enterprise Frontends</a></li>
+          <li><a href="#services" data-translate="foot-sol-app">ERP & CRM Invoicing</a></li>
+          <li><a href="#services" data-translate="foot-sol-wa">WhatsApp API Integrations</a></li>
+          <li><a href="#services" data-translate="foot-sol-mob">Mobile App Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 data-translate="foot-compliance">Compliance Hubs</h4>
+        <ul>
+          <li><a href="terms.html" data-translate="foot-comp-gdpr">GDPR Data Isolation</a></li>
+          <li><a href="terms.html" data-translate="foot-comp-swiss">Swiss FinSA Compliance</a></li>
+          <li><a href="terms.html" data-translate="foot-comp-uk">UK Data Protection Act</a></li>
+          <li><a href="terms.html" data-translate="foot-comp-vat">European VAT Registries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 data-translate="foot-reach">Continental Offices</h4>
+        <ul>
+          <li><a href="#compliance-section">London Office (UK)</a></li>
+          <li><a href="#compliance-section">Dublin Office (IE)</a></li>
+          <li><a href="#compliance-section">Zurich Office (CH)</a></li>
+          <li><a href="#compliance-section">Dubai Support (UAE)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 TheoMedia. All Rights Reserved.</div>
+      <div class="footer-legal">
+        <a href="terms.html" data-translate="foot-legal-privacy">Privacy Registry</a>
+        <a href="terms.html" data-translate="foot-legal-terms">Compliance Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modules -->
+  <script src="app.js"></script>
+</body>
+</html>
