@@ -1019,56 +1019,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1200);
   });
 
-  /* ==========================================================================
-     SOPHISTICATED JELLY & MAGNETIC PHYSICS CURSOR
-     ========================================================================== */
-  const cursorDot = document.getElementById('cursor-dot');
-  const cursorRing = document.getElementById('cursor-ring');
-
-  let mouseX = 0, mouseY = 0;     // Target coordinate inputs
-  let dotX = 0, dotY = 0;         // Interpolated Dot coordinates
-  let ringX = 0, ringY = 0;       // Interpolated Ring coordinates
-  
-  // Track mouse coordinates
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Inertial interpolation loop (Jelly physics calculations)
-  function updatePhysicsCursor() {
-    // 1. Dot moves snappy
-    const dotDamp = 0.35;
-    dotX += (mouseX - dotX) * dotDamp;
-    dotY += (mouseY - dotY) * dotDamp;
-    cursorDot.style.left = `${dotX}px`;
-    cursorDot.style.top = `${dotY}px`;
-
-    // 2. Ring moves with slow springy inertia
-    const ringDamp = 0.12;
-    const dx = mouseX - ringX;
-    const dy = mouseY - ringY;
-    
-    ringX += dx * ringDamp;
-    ringY += dy * ringDamp;
-
-    // Calculate actual moving speed for stretch stretch factor
-    const speed = Math.hypot(dx, dy);
-    const stretch = Math.min(speed * 0.006, 0.45);
-    const angle = Math.atan2(dy, dx);
-
-    // Apply translate and stretch scale
-    cursorRing.style.left = `${ringX}px`;
-    cursorRing.style.top = `${ringY}px`;
-    cursorRing.style.transform = `translate(-50%, -50%) rotate(${angle}rad) scale(${1 + stretch}, ${1 - stretch})`;
-
-    requestAnimationFrame(updatePhysicsCursor);
-  }
-  
-  // Kick off if desktop and elements exist
-  if (cursorDot && cursorRing && window.innerWidth > 1024) {
-    requestAnimationFrame(updatePhysicsCursor);
-  }
+  const cursorDot = null;
+  const cursorRing = null;
 
   /* ==========================================================================
      MAGNETIC UI ELEMENTS (SPRING-LIKE HOVER PHYSICS)

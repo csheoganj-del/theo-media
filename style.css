@@ -1848,73 +1848,7 @@ footer {
   }
 }
 
-/* ==========================================================================
-   SOPHISTICATED JELLY & MAGNETIC PHYSICS CURSOR (DESKTOP)
-   ========================================================================== */
-.custom-cursor-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-blue);
-  border-radius: 50%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 99999;
-  transition: width 0.3s, height 0.3s, background-color 0.3s;
-}
 
-.custom-cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid var(--color-blue);
-  border-radius: 50%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 99998;
-  /* GPU acceleration for stretch transformations */
-  will-change: width, height, transform, border-color, background-color;
-  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s, background-color 0.3s;
-}
-
-/* Cursor states on hover of magnetic/active elements */
-.custom-cursor-ring.magnetic-hover {
-  width: 52px;
-  height: 52px;
-  border-color: var(--color-blue);
-  background-color: rgba(156, 130, 83, 0.05); /* Frosted gold fill */
-}
-
-.custom-cursor-dot.magnetic-hover {
-  width: 12px;
-  height: 12px;
-  background-color: var(--color-blue-hover);
-}
-
-/* Hide default cursor on desktop when interactive cursor is active */
-@media (min-width: 1025px) {
-  body.home-page {
-    cursor: none !important;
-  }
-  
-  body.home-page a, body.home-page button, body.home-page select, body.home-page input, body.home-page textarea, body.home-page .dropdown-trigger, body.home-page .faq-question {
-    cursor: none !important;
-  }
-}
-
-/* Hide custom physics cursor on tablets and mobile screens */
-@media (max-width: 1024px) {
-  .custom-cursor-dot, .custom-cursor-ring {
-    display: none !important;
-  }
-  body {
-    cursor: auto !important;
-  }
-}
 
 /* ==========================================================================
    TRUST STATS SECTION
