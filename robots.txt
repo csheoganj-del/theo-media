@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /assets/favicon*
+Disallow: /.vercel/
 
 Sitemap: https://www.theomedia.co.uk/sitemap.xml

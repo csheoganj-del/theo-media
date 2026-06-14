@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Android App Development UK | Custom Mobile App Development — TheoMedia</title>
+  <meta name="description" content="TheoMedia builds native Android apps for UK businesses — loyalty apps, field team tools, ordering systems, and business-specific applications. Play Store submission included. From £3,950.">
+  <meta name="keywords" content="Android app development UK, custom mobile app development UK, native Android developer UK, business app development London, mobile app agency UK, Android developer Europe">
+  <meta name="author" content="TheoMedia Engineering">
+  <link rel="canonical" href="https://www.theomedia.co.uk/mobile-app-development.html">
+
+  <meta property="og:title" content="Native Android App Development for UK Businesses | TheoMedia">
+  <meta property="og:description" content="Custom Android apps built natively for UK businesses — loyalty programs, field operations, ordering systems, and CRM-connected mobile tools. From £3,950.">
+  <meta property="og:image" content="https://www.theomedia.co.uk/assets/og-image.png">
+  <meta property="og:url" content="https://www.theomedia.co.uk/mobile-app-development.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Native Android App Development for UK Businesses | TheoMedia">
+  <meta name="twitter:description" content="Custom Android apps for UK businesses — loyalty, field ops, ordering, CRM-connected. Play Store submission included. From £3,950.">
+  <meta name="twitter:image" content="https://www.theomedia.co.uk/assets/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.theomedia.co.uk/mobile-app-development.html#service",
+        "name": "Native Android App Development",
+        "description": "Custom Android app development for UK businesses. Includes native Android development, offline caching, push notifications, Google Play Store submission, and backend API integration.",
+        "provider": { "@type": "Organization", "name": "TheoMedia", "url": "https://www.theomedia.co.uk" },
+        "areaServed": ["United Kingdom", "Ireland", "Switzerland", "Europe"],
+        "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "3950" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theomedia.co.uk/" },
+          { "@type": "ListItem", "position": 2, "name": "Mobile App Development", "item": "https://www.theomedia.co.uk/mobile-app-development.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .sp-hero { padding: 9rem 2rem 5rem; background: var(--bg-primary); text-align: center; }
+    .sp-hero-content { max-width: 860px; margin: 0 auto; }
+    .sp-hero h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: 1.5rem; color: var(--text-primary); }
+    .sp-hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6; }
+    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; font-size: 0.83rem; color: var(--text-muted); }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--color-blue); }
+    .sp-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .sp-section-alt { background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .sp-section-alt .sp-section { padding: 5rem 2rem; }
+    .sp-prose h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.035em; margin-bottom: 1.25rem; color: var(--text-primary); }
+    .sp-prose h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; margin-top: 2.25rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+    .sp-prose p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem; }
+    .sp-prose ul { list-style: none; margin: 1.25rem 0 1.75rem; display: flex; flex-direction: column; gap: 0.65rem; }
+    .sp-prose ul li { display: flex; align-items: flex-start; gap: 0.65rem; color: var(--text-muted); font-size: 0.97rem; line-height: 1.55; }
+    .sp-prose ul li .check-icon { color: var(--color-blue); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 3rem; }
+    .feature-card { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 2rem 1.75rem; transition: var(--transition-clean); }
+    .feature-card:hover { border-color: var(--border-color-hover); transform: translateY(-3px); }
+    .feature-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .feature-card h4 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; color: var(--text-primary); }
+    .feature-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+    .use-cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .use-case-card { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 2rem; transition: var(--transition-clean); }
+    .use-case-card:hover { border-color: var(--border-color-hover); }
+    .use-case-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+    .use-case-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary); }
+    .use-case-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+    .process-steps { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+    .process-step { display: grid; grid-template-columns: 56px 1fr; gap: 1.5rem; align-items: start; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 1.75rem 2rem; transition: var(--transition-clean); }
+    .process-step:hover { border-color: var(--border-color-hover); }
+    .step-number { width: 56px; height: 56px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: var(--color-blue); flex-shrink: 0; }
+    .step-content h4 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; color: var(--text-primary); }
+    .step-content p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+    .faq-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .faq-section .section-header { margin-bottom: 3rem; }
+    .faq-section .section-header h2 { font-size: 2.2rem; }
+    .sp-cta { background: var(--bg-secondary); border-top: 1px solid var(--border-color); text-align: center; padding: 6rem 2rem; }
+    .sp-cta-inner { max-width: 680px; margin: 0 auto; }
+    .sp-cta h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 1.15rem; color: var(--text-primary); }
+    .sp-cta p { color: var(--text-muted); font-size: 1.08rem; line-height: 1.6; margin-bottom: 2.25rem; }
+    .cta-group { justify-content: center; }
+    .related-services { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .related-services h3 { font-weight: 700; color: var(--text-muted); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 0.55rem 1.1rem; border-radius: 100px; transition: var(--transition-clean); }
+    .related-links a:hover { border-color: var(--color-blue); color: var(--color-blue); }
+    @media (max-width: 768px) { .sp-hero h1 { font-size: 2rem; } .features-grid { grid-template-columns: 1fr; } .use-cases-grid { grid-template-columns: 1fr; } .process-step { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="light-theme">
+
+  <div class="comms-sidebar" aria-label="Quick Communication Channels">
+    <a href="facetime://+353852258004" class="comms-item facetime-item" title="FaceTime Call">
+      <span class="comms-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 16H5V8h9v8z"/></svg></span>
+      <span class="comms-label">FaceTime (+353 85 225 8004)</span>
+    </a>
+    <div class="comms-divider"></div>
+    <a href="https://wa.me/353852258004" target="_blank" class="comms-item whatsapp-item" title="WhatsApp Chat">
+      <span class="comms-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.335 4.978L2 22l5.197-1.361a9.938 9.938 0 004.814 1.246h.004c5.506 0 9.99-4.478 9.992-9.984A9.998 9.998 0 0012.012 2zm4.78 13.064c-.263.738-1.503 1.348-2.072 1.408-.57.06-1.129.239-3.666-.762-3.242-1.282-5.326-4.57-5.486-4.782-.16-.213-1.285-1.706-1.285-3.255 0-1.55.811-2.31 1.101-2.61.29-.3.64-.374.85-.374s.422-.004.606.006c.19.01.442-.073.693.532.251.605.859 2.09.934 2.24.075.15.125.325.025.525-.1.2-.15.325-.3.5-.15.175-.315.39-.45.522-.15.147-.306.307-.132.605.175.297.777 1.282 1.666 2.072.13.117.262.242.4.364 1.144 1.018 2.023 1.283 2.378 1.433.356.15.56.126.77-.116.21-.242.91-1.059 1.153-1.423.243-.364.485-.303.818-.182.333.121 2.115 1.002 2.478 1.182.364.18.607.27.697.422.09.15.09.873-.173 1.611z"/></svg></span>
+      <span class="comms-label">WhatsApp (+353 85 225 8004)</span>
+    </a>
+  </div>
+
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">TheoMedia<span>.</span></a>
+      <nav aria-label="Main Navigation">
+        <a href="/#services" class="nav-link">Solutions</a>
+        <a href="/#configurator-section" class="nav-link">Configurator</a>
+        <a href="/#pricing" class="nav-link">Pricing</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/#faq" class="nav-link">Q&A</a>
+      </nav>
+      <div class="header-controls">
+        <a href="/#contact" class="btn-header">Get Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="sp-hero">
+    <div class="sp-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><span>Mobile App Development</span>
+      </nav>
+      <div class="badge"><span class="pulse-dot"></span> Native Android · Offline Mode · Play Store Submission — From £3,950</div>
+      <h1>Native Android App Development<br>for <span class="dark-accent-text">UK Businesses</span></h1>
+      <p>From customer loyalty apps to field team tools and ordering platforms — we build native Android applications that connect your business operations to the devices your customers and staff actually use.</p>
+      <div class="cta-group">
+        <a href="/#contact" class="btn-primary">Get a Mobile App Development Quote</a>
+        <a href="/#pricing" class="btn-secondary">View Pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-prose">
+      <h2>Why Your Business Needs a Mobile App</h2>
+      <p>The smartphone is now the primary computing device for the majority of UK consumers and an increasing proportion of business operations. Apps — native applications installed directly on a device — deliver experiences and capabilities that websites and web apps simply cannot match: offline functionality, push notifications, camera and barcode scanner access, GPS tracking, biometric authentication, and integration with device-level features that create genuinely seamless user experiences.</p>
+      <p>For UK businesses, the business case for a native Android app typically falls into three categories. The first is customer engagement — loyalty programmes, ordering platforms, and service booking apps that create a direct, persistent channel to your customers, bypassing the algorithmic uncertainty of social media and the deliverability challenges of email. The second is field operations — apps for delivery drivers, field engineers, sales representatives, or inspection teams who need mobile access to your business data and the ability to record information remotely, with or without internet connectivity. The third is operational efficiency — mobile POS terminals, stock-taking apps, shift scheduling tools, and other internal applications that digitise time-consuming manual processes.</p>
+      <p>Android is our primary mobile platform — for good reason. Android commands over 72% of the global smartphone market and is dominant across UK business sectors, particularly in logistics, hospitality, retail, and field services. Android's open ecosystem also allows enterprise deployment without App Store review delays, and Android devices are significantly more cost-effective for fleet deployments of 50+ units.</p>
+
+      <h3>What We Build</h3>
+      <ul>
+        <li><span class="check-icon">✓</span> <strong>Customer loyalty apps</strong> — digital stamp cards, points accumulation, reward redemption, push notification campaigns, and customer profile management</li>
+        <li><span class="check-icon">✓</span> <strong>B2B ordering platforms</strong> — trade customer ordering apps with catalogue browsing, account-based pricing, order history, and reorder functionality</li>
+        <li><span class="check-icon">✓</span> <strong>Field team tools</strong> — job scheduling, route optimisation, form-based data collection, photo capture, signature capture, and offline synchronisation</li>
+        <li><span class="check-icon">✓</span> <strong>Mobile POS systems</strong> — tablet-based checkout terminals with barcode scanning, receipt printing via Bluetooth, and integration with your central inventory system</li>
+        <li><span class="check-icon">✓</span> <strong>Delivery driver apps</strong> — route planning, proof of delivery capture, real-time status updates, and customer notification triggers</li>
+        <li><span class="check-icon">✓</span> <strong>Internal business tools</strong> — shift scheduling, stock counting, equipment inspection logging, and any custom workflow that currently relies on paper or spreadsheets</li>
+      </ul>
+
+      <h3>Offline-First Architecture</h3>
+      <p>Many business-critical mobile applications need to work reliably in environments with poor or no connectivity — warehouses, basements, rural delivery routes, and construction sites. We build offline-first architecture as standard for any app where connectivity cannot be guaranteed: data is cached locally on the device, all actions are queued for synchronisation, and the app continues to function fully offline. When connectivity is restored, data syncs automatically with the backend — with conflict resolution handled gracefully. This isn't an optional add-on; for field and logistics applications, it's the fundamental design principle.</p>
+    </div>
+  </div>
+
+  <div class="sp-section-alt">
+    <div class="sp-section">
+      <div class="section-header">
+        <div class="micro-badge">APP CAPABILITIES</div>
+        <h2>What We Build Into Every Android App</h2>
+        <p>Native Android capabilities that make the difference between an app that gets deleted and one that becomes an essential business tool.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📲</div>
+          <h4>Push Notifications</h4>
+          <p>Firebase Cloud Messaging integration for targeted push notifications — order updates, promotions, appointment reminders, and operational alerts delivered instantly to users' devices.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📶</div>
+          <h4>Offline Mode</h4>
+          <p>Local SQLite caching ensures core functionality works without internet. Data syncs automatically when connectivity returns, with full conflict resolution.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📸</div>
+          <h4>Camera &amp; Barcode Scanning</h4>
+          <p>Native camera integration for photo capture, document scanning, and barcode/QR code scanning — far superior to web-based camera access in terms of performance and reliability.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h4>GPS &amp; Location Services</h4>
+          <p>Background location tracking, geofencing, route recording, and map integration for delivery, field service, and location-based loyalty applications.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h4>Backend API Integration</h4>
+          <p>Your app connects to our custom REST API backend — or to your existing systems. User authentication, data sync, push triggers, and analytics all handled server-side.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏪</div>
+          <h4>Google Play Store Submission</h4>
+          <p>Full Play Store submission handled by us — app listing creation, screenshot production, content rating, privacy policy, and release management. Your app, your account.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="section-header">
+      <div class="micro-badge">OUR PROCESS</div>
+      <h2>How We Build Your Android App</h2>
+      <p>A structured development process that delivers a tested, Play Store-ready Android app — typically in ten to fourteen weeks.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h4>Requirements &amp; User Journey Mapping</h4>
+          <p>We document every user type, every workflow, and every screen — creating a comprehensive functional specification before writing a single line of code. This prevents scope creep and gives you a precise cost and timeline.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h4>UI/UX Design &amp; Prototyping</h4>
+          <p>High-fidelity screen designs created in Figma following Android Material Design principles. Interactive prototypes let you test the user flow before development begins — changes at this stage are free; changes after development are not.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h4>Backend API Development</h4>
+          <p>We build the server-side API that powers your app — user authentication, data storage, push notification triggers, and integrations with your existing business systems — before building the app itself.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h4>Native Android Development</h4>
+          <p>Android development in Kotlin — Google's recommended language for Android development. We follow Android architecture best practices, test on physical devices across multiple Android versions, and benchmark performance throughout.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <h4>Testing, Play Store Submission &amp; Launch</h4>
+          <p>End-to-end testing on physical devices, crash reporting configuration via Firebase Crashlytics, Play Store listing creation and submission, and post-launch monitoring for the first 30 days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section-alt">
+    <div class="faq-section">
+      <div class="section-header">
+        <div class="micro-badge">COMMON QUESTIONS</div>
+        <h2>Mobile App Development FAQs</h2>
+        <p>What UK businesses most commonly ask before commissioning a native Android application.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do you develop for iOS (iPhone) as well as Android?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>Our primary mobile development platform is Android, which covers the majority of UK business use cases — particularly in logistics, retail, hospitality, and field operations where Android devices are the standard. For consumer-facing apps where your customer base includes significant iPhone usage (loyalty apps, customer ordering platforms), we can scope an iOS version — built natively in Swift — as a follow-on phase after the Android app is live and validated. Building and validating Android first is typically the right approach: Android development is faster, device testing is broader, and enterprise deployment doesn't require App Store approval. We'll advise on whether iOS is needed for your specific use case during the discovery phase.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">How long does custom Android app development take?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>A standard business Android app — with user authentication, a core set of screens, and backend API integration — takes ten to fourteen weeks from project kick-off to Play Store submission. More complex apps with offline sync, real-time features, hardware integrations (Bluetooth printing, payment terminals), or complex multi-role user systems take sixteen to twenty-four weeks. We provide a detailed timeline in your project proposal, broken down by phase, so you can plan your launch accordingly. We always allow a one-week buffer for Play Store review and any policy compliance adjustments Google requires.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Will my app work without internet connectivity?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>Yes — for any app where offline functionality is needed, we implement an offline-first architecture using SQLite local storage on the device. Users can continue to use the app — recording data, completing forms, browsing catalogued products, creating orders — when there is no internet connection. All actions are queued locally and synchronised with the server when connectivity is restored. The synchronisation logic handles conflicts intelligently — for example, if a stock level has been updated by both the app user and someone in the office during the offline period, the system applies a defined conflict resolution rule rather than silently overwriting data. Offline mode does require some upfront architectural decisions, so it's important to specify this requirement early in the project.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do you handle Google Play Store submission?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>Yes — Play Store submission is included in every Android app project. We handle the complete submission process: creating or configuring your Google Play Console developer account (under your Google account, not ours), creating the store listing with description, screenshots, and feature graphic, completing the content rating questionnaire, setting up the privacy policy link, creating the initial release, and managing the review process. Play Store review typically takes one to three days for new apps. If Google requires changes for policy compliance, we handle those revisions at no additional cost. After launch, we can also set up staged rollouts, manage version updates, and respond to early user reviews.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can the app connect to our existing CRM or business systems?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>Yes — connecting your mobile app to your existing business systems is a core part of most app projects. If your CRM, ERP, or other business platform has a documented API (REST or GraphQL), we can integrate with it. Common integrations include our own custom TheoMedia web applications, Salesforce, HubSpot, Xero, QuickBooks, Shopify, WooCommerce, and Google Workspace. If your existing system doesn't have a public API, we can build a middleware layer that securely exposes the data your app needs. For businesses using TheoMedia's custom web applications, the mobile app and the web app share the same backend API — giving you a single, consistent data source across all platforms.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-cta">
+    <div class="sp-cta-inner">
+      <div class="micro-badge">START YOUR PROJECT</div>
+      <h2>Put Your Business in Your Customers' Pockets</h2>
+      <p>Tell us what problem you're trying to solve with a mobile app — whether it's improving customer retention, streamlining field operations, or replacing a paper-based process. We'll help you scope the right solution.</p>
+      <div class="cta-group">
+        <a href="/#contact" class="btn-primary">Get a Mobile App Development Quote</a>
+        <a href="mailto:hello@theomedia.co.uk" class="btn-secondary">Email Us Directly</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="related-services">
+    <h3>Related Services</h3>
+    <div class="related-links">
+      <a href="/web-applications.html">Web Applications (CRM/ERP)</a>
+      <a href="/web-development.html">Web Development</a>
+      <a href="/ecommerce-development.html">Ecommerce Development</a>
+      <a href="/website-design.html">Website Design</a>
+      <a href="/landing-page-design.html">Landing Page Design</a>
+      <a href="/website-redesign.html">Website Redesign</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>TheoMedia<span>.</span></h3>
+        <p>Bespoke websites, CRM systems, POS software, and mobile apps for UK and European businesses.</p>
+      </div>
+      <div class="footer-links-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/website-design.html">Website Design</a></li>
+          <li><a href="/web-development.html">Web Development</a></li>
+          <li><a href="/web-applications.html">Web Applications</a></li>
+          <li><a href="/ecommerce-development.html">Ecommerce Development</a></li>
+          <li><a href="/mobile-app-development.html">Mobile App Development</a></li>
+          <li><a href="/landing-page-design.html">Landing Page Design</a></li>
+          <li><a href="/website-redesign.html">Website Redesign</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/terms.html">Terms &amp; Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@theomedia.co.uk">hello@theomedia.co.uk</a></li>
+          <li><a href="https://wa.me/353852258004">WhatsApp</a></li>
+          <li>London | Dublin | Zurich</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 TheoMedia. All Rights Reserved.</div>
+      <div class="footer-legal">
+        <a href="/terms.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

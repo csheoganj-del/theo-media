@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bespoke Ecommerce Website Development UK | Custom Online Shop Development — TheoMedia</title>
+  <meta name="description" content="TheoMedia builds bespoke ecommerce websites for UK retailers — custom-coded, Stripe-integrated, multi-currency (GBP/EUR/CHF), GDPR compliant. No Shopify lock-in. Get a free quote.">
+  <meta name="keywords" content="ecommerce website development UK, custom online shop development, bespoke ecommerce UK, Stripe ecommerce development, multi-currency ecommerce UK, ecommerce agency London">
+  <meta name="author" content="TheoMedia Engineering">
+  <link rel="canonical" href="https://www.theomedia.co.uk/ecommerce-development.html">
+
+  <meta property="og:title" content="Bespoke Ecommerce Website Development UK | TheoMedia">
+  <meta property="og:description" content="Custom-built ecommerce websites with Stripe integration, multi-currency checkout, and full GDPR compliance. No Shopify, no templates, no lock-in.">
+  <meta property="og:image" content="https://www.theomedia.co.uk/assets/og-image.png">
+  <meta property="og:url" content="https://www.theomedia.co.uk/ecommerce-development.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bespoke Ecommerce Website Development UK | TheoMedia">
+  <meta name="twitter:description" content="Custom-built ecommerce websites with Stripe integration, multi-currency checkout, and full GDPR compliance.">
+  <meta name="twitter:image" content="https://www.theomedia.co.uk/assets/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.theomedia.co.uk/ecommerce-development.html#service",
+        "name": "Bespoke Ecommerce Website Development",
+        "description": "Custom ecommerce website development for UK retailers. Includes Stripe payment integration, multi-currency checkout, product management, order tracking, inventory sync, and GDPR compliance.",
+        "provider": { "@type": "Organization", "name": "TheoMedia", "url": "https://www.theomedia.co.uk" },
+        "areaServed": ["United Kingdom", "Ireland", "Switzerland", "Europe"],
+        "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "1950" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theomedia.co.uk/" },
+          { "@type": "ListItem", "position": 2, "name": "Ecommerce Development", "item": "https://www.theomedia.co.uk/ecommerce-development.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .sp-hero { padding: 9rem 2rem 5rem; background: var(--bg-primary); text-align: center; }
+    .sp-hero-content { max-width: 860px; margin: 0 auto; }
+    .sp-hero h1 { font-size: 3.2rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: 1.5rem; color: var(--text-primary); }
+    .sp-hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.6; }
+    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; font-size: 0.83rem; color: var(--text-muted); }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--color-blue); }
+    .sp-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .sp-section-alt { background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .sp-section-alt .sp-section { padding: 5rem 2rem; }
+    .sp-prose h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.035em; margin-bottom: 1.25rem; color: var(--text-primary); }
+    .sp-prose h3 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; margin-top: 2.25rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+    .sp-prose p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem; }
+    .sp-prose ul { list-style: none; margin: 1.25rem 0 1.75rem; display: flex; flex-direction: column; gap: 0.65rem; }
+    .sp-prose ul li { display: flex; align-items: flex-start; gap: 0.65rem; color: var(--text-muted); font-size: 0.97rem; line-height: 1.55; }
+    .sp-prose ul li .check-icon { color: var(--color-blue); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-top: 3rem; }
+    .feature-card { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 2rem 1.75rem; transition: var(--transition-clean); }
+    .feature-card:hover { border-color: var(--border-color-hover); transform: translateY(-3px); }
+    .feature-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .feature-card h4 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; color: var(--text-primary); }
+    .feature-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+    .process-steps { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+    .process-step { display: grid; grid-template-columns: 56px 1fr; gap: 1.5rem; align-items: start; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--border-radius-lg); padding: 1.75rem 2rem; transition: var(--transition-clean); }
+    .process-step:hover { border-color: var(--border-color-hover); }
+    .step-number { width: 56px; height: 56px; border-radius: 50%; background: var(--bg-secondary); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: var(--color-blue); flex-shrink: 0; }
+    .step-content h4 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.4rem; color: var(--text-primary); }
+    .step-content p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+    .faq-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+    .faq-section .section-header { margin-bottom: 3rem; }
+    .faq-section .section-header h2 { font-size: 2.2rem; }
+    .sp-cta { background: var(--bg-secondary); border-top: 1px solid var(--border-color); text-align: center; padding: 6rem 2rem; }
+    .sp-cta-inner { max-width: 680px; margin: 0 auto; }
+    .sp-cta h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 1.15rem; color: var(--text-primary); }
+    .sp-cta p { color: var(--text-muted); font-size: 1.08rem; line-height: 1.6; margin-bottom: 2.25rem; }
+    .cta-group { justify-content: center; }
+    .related-services { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
+    .related-services h3 { font-weight: 700; color: var(--text-muted); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+    .related-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .related-links a { background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); text-decoration: none; font-size: 0.88rem; font-weight: 500; padding: 0.55rem 1.1rem; border-radius: 100px; transition: var(--transition-clean); }
+    .related-links a:hover { border-color: var(--color-blue); color: var(--color-blue); }
+    @media (max-width: 768px) { .sp-hero h1 { font-size: 2rem; } .features-grid { grid-template-columns: 1fr; } .process-step { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="light-theme">
+
+  <div class="comms-sidebar" aria-label="Quick Communication Channels">
+    <a href="facetime://+353852258004" class="comms-item facetime-item" title="FaceTime Call">
+      <span class="comms-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 16H5V8h9v8z"/></svg></span>
+      <span class="comms-label">FaceTime (+353 85 225 8004)</span>
+    </a>
+    <div class="comms-divider"></div>
+    <a href="https://wa.me/353852258004" target="_blank" class="comms-item whatsapp-item" title="WhatsApp Chat">
+      <span class="comms-icon"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.335 4.978L2 22l5.197-1.361a9.938 9.938 0 004.814 1.246h.004c5.506 0 9.99-4.478 9.992-9.984A9.998 9.998 0 0012.012 2zm4.78 13.064c-.263.738-1.503 1.348-2.072 1.408-.57.06-1.129.239-3.666-.762-3.242-1.282-5.326-4.57-5.486-4.782-.16-.213-1.285-1.706-1.285-3.255 0-1.55.811-2.31 1.101-2.61.29-.3.64-.374.85-.374s.422-.004.606.006c.19.01.442-.073.693.532.251.605.859 2.09.934 2.24.075.15.125.325.025.525-.1.2-.15.325-.3.5-.15.175-.315.39-.45.522-.15.147-.306.307-.132.605.175.297.777 1.282 1.666 2.072.13.117.262.242.4.364 1.144 1.018 2.023 1.283 2.378 1.433.356.15.56.126.77-.116.21-.242.91-1.059 1.153-1.423.243-.364.485-.303.818-.182.333.121 2.115 1.002 2.478 1.182.364.18.607.27.697.422.09.15.09.873-.173 1.611z"/></svg></span>
+      <span class="comms-label">WhatsApp (+353 85 225 8004)</span>
+    </a>
+  </div>
+
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">TheoMedia<span>.</span></a>
+      <nav aria-label="Main Navigation">
+        <a href="/#services" class="nav-link">Solutions</a>
+        <a href="/#configurator-section" class="nav-link">Configurator</a>
+        <a href="/#pricing" class="nav-link">Pricing</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/#faq" class="nav-link">Q&A</a>
+      </nav>
+      <div class="header-controls">
+        <a href="/#contact" class="btn-header">Get Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="sp-hero">
+    <div class="sp-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a><span>›</span><span>Ecommerce Development</span>
+      </nav>
+      <div class="badge"><span class="pulse-dot"></span> Stripe · Multi-Currency · GDPR · No Platform Lock-In</div>
+      <h1>Bespoke Ecommerce Website Development<br>for <span class="dark-accent-text">UK Retailers</span></h1>
+      <p>Custom-built online shops that look exactly like your brand, perform better than templates, and aren't subject to Shopify's commission structure or WooCommerce's plugin dependency nightmare.</p>
+      <div class="cta-group">
+        <a href="/#contact" class="btn-primary">Get an Ecommerce Development Quote</a>
+        <a href="/#pricing" class="btn-secondary">View Pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-prose">
+      <h2>Custom Ecommerce vs Shopify &amp; WooCommerce</h2>
+      <p>Shopify and WooCommerce have made ecommerce accessible to millions of businesses, and for many small retailers that's absolutely sufficient. But there are significant limitations that become increasingly painful as your business grows. Shopify charges transaction fees on every sale (0.5%–2% depending on your plan) unless you use Shopify Payments — which isn't always available or suitable for UK businesses. WooCommerce on WordPress requires constant plugin updates, plugin conflicts cause unexplained breakages, and the performance overhead of a WordPress installation creates slow load times that directly harm conversion rates.</p>
+      <p>For UK retailers with more than a few hundred products, international aspirations (selling in GBP, EUR, and CHF), or specific checkout requirements (VAT-inclusive pricing, country-based shipping rules, B2B net terms), a custom-built ecommerce platform is a significantly better long-term investment. You pay once for development, you own the codebase outright, and there are no percentage fees on your revenue.</p>
+      <p>TheoMedia builds custom ecommerce websites using React and Next.js on the frontend with a Node.js API backend and PostgreSQL database. Payments are handled by Stripe — the UK's leading payment processor, with full support for 3D Secure, Apple Pay, Google Pay, BACS direct debit, and all major card networks. The result is a shop that's fast, secure, scalable, and entirely under your control.</p>
+
+      <h3>What Your Custom Ecommerce Store Includes</h3>
+      <ul>
+        <li><span class="check-icon">✓</span> <strong>Stripe payment integration</strong> — card payments, Apple Pay, Google Pay, BACS debit, and Stripe Checkout with 3D Secure authentication</li>
+        <li><span class="check-icon">✓</span> <strong>Multi-currency checkout</strong> — GBP, EUR, and CHF pricing with automatic exchange rate display and currency switching for European customers</li>
+        <li><span class="check-icon">✓</span> <strong>Product management admin panel</strong> — add, edit, and organise products, variants, pricing, stock levels, and images through a custom-built admin interface</li>
+        <li><span class="check-icon">✓</span> <strong>Order management &amp; tracking</strong> — full order lifecycle management, automated confirmation emails, shipping integration, and customer order history portal</li>
+        <li><span class="check-icon">✓</span> <strong>Inventory synchronisation</strong> — real-time stock level management with low-stock alerts, out-of-stock handling, and optional multi-location stock tracking</li>
+        <li><span class="check-icon">✓</span> <strong>UK/EU VAT handling</strong> — VAT-inclusive pricing display, VAT calculation by delivery destination, VAT invoice generation, and OSS compliance for EU digital sales</li>
+        <li><span class="check-icon">✓</span> <strong>GDPR-compliant cookie consent</strong> — cookie categorisation, consent logging, and privacy policy integration meeting ICO requirements</li>
+        <li><span class="check-icon">✓</span> <strong>Mobile-first responsive design</strong> — optimised checkout experience on mobile devices where over 60% of UK ecommerce traffic originates</li>
+      </ul>
+
+      <h3>Performance: The Ecommerce Conversion Factor</h3>
+      <p>Google's research consistently demonstrates that a one-second improvement in mobile page load time increases ecommerce conversion rates by up to 27%. Every 100ms delay costs conversion. Our custom ecommerce builds target sub-2-second page loads on mobile networks, Lighthouse performance scores of 95+, and perfect Core Web Vitals — not because we want impressive numbers, but because page speed directly translates to revenue. Shopify themes and WooCommerce installations routinely load in 4–6 seconds on mobile. That gap is costing UK retailers sales every single day.</p>
+    </div>
+  </div>
+
+  <div class="sp-section-alt">
+    <div class="sp-section">
+      <div class="section-header">
+        <div class="micro-badge">ECOMMERCE FEATURES</div>
+        <h2>Everything Your Online Shop Needs</h2>
+        <p>A comprehensive feature set built for UK retailers with European ambitions — from checkout to compliance.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h4>Stripe Payments</h4>
+          <p>Full Stripe integration with support for cards, Apple Pay, Google Pay, BACS, and Stripe Checkout. PCI-DSS compliant. No transaction fees beyond Stripe's standard rates.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h4>Multi-Currency Checkout</h4>
+          <p>GBP, EUR, and CHF pricing with automatic display based on visitor location. Sell across the UK, Ireland, and Switzerland without a separate store for each market.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h4>Inventory Management</h4>
+          <p>Real-time stock tracking with configurable low-stock alerts, out-of-stock display, backorder handling, and optional multi-warehouse stock allocation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h4>GDPR Cookie Compliance</h4>
+          <p>ICO-compliant cookie consent banner, consent logging, analytics categorisation, and data subject request handling built in from day one.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h4>Sales Analytics Dashboard</h4>
+          <p>Revenue trends, best-selling products, average order values, conversion funnels, and customer lifetime value — all in a custom admin dashboard you own.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h4>Product SEO</h4>
+          <p>Individual product page meta tags, structured data (Product schema), canonical URLs, image alt tags, and automatic sitemap generation for maximum search visibility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section-alt">
+    <div class="faq-section">
+      <div class="section-header">
+        <div class="micro-badge">COMMON QUESTIONS</div>
+        <h2>Ecommerce Development FAQs</h2>
+        <p>What UK retailers most commonly ask before commissioning a custom ecommerce website.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Do you use Shopify, WooCommerce, or build from scratch?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>We build from scratch. Our custom ecommerce platform is built with React/Next.js (frontend), Node.js (backend API), and PostgreSQL (database). We specifically avoid Shopify because their transaction fee model penalises growth and their template system constrains your brand. We avoid WooCommerce because WordPress's plugin ecosystem creates security vulnerabilities and performance problems that directly harm conversion. Building from scratch means you own every line of code, pay no platform fees, and have complete freedom to evolve the shop as your business grows. For businesses that have already invested heavily in Shopify and simply need improvements, we can work with that platform — but for new builds, we recommend custom every time.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can I manage my own products and inventory after launch?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>Yes — every custom ecommerce build includes a fully custom admin panel where you can add, edit, and delete products, manage variants and pricing, update stock levels, process orders, issue refunds, and manage customer records. The admin interface is designed specifically for your product catalogue and business model — not a generic interface you have to adapt to. We can also build bulk import functionality (CSV or spreadsheet) if you have hundreds of products to add at launch. After handover, you're completely independent — no dependency on TheoMedia to make routine catalogue changes.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">How do you integrate Stripe into a custom shop?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>We use Stripe's official APIs and SDKs to build a fully integrated payment flow. When a customer reaches checkout, payment details are collected securely via Stripe Elements (hosted, PCI-compliant card input fields). We handle the full payment intent lifecycle — card authorisation, 3D Secure authentication where required, payment capture, and webhook-based order confirmation. Stripe handles all sensitive card data — it never touches our servers — so you inherit Stripe's PCI-DSS Level 1 compliance. We configure Apple Pay and Google Pay for one-tap mobile checkout, which typically increases mobile conversion rates significantly. Refunds, disputes, and payouts are all manageable via your Stripe dashboard, which we set up under your account so you have full control and visibility over your revenue.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">How do you handle UK and EU VAT on the shop?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>VAT handling is one of the more complex aspects of ecommerce for UK businesses selling to European customers post-Brexit. We implement destination-based VAT calculation: prices displayed to UK customers include UK VAT (20%), prices displayed to EU customers include the appropriate EU member state VAT rate, and prices displayed to non-VAT registered business buyers in B2B scenarios can be shown ex-VAT. For UK businesses registered for the EU's One Stop Shop (OSS) scheme, we build reporting that generates OSS quarterly return data. VAT-compliant invoices are generated automatically with each order. We'll discuss your specific VAT obligations during the discovery phase to ensure the implementation is correct for your registration status and markets.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Is the shop mobile-friendly?<span class="faq-icon-arrow">+</span></button>
+          <div class="faq-answer"><p>Absolutely — mobile is our starting point, not an afterthought. We design and develop mobile-first, meaning the mobile experience is designed first and the desktop layout is progressively enhanced from there. Over 60% of UK ecommerce traffic comes from mobile devices, and Google's Core Web Vitals — which directly influence your search rankings — are assessed on mobile. Our custom shops are tested across iOS Safari (the most restrictive mobile browser), Android Chrome, Samsung Internet, and all major desktop browsers. Particular attention is paid to the mobile checkout experience — minimising form fields, enabling autofill, integrating Apple Pay and Google Pay for one-tap payment, and ensuring the entire purchase funnel can be completed with one thumb.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-cta">
+    <div class="sp-cta-inner">
+      <div class="micro-badge">START YOUR PROJECT</div>
+      <h2>Ready to Sell Online Without the Platform Compromise?</h2>
+      <p>Tell us about your products, your target markets, and what frustrates you about your current setup. We'll design an ecommerce solution that fits your business and your budget.</p>
+      <div class="cta-group">
+        <a href="/#contact" class="btn-primary">Get an Ecommerce Development Quote</a>
+        <a href="mailto:hello@theomedia.co.uk" class="btn-secondary">Email Us Directly</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="related-services">
+    <h3>Related Services</h3>
+    <div class="related-links">
+      <a href="/website-design.html">Website Design</a>
+      <a href="/web-development.html">Web Development</a>
+      <a href="/web-applications.html">Web Applications (CRM/ERP)</a>
+      <a href="/landing-page-design.html">Landing Page Design</a>
+      <a href="/mobile-app-development.html">Mobile App Development</a>
+      <a href="/website-redesign.html">Website Redesign</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>TheoMedia<span>.</span></h3>
+        <p>Bespoke websites, CRM systems, POS software, and mobile apps for UK and European businesses.</p>
+      </div>
+      <div class="footer-links-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/website-design.html">Website Design</a></li>
+          <li><a href="/web-development.html">Web Development</a></li>
+          <li><a href="/web-applications.html">Web Applications</a></li>
+          <li><a href="/ecommerce-development.html">Ecommerce Development</a></li>
+          <li><a href="/mobile-app-development.html">Mobile App Development</a></li>
+          <li><a href="/landing-page-design.html">Landing Page Design</a></li>
+          <li><a href="/website-redesign.html">Website Redesign</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/terms.html">Terms &amp; Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@theomedia.co.uk">hello@theomedia.co.uk</a></li>
+          <li><a href="https://wa.me/353852258004">WhatsApp</a></li>
+          <li>London | Dublin | Zurich</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 TheoMedia. All Rights Reserved.</div>
+      <div class="footer-legal">
+        <a href="/terms.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

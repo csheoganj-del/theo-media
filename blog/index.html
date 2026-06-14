@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | TheoMedia — Web Development Insights for UK Businesses</title>
+  <meta name="description" content="Expert articles on web development, website design, CRM systems and digital strategy for UK businesses. Practical insights from the TheoMedia team." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.theomedia.co.uk/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog | TheoMedia — Web Development Insights for UK Businesses" />
+  <meta property="og:description" content="Expert articles on web development, website design, CRM systems and digital strategy for UK businesses." />
+  <meta property="og:url" content="https://www.theomedia.co.uk/blog/" />
+  <meta property="og:image" content="https://www.theomedia.co.uk/assets/og-image.png" />
+  <meta property="og:site_name" content="TheoMedia" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog | TheoMedia — Web Development Insights for UK Businesses" />
+  <meta name="twitter:description" content="Expert articles on web development, website design, CRM systems and digital strategy for UK businesses." />
+  <meta name="twitter:image" content="https://www.theomedia.co.uk/assets/og-image.png" />
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.theomedia.co.uk/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.theomedia.co.uk/blog/" }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    .blog-hero { padding: 8rem 2rem 3rem; text-align: center; background: var(--bg-secondary); }
+    .blog-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .blog-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 580px; margin: 0 auto; }
+    .blog-grid-section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .blog-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .blog-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all 0.35s cubic-bezier(0.25,1,0.5,1); }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--color-blue); }
+    .blog-card-body { padding: 1.75rem; }
+    .blog-card-category { font-size: 0.75rem; font-weight: 600; color: var(--color-blue); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .blog-card-title { font-size: 1.15rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.75rem; color: var(--text-primary); }
+    .blog-card-excerpt { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.25rem; }
+    .blog-card-meta { font-size: 0.8rem; color: var(--text-muted); display: flex; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+    .blog-card-link { display: block; text-decoration: none; color: inherit; }
+    .blog-card-link:hover .blog-card-title { color: var(--color-blue); }
+    .blog-section-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .blog-section-heading { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="/" class="logo">TheoMedia<span>.</span></a>
+    <nav aria-label="Main Navigation">
+      <a href="/#services" class="nav-link">Solutions</a>
+      <a href="/#pricing" class="nav-link">Pricing</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-controls">
+      <a href="/#contact" class="btn-header">Get Proposal</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="blog-hero">
+    <p class="blog-section-label">Insights &amp; Guides</p>
+    <h1>The TheoMedia Blog</h1>
+    <p>Practical web development insights, pricing guides, and technology deep-dives for UK and European business owners.</p>
+  </section>
+
+  <section class="blog-grid-section">
+    <p class="blog-section-label">All Articles</p>
+    <h2 class="blog-section-heading">Latest from the Blog</h2>
+
+    <div class="blog-cards-grid">
+
+      <!-- Article 1 -->
+      <a href="/blog/cost-of-website-development-uk.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Web Development</p>
+            <h3 class="blog-card-title">How Much Does a Website Cost in the UK? (2026 Pricing Guide)</h3>
+            <p class="blog-card-excerpt">Website pricing in the UK ranges from £0 (DIY builders) to £50,000+ for enterprise builds. We break down every cost tier, what's included, and how to budget wisely in 2026.</p>
+            <div class="blog-card-meta">
+              <span>14 Jun 2026</span>
+              <span>10 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="/blog/web-development-company-india-guide.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Web Development</p>
+            <h3 class="blog-card-title">How to Hire a Web Development Company in India for Your UK Business (2026 Guide)</h3>
+            <p class="blog-card-excerpt">Thousands of UK businesses now partner with India-based development agencies. This guide covers what to look for, what to avoid, and how to make the relationship work seamlessly.</p>
+            <div class="blog-card-meta">
+              <span>10 Jun 2026</span>
+              <span>12 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="/blog/react-vs-nextjs.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Technology</p>
+            <h3 class="blog-card-title">React vs Next.js: Which Should You Choose for Your Business Website? (2026)</h3>
+            <p class="blog-card-excerpt">React and Next.js dominate modern web development, but they serve very different purposes. We explain the key differences and tell you which to pick for your specific project.</p>
+            <div class="blog-card-meta">
+              <span>8 Jun 2026</span>
+              <span>8 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 4 -->
+      <a href="/blog/why-small-businesses-need-website.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Business</p>
+            <h3 class="blog-card-title">Why Every Small Business in the UK Needs a Professional Website in 2026</h3>
+            <p class="blog-card-excerpt">81% of UK consumers research online before making a purchase. If your business doesn't have a professional website, you're invisible to the majority of your potential customers.</p>
+            <div class="blog-card-meta">
+              <span>6 Jun 2026</span>
+              <span>7 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 5 -->
+      <a href="/blog/website-redesign-checklist.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Website Design</p>
+            <h3 class="blog-card-title">The Complete Website Redesign Checklist for UK Businesses (2026)</h3>
+            <p class="blog-card-excerpt">A website redesign done poorly can destroy your search rankings and lose customers. This step-by-step checklist ensures you redesign safely, strategically, and without losing what's already working.</p>
+            <div class="blog-card-meta">
+              <span>4 Jun 2026</span>
+              <span>9 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 6 -->
+      <a href="/blog/gdpr-website-compliance-uk.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Business</p>
+            <h3 class="blog-card-title">GDPR Website Compliance for UK Businesses: A Complete Guide (2026)</h3>
+            <p class="blog-card-excerpt">The ICO has issued fines exceeding £50 million for GDPR breaches. This guide explains exactly what your website must do to remain compliant under UK GDPR in 2026.</p>
+            <div class="blog-card-meta">
+              <span>2 Jun 2026</span>
+              <span>11 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 7 -->
+      <a href="/blog/whatsapp-business-api-guide.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Technology</p>
+            <h3 class="blog-card-title">WhatsApp Business API for UK Companies: Everything You Need to Know (2026)</h3>
+            <p class="blog-card-excerpt">The WhatsApp Business API lets companies send automated invoices, order confirmations, and customer support messages at scale. Here's how UK businesses can leverage it effectively.</p>
+            <div class="blog-card-meta">
+              <span>30 May 2026</span>
+              <span>9 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 8 -->
+      <a href="/blog/ecommerce-development-cost-uk.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Web Development</p>
+            <h3 class="blog-card-title">How Much Does Ecommerce Website Development Cost in the UK? (2026)</h3>
+            <p class="blog-card-excerpt">From Shopify plans to fully custom-built ecommerce systems, the cost range is enormous. We compare every approach honestly so you can choose the right one for your business.</p>
+            <div class="blog-card-meta">
+              <span>27 May 2026</span>
+              <span>10 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 9 -->
+      <a href="/blog/custom-crm-vs-off-shelf-software.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Business</p>
+            <h3 class="blog-card-title">Custom CRM vs Off-the-Shelf Software: Which Is Right for Your Business?</h3>
+            <p class="blog-card-excerpt">Salesforce costs £75–£300 per user per month. A custom CRM built by TheoMedia is a one-time investment. We compare both options across 10 criteria so you can decide with confidence.</p>
+            <div class="blog-card-meta">
+              <span>24 May 2026</span>
+              <span>10 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Article 10 -->
+      <a href="/blog/best-hosting-for-small-business-uk.html" class="blog-card-link">
+        <article class="blog-card">
+          <div class="blog-card-body">
+            <p class="blog-card-category">Web Development</p>
+            <h3 class="blog-card-title">Best Web Hosting for Small Businesses in the UK: 2026 Comparison</h3>
+            <p class="blog-card-excerpt">Not all web hosting is created equal. We compare the top UK hosting options — from shared hosting to cloud platforms — and explain what TheoMedia recommends for different project types.</p>
+            <div class="blog-card-meta">
+              <span>20 May 2026</span>
+              <span>8 min read</span>
+            </div>
+          </div>
+        </article>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>TheoMedia<span>.</span></h3>
+      <p>Bespoke websites, CRM systems, POS software, and mobile apps for UK and European businesses.</p>
+    </div>
+    <div class="footer-links-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/website-design.html">Website Design</a></li>
+        <li><a href="/web-development.html">Web Development</a></li>
+        <li><a href="/web-applications.html">CRM &amp; Web Apps</a></li>
+        <li><a href="/ecommerce-development.html">Ecommerce</a></li>
+        <li><a href="/mobile-app-development.html">Mobile Apps</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-col">
+      <h4>Blog</h4>
+      <ul>
+        <li><a href="/blog/">All Articles</a></li>
+        <li><a href="/blog/cost-of-website-development-uk.html">Website Costs</a></li>
+        <li><a href="/blog/web-development-company-india-guide.html">India Web Dev</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 TheoMedia. All Rights Reserved.</div>
+    <div class="footer-legal">
+      <a href="/terms.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>

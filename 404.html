@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | TheoMedia</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to TheoMedia's homepage.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.theomedia.co.uk/">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .error-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 800;
+      color: #9c8253;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .error-title {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-bottom: 1rem;
+    }
+    .error-desc {
+      color: #86868b;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .error-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body class="light-theme">
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">TheoMedia<span>.</span></a>
+      <nav aria-label="Main Navigation">
+        <a href="/#services" class="nav-link">Solutions</a>
+        <a href="/#pricing" class="nav-link">Pricing</a>
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-controls">
+        <a href="/#contact" class="btn-header">Get Proposal</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="error-section">
+    <div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-desc">The page you're looking for has moved or doesn't exist. Let's get you back on track.</p>
+      <div class="error-links">
+        <a href="/" class="btn-primary">Return Home</a>
+        <a href="/#contact" class="btn-secondary">Get a Proposal</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
