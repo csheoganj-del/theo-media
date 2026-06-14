@@ -1065,8 +1065,8 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(updatePhysicsCursor);
   }
   
-  // Kick off if desktop
-  if (window.innerWidth > 1024) {
+  // Kick off if desktop and elements exist
+  if (cursorDot && cursorRing && window.innerWidth > 1024) {
     requestAnimationFrame(updatePhysicsCursor);
   }
 

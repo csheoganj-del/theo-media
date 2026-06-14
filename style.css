@@ -1897,11 +1897,11 @@ footer {
 
 /* Hide default cursor on desktop when interactive cursor is active */
 @media (min-width: 1025px) {
-  body {
+  body.home-page {
     cursor: none !important;
   }
   
-  a, button, select, input, textarea, .dropdown-trigger, .faq-question {
+  body.home-page a, body.home-page button, body.home-page select, body.home-page input, body.home-page textarea, body.home-page .dropdown-trigger, body.home-page .faq-question {
     cursor: none !important;
   }
 }
