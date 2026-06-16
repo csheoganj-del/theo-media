@@ -65,7 +65,7 @@ export default function App() {
     card.style.setProperty('--mouse-y', `${y}px`);
   };
 
-  // Scroll gesture hook to intercept wheel and swipe events for 6 chapters
+  // Scroll gesture hook to intercept wheel and swipe events for 6 chapters of evolution
   useEffect(() => {
     let lastWheelTime = 0;
     let touchStartY = 0;
@@ -74,10 +74,10 @@ export default function App() {
       if (Math.abs(e.deltaY) < 12) return;
 
       const now = Date.now();
-      if (now - lastWheelTime < 1100) return; // Cooldown to let morph animations finish
+      if (now - lastWheelTime < 1200) return; // Cooldown to let morph transitions finish
 
       if (e.deltaY > 0) {
-        // Scroll Down -> Next Chapter (max 5 since there are 6 chapters: 0 to 5)
+        // Scroll Down -> Next Stage (0 to 5)
         if (currentChapter < 5) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -85,7 +85,7 @@ export default function App() {
           setTimeout(() => setIsAnimating(false), 1000);
         }
       } else {
-        // Scroll Up -> Previous Chapter
+        // Scroll Up -> Previous Stage
         if (currentChapter > 0) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -101,7 +101,7 @@ export default function App() {
 
     const handleTouchEnd = (e: TouchEvent) => {
       const now = Date.now();
-      if (now - lastWheelTime < 1100) return;
+      if (now - lastWheelTime < 1200) return;
 
       const touchEndY = e.changedTouches[0].clientY;
       const diffY = touchStartY - touchEndY;
@@ -109,7 +109,7 @@ export default function App() {
       if (Math.abs(diffY) < 45) return;
 
       if (diffY > 0) {
-        // Swipe Up -> Next Chapter
+        // Swipe Up -> Next Stage
         if (currentChapter < 5) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -117,7 +117,7 @@ export default function App() {
           setTimeout(() => setIsAnimating(false), 1000);
         }
       } else {
-        // Swipe Down -> Previous Chapter
+        // Swipe Down -> Previous Stage
         if (currentChapter > 0) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -138,7 +138,6 @@ export default function App() {
     };
   }, [currentChapter, isAnimating]);
 
-  // Keep target stardust scroll linked to current chapter index
   useEffect(() => {
     targetScrollProgressRef.current = currentChapter;
   }, [currentChapter]);
@@ -242,7 +241,7 @@ export default function App() {
     };
   }, []);
 
-  // Three.js Particle Storyteller Engine - Configured for 6 Chapters
+  // Three.js Particle Evolution Engine - 6 Morph Targets
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -266,83 +265,79 @@ export default function App() {
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const pos0Sphere: THREE.Vector3[] = [];
-    const pos1Grid: THREE.Vector3[] = [];
-    const pos2Streams: THREE.Vector3[] = [];
-    const pos3Terrain: THREE.Vector3[] = [];
-    const pos4Helix: THREE.Vector3[] = [];
+    // Evolution Stage targets
+    const pos0Chaos: THREE.Vector3[] = [];   // Stage 1: Primordial Chaos
+    const pos1Core: THREE.Vector3[] = [];    // Stage 2: Coalescing Core
+    const pos2DNA: THREE.Vector3[] = [];     // Stage 3: DNA Double Helix
+    const pos3Lattice: THREE.Vector3[] = []; // Stage 4: Network Lattice
+    const pos4Tunnel: THREE.Vector3[] = [];  // Stage 5: Acceleration Slipstream
 
-    // Pre-calculate target coordinates for the particles
     for (let i = 0; i < particleCount; i++) {
-      // --- Target 0: Orbiting Nebula Sphere (Origin & Ethos) ---
-      const theta = Math.acos(1 - 2 * (i / particleCount));
-      const phi = Math.sqrt(particleCount * Math.PI) * theta;
-      const sphereRadius = 3.2 + Math.sin(i * 1.5) * 0.15;
-      pos0Sphere.push(new THREE.Vector3(
-        sphereRadius * Math.sin(theta) * Math.cos(phi),
-        sphereRadius * Math.sin(theta) * Math.sin(phi),
-        sphereRadius * Math.cos(theta)
+      // --- Stage 0: Primordial Chaos (Origin) ---
+      const radChaos = 4.0;
+      pos0Chaos.push(new THREE.Vector3(
+        (Math.random() - 0.5) * radChaos * 2.2,
+        (Math.random() - 0.5) * radChaos * 2.2,
+        (Math.random() - 0.5) * radChaos * 2.2
       ));
 
-      // --- Target 1: Architectural Wavy Grid (Blueprint) ---
+      // --- Stage 1: Gravitational Core (Ethos) ---
+      const theta = Math.acos(1 - 2 * (i / particleCount));
+      const phi = Math.sqrt(particleCount * Math.PI) * theta;
+      const coreRadius = 2.4 + Math.sin(i * 1.5) * 0.08;
+      pos1Core.push(new THREE.Vector3(
+        coreRadius * Math.sin(theta) * Math.cos(phi),
+        coreRadius * Math.sin(theta) * Math.sin(phi),
+        coreRadius * Math.cos(theta)
+      ));
+
+      // --- Stage 2: DNA Double Helix (Blueprint) ---
+      const strand = i % 2 === 0 ? 0 : 1;
+      const helixAngle = (i / particleCount) * Math.PI * 18;
+      const helixHeight = (i / particleCount) * 7.5 - 3.75;
+      const helixRadius = 1.5;
+      const strandOffset = strand * Math.PI;
+      pos2DNA.push(new THREE.Vector3(
+        helixRadius * Math.cos(helixAngle + strandOffset),
+        helixHeight,
+        helixRadius * Math.sin(helixAngle + strandOffset)
+      ));
+
+      // --- Stage 3: Network Lattice (Vanguard Stack) ---
       const gridRows = 50;
       const gridCols = 70;
       const row = i % gridRows;
       const col = Math.floor(i / gridRows);
       const gridX = (col - gridCols / 2) * 0.16;
       const gridZ = (row - gridRows / 2) * 0.16;
-      const gridY = Math.sin(gridX * 0.45) * Math.cos(gridZ * 0.45) * 0.8;
-      pos1Grid.push(new THREE.Vector3(gridX, gridY, gridZ));
+      const gridY = Math.sin(gridX * 0.4) * Math.cos(gridZ * 0.4) * 0.8;
+      pos3Lattice.push(new THREE.Vector3(gridX, gridY, gridZ));
 
-      // --- Target 2: High-Speed Slipstream (Momentum) ---
+      // --- Stage 4: High-Speed Slipstream (Momentum) ---
       const channelId = i % 25;
       const channelAngle = (channelId / 25) * Math.PI * 2;
       const channelRadius = 2.0 + Math.sin(i * 0.1) * 0.4;
       const streamX = channelRadius * Math.cos(channelAngle);
       const streamY = channelRadius * Math.sin(channelAngle);
       const streamZ = ((i % 140) / 140) * 16 - 8;
-      pos2Streams.push(new THREE.Vector3(streamX, streamY, streamZ));
+      pos4Tunnel.push(new THREE.Vector3(streamX, streamY, streamZ));
 
-      // --- Target 3: Waving Mountain Terrain (Engine Room) ---
-      const terrCols = 60;
-      const terrRows = 60;
-      const tRow = i % terrRows;
-      const tCol = Math.floor(i / terrRows);
-      const terrX = (tCol - terrCols / 2) * 0.18;
-      const terrZ = (tRow - terrRows / 2) * 0.18;
-      const terrY = Math.sin(terrX * 0.3) * Math.cos(terrZ * 0.3) * 1.4 + Math.sin(terrX * 0.8) * 0.3;
-      pos3Terrain.push(new THREE.Vector3(terrX, terrY, terrZ));
+      // Initialize stardust coordinates with chaos stage
+      positions[i * 3] = pos0Chaos[i].x;
+      positions[i * 3 + 1] = pos0Chaos[i].y;
+      positions[i * 3 + 2] = pos0Chaos[i].z;
 
-      // --- Target 4: Double Helix Vortex (Convergence) ---
-      const helixStrand = i % 2 === 0 ? 0 : 1;
-      const helixAngle = (i / particleCount) * Math.PI * 18;
-      const helixHeight = (i / particleCount) * 7.5 - 3.75;
-      const helixRadius = 1.6;
-      const strandOffset = helixStrand * Math.PI;
-      pos4Helix.push(new THREE.Vector3(
-        helixRadius * Math.cos(helixAngle + strandOffset),
-        helixHeight,
-        helixRadius * Math.sin(helixAngle + strandOffset)
-      ));
-
-      positions[i * 3] = pos0Sphere[i].x;
-      positions[i * 3 + 1] = pos0Sphere[i].y;
-      positions[i * 3 + 2] = pos0Sphere[i].z;
-
-      // Assign Cobalt Blue, Liquid Gold, Ultraviolet/Purple colors
+      // Assign Cobalt Blue, Liquid Gold, Purple colors
       const colorType = i % 3;
       if (colorType === 0) {
-        // Glowing Gold (#FFD700)
         colors[i * 3] = 1.0;
         colors[i * 3 + 1] = 0.87;
         colors[i * 3 + 2] = 0.0;
       } else if (colorType === 1) {
-        // Cyber Cobalt Blue (#0052FF)
         colors[i * 3] = 0.0;
         colors[i * 3 + 1] = 0.32;
         colors[i * 3 + 2] = 1.0;
       } else {
-        // Ultraviolet Purple (#D600FF)
         colors[i * 3] = 0.76;
         colors[i * 3 + 1] = 0.05;
         colors[i * 3 + 2] = 1.0;
@@ -367,12 +362,12 @@ export default function App() {
     const particlesData: ParticleData[] = [];
     for (let i = 0; i < particleCount; i++) {
       particlesData.push({
-        x: pos0Sphere[i].x,
-        y: pos0Sphere[i].y,
-        z: pos0Sphere[i].z,
-        baseX: pos0Sphere[i].x,
-        baseY: pos0Sphere[i].y,
-        baseZ: pos0Sphere[i].z,
+        x: pos0Chaos[i].x,
+        y: pos0Chaos[i].y,
+        z: pos0Chaos[i].z,
+        baseX: pos0Chaos[i].x,
+        baseY: pos0Chaos[i].y,
+        baseZ: pos0Chaos[i].z,
         vx: 0,
         vy: 0,
         vz: 0,
@@ -408,35 +403,34 @@ export default function App() {
         let targetY = 0;
         let targetZ = 0;
 
-        // Interpolate coordinates dynamically based on smooth scrollProgress value across 6 chapters
+        // Interpolate coordinates dynamically representing visual evolution
         if (progress < 1.0) {
-          // Chapter 1 -> Chapter 2: Sphere (0) -> Grid (1)
+          // Stage 0 (Chaos) -> Stage 1 (Core)
           const t = progress;
-          targetX = pos0Sphere[i].x * (1 - t) + pos1Grid[i].x * t;
-          targetY = pos0Sphere[i].y * (1 - t) + pos1Grid[i].y * t;
-          targetZ = pos0Sphere[i].z * (1 - t) + pos1Grid[i].z * t;
+          targetX = pos0Chaos[i].x * (1 - t) + pos1Core[i].x * t;
+          targetY = pos0Chaos[i].y * (1 - t) + pos1Core[i].y * t;
+          targetZ = pos0Chaos[i].z * (1 - t) + pos1Core[i].z * t;
         } else if (progress < 2.0) {
-          // Chapter 2 -> Chapter 3: Grid (1) -> Streams (2)
+          // Stage 1 (Core) -> Stage 2 (DNA Helix)
           const t = progress - 1.0;
-          targetX = pos1Grid[i].x * (1 - t) + pos2Streams[i].x * t;
-          targetY = pos1Grid[i].y * (1 - t) + pos2Streams[i].y * t;
-          targetZ = pos1Grid[i].z * (1 - t) + pos2Streams[i].z * t;
+          targetX = pos1Core[i].x * (1 - t) + pos2DNA[i].x * t;
+          targetY = pos1Core[i].y * (1 - t) + pos2DNA[i].y * t;
+          targetZ = pos1Core[i].z * (1 - t) + pos2DNA[i].z * t;
         } else if (progress < 3.0) {
-          // Chapter 3 -> Chapter 4: Streams (2) -> Wavy Terrain (3)
+          // Stage 2 (DNA) -> Stage 3 (Lattice)
           const t = progress - 2.0;
-          targetX = pos2Streams[i].x * (1 - t) + pos3Terrain[i].x * t;
-          targetY = pos2Streams[i].y * (1 - t) + pos3Terrain[i].y * t;
-          targetZ = pos2Streams[i].z * (1 - t) + pos3Terrain[i].z * t;
+          targetX = pos2DNA[i].x * (1 - t) + pos3Lattice[i].x * t;
+          targetY = pos2DNA[i].y * (1 - t) + pos3Lattice[i].y * t;
+          targetZ = pos2DNA[i].z * (1 - t) + pos3Lattice[i].z * t;
         } else if (progress < 4.0) {
-          // Chapter 4 -> Chapter 5: Wavy Terrain (3) -> Helix (4)
+          // Stage 3 (Lattice) -> Stage 4 (Tunnel)
           const t = progress - 3.0;
-          targetX = pos3Terrain[i].x * (1 - t) + pos4Helix[i].x * t;
-          targetY = pos3Terrain[i].y * (1 - t) + pos4Helix[i].y * t;
-          targetZ = pos3Terrain[i].z * (1 - t) + pos4Helix[i].z * t;
+          targetX = pos3Lattice[i].x * (1 - t) + pos4Tunnel[i].x * t;
+          targetY = pos3Lattice[i].y * (1 - t) + pos4Tunnel[i].y * t;
+          targetZ = pos3Lattice[i].z * (1 - t) + pos4Tunnel[i].z * t;
         } else {
-          // Chapter 5 -> Chapter 6: Helix (4) -> Magnetic vortex around cursor (5)
+          // Stage 4 (Tunnel) -> Stage 5 (Dynamic Vortex orbiting cursor)
           const t = progress - 4.0;
-          // Calculate vortex rotation coordinates around cursor
           const vortexStrand = i % 2 === 0 ? 0 : 1;
           const vortexAngle = time * 2.5 + i * 0.05;
           const vortexRadius = 0.5 + (i / particleCount) * 1.8;
@@ -444,21 +438,28 @@ export default function App() {
           const vortexY = mouse3DY + vortexRadius * Math.sin(vortexAngle + vortexStrand * Math.PI);
           const vortexZ = Math.sin(time * 0.8 + i * 0.1) * 0.5;
 
-          targetX = pos4Helix[i].x * (1 - t) + vortexX * t;
-          targetY = pos4Helix[i].y * (1 - t) + vortexY * t;
-          targetZ = pos4Helix[i].z * (1 - t) + vortexZ * t;
+          targetX = pos4Tunnel[i].x * (1 - t) + vortexX * t;
+          targetY = pos4Tunnel[i].y * (1 - t) + vortexY * t;
+          targetZ = pos4Tunnel[i].z * (1 - t) + vortexZ * t;
         }
 
-        // Noise wave dynamics
+        // Noise wave dynamics (makes graphics look "alive" and breathable)
         let noiseScale = 0.15;
         let noiseSpeed = 0.6;
-        if (progress >= 1.0 && progress < 2.0) {
-          noiseScale = 0.08;
-        } else if (progress >= 2.0 && progress < 3.0) {
+        if (progress < 1.0) {
+          // raw chaos has high floating drift
+          noiseScale = 0.35;
+          noiseSpeed = 0.35;
+        } else if (progress >= 1.0 && progress < 2.0) {
+          // core is highly tight
+          noiseScale = 0.05;
+        } else if (progress >= 3.0 && progress < 4.0) {
+          // lattice has micro-vibrating waves
+          noiseScale = 0.07;
+        } else if (progress >= 4.0 && progress < 5.0) {
+          // streams have velocity streaking
           noiseScale = 0.22;
           noiseSpeed = 1.4;
-        } else if (progress >= 3.0 && progress < 4.0) {
-          noiseScale = 0.07;
         }
 
         const waveX = Math.sin(time * noiseSpeed + i * 0.08) * noiseScale * Math.cos(time * 0.4 + i * 0.03);
@@ -469,8 +470,19 @@ export default function App() {
         targetY += waveY;
         targetZ += waveZ;
 
+        // Stage-specific rotational/movement physics
         if (progress < 1.0) {
-          const rotAngle = time * 0.06 + i * 0.0001;
+          // Slow chaotic float
+          const rotAngle = time * 0.02 + i * 0.00005;
+          const cosR = Math.cos(rotAngle);
+          const sinR = Math.sin(rotAngle);
+          const originalX = targetX;
+          const originalZ = targetZ;
+          targetX = originalX * cosR - originalZ * sinR;
+          targetZ = originalX * sinR + originalZ * cosR;
+        } else if (progress >= 1.0 && progress < 2.0) {
+          // Core orbit rotation
+          const rotAngle = time * 0.08 + i * 0.0001;
           const cosR = Math.cos(rotAngle);
           const sinR = Math.sin(rotAngle);
           const originalX = targetX;
@@ -478,6 +490,16 @@ export default function App() {
           targetX = originalX * cosR - originalZ * sinR;
           targetZ = originalX * sinR + originalZ * cosR;
         } else if (progress >= 2.0 && progress < 3.0) {
+          // DNA helix rotation
+          const rotAngle = time * 0.15;
+          const cosR = Math.cos(rotAngle);
+          const sinR = Math.sin(rotAngle);
+          const originalX = targetX;
+          const originalZ = targetZ;
+          targetX = originalX * cosR - originalZ * sinR;
+          targetZ = originalX * sinR + originalZ * cosR;
+        } else if (progress >= 4.0 && progress < 5.0) {
+          // Linear forward velocity along Z
           const speedOffset = (time * 4.0 + i * 0.2) % 16.0 - 8.0;
           targetZ = speedOffset;
         }
@@ -504,7 +526,7 @@ export default function App() {
 
       posAttribute.needsUpdate = true;
 
-      // Camera transitions
+      // Dynamic Camera transition path matching evolution states
       if (progress < 1.0) {
         camera.position.x = Math.sin(progress * 0.5) * 2.0;
         camera.position.y = 0;
@@ -560,39 +582,39 @@ export default function App() {
 
   const chapters = [
     {
-      num: '[ 01 // ORIGIN ]',
-      title: 'We engineer extraordinary',
-      accentTitle: 'digital products.',
-      desc: 'Bespoke design combined with advanced software engineering. We create custom digital systems, interactive WebGL vector pipelines, and secure cloud platforms for premium enterprises.'
+      num: '[ EVOLUTION STAGE I // SPARK ]',
+      title: 'The Primordial Spark of',
+      accentTitle: 'Digital Creation.',
+      desc: 'TheoMedia bridges the gap between clean structural design and deep software engineering. We take chaotic, raw digital ideas and consolidate them into elegant codebases.'
     },
     {
-      num: '[ 02 // ETHOS ]',
-      title: 'Design is science,',
-      accentTitle: 'code is art.',
-      desc: 'A digital interface should elicit wonder. We operate at the intersection of mathematical aesthetics and hardware-accelerated code. Cookieless tracking, minimal network roundtrips, and zero-latency animation flows.'
+      num: '[ EVOLUTION STAGE II // COALESCENCE ]',
+      title: 'Consolidating into',
+      accentTitle: 'Gravitational Logic.',
+      desc: 'Digital platforms must be built with structural weight. Our products load instantly, run at 60FPS using hardware acceleration, bypass cookie dependencies, and enforce absolute runtime security.'
     },
     {
-      num: '[ 03 // BLUEPRINT ]',
-      title: 'Aesthetic Systems,',
-      accentTitle: 'Pure Performance.',
+      num: '[ EVOLUTION STAGE III // BLUEPRINT ]',
+      title: 'Structuring the genetic',
+      accentTitle: 'Digital DNA.',
       desc: 'We replace opaque timelines with fixed-price execution models. Transparent, native React codebases paired with custom Stripe invoicing, built to handle complex transaction networks.'
     },
     {
-      num: '[ 04 // VANGUARD ]',
-      title: 'Modern and secure',
-      accentTitle: 'technical stacks.',
+      num: '[ EVOLUTION STAGE IV // LATTICE ]',
+      title: 'Forging integrated',
+      accentTitle: 'Technical Networks.',
       desc: 'We leverage enterprise-ready toolkits to build high-availability architectures. Fully typed compilation, regional caching networks, edge computing nodes, and SCA-compliant checkout integrations.'
     },
     {
-      num: '[ 05 // MOMENTUM ]',
-      title: 'Delivered Globally,',
-      accentTitle: 'Protected Legally.',
+      num: '[ EVOLUTION STAGE V // MOMENTUM ]',
+      title: 'Accelerating through',
+      accentTitle: 'Velocity Fields.',
       desc: 'An active track record serving enterprises across the United Kingdom, Ireland, France, Germany, and Switzerland. Full contractual intellectual property ownership guarantees your code remains your asset.'
     },
     {
-      num: '[ 06 // CONVERGENCE ]',
-      title: 'Enter the Space,',
-      accentTitle: 'Build the Blueprint.',
+      num: '[ EVOLUTION STAGE VI // CONVERGENCE ]',
+      title: 'Converging into a single',
+      accentTitle: 'Collaborative Singularity.',
       desc: 'Let’s construct your next digital platform. Get in touch directly on WhatsApp or drop us an email to coordinate your bespoke software audit. London & Dublin studios active.'
     }
   ];
@@ -658,7 +680,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Floating Story Progress indicator (Sidebar) - Configured for 6 chapters */}
+      {/* Floating Story Progress indicator (Sidebar) - Configured for 6 chapters of evolution */}
       <nav className="fixed right-8 md:right-16 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 select-none pointer-events-auto">
         {chapters.map((_, idx) => (
           <button 
@@ -672,7 +694,7 @@ export default function App() {
             className="group flex items-center justify-end gap-3 cursor-pointer"
           >
             <span className="opacity-0 group-hover:opacity-100 font-mono text-[9px] text-blue-500 tracking-widest transition-opacity duration-300">
-              0{idx + 1}
+              STAGE 0{idx + 1}
             </span>
             <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
               currentChapter === idx 
@@ -687,7 +709,7 @@ export default function App() {
       <div className="fixed inset-0 z-10 w-full h-full pointer-events-none flex items-center justify-center py-20 px-6 md:px-20">
         <AnimatePresence mode="wait">
           
-          {/* Chapter 1: The Origin (Hero) */}
+          {/* Stage 1: Primordial Chaos (Origin) */}
           {currentChapter === 0 && (
             <motion.div 
               key="chapter-1"
@@ -697,7 +719,7 @@ export default function App() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-5xl mx-auto w-full text-center md:text-left pointer-events-auto"
             >
-              <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+              <span className="font-mono text-[9px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
                 {chapters[0].num}
               </span>
               <h2 className="mt-5 font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7.2rem] font-black leading-[1.0] tracking-tight text-white select-none">
@@ -721,7 +743,7 @@ export default function App() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white group-hover:text-blue-400 transition-colors">
-                    Explore Ethos
+                    Trigger Coalescence
                   </span>
                 </button>
                 <a 
@@ -739,7 +761,7 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* Chapter 2: The Philosophy (Ethos) */}
+          {/* Stage 2: Coalescing Core (Ethos) */}
           {currentChapter === 1 && (
             <motion.div 
               key="chapter-2"
@@ -749,7 +771,7 @@ export default function App() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-5xl mx-auto w-full text-center md:text-left pointer-events-auto"
             >
-              <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+              <span className="font-mono text-[9px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
                 {chapters[1].num}
               </span>
               <h2 className="mt-5 font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7.2rem] font-black leading-[1.0] tracking-tight text-white select-none">
@@ -779,7 +801,7 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* Chapter 3: The Blueprint (Services Bento) */}
+          {/* Stage 3: DNA Helix (Services Blueprint) */}
           {currentChapter === 2 && (
             <motion.div 
               key="chapter-3"
@@ -791,7 +813,7 @@ export default function App() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-4 flex flex-col gap-4">
-                  <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                  <span className="font-mono text-[9px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
                     {chapters[2].num}
                   </span>
                   <h3 className="font-sans text-3xl md:text-5xl text-white font-light tracking-tight leading-[1.1] mt-2 select-none">
@@ -853,7 +875,7 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* Chapter 4: The Engine (Vanguard Tech Stack) */}
+          {/* Stage 4: Network Lattice (Vanguard Stack) */}
           {currentChapter === 3 && (
             <motion.div 
               key="chapter-4"
@@ -865,7 +887,7 @@ export default function App() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-5 flex flex-col gap-4">
-                  <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                  <span className="font-mono text-[9px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
                     {chapters[3].num}
                   </span>
                   <h3 className="font-sans text-3xl md:text-5xl text-white font-light tracking-tight leading-[1.1] mt-2 select-none">
@@ -923,7 +945,7 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* Chapter 5: The Momentum (Stats & Credentials) */}
+          {/* Stage 5: Acceleration Slipstream (Metrics) */}
           {currentChapter === 4 && (
             <motion.div 
               key="chapter-5"
@@ -934,7 +956,7 @@ export default function App() {
               className="max-w-6xl mx-auto w-full pointer-events-auto"
             >
               <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10 select-none">
-                <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                <span className="font-mono text-[9px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
                   {chapters[4].num}
                 </span>
                 <h3 className="font-sans text-3xl md:text-5xl text-white font-light tracking-tight leading-tight mt-4">
@@ -974,7 +996,7 @@ export default function App() {
             </motion.div>
           )}
 
-          {/* Chapter 6: The Convergence (Contact & WhatsApp) */}
+          {/* Stage 6: Magnetic Vortex (Convergence Contact Form) */}
           {currentChapter === 5 && (
             <motion.div 
               key="chapter-6"
@@ -986,12 +1008,12 @@ export default function App() {
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-5 flex flex-col gap-4 select-none">
-                  <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                  <span className="font-mono text-[9px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
                     {chapters[5].num}
                   </span>
                   <h3 className="font-sans text-3xl md:text-4xl lg:text-5xl text-white font-light tracking-tight leading-tight mt-2">
                     {chapters[5].title} <br />
-                    <span className="font-serif font-light italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-yellow-550 glow-blue">
+                    <span className="font-serif font-light italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-yellow-500 glow-blue">
                       {chapters[5].accentTitle}
                     </span>
                   </h3>
