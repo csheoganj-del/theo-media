@@ -25,12 +25,12 @@ interface ParticleData {
   x: number;
   y: number;
   z: number;
-  baseX: number;
-  baseY: number;
-  baseZ: number;
   vx: number;
   vy: number;
   vz: number;
+  r: number; // distance from center
+  baseAngle: number; // initial orbital angle
+  armId: number; // arm identity (0-3 for spiral arms, -1 for core)
   id: number;
 }
 
@@ -77,7 +77,6 @@ export default function App() {
       if (now - lastWheelTime < 1100) return; // Cooldown to let morph animations finish
 
       if (e.deltaY > 0) {
-        // Scroll Down -> Next Chapter (max 5 since there are 6 chapters: 0 to 5)
         if (currentChapter < 5) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -85,7 +84,6 @@ export default function App() {
           setTimeout(() => setIsAnimating(false), 1000);
         }
       } else {
-        // Scroll Up -> Previous Chapter
         if (currentChapter > 0) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -109,7 +107,6 @@ export default function App() {
       if (Math.abs(diffY) < 45) return;
 
       if (diffY > 0) {
-        // Swipe Up -> Next Chapter
         if (currentChapter < 5) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -117,7 +114,6 @@ export default function App() {
           setTimeout(() => setIsAnimating(false), 1000);
         }
       } else {
-        // Swipe Down -> Previous Chapter
         if (currentChapter > 0) {
           lastWheelTime = now;
           setIsAnimating(true);
@@ -242,7 +238,7 @@ export default function App() {
     };
   }, []);
 
-  // Three.js Particle Storyteller Engine - Configured for 6 Chapters
+  // Three.js Milky Way Spiral Galaxy Simulation Engine
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -261,124 +257,154 @@ export default function App() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    const particleCount = 3500;
+    const particleCount = 4000;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const pos0Sphere: THREE.Vector3[] = [];
-    const pos1Grid: THREE.Vector3[] = [];
-    const pos2Streams: THREE.Vector3[] = [];
-    const pos3Terrain: THREE.Vector3[] = [];
+    const pos0Disk: THREE.Vector3[] = [];
+    const pos1Zoom: THREE.Vector3[] = [];
+    const pos2Wavy: THREE.Vector3[] = [];
+    const pos3Trails: THREE.Vector3[] = [];
     const pos4Helix: THREE.Vector3[] = [];
 
-    // Pre-calculate target coordinates for the particles
+    const particlesData: ParticleData[] = [];
+
+    // Model the Milky Way geometry mathematically: 25% Core Bulge, 75% Spiral Arms (4 Arms)
+    const coreCount = Math.floor(particleCount * 0.25);
+
     for (let i = 0; i < particleCount; i++) {
-      // --- Target 0: Orbiting Nebula Sphere (Origin & Ethos) ---
-      const theta = Math.acos(1 - 2 * (i / particleCount));
-      const phi = Math.sqrt(particleCount * Math.PI) * theta;
-      const sphereRadius = 3.2 + Math.sin(i * 1.5) * 0.15;
-      pos0Sphere.push(new THREE.Vector3(
-        sphereRadius * Math.sin(theta) * Math.cos(phi),
-        sphereRadius * Math.sin(theta) * Math.sin(phi),
-        sphereRadius * Math.cos(theta)
-      ));
+      let r = 0;
+      let theta = 0;
+      let phi = 0;
+      let armId = -1;
+      let isCore = i < coreCount;
 
-      // --- Target 1: Architectural Wavy Grid (Blueprint) ---
-      const gridRows = 50;
-      const gridCols = 70;
-      const row = i % gridRows;
-      const col = Math.floor(i / gridRows);
-      const gridX = (col - gridCols / 2) * 0.16;
-      const gridZ = (row - gridRows / 2) * 0.16;
-      const gridY = Math.sin(gridX * 0.45) * Math.cos(gridZ * 0.45) * 0.8;
-      pos1Grid.push(new THREE.Vector3(gridX, gridY, gridZ));
-
-      // --- Target 2: High-Speed Slipstream (Momentum) ---
-      const channelId = i % 25;
-      const channelAngle = (channelId / 25) * Math.PI * 2;
-      const channelRadius = 2.0 + Math.sin(i * 0.1) * 0.4;
-      const streamX = channelRadius * Math.cos(channelAngle);
-      const streamY = channelRadius * Math.sin(channelAngle);
-      const streamZ = ((i % 140) / 140) * 16 - 8;
-      pos2Streams.push(new THREE.Vector3(streamX, streamY, streamZ));
-
-      // --- Target 3: Waving Mountain Terrain (Engine Room) ---
-      const terrCols = 60;
-      const terrRows = 60;
-      const tRow = i % terrRows;
-      const tCol = Math.floor(i / terrRows);
-      const terrX = (tCol - terrCols / 2) * 0.18;
-      const terrZ = (tRow - terrRows / 2) * 0.18;
-      const terrY = Math.sin(terrX * 0.3) * Math.cos(terrZ * 0.3) * 1.4 + Math.sin(terrX * 0.8) * 0.3;
-      pos3Terrain.push(new THREE.Vector3(terrX, terrY, terrZ));
-
-      // --- Target 4: Double Helix Vortex (Convergence) ---
-      const helixStrand = i % 2 === 0 ? 0 : 1;
-      const helixAngle = (i / particleCount) * Math.PI * 18;
-      const helixHeight = (i / particleCount) * 7.5 - 3.75;
-      const helixRadius = 1.6;
-      const strandOffset = helixStrand * Math.PI;
-      pos4Helix.push(new THREE.Vector3(
-        helixRadius * Math.cos(helixAngle + strandOffset),
-        helixHeight,
-        helixRadius * Math.sin(helixAngle + strandOffset)
-      ));
-
-      positions[i * 3] = pos0Sphere[i].x;
-      positions[i * 3 + 1] = pos0Sphere[i].y;
-      positions[i * 3 + 2] = pos0Sphere[i].z;
-
-      // Assign Cobalt Blue, Liquid Gold, Ultraviolet/Purple colors
-      const colorType = i % 3;
-      if (colorType === 0) {
-        // Glowing Gold (#FFD700)
-        colors[i * 3] = 1.0;
-        colors[i * 3 + 1] = 0.87;
-        colors[i * 3 + 2] = 0.0;
-      } else if (colorType === 1) {
-        // Cyber Cobalt Blue (#0052FF)
-        colors[i * 3] = 0.0;
-        colors[i * 3 + 1] = 0.32;
-        colors[i * 3 + 2] = 1.0;
+      if (isCore) {
+        // --- Core Bulge: Dense sphere at the center ---
+        r = Math.pow(Math.random(), 2.0) * 0.75;
+        theta = Math.acos(Math.random() * 2.0 - 1);
+        phi = Math.random() * Math.PI * 2;
       } else {
-        // Ultraviolet Purple (#D600FF)
-        colors[i * 3] = 0.76;
-        colors[i * 3 + 1] = 0.05;
-        colors[i * 3 + 2] = 1.0;
+        // --- Spiral Arms: 4 logarithmic spiral arms ---
+        armId = (i - coreCount) % 4;
+        const armAngle = (armId / 4) * Math.PI * 2;
+        // Distribute distance outwards from core edge
+        r = 0.75 + Math.pow(Math.random(), 1.5) * 3.5;
+        // Logarithmic spiral angle twist based on radius
+        const twist = r * 1.35;
+        phi = armAngle + twist;
       }
+
+      const baseAngle = phi;
+
+      // 1. Target 0: Milky Way Standard Disk Flat Rotation
+      let x0 = 0, y0 = 0, z0 = 0;
+      if (isCore) {
+        x0 = r * Math.sin(theta) * Math.cos(phi);
+        y0 = r * Math.sin(theta) * Math.sin(phi) * 0.8; // slightly flattened core
+        z0 = r * Math.cos(theta);
+      } else {
+        // flat disk with slight vertical dispersion
+        const dispY = (Math.random() - 0.5) * 0.16;
+        const dispX = (Math.random() - 0.5) * 0.25 / (r * 0.3 + 0.7);
+        const dispZ = (Math.random() - 0.5) * 0.25 / (r * 0.3 + 0.7);
+        x0 = r * Math.cos(phi) + dispX;
+        y0 = dispY;
+        z0 = r * Math.sin(phi) + dispZ;
+      }
+      pos0Disk.push(new THREE.Vector3(x0, y0, z0));
+
+      // 2. Target 1: Zoom Core (stars disperse outwards visually like flying through a hyper-jump)
+      let x1 = x0 * 2.2;
+      let y1 = y0 * 2.2;
+      let z1 = z0 * 2.2;
+      pos1Zoom.push(new THREE.Vector3(x1, y1, z1));
+
+      // 3. Target 2: Gravitational Wavy Grid (Rippling gravity ripples along the disk)
+      let x2 = x0;
+      // Waving sine ripples moving radially out
+      let y2 = y0 + Math.sin(r * 2.8) * 0.55;
+      let z2 = z0;
+      pos2Wavy.push(new THREE.Vector3(x2, y2, z2));
+
+      // 4. Target 3: Ultra-thin Star Trails (Zero dispersion, stars pulled exactly into clean spirals)
+      let x3 = 0, y3 = 0, z3 = 0;
+      if (isCore) {
+        x3 = x0; y3 = y0; z3 = z0;
+      } else {
+        x3 = r * Math.cos(phi);
+        y3 = 0;
+        z3 = r * Math.sin(phi);
+      }
+      pos3Trails.push(new THREE.Vector3(x3, y3, z3));
+
+      // 5. Target 4: Double Helix Disk (spiral arms twisted vertically into double helix orbits)
+      let x4 = x0;
+      let y4 = isCore ? y0 : y0 + Math.sin(phi * 2.0) * 0.65;
+      let z4 = z0;
+      pos4Helix.push(new THREE.Vector3(x4, y4, z4));
+
+      // Initialize buffer geometry array
+      positions[i * 3] = x0;
+      positions[i * 3 + 1] = y0;
+      positions[i * 3 + 2] = z0;
+
+      // Assign natural galactic colors
+      if (isCore) {
+        // Bulge: Warm white/light golden star bulb (#FFF5E0)
+        colors[i * 3] = 1.0;
+        colors[i * 3 + 1] = 0.94;
+        colors[i * 3 + 2] = 0.82;
+      } else {
+        // Spiral Arms: Dynamic hot cobalt blue stars mixed with ultraviolet dust lanes
+        const type = i % 3;
+        if (type === 0) {
+          // Hot Cobalt Blue (#00A6FF)
+          colors[i * 3] = 0.0;
+          colors[i * 3 + 1] = 0.65;
+          colors[i * 3 + 2] = 1.0;
+        } else if (type === 1) {
+          // Luminous Gold (#FFD700)
+          colors[i * 3] = 1.0;
+          colors[i * 3 + 1] = 0.84;
+          colors[i * 3 + 2] = 0.0;
+        } else {
+          // Ultraviolet Dust (#B800FF)
+          colors[i * 3] = 0.72;
+          colors[i * 3 + 1] = 0.0;
+          colors[i * 3 + 2] = 1.0;
+        }
+      }
+
+      particlesData.push({
+        x: x0,
+        y: y0,
+        z: z0,
+        vx: 0,
+        vy: 0,
+        vz: 0,
+        r,
+        baseAngle,
+        armId,
+        id: i
+      });
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const pMaterial = new THREE.PointsMaterial({
-      size: 0.045,
+      size: 0.048,
       vertexColors: true,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.9,
       blending: THREE.AdditiveBlending,
       depthWrite: false
     });
 
     const particleSystem = new THREE.Points(geometry, pMaterial);
     scene.add(particleSystem);
-
-    const particlesData: ParticleData[] = [];
-    for (let i = 0; i < particleCount; i++) {
-      particlesData.push({
-        x: pos0Sphere[i].x,
-        y: pos0Sphere[i].y,
-        z: pos0Sphere[i].z,
-        baseX: pos0Sphere[i].x,
-        baseY: pos0Sphere[i].y,
-        baseZ: pos0Sphere[i].z,
-        vx: 0,
-        vy: 0,
-        vz: 0,
-        id: i
-      });
-    }
 
     const clock = new THREE.Clock();
     let animationFrameId: number;
@@ -388,7 +414,7 @@ export default function App() {
 
       const time = clock.getElapsedTime();
 
-      // Smooth stardust interpolation toward active chapter progress
+      // Smooth progress calculation across 6 chapters
       currentScrollProgressRef.current += (targetScrollProgressRef.current - currentScrollProgressRef.current) * 0.055;
       const progress = currentScrollProgressRef.current;
 
@@ -401,101 +427,126 @@ export default function App() {
       const posAttribute = geometry.attributes.position;
       const posArray = posAttribute.array as Float32Array;
 
+      // Core rotation: flat rotation curve where angle rotates around center
       for (let i = 0; i < particleCount; i++) {
         const p = particlesData[i];
 
+        // Flat rotation curve logic: stars orbit at speeds inversely proportional to radius
+        // Core rotates faster, arms rotate slightly slower but at a constant rate
+        const rotSpeed = p.armId === -1 ? 0.35 : 0.2 / (p.r * 0.2 + 0.8);
+        const currentAngle = p.baseAngle + time * rotSpeed;
+
+        // Apply rotation to base target positions
         let targetX = 0;
         let targetY = 0;
         let targetZ = 0;
 
-        // Interpolate coordinates dynamically based on smooth scrollProgress value across 6 chapters
+        // Calculate positions dynamically for 6 chapters morph targets
         if (progress < 1.0) {
-          // Chapter 1 -> Chapter 2: Sphere (0) -> Grid (1)
+          // Chapter 1 -> Chapter 2: Rotate standard Milky Way Disk (0) -> Zoom-in volumetric core (1)
           const t = progress;
-          targetX = pos0Sphere[i].x * (1 - t) + pos1Grid[i].x * t;
-          targetY = pos0Sphere[i].y * (1 - t) + pos1Grid[i].y * t;
-          targetZ = pos0Sphere[i].z * (1 - t) + pos1Grid[i].z * t;
+          const x0 = p.armId === -1 ? p.r * Math.sin(Math.acos(positions[i * 3 + 2] / p.r)) * Math.cos(currentAngle) : p.r * Math.cos(currentAngle);
+          const z0 = p.armId === -1 ? p.r * Math.cos(Math.acos(positions[i * 3 + 2] / p.r)) : p.r * Math.sin(currentAngle);
+          
+          const x0_base = pos0Disk[i].x;
+          const z0_base = pos0Disk[i].z;
+          const cR = Math.cos(time * rotSpeed);
+          const sR = Math.sin(time * rotSpeed);
+
+          const rotX0 = x0_base * cR - z0_base * sR;
+          const rotZ0 = x0_base * sR + z0_base * cR;
+
+          const rotX1 = pos1Zoom[i].x * cR - pos1Zoom[i].z * sR;
+          const rotZ1 = pos1Zoom[i].x * sR + pos1Zoom[i].z * cR;
+
+          targetX = rotX0 * (1 - t) + rotX1 * t;
+          targetY = pos0Disk[i].y * (1 - t) + pos1Zoom[i].y * t;
+          targetZ = rotZ0 * (1 - t) + rotZ1 * t;
         } else if (progress < 2.0) {
-          // Chapter 2 -> Chapter 3: Grid (1) -> Streams (2)
+          // Chapter 2 -> Chapter 3: Zoom Core (1) -> Gravitational Wavy Disk (2)
           const t = progress - 1.0;
-          targetX = pos1Grid[i].x * (1 - t) + pos2Streams[i].x * t;
-          targetY = pos1Grid[i].y * (1 - t) + pos2Streams[i].y * t;
-          targetZ = pos1Grid[i].z * (1 - t) + pos2Streams[i].z * t;
+          const cR = Math.cos(time * rotSpeed);
+          const sR = Math.sin(time * rotSpeed);
+
+          const rotX1 = pos1Zoom[i].x * cR - pos1Zoom[i].z * sR;
+          const rotZ1 = pos1Zoom[i].x * sR + pos1Zoom[i].z * cR;
+
+          const rotX2 = pos2Wavy[i].x * cR - pos2Wavy[i].z * sR;
+          const rotZ2 = pos2Wavy[i].x * sR + pos2Wavy[i].z * cR;
+
+          targetX = rotX1 * (1 - t) + rotX2 * t;
+          // Apply dynamic rippling waves directly to targetY
+          const wavyY = pos2Wavy[i].y + Math.sin(p.r * 2.8 - time * 2.0) * 0.15 * t;
+          targetY = pos1Zoom[i].y * (1 - t) + wavyY * t;
+          targetZ = rotZ1 * (1 - t) + rotZ2 * t;
         } else if (progress < 3.0) {
-          // Chapter 3 -> Chapter 4: Streams (2) -> Wavy Terrain (3)
+          // Chapter 3 -> Chapter 4: Gravitational Wave Disk (2) -> Clean Star Trails (3)
           const t = progress - 2.0;
-          targetX = pos2Streams[i].x * (1 - t) + pos3Terrain[i].x * t;
-          targetY = pos2Streams[i].y * (1 - t) + pos3Terrain[i].y * t;
-          targetZ = pos2Streams[i].z * (1 - t) + pos3Terrain[i].z * t;
+          const cR = Math.cos(time * rotSpeed);
+          const sR = Math.sin(time * rotSpeed);
+
+          const rotX2 = pos2Wavy[i].x * cR - pos2Wavy[i].z * sR;
+          const rotZ2 = pos2Wavy[i].x * sR + pos2Wavy[i].z * cR;
+
+          const rotX3 = pos3Trails[i].x * cR - pos3Trails[i].z * sR;
+          const rotZ3 = pos3Trails[i].x * sR + pos3Trails[i].z * cR;
+
+          targetX = rotX2 * (1 - t) + rotX3 * t;
+          targetY = pos2Wavy[i].y * (1 - t) + pos3Trails[i].y * t;
+          targetZ = rotZ2 * (1 - t) + rotZ3 * t;
         } else if (progress < 4.0) {
-          // Chapter 4 -> Chapter 5: Wavy Terrain (3) -> Helix (4)
+          // Chapter 4 -> Chapter 5: Clean Trails (3) -> Double Helix Disk (4)
           const t = progress - 3.0;
-          targetX = pos3Terrain[i].x * (1 - t) + pos4Helix[i].x * t;
-          targetY = pos3Terrain[i].y * (1 - t) + pos4Helix[i].y * t;
-          targetZ = pos3Terrain[i].z * (1 - t) + pos4Helix[i].z * t;
+          const cR = Math.cos(time * rotSpeed);
+          const sR = Math.sin(time * rotSpeed);
+
+          const rotX3 = pos3Trails[i].x * cR - pos3Trails[i].z * sR;
+          const rotZ3 = pos3Trails[i].x * sR + pos3Trails[i].z * cR;
+
+          const rotX4 = pos4Helix[i].x * cR - pos4Helix[i].z * sR;
+          const rotZ4 = pos4Helix[i].x * sR + pos4Helix[i].z * cR;
+
+          targetX = rotX3 * (1 - t) + rotX4 * t;
+          targetY = pos3Trails[i].y * (1 - t) + pos4Helix[i].y * t;
+          targetZ = rotZ3 * (1 - t) + rotZ4 * t;
         } else {
-          // Chapter 5 -> Chapter 6: Helix (4) -> Magnetic vortex around cursor (5)
+          // Chapter 5 -> Chapter 6: Double Helix (4) -> Gravity singularity pulling into black hole (5)
           const t = progress - 4.0;
-          // Calculate vortex rotation coordinates around cursor
-          const vortexStrand = i % 2 === 0 ? 0 : 1;
-          const vortexAngle = time * 2.5 + i * 0.05;
-          const vortexRadius = 0.5 + (i / particleCount) * 1.8;
-          const vortexX = mouse3DX + vortexRadius * Math.cos(vortexAngle + vortexStrand * Math.PI);
-          const vortexY = mouse3DY + vortexRadius * Math.sin(vortexAngle + vortexStrand * Math.PI);
-          const vortexZ = Math.sin(time * 0.8 + i * 0.1) * 0.5;
+          const cR = Math.cos(time * rotSpeed);
+          const sR = Math.sin(time * rotSpeed);
 
-          targetX = pos4Helix[i].x * (1 - t) + vortexX * t;
+          const rotX4 = pos4Helix[i].x * cR - pos4Helix[i].z * sR;
+          const rotZ4 = pos4Helix[i].x * sR + pos4Helix[i].z * cR;
+
+          // Pull coordinates strongly toward mouse location, forming spiral vortex orbit
+          const vortexAngle = time * 3.5 + p.r * 1.5;
+          // Orbit radius scales down to simulate black hole pull
+          const orbitR = Math.max(0.1, p.r * 0.15);
+          const vortexX = mouse3DX + orbitR * Math.cos(vortexAngle);
+          const vortexY = mouse3DY + (Math.random() - 0.5) * 0.08;
+          const vortexZ = orbitR * Math.sin(vortexAngle);
+
+          targetX = rotX4 * (1 - t) + vortexX * t;
           targetY = pos4Helix[i].y * (1 - t) + vortexY * t;
-          targetZ = pos4Helix[i].z * (1 - t) + vortexZ * t;
+          targetZ = rotZ4 * (1 - t) + vortexZ * t;
         }
 
-        // Noise wave dynamics
-        let noiseScale = 0.15;
-        let noiseSpeed = 0.6;
-        if (progress >= 1.0 && progress < 2.0) {
-          noiseScale = 0.08;
-        } else if (progress >= 2.0 && progress < 3.0) {
-          noiseScale = 0.22;
-          noiseSpeed = 1.4;
-        } else if (progress >= 3.0 && progress < 4.0) {
-          noiseScale = 0.07;
+        // Apply mouse ripple pushes in chapters 1-5
+        if (progress < 4.0) {
+          const dx = p.x - mouse3DX;
+          const dy = p.y - mouse3DY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 1.6) {
+            const force = (1.6 - dist) * 0.07;
+            targetX += (dx / dist) * force;
+            targetY += (dy / dist) * force;
+          }
         }
 
-        const waveX = Math.sin(time * noiseSpeed + i * 0.08) * noiseScale * Math.cos(time * 0.4 + i * 0.03);
-        const waveY = Math.cos(time * (noiseSpeed * 0.8) + i * 0.06) * noiseScale * Math.sin(time * 0.5 + i * 0.02);
-        const waveZ = Math.sin(time * (noiseSpeed * 1.2) + i * 0.1) * noiseScale * 0.5;
-
-        targetX += waveX;
-        targetY += waveY;
-        targetZ += waveZ;
-
-        if (progress < 1.0) {
-          const rotAngle = time * 0.06 + i * 0.0001;
-          const cosR = Math.cos(rotAngle);
-          const sinR = Math.sin(rotAngle);
-          const originalX = targetX;
-          const originalZ = targetZ;
-          targetX = originalX * cosR - originalZ * sinR;
-          targetZ = originalX * sinR + originalZ * cosR;
-        } else if (progress >= 2.0 && progress < 3.0) {
-          const speedOffset = (time * 4.0 + i * 0.2) % 16.0 - 8.0;
-          targetZ = speedOffset;
-        }
-
-        // Mouse displacement repulsion
-        const dx = p.x - mouse3DX;
-        const dy = p.y - mouse3DY;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 1.8) {
-          const force = (1.8 - dist) * 0.06;
-          targetX += (dx / dist) * force;
-          targetY += (dy / dist) * force;
-        }
-
-        p.x += (targetX - p.x) * 0.075;
-        p.y += (targetY - p.y) * 0.075;
-        p.z += (targetZ - p.z) * 0.075;
+        // Smoothly update actual positions with inertia
+        p.x += (targetX - p.x) * 0.08;
+        p.y += (targetY - p.y) * 0.08;
+        p.z += (targetZ - p.z) * 0.08;
 
         posArray[i * 3] = p.x;
         posArray[i * 3 + 1] = p.y;
@@ -504,35 +555,39 @@ export default function App() {
 
       posAttribute.needsUpdate = true;
 
-      // Camera transitions
+      // Rotate camera around galaxy disk to present beautiful cinematic angles
       if (progress < 1.0) {
-        camera.position.x = Math.sin(progress * 0.5) * 2.0;
-        camera.position.y = 0;
-        camera.position.z = 8.0 - progress * 1.5;
+        // Standard wide perspective looking down at disk
+        camera.position.x = Math.sin(time * 0.03) * 3.0;
+        camera.position.y = 4.2; // tilted high looking down
+        camera.position.z = 7.5;
         camera.lookAt(0, 0, 0);
       } else if (progress < 2.0) {
+        // Zoom camera in tight to buldge
         const t = progress - 1.0;
-        camera.position.x = 2.0 - t * 2.0;
-        camera.position.y = t * 2.5;
-        camera.position.z = 6.5 - t * 0.5;
+        camera.position.x = Math.sin(time * 0.03) * (3.0 - t * 2.0);
+        camera.position.y = 4.2 - t * 3.2; // pull camera down into disk plane
+        camera.position.z = 7.5 - t * 3.5;
         camera.lookAt(0, 0, 0);
       } else if (progress < 3.0) {
+        // Perspective looking along the waves of the disk
         const t = progress - 2.0;
-        camera.position.x = 0;
-        camera.position.y = 2.5 - t * 2.5;
+        camera.position.x = 1.0;
+        camera.position.y = 1.0 + t * 1.5;
+        camera.position.z = 4.0 + t * 2.0;
+        camera.lookAt(0, 0.2, 0);
+      } else if (progress < 4.0) {
+        // Looking down at the clean star trails
+        const t = progress - 3.0;
+        camera.position.x = 1.0 - t * 1.0;
+        camera.position.y = 2.5 + t * 3.0;
         camera.position.z = 6.0;
         camera.lookAt(0, 0, 0);
-      } else if (progress < 4.0) {
-        const t = progress - 3.0;
-        camera.position.x = t * 2.0;
-        camera.position.y = t * 1.5;
-        camera.position.z = 6.0 - t * 0.5;
-        camera.lookAt(0, 0, 0);
       } else {
-        const t = progress - 4.0;
-        camera.position.x = 2.0 - t * 2.0;
-        camera.position.y = 1.5 - t * 1.5;
-        camera.position.z = 5.5 + t * 2.0;
+        // Cinematic rotating angle looking at helix/vortex
+        camera.position.x = Math.cos(time * 0.04) * 2.0;
+        camera.position.y = 5.5 - (progress - 4.0) * 1.5;
+        camera.position.z = 6.0;
         camera.lookAt(0, 0, 0);
       }
 
@@ -627,7 +682,6 @@ export default function App() {
 
         {/* Audio controls & shortcuts */}
         <div className="flex items-center gap-5 pointer-events-auto">
-          {/* WhatsApp Quick Link */}
           <a 
             href="https://wa.me/353852258004" 
             target="_blank" 
@@ -638,7 +692,6 @@ export default function App() {
             <span className="font-mono text-[8.5px] font-semibold tracking-wider text-white/60 group-hover:text-white uppercase transition-colors">Direct WhatsApp</span>
           </a>
 
-          {/* Web Audio Toggle button */}
           <button 
             onClick={toggleAudio}
             className="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:border-blue-500/40 hover:bg-white/[0.02] cursor-pointer transition-all duration-300"
@@ -658,7 +711,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Floating Story Progress indicator (Sidebar) - Configured for 6 chapters */}
+      {/* Floating Story Progress indicator (Sidebar) */}
       <nav className="fixed right-8 md:right-16 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 select-none pointer-events-auto">
         {chapters.map((_, idx) => (
           <button 
@@ -991,7 +1044,7 @@ export default function App() {
                   </span>
                   <h3 className="font-sans text-3xl md:text-4xl lg:text-5xl text-white font-light tracking-tight leading-tight mt-2">
                     {chapters[5].title} <br />
-                    <span className="font-serif font-light italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-yellow-550 glow-blue">
+                    <span className="font-serif font-light italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-yellow-500 glow-blue">
                       {chapters[5].accentTitle}
                     </span>
                   </h3>
