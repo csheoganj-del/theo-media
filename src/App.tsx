@@ -14,7 +14,10 @@ import {
   Globe,
   Lock,
   Server,
-  DollarSign
+  Code2,
+  Terminal,
+  Activity,
+  CheckCircle2
 } from 'lucide-react';
 
 // Types for stardust particles
@@ -62,21 +65,20 @@ export default function App() {
     card.style.setProperty('--mouse-y', `${y}px`);
   };
 
-  // Scroll gesture hook to intercept wheel and swipe events
+  // Scroll gesture hook to intercept wheel and swipe events for 6 chapters
   useEffect(() => {
     let lastWheelTime = 0;
     let touchStartY = 0;
 
     const handleWheel = (e: WheelEvent) => {
-      // Ignore minor trackpad scrolls
       if (Math.abs(e.deltaY) < 12) return;
 
       const now = Date.now();
-      if (now - lastWheelTime < 1100) return; // Cooldown to allow WebGL morph and text animations to complete
+      if (now - lastWheelTime < 1100) return; // Cooldown to let morph animations finish
 
       if (e.deltaY > 0) {
-        // Scroll Down -> Next Chapter
-        if (currentChapter < 3) {
+        // Scroll Down -> Next Chapter (max 5 since there are 6 chapters: 0 to 5)
+        if (currentChapter < 5) {
           lastWheelTime = now;
           setIsAnimating(true);
           setCurrentChapter((prev) => prev + 1);
@@ -104,12 +106,11 @@ export default function App() {
       const touchEndY = e.changedTouches[0].clientY;
       const diffY = touchStartY - touchEndY;
 
-      // Threshold to distinguish swipe from simple tap
       if (Math.abs(diffY) < 45) return;
 
       if (diffY > 0) {
         // Swipe Up -> Next Chapter
-        if (currentChapter < 3) {
+        if (currentChapter < 5) {
           lastWheelTime = now;
           setIsAnimating(true);
           setCurrentChapter((prev) => prev + 1);
@@ -145,7 +146,6 @@ export default function App() {
   // Mouse move effect for particle interactivity
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Map coordinates to normalized space (-1 to +1)
       mouseRef.current.targetX = (e.clientX / window.innerWidth) * 2 - 1;
       mouseRef.current.targetY = -(e.clientY / window.innerHeight) * 2 + 1;
     };
@@ -169,7 +169,6 @@ export default function App() {
         }
 
         if (!synthNodesRef.current) {
-          // Warm detuned synth pad
           const oscA = ctx.createOscillator();
           const oscB = ctx.createOscillator();
           const oscC = ctx.createOscillator();
@@ -243,7 +242,7 @@ export default function App() {
     };
   }, []);
 
-  // Three.js Particle Storyteller Engine
+  // Three.js Particle Storyteller Engine - Configured for 6 Chapters
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -267,18 +266,19 @@ export default function App() {
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const posSphere: THREE.Vector3[] = [];
-    const posGrid: THREE.Vector3[] = [];
-    const posStreams: THREE.Vector3[] = [];
-    const posHelix: THREE.Vector3[] = [];
+    const pos0Sphere: THREE.Vector3[] = [];
+    const pos1Grid: THREE.Vector3[] = [];
+    const pos2Streams: THREE.Vector3[] = [];
+    const pos3Terrain: THREE.Vector3[] = [];
+    const pos4Helix: THREE.Vector3[] = [];
 
     // Pre-calculate target coordinates for the particles
     for (let i = 0; i < particleCount; i++) {
-      // --- Target 0: Orbiting Nebula Sphere (Origin) ---
+      // --- Target 0: Orbiting Nebula Sphere (Origin & Ethos) ---
       const theta = Math.acos(1 - 2 * (i / particleCount));
       const phi = Math.sqrt(particleCount * Math.PI) * theta;
       const sphereRadius = 3.2 + Math.sin(i * 1.5) * 0.15;
-      posSphere.push(new THREE.Vector3(
+      pos0Sphere.push(new THREE.Vector3(
         sphereRadius * Math.sin(theta) * Math.cos(phi),
         sphereRadius * Math.sin(theta) * Math.sin(phi),
         sphereRadius * Math.cos(theta)
@@ -291,8 +291,8 @@ export default function App() {
       const col = Math.floor(i / gridRows);
       const gridX = (col - gridCols / 2) * 0.16;
       const gridZ = (row - gridRows / 2) * 0.16;
-      const gridY = Math.sin(gridX * 0.4) * Math.cos(gridZ * 0.4) * 0.8;
-      posGrid.push(new THREE.Vector3(gridX, gridY, gridZ));
+      const gridY = Math.sin(gridX * 0.45) * Math.cos(gridZ * 0.45) * 0.8;
+      pos1Grid.push(new THREE.Vector3(gridX, gridY, gridZ));
 
       // --- Target 2: High-Speed Slipstream (Momentum) ---
       const channelId = i % 25;
@@ -301,36 +301,50 @@ export default function App() {
       const streamX = channelRadius * Math.cos(channelAngle);
       const streamY = channelRadius * Math.sin(channelAngle);
       const streamZ = ((i % 140) / 140) * 16 - 8;
-      posStreams.push(new THREE.Vector3(streamX, streamY, streamZ));
+      pos2Streams.push(new THREE.Vector3(streamX, streamY, streamZ));
 
-      // --- Target 3: Double Helix Vortex (Convergence) ---
+      // --- Target 3: Waving Mountain Terrain (Engine Room) ---
+      const terrCols = 60;
+      const terrRows = 60;
+      const tRow = i % terrRows;
+      const tCol = Math.floor(i / terrRows);
+      const terrX = (tCol - terrCols / 2) * 0.18;
+      const terrZ = (tRow - terrRows / 2) * 0.18;
+      const terrY = Math.sin(terrX * 0.3) * Math.cos(terrZ * 0.3) * 1.4 + Math.sin(terrX * 0.8) * 0.3;
+      pos3Terrain.push(new THREE.Vector3(terrX, terrY, terrZ));
+
+      // --- Target 4: Double Helix Vortex (Convergence) ---
       const helixStrand = i % 2 === 0 ? 0 : 1;
       const helixAngle = (i / particleCount) * Math.PI * 18;
       const helixHeight = (i / particleCount) * 7.5 - 3.75;
       const helixRadius = 1.6;
       const strandOffset = helixStrand * Math.PI;
-      posHelix.push(new THREE.Vector3(
+      pos4Helix.push(new THREE.Vector3(
         helixRadius * Math.cos(helixAngle + strandOffset),
         helixHeight,
         helixRadius * Math.sin(helixAngle + strandOffset)
       ));
 
-      positions[i * 3] = posSphere[i].x;
-      positions[i * 3 + 1] = posSphere[i].y;
-      positions[i * 3 + 2] = posSphere[i].z;
+      positions[i * 3] = pos0Sphere[i].x;
+      positions[i * 3 + 1] = pos0Sphere[i].y;
+      positions[i * 3 + 2] = pos0Sphere[i].z;
 
+      // Assign Cobalt Blue, Liquid Gold, Ultraviolet/Purple colors
       const colorType = i % 3;
       if (colorType === 0) {
+        // Glowing Gold (#FFD700)
         colors[i * 3] = 1.0;
-        colors[i * 3 + 1] = 0.84;
+        colors[i * 3 + 1] = 0.87;
         colors[i * 3 + 2] = 0.0;
       } else if (colorType === 1) {
-        colors[i * 3] = 0.388;
-        colors[i * 3 + 1] = 0.4;
-        colors[i * 3 + 2] = 0.945;
+        // Cyber Cobalt Blue (#0052FF)
+        colors[i * 3] = 0.0;
+        colors[i * 3 + 1] = 0.32;
+        colors[i * 3 + 2] = 1.0;
       } else {
-        colors[i * 3] = 0.839;
-        colors[i * 3 + 1] = 0.0;
+        // Ultraviolet Purple (#D600FF)
+        colors[i * 3] = 0.76;
+        colors[i * 3 + 1] = 0.05;
         colors[i * 3 + 2] = 1.0;
       }
     }
@@ -353,12 +367,12 @@ export default function App() {
     const particlesData: ParticleData[] = [];
     for (let i = 0; i < particleCount; i++) {
       particlesData.push({
-        x: posSphere[i].x,
-        y: posSphere[i].y,
-        z: posSphere[i].z,
-        baseX: posSphere[i].x,
-        baseY: posSphere[i].y,
-        baseZ: posSphere[i].z,
+        x: pos0Sphere[i].x,
+        y: pos0Sphere[i].y,
+        z: pos0Sphere[i].z,
+        baseX: pos0Sphere[i].x,
+        baseY: pos0Sphere[i].y,
+        baseZ: pos0Sphere[i].z,
         vx: 0,
         vy: 0,
         vz: 0,
@@ -394,22 +408,45 @@ export default function App() {
         let targetY = 0;
         let targetZ = 0;
 
-        // Interpolate coordinates dynamically based on smooth scrollProgress value
+        // Interpolate coordinates dynamically based on smooth scrollProgress value across 6 chapters
         if (progress < 1.0) {
+          // Chapter 1 -> Chapter 2: Sphere (0) -> Grid (1)
           const t = progress;
-          targetX = posSphere[i].x * (1 - t) + posGrid[i].x * t;
-          targetY = posSphere[i].y * (1 - t) + posGrid[i].y * t;
-          targetZ = posSphere[i].z * (1 - t) + posGrid[i].z * t;
+          targetX = pos0Sphere[i].x * (1 - t) + pos1Grid[i].x * t;
+          targetY = pos0Sphere[i].y * (1 - t) + pos1Grid[i].y * t;
+          targetZ = pos0Sphere[i].z * (1 - t) + pos1Grid[i].z * t;
         } else if (progress < 2.0) {
+          // Chapter 2 -> Chapter 3: Grid (1) -> Streams (2)
           const t = progress - 1.0;
-          targetX = posGrid[i].x * (1 - t) + posStreams[i].x * t;
-          targetY = posGrid[i].y * (1 - t) + posStreams[i].y * t;
-          targetZ = posGrid[i].z * (1 - t) + posStreams[i].z * t;
-        } else {
+          targetX = pos1Grid[i].x * (1 - t) + pos2Streams[i].x * t;
+          targetY = pos1Grid[i].y * (1 - t) + pos2Streams[i].y * t;
+          targetZ = pos1Grid[i].z * (1 - t) + pos2Streams[i].z * t;
+        } else if (progress < 3.0) {
+          // Chapter 3 -> Chapter 4: Streams (2) -> Wavy Terrain (3)
           const t = progress - 2.0;
-          targetX = posStreams[i].x * (1 - t) + posHelix[i].x * t;
-          targetY = posStreams[i].y * (1 - t) + posHelix[i].y * t;
-          targetZ = posStreams[i].z * (1 - t) + posHelix[i].z * t;
+          targetX = pos2Streams[i].x * (1 - t) + pos3Terrain[i].x * t;
+          targetY = pos2Streams[i].y * (1 - t) + pos3Terrain[i].y * t;
+          targetZ = pos2Streams[i].z * (1 - t) + pos3Terrain[i].z * t;
+        } else if (progress < 4.0) {
+          // Chapter 4 -> Chapter 5: Wavy Terrain (3) -> Helix (4)
+          const t = progress - 3.0;
+          targetX = pos3Terrain[i].x * (1 - t) + pos4Helix[i].x * t;
+          targetY = pos3Terrain[i].y * (1 - t) + pos4Helix[i].y * t;
+          targetZ = pos3Terrain[i].z * (1 - t) + pos4Helix[i].z * t;
+        } else {
+          // Chapter 5 -> Chapter 6: Helix (4) -> Magnetic vortex around cursor (5)
+          const t = progress - 4.0;
+          // Calculate vortex rotation coordinates around cursor
+          const vortexStrand = i % 2 === 0 ? 0 : 1;
+          const vortexAngle = time * 2.5 + i * 0.05;
+          const vortexRadius = 0.5 + (i / particleCount) * 1.8;
+          const vortexX = mouse3DX + vortexRadius * Math.cos(vortexAngle + vortexStrand * Math.PI);
+          const vortexY = mouse3DY + vortexRadius * Math.sin(vortexAngle + vortexStrand * Math.PI);
+          const vortexZ = Math.sin(time * 0.8 + i * 0.1) * 0.5;
+
+          targetX = pos4Helix[i].x * (1 - t) + vortexX * t;
+          targetY = pos4Helix[i].y * (1 - t) + vortexY * t;
+          targetZ = pos4Helix[i].z * (1 - t) + vortexZ * t;
         }
 
         // Noise wave dynamics
@@ -417,9 +454,11 @@ export default function App() {
         let noiseSpeed = 0.6;
         if (progress >= 1.0 && progress < 2.0) {
           noiseScale = 0.08;
-        } else if (progress >= 2.0) {
+        } else if (progress >= 2.0 && progress < 3.0) {
           noiseScale = 0.22;
           noiseSpeed = 1.4;
+        } else if (progress >= 3.0 && progress < 4.0) {
+          noiseScale = 0.07;
         }
 
         const waveX = Math.sin(time * noiseSpeed + i * 0.08) * noiseScale * Math.cos(time * 0.4 + i * 0.03);
@@ -443,7 +482,7 @@ export default function App() {
           targetZ = speedOffset;
         }
 
-        // Mouse displacement
+        // Mouse displacement repulsion
         const dx = p.x - mouse3DX;
         const dy = p.y - mouse3DY;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -465,7 +504,7 @@ export default function App() {
 
       posAttribute.needsUpdate = true;
 
-      // Adjust camera positioning to create organic depth transitions
+      // Camera transitions
       if (progress < 1.0) {
         camera.position.x = Math.sin(progress * 0.5) * 2.0;
         camera.position.y = 0;
@@ -477,11 +516,23 @@ export default function App() {
         camera.position.y = t * 2.5;
         camera.position.z = 6.5 - t * 0.5;
         camera.lookAt(0, 0, 0);
-      } else {
+      } else if (progress < 3.0) {
         const t = progress - 2.0;
-        camera.position.x = Math.sin(time * 0.05 + t) * 1.5;
+        camera.position.x = 0;
         camera.position.y = 2.5 - t * 2.5;
-        camera.position.z = 6.0 + t * 1.5;
+        camera.position.z = 6.0;
+        camera.lookAt(0, 0, 0);
+      } else if (progress < 4.0) {
+        const t = progress - 3.0;
+        camera.position.x = t * 2.0;
+        camera.position.y = t * 1.5;
+        camera.position.z = 6.0 - t * 0.5;
+        camera.lookAt(0, 0, 0);
+      } else {
+        const t = progress - 4.0;
+        camera.position.x = 2.0 - t * 2.0;
+        camera.position.y = 1.5 - t * 1.5;
+        camera.position.z = 5.5 + t * 2.0;
         camera.lookAt(0, 0, 0);
       }
 
@@ -510,24 +561,36 @@ export default function App() {
   const chapters = [
     {
       num: '[ 01 // ORIGIN ]',
-      title: 'Engineering the',
-      accentTitle: 'Digital Future.',
+      title: 'We engineer extraordinary',
+      accentTitle: 'digital products.',
       desc: 'Bespoke design combined with advanced software engineering. We create custom digital systems, interactive WebGL vector pipelines, and secure cloud platforms for premium enterprises.'
     },
     {
-      num: '[ 02 // BLUEPRINT ]',
+      num: '[ 02 // ETHOS ]',
+      title: 'Design is science,',
+      accentTitle: 'code is art.',
+      desc: 'A digital interface should elicit wonder. We operate at the intersection of mathematical aesthetics and hardware-accelerated code. Cookieless tracking, minimal network roundtrips, and zero-latency animation flows.'
+    },
+    {
+      num: '[ 03 // BLUEPRINT ]',
       title: 'Aesthetic Systems,',
       accentTitle: 'Pure Performance.',
       desc: 'We replace opaque timelines with fixed-price execution models. Transparent, native React codebases paired with custom Stripe invoicing, built to handle complex transaction networks.'
     },
     {
-      num: '[ 03 // MOMENTUM ]',
+      num: '[ 04 // VANGUARD ]',
+      title: 'Modern and secure',
+      accentTitle: 'technical stacks.',
+      desc: 'We leverage enterprise-ready toolkits to build high-availability architectures. Fully typed compilation, regional caching networks, edge computing nodes, and SCA-compliant checkout integrations.'
+    },
+    {
+      num: '[ 05 // MOMENTUM ]',
       title: 'Delivered Globally,',
       accentTitle: 'Protected Legally.',
       desc: 'An active track record serving enterprises across the United Kingdom, Ireland, France, Germany, and Switzerland. Full contractual intellectual property ownership guarantees your code remains your asset.'
     },
     {
-      num: '[ 04 // CONVERGENCE ]',
+      num: '[ 06 // CONVERGENCE ]',
       title: 'Enter the Space,',
       accentTitle: 'Build the Blueprint.',
       desc: 'Let’s construct your next digital platform. Get in touch directly on WhatsApp or drop us an email to coordinate your bespoke software audit. London & Dublin studios active.'
@@ -535,7 +598,7 @@ export default function App() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#030303] overflow-hidden">
+    <div className="relative min-h-screen bg-[#020204] overflow-hidden">
       {/* Cinematic Grid Frame and Grain Noise Overlay */}
       <div className="viewport-frame" />
       <div className="grain-overlay" />
@@ -553,8 +616,8 @@ export default function App() {
       {/* Glassmorphic Sticky Header */}
       <header className="fixed top-0 left-0 w-full z-50 px-8 py-6 md:px-16 md:py-8 flex justify-between items-center pointer-events-none">
         <div className="flex items-center gap-3 pointer-events-auto select-none">
-          <div className="w-7 h-7 rounded-full border border-yellow-500/40 flex items-center justify-center">
-            <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full animate-pulse" />
+          <div className="w-7 h-7 rounded-full border border-blue-500/40 flex items-center justify-center">
+            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
           </div>
           <div>
             <h1 className="font-sans text-xs font-bold tracking-[0.25em] text-white">THEOMEDIA</h1>
@@ -569,7 +632,7 @@ export default function App() {
             href="https://wa.me/353852258004" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-2 group px-4.5 py-1.5 rounded-full border border-white/10 hover:border-yellow-500/35 hover:bg-white/[0.02] transition-all duration-300 select-none"
+            className="hidden sm:flex items-center gap-2 group px-4.5 py-1.5 rounded-full border border-white/10 hover:border-blue-500/35 hover:bg-white/[0.02] transition-all duration-300 select-none"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
             <span className="font-mono text-[8.5px] font-semibold tracking-wider text-white/60 group-hover:text-white uppercase transition-colors">Direct WhatsApp</span>
@@ -578,24 +641,24 @@ export default function App() {
           {/* Web Audio Toggle button */}
           <button 
             onClick={toggleAudio}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:border-yellow-500/40 hover:bg-white/[0.02] cursor-pointer transition-all duration-300"
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:border-blue-500/40 hover:bg-white/[0.02] cursor-pointer transition-all duration-300"
             title="Toggle Ambient Audio Synth"
           >
             {isMuted ? (
               <VolumeX className="w-4 h-4 text-white/40" />
             ) : (
               <div className="flex items-end justify-center gap-[3px] h-3.5">
-                <div className="wave-bar w-[2px] h-3.5 bg-yellow-500 rounded-sm" />
-                <div className="wave-bar w-[2px] h-2.5 bg-yellow-500 rounded-sm" />
-                <div className="wave-bar w-[2px] h-3 bg-yellow-500 rounded-sm" />
-                <div className="wave-bar w-[2px] h-1.5 bg-yellow-500 rounded-sm" />
+                <div className="wave-bar w-[2px] h-3.5 bg-blue-500 rounded-sm" />
+                <div className="wave-bar w-[2px] h-2.5 bg-blue-500 rounded-sm" />
+                <div className="wave-bar w-[2px] h-3 bg-blue-500 rounded-sm" />
+                <div className="wave-bar w-[2px] h-1.5 bg-blue-500 rounded-sm" />
               </div>
             )}
           </button>
         </div>
       </header>
 
-      {/* Floating Story Progress indicator (Sidebar) */}
+      {/* Floating Story Progress indicator (Sidebar) - Configured for 6 chapters */}
       <nav className="fixed right-8 md:right-16 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 select-none pointer-events-auto">
         {chapters.map((_, idx) => (
           <button 
@@ -608,12 +671,12 @@ export default function App() {
             }}
             className="group flex items-center justify-end gap-3 cursor-pointer"
           >
-            <span className="opacity-0 group-hover:opacity-100 font-mono text-[9px] text-yellow-500/80 tracking-widest transition-opacity duration-300">
+            <span className="opacity-0 group-hover:opacity-100 font-mono text-[9px] text-blue-500 tracking-widest transition-opacity duration-300">
               0{idx + 1}
             </span>
             <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
               currentChapter === idx 
-                ? 'bg-yellow-500 scale-150 shadow-[0_0_10px_rgba(234,179,8,0.6)]' 
+                ? 'bg-blue-500 scale-150 shadow-[0_0_12px_rgba(0,82,255,0.7)]' 
                 : 'bg-white/20 group-hover:bg-white/60'
             }`} />
           </button>
@@ -623,6 +686,8 @@ export default function App() {
       {/* FIXED STORYTELLING TEXT OVERLAY CONTAINER */}
       <div className="fixed inset-0 z-10 w-full h-full pointer-events-none flex items-center justify-center py-20 px-6 md:px-20">
         <AnimatePresence mode="wait">
+          
+          {/* Chapter 1: The Origin (Hero) */}
           {currentChapter === 0 && (
             <motion.div 
               key="chapter-1"
@@ -630,18 +695,18 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="max-w-4xl mx-auto w-full text-center md:text-left pointer-events-auto"
+              className="max-w-5xl mx-auto w-full text-center md:text-left pointer-events-auto"
             >
-              <span className="font-mono text-[10px] tracking-[0.35em] text-yellow-500/80 uppercase font-semibold">
+              <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
                 {chapters[0].num}
               </span>
-              <h2 className="mt-6 font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.0] tracking-tight text-white select-none">
+              <h2 className="mt-5 font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7.2rem] font-black leading-[1.0] tracking-tight text-white select-none">
                 {chapters[0].title} <br />
-                <span className="font-extrabold italic text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-indigo-400 to-purple-500 glow-indigo">
+                <span className="font-serif font-light italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-yellow-500 glow-indigo">
                   {chapters[0].accentTitle}
                 </span>
               </h2>
-              <p className="mt-8 font-sans text-sm md:text-base text-white/50 max-w-xl leading-relaxed tracking-wide">
+              <p className="mt-8 font-sans text-sm md:text-base text-white/50 max-w-2xl leading-relaxed tracking-wide">
                 {chapters[0].desc}
               </p>
               <div className="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
@@ -652,31 +717,72 @@ export default function App() {
                     setCurrentChapter(1);
                     setTimeout(() => setIsAnimating(false), 1000);
                   }}
-                  className="group relative px-8 py-3.5 rounded-full border border-white/10 overflow-hidden cursor-pointer bg-white/[0.01] hover:border-yellow-500/40 active:scale-95 transition-all duration-300"
+                  className="group relative px-9 py-4 rounded-full border border-white/10 overflow-hidden cursor-pointer bg-white/[0.01] hover:border-blue-500/40 active:scale-95 transition-all duration-300"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/5 via-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white group-hover:text-yellow-400 transition-colors">
-                    Explore Blueprint
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-indigo-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="relative font-mono text-[10px] uppercase tracking-[0.25em] text-white group-hover:text-blue-400 transition-colors">
+                    Explore Ethos
                   </span>
                 </button>
                 <a 
                   href="https://wa.me/353852258004" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="group relative px-8 py-3.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/50 hover:bg-emerald-500/10 transition-all duration-300 flex items-center gap-3"
+                  className="group relative px-9 py-4 rounded-full border border-emerald-500/20 bg-emerald-500/5 hover:border-emerald-500/50 hover:bg-emerald-500/10 transition-all duration-300 flex items-center gap-3"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white group-hover:text-emerald-400 transition-colors">
-                    WhatsApp Audit
+                    WhatsApp Connection
                   </span>
                 </a>
               </div>
             </motion.div>
           )}
 
+          {/* Chapter 2: The Philosophy (Ethos) */}
           {currentChapter === 1 && (
             <motion.div 
               key="chapter-2"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-5xl mx-auto w-full text-center md:text-left pointer-events-auto"
+            >
+              <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                {chapters[1].num}
+              </span>
+              <h2 className="mt-5 font-sans text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] xl:text-[7.2rem] font-black leading-[1.0] tracking-tight text-white select-none">
+                {chapters[1].title} <br />
+                <span className="font-serif font-light italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-400 to-yellow-500 glow-blue">
+                  {chapters[1].accentTitle}
+                </span>
+              </h2>
+              <p className="mt-8 font-sans text-sm md:text-base text-white/50 max-w-2xl leading-relaxed tracking-wide">
+                {chapters[1].desc}
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 max-w-3xl">
+                <div className="flex flex-col gap-1 border-l border-blue-500/20 pl-4 py-1">
+                  <span className="font-mono text-[9px] text-blue-400 uppercase tracking-widest">[ LATENCY ]</span>
+                  <span className="font-sans text-white text-xs font-semibold mt-1">Zero Layout Shifting</span>
+                </div>
+                <div className="flex flex-col gap-1 border-l border-blue-500/20 pl-4 py-1">
+                  <span className="font-mono text-[9px] text-blue-400 uppercase tracking-widest">[ HARDWARE ]</span>
+                  <span className="font-sans text-white text-xs font-semibold mt-1">60FPS WebGL Engines</span>
+                </div>
+                <div className="flex flex-col gap-1 border-l border-blue-500/20 pl-4 py-1">
+                  <span className="font-mono text-[9px] text-blue-400 uppercase tracking-widest">[ DATA SAFETY ]</span>
+                  <span className="font-sans text-white text-xs font-semibold mt-1">Cookieless Architectures</span>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Chapter 3: The Blueprint (Services Bento) */}
+          {currentChapter === 2 && (
+            <motion.div 
+              key="chapter-3"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
@@ -685,43 +791,43 @@ export default function App() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-4 flex flex-col gap-4">
-                  <span className="font-mono text-[10px] tracking-[0.35em] text-yellow-500/80 uppercase font-semibold">
-                    {chapters[1].num}
+                  <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                    {chapters[2].num}
                   </span>
-                  <h3 className="font-sans text-3xl md:text-4xl text-white font-light tracking-tight leading-[1.1] mt-2">
-                    {chapters[1].title} <br />
-                    <span className="font-bold italic text-yellow-500">{chapters[1].accentTitle}</span>
+                  <h3 className="font-sans text-3xl md:text-5xl text-white font-light tracking-tight leading-[1.1] mt-2 select-none">
+                    {chapters[2].title} <br />
+                    <span className="font-serif font-light italic text-blue-400 glow-blue">{chapters[2].accentTitle}</span>
                   </h3>
                   <p className="font-sans text-xs md:text-sm text-white/40 leading-relaxed tracking-wide mt-2">
-                    {chapters[1].desc}
+                    {chapters[2].desc}
                   </p>
-                  <div className="w-12 h-[1px] bg-yellow-500/40 mt-3" />
+                  <div className="w-12 h-[1px] bg-blue-500/40 mt-3" />
                 </div>
 
                 <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[68vh] overflow-y-auto pr-1">
-                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-yellow-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
+                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-blue-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
                     <div className="flex justify-between items-start">
-                      <div className="w-9 h-9 rounded-xl bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 text-yellow-500"><Cpu className="w-4 h-4" /></div>
+                      <div className="w-9 h-9 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-500"><Cpu className="w-4 h-4" /></div>
                       <span className="font-mono text-[8px] text-white/25 tracking-wider">STAGE I</span>
                     </div>
                     <div className="mt-4">
-                      <h4 className="font-sans text-base font-bold text-white group-hover:text-yellow-400 transition-colors">React Web Platforms</h4>
+                      <h4 className="font-sans text-base font-bold text-white group-hover:text-blue-400 transition-colors">React Web Platforms</h4>
                       <p className="font-sans text-[11px] text-white/40 leading-relaxed mt-2">Premium web architectures built with React, Vite, and WebGL particle flows to lock client engagement.</p>
                     </div>
                   </div>
 
-                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-yellow-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
+                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-blue-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
                     <div className="flex justify-between items-start">
-                      <div className="w-9 h-9 rounded-xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20 text-indigo-400"><Layers className="w-4 h-4" /></div>
+                      <div className="w-9 h-9 rounded-xl bg-yellow-500/10 flex items-center justify-center border border-yellow-500/20 text-yellow-500"><Layers className="w-4 h-4" /></div>
                       <span className="font-mono text-[8px] text-white/25 tracking-wider">STAGE II</span>
                     </div>
                     <div className="mt-4">
-                      <h4 className="font-sans text-base font-bold text-white group-hover:text-indigo-400 transition-colors">Operational Engines</h4>
+                      <h4 className="font-sans text-base font-bold text-white group-hover:text-yellow-400 transition-colors">Operational Engines</h4>
                       <p className="font-sans text-[11px] text-white/40 leading-relaxed mt-2">Bespoke secure dashboards, customer management directories, and checkout systems powered by Stripe.</p>
                     </div>
                   </div>
 
-                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-yellow-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
+                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-blue-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
                     <div className="flex justify-between items-start">
                       <div className="w-9 h-9 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20 text-purple-400"><Database className="w-4 h-4" /></div>
                       <span className="font-mono text-[8px] text-white/25 tracking-wider">STAGE III</span>
@@ -732,7 +838,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-yellow-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
+                  <div onMouseMove={handleSpotlightMouseMove} className="spotlight-card group p-6 rounded-2xl glass-panel hover:bg-[#100a1c]/25 hover:border-blue-500/25 transition-all duration-500 flex flex-col justify-between aspect-video sm:aspect-square">
                     <div className="flex justify-between items-start">
                       <div className="w-9 h-9 rounded-xl bg-pink-500/10 flex items-center justify-center border border-pink-500/20 text-pink-400"><Zap className="w-4 h-4" /></div>
                       <span className="font-mono text-[8px] text-white/25 tracking-wider">STAGE IV</span>
@@ -747,9 +853,80 @@ export default function App() {
             </motion.div>
           )}
 
-          {currentChapter === 2 && (
+          {/* Chapter 4: The Engine (Vanguard Tech Stack) */}
+          {currentChapter === 3 && (
             <motion.div 
-              key="chapter-3"
+              key="chapter-4"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="max-w-6xl mx-auto w-full pointer-events-auto"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div className="lg:col-span-5 flex flex-col gap-4">
+                  <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                    {chapters[3].num}
+                  </span>
+                  <h3 className="font-sans text-3xl md:text-5xl text-white font-light tracking-tight leading-[1.1] mt-2 select-none">
+                    {chapters[3].title} <br />
+                    <span className="font-serif font-light italic text-yellow-500 glow-gold">{chapters[3].accentTitle}</span>
+                  </h3>
+                  <p className="font-sans text-xs md:text-sm text-white/40 leading-relaxed tracking-wide mt-2">
+                    {chapters[3].desc}
+                  </p>
+                  <div className="w-12 h-[1px] bg-yellow-500/40 mt-3" />
+                </div>
+
+                <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[68vh] overflow-y-auto pr-1 select-none">
+                  <div className="p-6 rounded-2xl glass-panel flex flex-col gap-4">
+                    <div className="flex items-center gap-3">
+                      <Code2 className="w-4 h-4 text-blue-500" />
+                      <span className="font-mono text-[10px] text-white uppercase tracking-widest">FRONTEND CORE</span>
+                    </div>
+                    <p className="font-sans text-[11px] text-white/50 leading-relaxed">
+                      We utilize **React 19**, **Vite**, and **TypeScript** for compiling secure static bundles. Built with strict component reusability and typed interfaces to eliminate run-time crashes.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl glass-panel flex flex-col gap-4">
+                    <div className="flex items-center gap-3">
+                      <Terminal className="w-4 h-4 text-yellow-500" />
+                      <span className="font-mono text-[10px] text-white uppercase tracking-widest">STYLING FRAMEWORK</span>
+                    </div>
+                    <p className="font-sans text-[11px] text-white/50 leading-relaxed">
+                      Powered by **Tailwind CSS v4**. Hardware-optimized CSS transformations, zero stylesheet bloat, and unified CSS variables to configure responsive system theme tokens.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl glass-panel flex flex-col gap-4">
+                    <div className="flex items-center gap-3">
+                      <Activity className="w-4 h-4 text-purple-400" />
+                      <span className="font-mono text-[10px] text-white uppercase tracking-widest">3D GRAPHICS ENGINE</span>
+                    </div>
+                    <p className="font-sans text-[11px] text-white/50 leading-relaxed">
+                      **Three.js (WebGL)** custom shaders and vertex geometry. Rendered dynamically via requestAnimationFrame with device pixel ratio scaling to ensure 60FPS fluid movements.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl glass-panel flex flex-col gap-4">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      <span className="font-mono text-[10px] text-white uppercase tracking-widest">SERVER EDGE</span>
+                    </div>
+                    <p className="font-sans text-[11px] text-white/50 leading-relaxed">
+                      Regional server edge security groups on **AWS** and **Vercel** setups. Instant routing, HTTPS compliance headers, and automatic continuous backup schemes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Chapter 5: The Momentum (Stats & Credentials) */}
+          {currentChapter === 4 && (
+            <motion.div 
+              key="chapter-5"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
@@ -757,36 +934,36 @@ export default function App() {
               className="max-w-6xl mx-auto w-full pointer-events-auto"
             >
               <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10 select-none">
-                <span className="font-mono text-[10px] tracking-[0.35em] text-yellow-500/80 uppercase font-semibold">
-                  {chapters[2].num}
+                <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                  {chapters[4].num}
                 </span>
                 <h3 className="font-sans text-3xl md:text-5xl text-white font-light tracking-tight leading-tight mt-4">
-                  {chapters[2].title} <br />
-                  <span className="font-bold italic text-indigo-400 glow-indigo">{chapters[2].accentTitle}</span>
+                  {chapters[4].title} <br />
+                  <span className="font-serif font-light italic text-blue-500 glow-blue">{chapters[4].accentTitle}</span>
                 </h3>
                 <p className="font-sans text-xs md:text-sm text-white/40 leading-relaxed tracking-wide mt-2">
-                  {chapters[2].desc}
+                  {chapters[4].desc}
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
-                <div className="group p-7 rounded-2xl glass-panel hover:bg-[#100a1c]/15 hover:border-yellow-500/20 transition-all duration-500 flex flex-col justify-between h-56 md:h-64">
-                  <span className="font-sans text-5xl md:text-6xl font-extralight text-yellow-500 tracking-tighter glow-gold select-none">25+</span>
+                <div className="group p-7 rounded-2xl glass-panel hover:bg-[#100a1c]/15 hover:border-blue-500/20 transition-all duration-500 flex flex-col justify-between h-56 md:h-64">
+                  <span className="font-sans text-5xl md:text-6xl font-extralight text-blue-500 tracking-tighter glow-blue select-none">25+</span>
                   <div>
-                    <h4 className="font-sans text-sm font-bold text-white flex items-center gap-2"><Globe className="w-3.5 h-3.5 text-yellow-500/70" /> Projects Deployed</h4>
+                    <h4 className="font-sans text-sm font-bold text-white flex items-center gap-2"><Globe className="w-3.5 h-3.5 text-blue-500/70" /> Projects Deployed</h4>
                     <p className="font-sans text-[10px] text-white/40 leading-relaxed uppercase tracking-wider mt-1.5">Active design systems and secure transaction engines in circulation.</p>
                   </div>
                 </div>
 
-                <div className="group p-7 rounded-2xl glass-panel hover:bg-[#100a1c]/15 hover:border-yellow-500/20 transition-all duration-500 flex flex-col justify-between h-56 md:h-64">
-                  <span className="font-sans text-5xl md:text-6xl font-extralight text-indigo-400 tracking-tighter glow-indigo select-none">05</span>
+                <div className="group p-7 rounded-2xl glass-panel hover:bg-[#100a1c]/15 hover:border-blue-500/20 transition-all duration-500 flex flex-col justify-between h-56 md:h-64">
+                  <span className="font-sans text-5xl md:text-6xl font-extralight text-yellow-500 tracking-tighter glow-gold select-none">05</span>
                   <div>
-                    <h4 className="font-sans text-sm font-bold text-white flex items-center gap-2"><Server className="w-3.5 h-3.5 text-indigo-400/70" /> Nations Supported</h4>
+                    <h4 className="font-sans text-sm font-bold text-white flex items-center gap-2"><Server className="w-3.5 h-3.5 text-yellow-500/70" /> Nations Supported</h4>
                     <p className="font-sans text-[10px] text-white/40 leading-relaxed uppercase tracking-wider mt-1.5">Reliable custom codebases for clients in UK, IE, FR, DE, & CH.</p>
                   </div>
                 </div>
 
-                <div className="group p-7 rounded-2xl glass-panel hover:bg-[#100a1c]/15 hover:border-yellow-500/20 transition-all duration-500 flex flex-col justify-between h-56 md:h-64">
+                <div className="group p-7 rounded-2xl glass-panel hover:bg-[#100a1c]/15 hover:border-blue-500/20 transition-all duration-500 flex flex-col justify-between h-56 md:h-64">
                   <span className="font-sans text-5xl md:text-6xl font-extralight text-purple-400 tracking-tighter glow-indigo select-none">100%</span>
                   <div>
                     <h4 className="font-sans text-sm font-bold text-white flex items-center gap-2"><Lock className="w-3.5 h-3.5 text-purple-400/70" /> IP Protection</h4>
@@ -797,9 +974,10 @@ export default function App() {
             </motion.div>
           )}
 
-          {currentChapter === 3 && (
+          {/* Chapter 6: The Convergence (Contact & WhatsApp) */}
+          {currentChapter === 5 && (
             <motion.div 
-              key="chapter-4"
+              key="chapter-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
@@ -808,17 +986,17 @@ export default function App() {
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 <div className="md:col-span-5 flex flex-col gap-4 select-none">
-                  <span className="font-mono text-[10px] tracking-[0.35em] text-yellow-500/80 uppercase font-semibold">
-                    {chapters[3].num}
+                  <span className="font-mono text-[10px] tracking-[0.35em] text-blue-400 uppercase font-semibold">
+                    {chapters[5].num}
                   </span>
                   <h3 className="font-sans text-3xl md:text-4xl lg:text-5xl text-white font-light tracking-tight leading-tight mt-2">
-                    {chapters[3].title} <br />
-                    <span className="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-indigo-400 glow-indigo">
-                      {chapters[3].accentTitle}
+                    {chapters[5].title} <br />
+                    <span className="font-serif font-light italic text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-yellow-550 glow-blue">
+                      {chapters[5].accentTitle}
                     </span>
                   </h3>
                   <p className="font-sans text-xs md:text-sm text-white/45 leading-relaxed mt-2">
-                    {chapters[3].desc}
+                    {chapters[5].desc}
                   </p>
 
                   <div className="mt-4">
@@ -847,22 +1025,22 @@ export default function App() {
 
                 <div className="md:col-span-7 p-6 rounded-2xl glass-panel-heavy max-h-[72vh] overflow-y-auto">
                   <h4 className="font-sans text-base font-bold text-white flex items-center gap-2 mb-4">
-                    <MessageSquare className="w-3.5 h-3.5 text-yellow-500/70" /> Request Audit
+                    <MessageSquare className="w-3.5 h-3.5 text-blue-500/70" /> Request Audit
                   </h4>
                   <form onSubmit={(e) => { e.preventDefault(); alert("Transmitting details..."); }} className="flex flex-col gap-3.5">
                     <div>
                       <label className="block font-mono text-[8px] tracking-widest text-white/40 uppercase mb-1">Entity Name</label>
-                      <input type="text" required placeholder="Acme Corp" className="w-full px-3 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 focus:border-yellow-500/40 focus:bg-white/[0.04] text-white font-sans text-xs outline-none transition-all" />
+                      <input type="text" required placeholder="Acme Corp" className="w-full px-3 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 focus:border-blue-500/40 focus:bg-white/[0.04] text-white font-sans text-xs outline-none transition-all" />
                     </div>
                     <div>
                       <label className="block font-mono text-[8px] tracking-widest text-white/40 uppercase mb-1">Secure Email</label>
-                      <input type="email" required placeholder="hello@acme.com" className="w-full px-3 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 focus:border-yellow-500/40 focus:bg-white/[0.04] text-white font-sans text-xs outline-none transition-all" />
+                      <input type="email" required placeholder="hello@acme.com" className="w-full px-3 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 focus:border-blue-500/40 focus:bg-white/[0.04] text-white font-sans text-xs outline-none transition-all" />
                     </div>
                     <div>
                       <label className="block font-mono text-[8px] tracking-widest text-white/40 uppercase mb-1">Bespoke System Details</label>
-                      <textarea rows={3} required placeholder="Specify your integrations or backend database details..." className="w-full px-3 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 focus:border-yellow-500/40 focus:bg-white/[0.04] text-white font-sans text-xs outline-none resize-none transition-all" />
+                      <textarea rows={3} required placeholder="Specify your integrations or backend database details..." className="w-full px-3 py-2.5 rounded-lg bg-white/[0.02] border border-white/5 focus:border-blue-500/40 focus:bg-white/[0.04] text-white font-sans text-xs outline-none resize-none transition-all" />
                     </div>
-                    <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-yellow-500 to-indigo-600 hover:from-yellow-400 hover:to-indigo-500 text-white font-mono text-[9px] uppercase tracking-[0.25em] font-bold cursor-pointer transition-all duration-300">Transmit Details</button>
+                    <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-650 to-indigo-650 hover:from-blue-500 hover:to-indigo-500 text-white font-mono text-[9px] uppercase tracking-[0.25em] font-bold cursor-pointer transition-all duration-300">Transmit Details</button>
                   </form>
                 </div>
               </div>
@@ -877,11 +1055,11 @@ export default function App() {
           © 2026 THEOMEDIA. REGISTERED IN IRELAND & THE UNITED KINGDOM.
         </div>
         <div className="flex gap-5">
-          <a href="#" className="hover:text-yellow-500/80 transition-colors">Privacy Policy</a>
+          <a href="#" className="hover:text-blue-550 transition-colors">Privacy Policy</a>
           <span>•</span>
-          <a href="#" className="hover:text-yellow-500/80 transition-colors">Terms of Use</a>
+          <a href="#" className="hover:text-blue-550 transition-colors">Terms of Use</a>
           <span>•</span>
-          <a href="mailto:hello@theomedia.co" className="hover:text-yellow-400 text-yellow-500/80 font-bold transition-colors">hello@theomedia.co</a>
+          <a href="mailto:hello@theomedia.co" className="hover:text-blue-400 text-blue-550 font-bold transition-colors">hello@theomedia.co</a>
         </div>
       </footer>
     </div>
