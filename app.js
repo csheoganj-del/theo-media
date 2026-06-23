@@ -1070,7 +1070,96 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorRing.classList.remove('magnetic-hover');
         cursorDot.classList.remove('magnetic-hover');
       }
-    });
   });
+
+  /* ==========================================================================
+     DYNAMIC MOBILE NAVIGATION MENU
+     ========================================================================== */
+  const headerContainer = document.querySelector('.header-container');
+  const originalNav = document.querySelector('header nav');
+  const originalProposalBtn = document.querySelector('.header-controls .btn-header');
+
+  if (headerContainer && originalNav) {
+    // 1. Create Hamburger toggle button
+    const mobileToggle = document.createElement('button');
+    mobileToggle.className = 'mobile-menu-toggle';
+    mobileToggle.setAttribute('aria-label', 'Toggle navigation menu');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileToggle.innerHTML = `
+      <span class="bar bar-top"></span>
+      <span class="bar bar-mid"></span>
+      <span class="bar bar-bot"></span>
+    `;
+
+    // Append to header controls if they exist, otherwise to container
+    const headerControls = document.querySelector('.header-controls');
+    if (headerControls) {
+      headerControls.appendChild(mobileToggle);
+    } else {
+      headerContainer.appendChild(mobileToggle);
+    }
+
+    // 2. Create Mobile Menu Overlay Container
+    const mobileOverlay = document.createElement('div');
+    mobileOverlay.className = 'mobile-menu-overlay';
+
+    const mobileNav = document.createElement('nav');
+    mobileNav.className = 'mobile-nav-links';
+
+    // Clone all links from header nav
+    const navLinks = originalNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      const clone = link.cloneNode(true);
+      clone.className = 'mobile-nav-link';
+      clone.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+      mobileNav.appendChild(clone);
+    });
+
+    // Clone Proposal CTA button if it exists
+    if (originalProposalBtn) {
+      const cloneProposalBtn = originalProposalBtn.cloneNode(true);
+      cloneProposalBtn.className = 'btn-mobile-menu-proposal';
+      cloneProposalBtn.addEventListener('click', () => {
+        closeMobileMenu();
+      });
+      mobileNav.appendChild(cloneProposalBtn);
+    }
+
+    mobileOverlay.appendChild(mobileNav);
+    document.body.appendChild(mobileOverlay);
+
+    // 3. Toggle Functionality
+    function openMobileMenu() {
+      mobileToggle.classList.add('active');
+      mobileOverlay.classList.add('active');
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('scroll-locked');
+    }
+
+    function closeMobileMenu() {
+      mobileToggle.classList.remove('active');
+      mobileOverlay.classList.remove('active');
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('scroll-locked');
+    }
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileOverlay.classList.contains('active');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    // Close on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMobileMenu();
+      }
+    });
+  }
 
 });
