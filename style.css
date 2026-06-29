@@ -15,6 +15,8 @@
   --color-blue: #9c8253;            /* Premium Sober Gold */
   --color-blue-hover: #b09768;      /* Gold Hover State */
   --color-green: #34c759;           /* Apple Success Green */
+  --color-ink: #1b365d;
+  --color-teal: #0f9f8f;
   --border-color: #e5e7eb;          /* Very thin, clean gray line */
   --border-color-hover: #b09768;    /* Gold border on hover */
   
@@ -222,21 +224,33 @@ nav {
    HERO SECTION
    ========================================================================== */
 .hero {
-  min-height: 90vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 7rem 2rem 2rem 2rem;
-  background: var(--bg-primary);
+  text-align: left;
+  padding: 7rem 2rem 2.5rem 2rem;
+  background:
+    linear-gradient(135deg, rgba(156, 130, 83, 0.08), transparent 42%),
+    linear-gradient(225deg, rgba(15, 159, 143, 0.08), transparent 36%),
+    var(--bg-primary);
+}
+
+.hero-shell {
+  width: 100%;
+  max-width: 1280px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: 3rem;
+  align-items: center;
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 640px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .badge {
@@ -247,15 +261,15 @@ nav {
   border-radius: 100px;
   font-weight: 600;
   font-size: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
   letter-spacing: -0.01em;
 }
 
 .hero h1 {
-  font-size: 3.8rem;
+  font-size: clamp(2.8rem, 4.6vw, 3.65rem);
   font-weight: 800;
   line-height: 1.12;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.15rem;
   letter-spacing: -0.04em;
   color: var(--text-primary);
 }
@@ -265,10 +279,10 @@ nav {
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: 1.12rem;
   color: var(--text-muted);
-  max-width: 720px;
-  margin-bottom: 3rem;
+  max-width: 620px;
+  margin-bottom: 2rem;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -276,6 +290,74 @@ nav {
 .cta-group {
   display: flex;
   gap: 1.25rem;
+}
+
+.hero-proof-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.hero-proof-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  box-shadow: 0 26px 70px rgba(29, 29, 31, 0.14);
+}
+
+.hero-result-card {
+  position: absolute;
+  left: -1.4rem;
+  bottom: -1.6rem;
+  width: min(320px, 72%);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 1.1rem;
+  box-shadow: 0 18px 40px rgba(29, 29, 31, 0.12);
+  backdrop-filter: blur(16px);
+}
+
+.hero-result-card span {
+  color: var(--color-teal);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-result-card strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  margin: 0.25rem 0;
+}
+
+.hero-result-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 .btn-primary {
@@ -434,6 +516,201 @@ section > form {
 @keyframes marqueeAnimation {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   PROJECT PROOF CARDS
+   ========================================================================== */
+.project-proof-section {
+  background: var(--bg-primary);
+}
+
+.project-proof-grid {
+  display: grid;
+  grid-template-columns: 1.25fr repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.proof-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition: var(--transition-clean);
+  box-shadow: 0 12px 32px rgba(29, 29, 31, 0.035);
+}
+
+.proof-card:hover {
+  border-color: var(--border-color-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(29, 29, 31, 0.08);
+}
+
+.proof-card-featured {
+  grid-row: span 2;
+}
+
+.proof-visual {
+  min-height: 190px;
+  padding: 1.25rem;
+  background:
+    linear-gradient(135deg, rgba(27, 54, 93, 0.08), rgba(15, 159, 143, 0.08)),
+    var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-card-featured .proof-visual {
+  min-height: 280px;
+}
+
+.proof-card-body {
+  padding: 1.6rem;
+}
+
+.proof-type {
+  color: var(--color-blue);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.proof-card h3 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0.45rem 0 0.75rem;
+}
+
+.proof-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.proof-card ul {
+  list-style: none;
+  margin-top: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.proof-card li {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.proof-card li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--color-teal);
+  margin-top: 0.45rem;
+  flex: 0 0 auto;
+}
+
+.mock-window,
+.mock-hero,
+.mock-receipt,
+.mock-column,
+.mock-line,
+.mock-chart,
+.mock-pill,
+.mock-button,
+.mock-total {
+  display: block;
+  border-radius: var(--border-radius-sm);
+  background: var(--bg-primary);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  box-shadow: 0 10px 28px rgba(29, 29, 31, 0.08);
+}
+
+.dashboard-visual .mock-window {
+  height: 54px;
+  margin-bottom: 1rem;
+}
+
+.mock-line {
+  width: 74%;
+  height: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.mock-line.wide {
+  width: 92%;
+}
+
+.mock-line.short {
+  width: 48%;
+}
+
+.mock-chart {
+  height: 112px;
+  background:
+    linear-gradient(180deg, transparent 0 62%, rgba(15, 159, 143, 0.15) 62%),
+    linear-gradient(125deg, transparent 0 45%, rgba(27, 54, 93, 0.25) 46% 49%, transparent 50%),
+    var(--bg-primary);
+}
+
+.mock-pill {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 38%;
+  height: 36px;
+  background: rgba(15, 159, 143, 0.14);
+}
+
+.website-visual .mock-hero {
+  height: 84px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, rgba(156, 130, 83, 0.25), rgba(27, 54, 93, 0.12));
+}
+
+.mock-button {
+  width: 96px;
+  height: 30px;
+  background: var(--color-blue);
+}
+
+.pos-visual .mock-receipt {
+  width: 72%;
+  height: 118px;
+  margin: 0 auto 1rem;
+}
+
+.mock-total {
+  width: 52%;
+  height: 22px;
+  margin: 0 auto 0.85rem;
+  background: rgba(52, 199, 89, 0.14);
+}
+
+.crm-visual {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.mock-column {
+  height: 138px;
+  background:
+    linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+    linear-gradient(180deg, rgba(27, 54, 93, 0.08), rgba(156, 130, 83, 0.12)) border-box;
+}
+
+.mock-column.active {
+  background: rgba(15, 159, 143, 0.14);
 }
 
 /* ==========================================================================
@@ -883,6 +1160,80 @@ section > form {
 
 .pay-preview {
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.agency-preview {
+  padding: 2rem;
+}
+
+.template-browser-mock,
+.template-dashboard-mock {
+  width: min(360px, 88%);
+  min-height: 155px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  box-shadow: 0 20px 44px rgba(29, 29, 31, 0.1);
+}
+
+.template-browser-mock span,
+.template-dashboard-mock span {
+  display: block;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(29, 29, 31, 0.12);
+  margin-bottom: 0.7rem;
+}
+
+.template-browser-mock span {
+  width: 42%;
+  height: 34px;
+  border-radius: var(--border-radius-sm);
+  background: linear-gradient(135deg, rgba(156, 130, 83, 0.28), rgba(15, 159, 143, 0.16));
+}
+
+.template-browser-mock strong,
+.template-dashboard-mock strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  margin-bottom: 0.45rem;
+}
+
+.template-browser-mock p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.template-dashboard-mock {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  align-content: center;
+}
+
+.template-dashboard-mock span {
+  width: 100%;
+  height: 72px;
+  border-radius: var(--border-radius-sm);
+  margin: 0;
+  background: rgba(27, 54, 93, 0.08);
+}
+
+.template-dashboard-mock span:nth-child(2) {
+  background: rgba(15, 159, 143, 0.13);
+}
+
+.template-dashboard-mock span:nth-child(3) {
+  background: rgba(156, 130, 83, 0.18);
+}
+
+.template-dashboard-mock strong {
+  grid-column: 1 / -1;
+  margin: 0.15rem 0 0;
 }
 
 .template-badge {
@@ -1577,9 +1928,26 @@ footer {
   section {
     padding: 5rem 2rem;
   }
+
+  .hero-shell {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
   
   .hero h1 {
     font-size: 3rem;
+  }
+
+  .hero-content {
+    max-width: 760px;
+  }
+
+  .project-proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .proof-card-featured {
+    grid-row: auto;
   }
   
   .services-grid {
@@ -1658,6 +2026,29 @@ footer {
   .hero p {
     font-size: 1.05rem;
   }
+
+  .hero {
+    text-align: center;
+    padding-top: 7rem;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-proof-row {
+    display: none;
+  }
+
+  .hero-shell {
+    gap: 2rem;
+  }
+
+  .hero-result-card {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+  }
   
   .cta-group {
     flex-direction: column;
@@ -1676,6 +2067,10 @@ footer {
   }
   
   .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-proof-grid {
     grid-template-columns: 1fr;
   }
   
