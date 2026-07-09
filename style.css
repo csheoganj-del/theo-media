@@ -2564,3 +2564,462 @@ body.scroll-locked {
     grid-column: span 2;
   }
 }
+
+/* Center mockup containers inside visuals */
+.proof-visual {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.template-preview {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Premium Device Window Mockup */
+.visual-device-mock {
+  width: min(340px, 92%);
+  height: 85%;
+  background: #ffffff;
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(29, 29, 31, 0.06);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  transition: var(--transition-clean);
+}
+
+.proof-card-featured .visual-device-mock {
+  width: min(440px, 92%);
+  height: 90%;
+}
+
+.visual-device-header {
+  height: 18px;
+  background: #f1f1f3;
+  border-bottom: 1px solid rgba(29, 29, 31, 0.06);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.visual-device-dot {
+  width: 5px;
+  height: 5px;
+  background: #cbd5e1;
+  border-radius: 50%;
+}
+
+.visual-device-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+}
+
+.visual-device-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template-badge {
+  z-index: 10;
+}
+
+/* ==========================================================================
+   PURE CSS MOCKUPS (REPLACING STATIC RASTER IMAGES)
+   ========================================================================== */
+.visual-device-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* 1. Dashboard Mockup */
+.css-dashboard-mock {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-family);
+  background: #f8fafc;
+  color: #0f172a;
+}
+.css-dashboard-mock .mock-sidebar {
+  width: 20%;
+  background: #1e293b;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.css-dashboard-mock .mock-side-item {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+.css-dashboard-mock .mock-side-item.active {
+  background: var(--color-blue);
+}
+.css-dashboard-mock .mock-main {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.css-dashboard-mock .mock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.css-dashboard-mock .mock-title-bar {
+  width: 60px;
+  height: 10px;
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+.css-dashboard-mock .mock-avatar {
+  width: 16px;
+  height: 16px;
+  background: #94a3b8;
+  border-radius: 50%;
+}
+.css-dashboard-mock .mock-grid {
+  display: flex;
+  gap: 8px;
+}
+.css-dashboard-mock .mock-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.css-dashboard-mock .mock-card-val {
+  width: 50%;
+  height: 12px;
+  border-radius: 3px;
+}
+.css-dashboard-mock .mock-card.card-blue .mock-card-val {
+  background: var(--color-ink);
+}
+.css-dashboard-mock .mock-card.card-teal .mock-card-val {
+  background: var(--color-teal);
+}
+.css-dashboard-mock .mock-card-line {
+  width: 80%;
+  height: 6px;
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+.css-dashboard-mock .mock-chart-container {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.css-dashboard-mock .mock-chart {
+  width: 100%;
+  height: 100%;
+}
+
+/* 2. Website Mockup */
+.css-website-mock, .css-authority-mock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 12px;
+  gap: 16px;
+}
+.mock-web-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+.mock-web-logo {
+  width: 40px;
+  height: 10px;
+  background: #0f172a;
+  border-radius: 5px;
+}
+.mock-web-logo.gold {
+  background: var(--color-blue);
+}
+.mock-web-nav-links {
+  display: flex;
+  gap: 6px;
+}
+.mock-web-link {
+  width: 20px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+}
+.mock-web-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mock-web-hero.center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+.mock-web-badge {
+  width: 60px;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+.mock-web-badge.gold {
+  background: rgba(156, 130, 83, 0.15);
+}
+.mock-web-title {
+  width: 90%;
+  height: 14px;
+  background: #1e293b;
+  border-radius: 7px;
+}
+.mock-web-title.center {
+  width: 80%;
+}
+.mock-web-title.short {
+  width: 60%;
+}
+.mock-web-cta {
+  width: 50px;
+  height: 16px;
+  background: #0f172a;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+.mock-web-cta.gold {
+  background: var(--color-blue);
+}
+
+/* 3. POS Receipt Mockup */
+.css-pos-mock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 12px;
+  font-family: monospace;
+}
+.mock-receipt-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.mock-receipt-logo {
+  width: 16px;
+  height: 16px;
+  background: var(--color-blue);
+  border-radius: 50%;
+}
+.mock-receipt-title {
+  width: 50px;
+  height: 6px;
+  background: #64748b;
+  border-radius: 3px;
+}
+.mock-receipt-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mock-receipt-row {
+  display: flex;
+  justify-content: space-between;
+}
+.mock-receipt-item {
+  width: 40px;
+  height: 6px;
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.mock-receipt-item.long {
+  width: 60px;
+}
+.mock-receipt-price {
+  width: 15px;
+  height: 6px;
+  background: #94a3b8;
+  border-radius: 3px;
+}
+.mock-receipt-divider {
+  border-top: 1px dashed #cbd5e1;
+  margin: 10px 0;
+}
+.mock-receipt-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.mock-receipt-total-label {
+  width: 30px;
+  height: 8px;
+  background: #334155;
+  border-radius: 4px;
+}
+.mock-receipt-total-val {
+  width: 20px;
+  height: 8px;
+  background: var(--color-blue);
+  border-radius: 4px;
+}
+.mock-receipt-btn {
+  height: 18px;
+  background: #22c55e;
+  border-radius: 4px;
+}
+
+/* 4. CRM Pipeline Mockup */
+.css-crm-mock {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #f8fafc;
+  padding: 10px;
+  gap: 8px;
+}
+.mock-crm-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mock-crm-col-header {
+  height: 8px;
+  border-radius: 4px;
+}
+.mock-crm-col-header.header-blue {
+  background: rgba(27, 54, 93, 0.2);
+}
+.mock-crm-col-header.header-teal {
+  background: rgba(15, 159, 143, 0.2);
+}
+.mock-crm-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+.mock-crm-card-title {
+  width: 80%;
+  height: 6px;
+  background: #475569;
+  border-radius: 3px;
+}
+.mock-crm-card-title.short {
+  width: 50%;
+}
+.mock-crm-card-desc {
+  width: 90%;
+  height: 4px;
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+/* 6. Operations Hub Mockup */
+.css-hub-mock {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #f1f5f9;
+}
+.css-hub-mock .mock-sidebar {
+  width: 18%;
+  background: #0f172a;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.css-hub-mock .mock-side-item {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+.css-hub-mock .mock-side-item.active.gold {
+  background: var(--color-blue);
+}
+.css-hub-mock .mock-main {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.css-hub-mock .mock-header {
+  display: flex;
+  align-items: center;
+}
+.css-hub-mock .mock-title-bar.long {
+  width: 80px;
+  height: 8px;
+  background: #94a3b8;
+  border-radius: 4px;
+}
+.css-hub-mock .mock-table {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.css-hub-mock .mock-table-row {
+  display: flex;
+  padding: 6px;
+  border-bottom: 1px solid #f1f5f9;
+  align-items: center;
+  justify-content: space-between;
+}
+.css-hub-mock .mock-table-row.header {
+  background: #f8fafc;
+}
+.css-hub-mock .mock-table-cell {
+  width: 30px;
+  height: 5px;
+  background: #cbd5e1;
+  border-radius: 2.5px;
+}
+.css-hub-mock .mock-table-row.header .mock-table-cell {
+  background: #94a3b8;
+}
+.css-hub-mock .mock-table-cell.badge {
+  background: rgba(34, 197, 94, 0.2);
+  border-radius: 3px;
+  height: 7px;
+  width: 25px;
+}
