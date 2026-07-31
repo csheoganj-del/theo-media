@@ -4,7 +4,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import FloatingContact from '../components/FloatingContact';
 import BrandIntro from '../components/BrandIntro';
 import { site } from '../config/site';
-import { ogImage, socialMetadata } from '../lib/seo';
+import { absoluteOgImageUrl, socialMetadata } from '../lib/seo';
 import './globals.css';
 
 const sans = Manrope({
@@ -52,11 +52,6 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: '/brand/theomedia-mark.svg' }],
   },
-  // Explicit absolute image for crawlers that ignore relative openGraph.images
-  other: {
-    'og:image:width': String(ogImage.width),
-    'og:image:height': String(ogImage.height),
-  },
 };
 
 export default function RootLayout({
@@ -65,10 +60,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const orgId = `${site.domain}/#organization`;
+  const ogImageUrl = absoluteOgImageUrl();
 
   return (
     <html lang={site.htmlLang} className={`${sans.variable} ${serif.variable} ${mono.variable} scroll-smooth`}>
       <head>
+        {/* Hard-coded absolute tags for WhatsApp / Facebook scrapers (belt-and-braces) */}
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:secure_url" content={ogImageUrl} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={`${site.brand} — ${site.region.label}`} />
+        <meta name="twitter:image" content={ogImageUrl} />
+        <link rel="image_src" href={ogImageUrl} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

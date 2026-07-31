@@ -1,11 +1,20 @@
 import type { Metadata } from 'next';
 import { site } from '../config/site';
 
-/** Absolute OG/Twitter share image (WhatsApp, LinkedIn, iMessage, etc.) */
-export const OG_IMAGE_PATH = '/brand/theomedia-og.jpg';
+/**
+ * Prefer a short root path for share crawlers (WhatsApp, iMessage, LinkedIn).
+ * Exact 1200×630 JPEG lives at public/og.jpg.
+ */
+export const OG_IMAGE_PATH = '/og.jpg';
+
+/** Absolute HTTPS URL — required by WhatsApp / Facebook share scrapers. */
+export function absoluteOgImageUrl(): string {
+  return `${site.domain}${OG_IMAGE_PATH}`;
+}
 
 export const ogImage = {
-  url: OG_IMAGE_PATH,
+  url: absoluteOgImageUrl(),
+  secureUrl: absoluteOgImageUrl(),
   width: 1200,
   height: 630,
   alt: `${site.brand} — websites, apps and business software for ${site.region.label}`,
@@ -25,6 +34,7 @@ export function socialMetadata(options: {
   publishedTime?: string;
 }): Pick<Metadata, 'openGraph' | 'twitter'> {
   const { title, description, url, type = 'website', publishedTime } = options;
+  const imageUrl = absoluteOgImageUrl();
 
   return {
     openGraph: {
@@ -34,14 +44,23 @@ export function socialMetadata(options: {
       title,
       description,
       url,
-      images: [ogImage],
+      images: [
+        {
+          url: imageUrl,
+          secureUrl: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: ogImage.alt,
+          type: 'image/jpeg',
+        },
+      ],
       ...(publishedTime ? { publishedTime } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [OG_IMAGE_PATH],
+      images: [imageUrl],
     },
   };
 }

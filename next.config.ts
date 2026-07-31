@@ -50,6 +50,23 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Long-cache public share images (WhatsApp scrapes these once and caches hard)
+        source: '/og.jpg',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' },
+          { key: 'Content-Type', value: 'image/jpeg' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+        ],
+      },
+      {
+        source: '/brand/theomedia-og.jpg',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' },
+          { key: 'Content-Type', value: 'image/jpeg' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+        ],
+      },
+      {
         source: '/:path*',
         headers: securityHeaders,
       },
