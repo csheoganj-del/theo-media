@@ -6,6 +6,7 @@ import Footer from '../../../components/Footer';
 import ContactForm from '../../../components/ContactForm';
 import { blogPosts } from '../../../data/blog';
 import { formatBlogDate } from '../../../lib/dates';
+import { socialMetadata } from '../../../lib/seo';
 
 export const dynamicParams = false;
 
@@ -22,6 +23,10 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
 
   const title = post.metaTitle.replace(/\s*\|\s*TheoMedia\s*$/i, '');
 
+  const ogTitle = post.metaTitle.includes('TheoMedia')
+    ? post.metaTitle
+    : `${post.title} | TheoMedia`;
+
   return {
     title,
     description: post.metaDescription,
@@ -29,21 +34,13 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     alternates: {
       canonical: `https://theomedia.co.uk/blog/${params.slug}`,
     },
-    openGraph: {
-      title: post.metaTitle.includes('TheoMedia') ? post.metaTitle : `${post.title} | TheoMedia`,
+    ...socialMetadata({
+      title: ogTitle,
       description: post.metaDescription,
+      url: `https://theomedia.co.uk/blog/${params.slug}`,
       type: 'article',
       publishedTime: post.date,
-      url: `https://theomedia.co.uk/blog/${params.slug}`,
-      images: [
-        {
-          url: '/brand/theomedia-og.jpg',
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
-    },
+    }),
   };
 }
 

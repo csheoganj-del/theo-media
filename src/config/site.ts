@@ -10,7 +10,8 @@ export const site = {
   market: 'GB' as const satisfies MarketId,
   brand: 'TheoMedia',
   legalName: 'TheoMedia',
-  domain: 'https://theomedia.co.uk',
+  /** Canonical origin (no www). Both apex and www resolve on Vercel. */
+  domain: 'https://www.theomedia.co.uk',
   email: 'hello@theomedia.co.uk',
 
   phone: {

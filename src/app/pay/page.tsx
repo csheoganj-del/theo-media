@@ -6,16 +6,17 @@ import PayPlans from '../../components/PayPlans';
 import { mailTo, site } from '../../config/site';
 import { getPaymentPlan } from '../../data/pricing';
 import { isOnlineCheckoutEnabled, paymentStatusMessage } from '../../lib/payments';
+import { socialMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = {
   title: 'Pay',
   description: `GBP pricing for ${site.brand} products and project deposits. Stripe card checkout coming soon; invoice and bank transfer available now.`,
   alternates: { canonical: `${site.domain}/pay` },
-  openGraph: {
+  ...socialMetadata({
     title: `Pay | ${site.brand}`,
     description: `${site.currency.code} plans for ${site.brand}. Stripe coming soon.`,
     url: `${site.domain}/pay`,
-  },
+  }),
 };
 
 export default async function PayPage(props: {

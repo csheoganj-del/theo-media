@@ -3,16 +3,24 @@ import Link from 'next/link';
 import { Calendar, ArrowRight } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { site } from '../../config/site';
 import { listedBlogPosts } from '../../data/blog';
 import { formatBlogDate } from '../../lib/dates';
+import { socialMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = {
   title: 'Blog',
   description:
     'Notes from TheoMedia on websites, cost, SEO, and building software without the jargon.',
   alternates: {
-    canonical: 'https://theomedia.co.uk/blog',
+    canonical: `${site.domain}/blog`,
   },
+  ...socialMetadata({
+    title: `Blog | ${site.brand}`,
+    description:
+      'Notes from TheoMedia on websites, cost, SEO, and building software without the jargon.',
+    url: `${site.domain}/blog`,
+  }),
 };
 
 export default function BlogListingPage() {

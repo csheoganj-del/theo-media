@@ -6,6 +6,7 @@ import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import { mailTo, site } from '../../../config/site';
 import { caseStudiesData } from '../../../data/case-studies';
+import { socialMetadata } from '../../../lib/seo';
 
 export const dynamicParams = false;
 
@@ -25,12 +26,11 @@ export async function generateMetadata(props: { params: Promise<{ id: string }> 
     alternates: {
       canonical: `https://theomedia.co.uk/case-studies/${params.id}`,
     },
-    openGraph: {
+    ...socialMetadata({
       title: study.metaTitle,
       description: study.metaDescription,
       url: `https://theomedia.co.uk/case-studies/${params.id}`,
-      images: [{ url: study.image, alt: study.title }],
-    },
+    }),
   };
 }
 

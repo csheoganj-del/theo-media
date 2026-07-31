@@ -4,6 +4,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import FloatingContact from '../components/FloatingContact';
 import BrandIntro from '../components/BrandIntro';
 import { site } from '../config/site';
+import { ogImage, socialMetadata } from '../lib/seo';
 import './globals.css';
 
 const sans = Manrope({
@@ -39,30 +40,22 @@ export const metadata: Metadata = {
   authors: [{ name: site.brand, url: site.domain }],
   creator: site.brand,
   publisher: site.brand,
-  openGraph: {
-    type: 'website',
-    locale: site.openGraphLocale,
-    siteName: site.brand,
+  ...socialMetadata({
     title: site.seo.defaultTitle,
     description: site.seo.description,
-    images: [
-      {
-        url: '/brand/theomedia-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: site.brand,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: site.seo.defaultTitle,
-    description: site.seo.description,
-    images: ['/brand/theomedia-og.jpg'],
-  },
+    url: site.domain,
+  }),
   icons: {
-    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/brand/theomedia-mark.svg', type: 'image/svg+xml' },
+    ],
     apple: [{ url: '/brand/theomedia-mark.svg' }],
+  },
+  // Explicit absolute image for crawlers that ignore relative openGraph.images
+  other: {
+    'og:image:width': String(ogImage.width),
+    'og:image:height': String(ogImage.height),
   },
 };
 

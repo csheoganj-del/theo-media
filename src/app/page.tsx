@@ -9,6 +9,7 @@ import ProductPreview from '../components/ProductPreview';
 import { productsData, productStatusClass, statusLabel } from '../data/products';
 import { caseStudiesData } from '../data/case-studies';
 import { mailTo, site } from '../config/site';
+import { socialMetadata } from '../lib/seo';
 
 export const metadata: Metadata = {
   title: {
@@ -16,11 +17,11 @@ export const metadata: Metadata = {
   },
   description: site.seo.description,
   alternates: { canonical: `${site.domain}/` },
-  openGraph: {
-    url: `${site.domain}/`,
+  ...socialMetadata({
     title: site.seo.defaultTitle,
     description: site.seo.description,
-  },
+    url: `${site.domain}/`,
+  }),
 };
 
 /** Shipped work — cards open our case study pages */

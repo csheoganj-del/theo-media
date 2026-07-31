@@ -8,7 +8,7 @@ describe('TheoMedia market config', () => {
     expect(site.tax.label).toBe('VAT');
     expect(site.email).toBe('hello@theomedia.co.uk');
     expect(site.phone.whatsapp).toBe('353852258004');
-    expect(site.domain).toContain('theomedia.co.uk');
+    expect(site.domain).toMatch(/theomedia\.co\.uk/);
   });
 
   it('points sister traffic to CodeArc India', () => {

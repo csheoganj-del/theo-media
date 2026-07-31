@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { mailTo, site, whatsappUrl } from '../../config/site';
 import { productsData, productStatusClass, statusLabel } from '../../data/products';
+import { socialMetadata } from '../../lib/seo';
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${site.domain}/products`,
   },
-  openGraph: {
+  ...socialMetadata({
     title: `Products | ${site.brand}`,
     description: `RestroSuite, StaySuite and MediSuite — vertical products from ${site.brand}.`,
     url: `${site.domain}/products`,
-  },
+  }),
 };
 
 export default function ProductsPage() {

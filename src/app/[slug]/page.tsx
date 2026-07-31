@@ -15,6 +15,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ContactForm from '../../components/ContactForm';
 import { servicesData, type ServiceIconName } from '../../data/services';
+import { socialMetadata } from '../../lib/seo';
 
 export const dynamicParams = false;
 
@@ -44,6 +45,10 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
 
   const title = service.metaTitle.replace(/\s*\|\s*TheoMedia\s*$/i, '');
 
+  const ogTitle = service.metaTitle.includes('TheoMedia')
+    ? service.metaTitle
+    : `${service.title} | TheoMedia`;
+
   return {
     title,
     description: service.metaDescription,
@@ -51,19 +56,11 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
     alternates: {
       canonical: `https://theomedia.co.uk/${params.slug}`,
     },
-    openGraph: {
-      title: service.metaTitle.includes('TheoMedia') ? service.metaTitle : `${service.title} | TheoMedia`,
+    ...socialMetadata({
+      title: ogTitle,
       description: service.metaDescription,
       url: `https://theomedia.co.uk/${params.slug}`,
-      images: [
-        {
-          url: '/brand/theomedia-og.jpg',
-          width: 1200,
-          height: 630,
-          alt: `${service.title} | TheoMedia`,
-        },
-      ],
-    },
+    }),
   };
 }
 

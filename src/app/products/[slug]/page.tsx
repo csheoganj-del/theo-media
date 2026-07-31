@@ -8,6 +8,7 @@ import Footer from '../../../components/Footer';
 import { mailTo, site, whatsappUrl } from '../../../config/site';
 import { getProduct, productsData, productStatusClass, statusLabel } from '../../../data/products';
 import { plansForProduct } from '../../../data/pricing';
+import { socialMetadata } from '../../../lib/seo';
 
 export const dynamicParams = false;
 
@@ -27,12 +28,11 @@ export async function generateMetadata(props: {
     alternates: {
       canonical: `${site.domain}/products/${product.slug}`,
     },
-    openGraph: {
-      title: `${product.metaTitle} | TheoMedia`,
+    ...socialMetadata({
+      title: `${product.metaTitle} | ${site.brand}`,
       description: product.metaDescription,
-      url: `https://theomedia.co.uk/products/${product.slug}`,
-      images: [{ url: product.image, alt: product.name }],
-    },
+      url: `${site.domain}/products/${product.slug}`,
+    }),
   };
 }
 
