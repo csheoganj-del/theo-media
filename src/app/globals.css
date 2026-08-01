@@ -588,7 +588,7 @@ textarea {
   background: #0a0a0a;
 }
 
-/* Sister logo cards: iframe fills the media area (no desktop scale-down) */
+/* Sister logo / entry-screen cards: iframe fills the media area */
 .v2-work-media.is-logo .v2-work-iframe-wrap iframe {
   inset: 0;
   width: 100% !important;
@@ -596,7 +596,7 @@ textarea {
   transform: none !important;
 }
 
-/* Deora poster � dark entry screen, never the building photo */
+/* Deora poster — dark entry screen, never the building photo */
 .v2-work-deora-poster {
   position: absolute;
   inset: 0;
@@ -609,8 +609,6 @@ textarea {
   opacity: 0;
   pointer-events: none;
 }
-
-
 
 .v2-live-badge {
   position: absolute;
@@ -662,8 +660,8 @@ textarea {
 }
 
 /* Sister brand logo loops — dark canvas already matches the card */
-.v2-work-card.is-codearc .v2-work-live-poster,
-.v2-work-card.is-theo-media .v2-work-live-poster {
+.v2-work-card.is-theo-media .v2-work-live-poster,
+.v2-work-card.is-codearc .v2-work-live-poster {
   filter: brightness(1.02) contrast(1.02);
 }
 
@@ -1496,8 +1494,8 @@ a.v2-build-row:hover h3 {
   }
 }
 
-/* ——— TheoMedia logo lockup ——— */
-.theomedia-logo-link {
+/* ——— CodeArc logo lockup ——— */
+.codearc-logo-link {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -1505,14 +1503,14 @@ a.v2-build-row:hover h3 {
   flex-shrink: 0;
 }
 
-.theomedia-logo {
+.codearc-logo {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   line-height: 1;
 }
 
-.theomedia-mark {
+.codearc-mark {
   width: 34px !important;
   height: 34px !important;
   flex-shrink: 0;
@@ -1523,15 +1521,15 @@ a.v2-build-row:hover h3 {
     0 2px 6px rgba(0, 0, 0, 0.28);
 }
 
-.theomedia-logo.is-light {
+.codearc-logo.is-light {
   color: #f3f0e8;
 }
 
-.theomedia-logo.is-dark {
+.codearc-logo.is-dark {
   color: #0b0c0b;
 }
 
-.theomedia-wordmark {
+.codearc-wordmark {
   display: inline-flex;
   align-items: baseline;
   font-family: var(--font-sans), Manrope, system-ui, sans-serif;
@@ -1541,12 +1539,12 @@ a.v2-build-row:hover h3 {
   line-height: 1;
 }
 
-.theomedia-word-code {
+.codearc-word-code {
   color: inherit;
 }
 
-.theomedia-logo.is-light .theomedia-word-arc,
-.theomedia-logo.is-dark .theomedia-word-arc {
+.codearc-logo.is-light .codearc-word-arc,
+.codearc-logo.is-dark .codearc-word-arc {
   color: #e85a2f;
 }
 
@@ -1560,21 +1558,21 @@ a.v2-build-row:hover h3 {
   height: auto;
 }
 
-.v2-footer .theomedia-wordmark {
+.v2-footer .codearc-wordmark {
   font-size: 1.22rem;
 }
 
-.v2-footer .theomedia-mark {
+.v2-footer .codearc-mark {
   width: 32px;
   height: 32px;
 }
 
 @media (max-width: 720px) {
-  .theomedia-wordmark {
+  .codearc-wordmark {
     font-size: 1.16rem;
   }
 
-  .theomedia-mark {
+  .codearc-mark {
     width: 30px;
     height: 30px;
   }
