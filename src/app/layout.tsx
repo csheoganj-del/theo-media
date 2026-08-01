@@ -189,6 +189,12 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#0b0c0b] text-[#f3f0e8] font-sans antialiased overflow-x-hidden">
+        {/* Nuclear failsafe: if React never hydrates on mobile, still clear the logo splash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var k='theomedia-brand-intro-seen';if(sessionStorage.getItem(k)==='1'){var s=document.createElement('style');s.textContent='[data-brand-intro]{display:none!important}';document.head.appendChild(s);return;}setTimeout(function(){var el=document.querySelector('[data-brand-intro]');if(!el)return;el.style.opacity='0';el.style.visibility='hidden';el.style.pointerEvents='none';try{sessionStorage.setItem(k,'1');}catch(e){}setTimeout(function(){if(el&&el.parentNode)el.parentNode.removeChild(el);},500);},3800);}catch(e){}})();`,
+          }}
+        />
         <BrandIntro />
         <a href="#main-content" className="v2-skip-link">
           Skip to content
