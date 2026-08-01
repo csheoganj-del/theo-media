@@ -596,6 +596,21 @@ textarea {
   transform: none !important;
 }
 
+/* Deora poster — dark entry screen, never the building photo */
+.v2-work-deora-poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, rgba(242, 185, 75, 0.08), transparent 55%),
+    #0a0806;
+}
+.v2-work-deora-poster.is-covered {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 
 .v2-live-badge {
   position: absolute;
