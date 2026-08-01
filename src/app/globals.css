@@ -1502,8 +1502,10 @@ a.v2-build-row:hover h3 {
   }
 }
 
-/* ——— CodeArc logo lockup ——— */
-.codearc-logo-link {
+/* ——— Brand logo lockup (TheoMedia + CodeArc twin layout) ——— */
+/* Mark on the left, wordmark on the right — same pattern as CodeArc */
+.codearc-logo-link,
+.theomedia-logo-link {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -1511,35 +1513,44 @@ a.v2-build-row:hover h3 {
   flex-shrink: 0;
 }
 
-.codearc-logo {
+.codearc-logo,
+.theomedia-logo {
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
   gap: 12px;
   line-height: 1;
 }
 
-.codearc-mark {
+.codearc-mark,
+.theomedia-mark {
   width: 34px !important;
   height: 34px !important;
   flex-shrink: 0;
   border-radius: 9px;
   object-fit: cover;
+  display: block;
   box-shadow:
     0 0 0 1px rgba(243, 240, 232, 0.06),
     0 2px 6px rgba(0, 0, 0, 0.28);
 }
 
-.codearc-logo.is-light {
+.codearc-logo.is-light,
+.theomedia-logo.is-light {
   color: #f3f0e8;
 }
 
-.codearc-logo.is-dark {
+.codearc-logo.is-dark,
+.theomedia-logo.is-dark {
   color: #0b0c0b;
 }
 
-.codearc-wordmark {
+.codearc-wordmark,
+.theomedia-wordmark {
   display: inline-flex;
+  flex-direction: row;
   align-items: baseline;
+  white-space: nowrap;
   font-family: var(--font-sans), Manrope, system-ui, sans-serif;
   font-size: 1.28rem;
   font-weight: 750;
@@ -1547,12 +1558,16 @@ a.v2-build-row:hover h3 {
   line-height: 1;
 }
 
-.codearc-word-code {
+.codearc-word-code,
+.theomedia-word-code {
   color: inherit;
 }
 
+/* Accent half: Arc / Media */
 .codearc-logo.is-light .codearc-word-arc,
-.codearc-logo.is-dark .codearc-word-arc {
+.codearc-logo.is-dark .codearc-word-arc,
+.theomedia-logo.is-light .theomedia-word-arc,
+.theomedia-logo.is-dark .theomedia-word-arc {
   color: #e85a2f;
 }
 
@@ -1566,22 +1581,31 @@ a.v2-build-row:hover h3 {
   height: auto;
 }
 
-.v2-footer .codearc-wordmark {
+.v2-footer .codearc-wordmark,
+.v2-footer .theomedia-wordmark {
   font-size: 1.22rem;
 }
 
-.v2-footer .codearc-mark {
-  width: 32px;
-  height: 32px;
+.v2-footer .codearc-mark,
+.v2-footer .theomedia-mark {
+  width: 32px !important;
+  height: 32px !important;
 }
 
 @media (max-width: 720px) {
-  .codearc-wordmark {
-    font-size: 1.16rem;
+  .codearc-wordmark,
+  .theomedia-wordmark {
+    font-size: 1.12rem;
   }
 
-  .codearc-mark {
-    width: 30px;
-    height: 30px;
+  .codearc-mark,
+  .theomedia-mark {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .codearc-logo,
+  .theomedia-logo {
+    gap: 10px;
   }
 }

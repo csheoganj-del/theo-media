@@ -18,14 +18,15 @@ export default function Logo({
 }: LogoProps) {
   const isLight = variant === 'light';
 
+  // Same lockup as CodeArc: mark left, wordmark right ("Theo" + accent "Media")
   const inner = (
     <span className={`theomedia-logo ${isLight ? 'is-light' : 'is-dark'} ${className}`.trim()}>
       <Image
         className="theomedia-mark"
         src="/brand/theomedia-mark.svg"
         alt=""
-        width={72}
-        height={72}
+        width={34}
+        height={34}
         priority
         aria-hidden="true"
       />
