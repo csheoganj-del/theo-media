@@ -27,10 +27,17 @@ const securityHeaders = [
       "font-src 'self' data:",
       "img-src 'self' data: https:",
       "connect-src 'self' https://api.stripe.com",
-      "frame-src https://js.stripe.com https://hooks.stripe.com",
+      // 'self' = live Work previews (/work-proxy/*). Stripe = checkout.
+      "frame-src 'self' https://js.stripe.com https://hooks.stripe.com",
       'upgrade-insecure-requests',
     ].join('; '),
   },
+];
+
+const workProxyHeaders = [
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+  { key: 'Content-Security-Policy', value: "frame-ancestors 'self'" },
 ];
 
 const nextConfig: NextConfig = {
@@ -49,6 +56,10 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: '/work-proxy/:path*',
+        headers: workProxyHeaders,
+      },
       {
         // Long-cache public share images (WhatsApp scrapes these once and caches hard)
         source: '/og.jpg',
