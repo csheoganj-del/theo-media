@@ -30,6 +30,7 @@ function liveModeForWork(id: string): WorkLiveMode {
   if (
     id === 'wild-jawai-safari' ||
     id === 'bros-bar' ||
+    id === 'deora-plaza' ||
     id === 'theo-media' ||
     id === 'codearc'
   ) {
@@ -41,15 +42,25 @@ function liveModeForWork(id: string): WorkLiveMode {
 function livePreviewSrc(id: string): string | undefined {
   if (id === 'wild-jawai-safari') return '/work-proxy/jawai';
   if (id === 'bros-bar') return '/work-proxy/brosbar';
+  if (id === 'deora-plaza') return '/work-proxy/deora';
   if (id === 'theo-media') return '/work-proxy/theomedia';
   if (id === 'codearc') return '/work-proxy/codearc';
   return undefined;
 }
 
+/** Preferred Work grid order (4 live cards) */
+const WORK_ORDER = [
+  'wild-jawai-safari',
+  'bros-bar',
+  'deora-plaza',
+  'codearc',
+  'theo-media',
+] as const;
+
 /** Shipped work — cards open our case study pages */
-const work = caseStudiesData
-  .filter((c) => c.isExternal && c.id !== 'restrosuite' && c.id !== 'bloom-cafe')
-  .slice(0, 3)
+const work = WORK_ORDER.map((id) => caseStudiesData.find((c) => c.id === id))
+  .filter((c): c is (typeof caseStudiesData)[number] => Boolean(c))
+  .slice(0, 4)
   .map((c) => ({
     id: c.id,
     title: c.title,
@@ -281,8 +292,8 @@ export default function Home() {
               <h2>Selected work.</h2>
             </div>
             <p className="v2-section-aside">
-              Three live builds. Wild Jawai scrolls the real site, Bro&apos;s Bar
-              plays its entrance, and CodeArc loops the brand logo animation.
+              Four live builds — Wild Jawai, Bro&apos;s Bar, Deora Plaza and
+              CodeArc. Previews move on their own; open a project for the full story.
             </p>
           </div>
 
