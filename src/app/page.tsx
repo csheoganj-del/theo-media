@@ -27,13 +27,22 @@ export const metadata: Metadata = {
 };
 
 function liveModeForWork(id: string): WorkLiveMode {
-  if (id === 'wild-jawai-safari' || id === 'bros-bar') return 'iframe';
+  if (
+    id === 'wild-jawai-safari' ||
+    id === 'bros-bar' ||
+    id === 'theo-media' ||
+    id === 'codearc'
+  ) {
+    return 'iframe';
+  }
   return 'static';
 }
 
 function livePreviewSrc(id: string): string | undefined {
   if (id === 'wild-jawai-safari') return '/work-proxy/jawai';
   if (id === 'bros-bar') return '/work-proxy/brosbar';
+  if (id === 'theo-media') return '/work-proxy/theomedia';
+  if (id === 'codearc') return '/work-proxy/codearc';
   return undefined;
 }
 
@@ -272,9 +281,8 @@ export default function Home() {
               <h2>Selected work.</h2>
             </div>
             <p className="v2-section-aside">
-              Three live builds across tourism, hospitality and business software.
-              Wild Jawai slowly scrolls the real site; Bro&apos;s Bar shows its live
-              entrance animation. Open a project for the full story.
+              Three live builds. Wild Jawai scrolls the real site, Bro&apos;s Bar
+              plays its entrance, and CodeArc loops the brand logo animation.
             </p>
           </div>
 
