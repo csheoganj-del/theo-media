@@ -526,10 +526,110 @@ button { background: none; border: none; font: inherit; cursor: pointer; }
     .p-f-hidden.expanded { display: flex; opacity: 1; animation: fadeIn 0.3s ease forwards; }
 }
 
-@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
-
-.pricing-footer { margin-top: 6rem; display: flex; flex-direction: column; gap: 4rem; border-top: 1px solid var(--muted-beige); padding-top: 4rem; }
+.pricing-footer { margin-top: 5rem; display: flex; flex-direction: column; gap: 4rem; border-top: 1px solid var(--muted-beige); padding-top: 4rem; }
 @media (min-width: 768px) { .pricing-footer { flex-direction: row; justify-content: space-between; } }
+
+/* ====== SPECIALIST PROJECTS SECTION ====== */
+.specialist-projects-section {
+    margin-top: 5rem;
+    padding-top: 4.5rem;
+    border-top: 1px solid var(--muted-beige);
+    width: 100%;
+}
+
+.sp-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+.sp-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--charcoal);
+    margin-bottom: 0.8rem;
+    line-height: 1;
+}
+.sp-subtitle {
+    font-size: 1.05rem;
+    color: var(--olive);
+    max-width: 620px;
+    line-height: 1.5;
+}
+
+.sp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    width: 100%;
+}
+@media (min-width: 960px) {
+    .sp-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+.sp-card {
+    background: white;
+    border: 1px solid var(--muted-beige);
+    border-radius: 8px;
+    padding: 2.2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.sp-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--charcoal);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.sp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.25rem;
+    gap: 1rem;
+}
+.sp-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--olive);
+    letter-spacing: 0.08em;
+    background: var(--warm-paper);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+}
+.sp-price {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--charcoal);
+    letter-spacing: -0.03em;
+}
+.sp-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--charcoal);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+}
+.sp-desc {
+    font-size: 0.92rem;
+    color: var(--olive);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.sp-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid var(--muted-beige);
+    padding-top: 1.5rem;
+    margin-top: auto;
+}
 .pf-shared h3, .pf-unsure h3 { font-size: 1rem; font-weight: 800; color: var(--charcoal); letter-spacing: 0.05em; margin-bottom: 2rem; }
 .pf-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 @media (min-width: 1024px) { .pf-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem 1.5rem; } }
