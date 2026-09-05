@@ -223,6 +223,30 @@ button { background: none; border: none; font: inherit; cursor: pointer; }
     margin: 0;
     white-space: nowrap;
     text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.char-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 0 0.01em 0.05em;
+    cursor: default;
+}
+
+.char {
+    display: inline-block;
+    transform: translateY(115%);
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.char-mask:hover .char {
+    transform: translateY(-8px) scale(1.04);
+    color: var(--olive);
 }
 
 .hero-content {

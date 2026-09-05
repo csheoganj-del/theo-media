@@ -84,24 +84,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. HERO ANIMATION
+    // 3. HERO KINETIC STAGGER & PARALLAX ANIMATION
     if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
-        const heroTl = gsap.timeline({ delay: 0.2 });
+        if (typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+        }
+
+        const heroTl = gsap.timeline({ delay: 0.15 });
         
-        heroTl.fromTo(".huge-brand", 
-            { y: -40, opacity: 0 }, 
-            { y: 0, opacity: 1, duration: 1, ease: "power4.out" }
-        )
+        // Kinetic Letter Stagger Reveal
+        heroTl.to(".huge-brand .char", {
+            y: "0%",
+            opacity: 1,
+            duration: 1.1,
+            stagger: 0.04,
+            ease: "power4.out"
+        })
         .fromTo(".huge-brand", 
             { textShadow: "0 0px 0px rgba(0,0,0,0)" },
-            { textShadow: "0 15px 40px rgba(0, 0, 0, 0.05)", duration: 0.6, ease: "power2.out" }, 
-            "-=0.5"
+            { textShadow: "0 15px 40px rgba(0, 0, 0, 0.05)", duration: 0.7, ease: "power2.out" }, 
+            "-=0.7"
         )
         .fromTo(".hero-content", 
-            { opacity: 0, y: 20 }, 
-            { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, 
-            "-=0.3"
+            { opacity: 0, y: 24 }, 
+            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" }, 
+            "-=0.6"
         );
+
+        // Scroll Parallax Depth Effect
+        if (typeof ScrollTrigger !== 'undefined') {
+            gsap.to(".hero-brand-layer", {
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1.2,
+                },
+                y: 90,
+                scale: 0.95,
+                opacity: 0.35,
+                ease: "none"
+            });
+
+            gsap.to(".hero-content", {
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "80% top",
+                    scrub: 1,
+                },
+                y: -25,
+                opacity: 0.4,
+                ease: "none"
+            });
+        }
+    } else {
+        // Fallback for reduced motion / non-JS
+        document.querySelectorAll(".huge-brand .char").forEach(c => {
+            c.style.transform = "translateY(0%)";
+            c.style.opacity = "1";
+        });
+        const hc = document.querySelector(".hero-content");
+        if (hc) {
+            hc.style.opacity = "1";
+            hc.style.transform = "none";
+        }
     }
 
     // 4. PRICING EXPAND / COLLAPSE DETAILS
