@@ -97,13 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
             { textShadow: "0 15px 40px rgba(0, 0, 0, 0.05)", duration: 0.6, ease: "power2.out" }, 
             "-=0.5"
         )
-        .to(".gl-3", { opacity: 1, y: "-3vh", duration: 0.7, ease: "power2.out" }, "-=0.3")
-        .to(".gl-2", { opacity: 1, y: "-1vh", duration: 0.7, ease: "power2.out" }, "-=0.5")
-        .to(".gl-1", { opacity: 1, y: "1vh", duration: 0.7, ease: "power2.out" }, "-=0.5")
         .fromTo(".hero-content", 
             { opacity: 0, y: 20 }, 
             { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, 
-            "+=0.1"
+            "-=0.3"
         );
     }
 
