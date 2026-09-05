@@ -24,9 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 gsap.ticker.lagSmoothing(0, 0);
             }
         } catch (err) {
-            console.warn('Lenis init fallback:', err);
+            console.warn('Lenis fallback:', err);
         }
     }
+
+    // Helper for smooth scroll
+    const scrollToTarget = (targetId) => {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+            const topPos = targetEl.getBoundingClientRect().top + window.scrollY - 80;
+            if (lenis) {
+                lenis.scrollTo(topPos);
+            } else {
+                window.scrollTo({ top: topPos, behavior: 'smooth' });
+            }
+        }
+    };
 
     // 2. MOBILE NAVIGATION DRAWER
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -49,8 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         drawerLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                toggleDrawer(false);
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    toggleDrawer(false);
+                    setTimeout(() => {
+                        scrollToTarget(href);
+                    }, 300);
+                } else {
+                    toggleDrawer(false);
+                }
             });
         });
 
@@ -134,7 +156,82 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // 6. TACTILE CONVERSION BUTTONS
+    // 6. SELECT PACKAGE SHORTCUT
+    document.querySelectorAll(".select-pkg-btn").forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const pkgName = this.getAttribute("data-package");
+            const pkgSelect = document.getElementById("cPackage");
+            if (pkgSelect && pkgName) {
+                for (let option of pkgSelect.options) {
+                    if (option.value.includes(pkgName.split(" ")[0]) || option.text.includes(pkgName.split(" ")[0])) {
+                        pkgSelect.value = option.value;
+                        break;
+                    }
+                }
+            }
+            scrollToTarget("#contact");
+            const nameInput = document.getElementById("cName");
+            if (nameInput) setTimeout(() => nameInput.focus(), 600);
+        });
+    });
+
+    // 7. FAQ ACCORDION INTERACTION
+    document.querySelectorAll(".faq-question").forEach(questionBtn => {
+        questionBtn.addEventListener("click", function() {
+            const item = this.parentElement;
+            const isOpen = item.classList.contains("active");
+
+            // Close other accordion items
+            document.querySelectorAll(".faq-item").forEach(other => {
+                if (other !== item) {
+                    other.classList.remove("active");
+                    const btn = other.querySelector(".faq-question");
+                    if (btn) btn.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            // Toggle clicked item
+            item.classList.toggle("active", !isOpen);
+            this.setAttribute("aria-expanded", String(!isOpen));
+        });
+    });
+
+    // 8. INQUIRY FORM SUBMISSION HANDLER
+    const inquiryForm = document.getElementById('inquiryForm');
+    const formFeedback = document.getElementById('formFeedback');
+
+    if (inquiryForm) {
+        inquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('cName').value.trim();
+            const email = document.getElementById('cEmail').value.trim();
+            const pkg = document.getElementById('cPackage').value;
+            const message = document.getElementById('cMessage').value.trim();
+
+            const subject = encodeURIComponent(`New Project Enquiry: ${pkg} — ${name}`);
+            const body = encodeURIComponent(
+                `Hi TheoMedia,\n\nI would like to start a project with TheoMedia.\n\n` +
+                `Name: ${name}\n` +
+                `Email: ${email}\n` +
+                `Selected Package: ${pkg}\n\n` +
+                `Project Details:\n${message}\n\n` +
+                `Best regards,\n${name}`
+            );
+
+            // Open prefilled email client
+            const mailtoUrl = `mailto:hello@theomedia.co.uk?subject=${subject}&body=${body}`;
+            window.location.href = mailtoUrl;
+
+            // Show confirmation in form
+            if (formFeedback) {
+                formFeedback.innerHTML = `✓ Opening your email client to send your enquiry to <strong>hello@theomedia.co.uk</strong>. If your email client did not open, you can also reach us directly via <a href="https://wa.me/353852258004" target="_blank" style="text-decoration:underline;">WhatsApp</a>.`;
+                formFeedback.className = 'form-feedback success';
+            }
+        });
+    }
+
+    // 9. TACTILE BUTTONS FEEDBACK
     document.querySelectorAll(".tactile-btn").forEach(btn => {
         btn.addEventListener("click", function(e) {
             if (navigator.vibrate) {
