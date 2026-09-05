@@ -40,6 +40,24 @@ a { text-decoration: none; color: inherit; }
 button { background: none; border: none; font: inherit; cursor: pointer; }
 
 /* ACCESSIBILITY */
+.skip-to-content {
+    position: absolute;
+    top: -120px;
+    left: 1.5rem;
+    background: var(--charcoal);
+    color: var(--ivory);
+    padding: 0.8rem 1.6rem;
+    z-index: 99999;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: top 0.25s ease;
+}
+.skip-to-content:focus {
+    top: 1.5rem;
+}
+
 :focus-visible {
     outline: 2px solid var(--forest-green);
     outline-offset: 3px;

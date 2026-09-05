@@ -1,7 +1,6 @@
 node_modules
 .next
 .vercel
+.vercel-theo-backup
 .env*
 *.log
-
-.vercel
