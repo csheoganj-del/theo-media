@@ -3,30 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // 1. INIT LENIS SMOOTH SCROLL (if supported and preferred)
-    let lenis = null;
-    if (typeof Lenis !== 'undefined' && !prefersReducedMotion) {
-        try {
-            lenis = new Lenis({
-                duration: 1.2,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                orientation: 'vertical',
-                gestureOrientation: 'vertical',
-                smoothWheel: true,
-                smoothTouch: false,
-                touchMultiplier: 1.5,
-                infinite: false,
-            });
-
-            if (typeof ScrollTrigger !== 'undefined') {
-                lenis.on('scroll', ScrollTrigger.update);
-                gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-                gsap.ticker.lagSmoothing(0, 0);
-            }
-        } catch (err) {
-            console.warn('Lenis fallback:', err);
-        }
-    }
+    // Native scrolling works with browser anchors, keyboard and reduced motion.
+    const lenis = null;
 
     // Helper for smooth scroll
     const scrollToTarget = (targetId) => {
@@ -36,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lenis) {
                 lenis.scrollTo(topPos);
             } else {
-                window.scrollTo({ top: topPos, behavior: 'smooth' });
+                window.scrollTo({ top: topPos, behavior: prefersReducedMotion ? 'instant' : 'smooth' });
             }
         }
     };
@@ -54,6 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
             mobileDrawer.setAttribute('aria-hidden', String(!isOpen));
             document.body.style.overflow = isOpen ? 'hidden' : '';
+            mobileDrawer.inert = !isOpen;
+            const mainEl = document.querySelector('main');
+            if (mainEl) mainEl.inert = isOpen;
+            const footerEl = document.querySelector('footer');
+            if (footerEl) footerEl.inert = isOpen;
+            const fcEl = document.querySelector('.fc-wrapper');
+            if (fcEl) fcEl.inert = isOpen;
+            if (lenis) isOpen ? lenis.stop() : lenis.start();
+            if (isOpen) mobileDrawer.querySelector('a').focus();
+            else mobileMenuBtn.focus();
         };
 
         mobileMenuBtn.addEventListener('click', (e) => {
@@ -76,6 +64,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        window.matchMedia('(min-width: 769px)').addEventListener('change', e => {
+            if (e.matches) toggleDrawer(false);
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Tab' || !mobileDrawer.classList.contains('open')) return;
+            const links = [...mobileDrawer.querySelectorAll('a[href]')];
+            const first = links[0], last = links[links.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault(); mobileMenuBtn.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault(); mobileMenuBtn.focus();
+            } else if (document.activeElement === mobileMenuBtn) {
+                e.preventDefault(); (e.shiftKey ? last : first).focus();
+            }
+        });
         // Close on ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
@@ -84,71 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. HERO KINETIC STAGGER & PARALLAX ANIMATION
+    // Keep essential content visible; decorative motion never controls the message.
     if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
-        if (typeof ScrollTrigger !== 'undefined') {
-            gsap.registerPlugin(ScrollTrigger);
-        }
-
-        const heroTl = gsap.timeline({ delay: 0.15 });
-        
-        // Kinetic Letter Stagger Reveal
-        heroTl.to(".huge-brand .char", {
-            y: "0%",
-            opacity: 1,
-            duration: 1.1,
-            stagger: 0.04,
-            ease: "power4.out"
-        })
-        .fromTo(".huge-brand", 
-            { textShadow: "0 0px 0px rgba(0,0,0,0)" },
-            { textShadow: "0 15px 40px rgba(0, 0, 0, 0.05)", duration: 0.7, ease: "power2.out" }, 
-            "-=0.7"
-        )
-        .fromTo(".hero-content", 
-            { opacity: 0, y: 24 }, 
-            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" }, 
-            "-=0.6"
-        );
-
-        // Scroll Parallax Depth Effect
-        if (typeof ScrollTrigger !== 'undefined') {
-            gsap.to(".hero-brand-layer", {
-                scrollTrigger: {
-                    trigger: "#hero",
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: 1.2,
-                },
-                y: 90,
-                scale: 0.95,
-                opacity: 0.35,
-                ease: "none"
-            });
-
-            gsap.to(".hero-content", {
-                scrollTrigger: {
-                    trigger: "#hero",
-                    start: "top top",
-                    end: "80% top",
-                    scrub: 1,
-                },
-                y: -25,
-                opacity: 0.4,
-                ease: "none"
-            });
-        }
-    } else {
-        // Fallback for reduced motion / non-JS
-        document.querySelectorAll(".huge-brand .char").forEach(c => {
-            c.style.transform = "translateY(0%)";
-            c.style.opacity = "1";
+        gsap.fromTo('.huge-brand .char', { y: '15%' }, {
+            y: '0%', duration: 0.7, stagger: 0.035, ease: 'power3.out',
+            clearProps: 'transform'
         });
-        const hc = document.querySelector(".hero-content");
-        if (hc) {
-            hc.style.opacity = "1";
-            hc.style.transform = "none";
-        }
     }
 
     // 4. PRICING EXPAND / COLLAPSE DETAILS
@@ -156,8 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener("click", function() {
             const hiddenList = this.nextElementSibling;
             if (hiddenList && hiddenList.classList.contains("p-f-hidden")) {
-                hiddenList.classList.add("expanded");
-                this.style.display = "none";
+                const expanded = hiddenList.classList.toggle("expanded");
+                this.setAttribute('aria-expanded', String(expanded));
+                this.textContent = expanded ? 'SHOW FEWER DETAILS −' : 'VIEW EVERYTHING INCLUDED +';
             }
         });
     });
@@ -174,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (lenis) {
                     lenis.scrollTo(topPos);
                 } else {
-                    window.scrollTo({ top: topPos, behavior: 'smooth' });
+                    window.scrollTo({ top: topPos, behavior: prefersReducedMotion ? 'instant' : 'smooth' });
                 }
                 pmnLinks.forEach(l => l.classList.remove("active"));
                 this.classList.add("active");
@@ -216,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             scrollToTarget("#contact");
             const nameInput = document.getElementById("cName");
-            if (nameInput) setTimeout(() => nameInput.focus(), 600);
+            if (nameInput) setTimeout(() => nameInput.focus({ preventScroll: true }), 600);
         });
     });
 
@@ -281,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (navigator.vibrate) {
                 try { navigator.vibrate(12); } catch (err) {}
             }
-            if (typeof gsap !== 'undefined') {
+            if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
                 gsap.to(this, { scale: 0.97, duration: 0.1, yoyo: true, repeat: 1, ease: 'power2.inOut' });
             }
         });

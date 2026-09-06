@@ -1,5 +1,42 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/blog/whatsapp-business-api-guide",
+      "destination": "/ecommerce-development",
+      "permanent": true
+    },
+    {
+      "source": "/website-redesign",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/landing-page-design",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/products/(.*)",
+      "destination": "/ecommerce-development",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/ecommerce-development",
+      "permanent": true
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/website-design",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/website-design",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -57,14 +57,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css?v=3.2">
+    <link rel="stylesheet" href="styles.css?v=3.3">
     
-    <!-- GSAP & Lenis -->
+    <!-- Optional decorative animation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js" defer></script>
 
-    <!-- Structured Data (JSON-LD) - Schema.org 10/10 Suite -->
+    <!-- Structured Data (JSON-LD) - Schema.org website, services and FAQ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -131,7 +129,7 @@
               },
               {
                 "@type": "Offer",
-                "name": "Professional Package (Most Popular)",
+                "name": "Professional Package (Featured)",
                 "description": "Up to 8 pages with CMS editable content, kinetic animations, Google Analytics & Search Console setup, conversion layouts, and 60 days support.",
                 "price": "2495",
                 "priceCurrency": "GBP",
@@ -181,7 +179,7 @@
               "name": "How long does a website project take?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Essential and Business packages are typically completed in 10–14 days. Growth and Signature projects with complex workflows or booking systems usually take 3–4 weeks from initial kickoff."
+                "text": "Starter website projects are typically completed in 10–14 days. Professional and Bespoke website projects or Specialist systems with custom workflows or booking engines usually take 3–5 weeks from initial kickoff."
               }
             },
             {
@@ -197,7 +195,7 @@
               "name": "Can I update text, prices, and images myself?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. On our Business, Growth, and Signature plans, we set up an intuitive content management interface so your team can easily modify text, blog posts, menus, and media without touching code."
+                "text": "Yes. On our Professional and Bespoke plans, as well as Specialist Projects, we set up an intuitive content management interface so your team can easily modify text, blog posts, menus, and media without touching code."
               }
             },
             {
@@ -205,7 +203,7 @@
               "name": "Are there any hidden monthly costs?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "None from our studio. What we quote is a one-time fixed project fee. You only pay for your own domain name (around £10–£15/year) and fast modern hosting (often £0–£15/month)."
+                "text": "Your project quote covers the agreed design and build. Domain, hosting, paid software, and payment-provider fees are separate where applicable. Costs depend on your chosen services and usage; we agree the scope and ongoing costs before work begins."
               }
             },
             {
@@ -244,7 +242,7 @@
     </nav>
 
     <!-- MOBILE NAVIGATION DRAWER -->
-    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer" id="mobileDrawer" inert aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
         <div class="drawer-content">
             <div class="drawer-links">
                 <a href="#services" class="drawer-link">Services</a>
@@ -294,8 +292,8 @@
     <section class="trust-bar">
         <div class="trust-bar-inner">
             <div class="trust-item">
-                <strong>14-Day Delivery</strong>
-                <span>Swift, focused launches without agency drag</span>
+                <strong>Starter: 10–14 Days</strong>
+                <span>Larger projects: typically 3–5 weeks</span>
             </div>
             <div class="trust-item">
                 <strong>100% Client Ownership</strong>
@@ -338,6 +336,7 @@
                         <li>SEO & Google Indexing</li>
                         <li>WhatsApp & Contact Hooks</li>
                     </ul>
+                    <a href="/website-design" class="sc-link">Explore Website Design &rarr;</a>
                 </div>
 
                 <div class="service-card">
@@ -392,7 +391,7 @@
                 <div class="process-card">
                     <span class="pc-num">03</span>
                     <h3 class="pc-title">Launch & Stay</h3>
-                    <p class="pc-body">We connect your domain, configure SSL, test performance on real phones, and provide 30 to 90 days of dedicated launch support. We don't vanish after the invoice.</p>
+                    <p class="pc-body">We connect your domain, configure SSL, test performance on real phones, and provide 14 days of launch support for Starter, 60 days for Professional, and 90 days for Bespoke. We don't vanish after the invoice.</p>
                 </div>
             </div>
         </div>
@@ -457,8 +456,8 @@
                                 <li>WhatsApp / call integration</li>
                                 <li>Basic SEO & Google indexing</li>
                             </ul>
-                            <div class="p-expand-btn">VIEW EVERYTHING INCLUDED +</div>
-                            <ul class="p-f-list p-f-hidden">
+                            <button type="button" class="p-expand-btn" aria-expanded="false" aria-controls="package-details-1">VIEW EVERYTHING INCLUDED +</button>
+                            <ul class="p-f-list p-f-hidden" id="package-details-1">
                                 <li>SSL & domain setup</li>
                                 <li>High-speed performance tuning</li>
                                 <li>Social links & favicon</li>
@@ -473,9 +472,9 @@
                     </div>
                 </div>
 
-                <!-- 02 — PROFESSIONAL ⭐ (MOST POPULAR) -->
+                <!-- 02 — PROFESSIONAL ⭐ (FEATURED) -->
                 <div id="pkg-professional" class="p-card p-growth">
-                    <div class="p-badge">MOST POPULAR</div>
+                    <div class="p-badge">FEATURED</div>
                     <div class="p-card-content">
                         <div class="p-num">02 — PROFESSIONAL</div>
                         <div class="p-price"><span class="price-from">FROM</span> £2,495</div>
@@ -491,8 +490,8 @@
                                 <li>Copywriting polishing on key pages</li>
                                 <li>Google Analytics & Search Console setup</li>
                             </ul>
-                            <div class="p-expand-btn">VIEW EVERYTHING INCLUDED +</div>
-                            <ul class="p-f-list p-f-hidden">
+                            <button type="button" class="p-expand-btn" aria-expanded="false" aria-controls="package-details-2">VIEW EVERYTHING INCLUDED +</button>
+                            <ul class="p-f-list p-f-hidden" id="package-details-2">
                                 <li>Local SEO & schema foundation</li>
                                 <li>Advanced enquiry & booking forms</li>
                                 <li>Up to 2 business integrations</li>
@@ -525,8 +524,8 @@
                                 <li>Bespoke workflows or client portals</li>
                                 <li>Custom API & database integrations</li>
                             </ul>
-                            <div class="p-expand-btn">VIEW EVERYTHING INCLUDED +</div>
-                            <ul class="p-f-list p-f-hidden">
+                            <button type="button" class="p-expand-btn" aria-expanded="false" aria-controls="package-details-3">VIEW EVERYTHING INCLUDED +</button>
+                            <ul class="p-f-list p-f-hidden" id="package-details-3">
                                 <li>Advanced technical SEO architecture</li>
                                 <li>Performance & Core Web Vitals tuning</li>
                                 <li>Custom animations & interactive elements</li>
@@ -564,6 +563,7 @@
                             <a href="#contact" data-package="Ecommerce (From £3,995)" class="btn-pricing select-pkg-btn tactile-btn">GET A QUOTE &rarr;</a>
                             <a href="https://wa.me/353852258004?text=Hi%20TheoMedia%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20an%20Ecommerce%20Platform%20%28from%20%C2%A33%2C995%29." class="btn-wa-secondary tactile-btn" target="_blank" rel="noopener">WhatsApp Us</a>
                         </div>
+                        <a href="/ecommerce-development" class="sc-link" style="margin-top: 1.25rem;">View Ecommerce Details &rarr;</a>
                     </div>
 
                     <!-- ROW 2: HOTELS & HOSPITALITY -->
@@ -613,7 +613,7 @@
                 
                 <div class="pf-unsure">
                     <h3>NOT SURE WHICH ONE?</h3>
-                    <p>Most businesses choose Professional (£2,495). We'll tell you if you don't need it.</p>
+                    <p>Professional (£2,495) includes an editable CMS and up to 8 pages. We'll help you choose based on what your business needs.</p>
                     <a href="https://wa.me/353852258004?text=Hi%20TheoMedia%2C%20I%27m%20not%20sure%20which%20website%20or%20specialist%20package%20fits%20my%20business.%20Could%20you%20advise%3F" target="_blank" rel="noopener" class="btn-text">ASK THEOMEDIA &rarr;</a>
                 </div>
             </div>
@@ -667,7 +667,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>None from our studio. What we quote is a one-time fixed project fee. You only pay for your own domain name (around £10–£15/year) and fast modern hosting (often £0–£15/month).</p>
+                        <p>Your project quote covers the agreed design and build. Domain, hosting, paid software, and payment-provider fees are separate where applicable. Costs depend on your chosen services and usage; we agree the scope and ongoing costs before work begins.</p>
                     </div>
                 </div>
 
@@ -710,6 +710,7 @@
                 </div>
 
                 <div class="contact-form-card">
+                    <noscript><style>.inquiry-form,.p-expand-btn{display:none!important}.p-f-hidden{display:flex!important;opacity:1!important}.faq-answer{max-height:none!important;padding-bottom:1.5rem!important}</style><p>Please email <a href="mailto:hello@theomedia.co.uk">hello@theomedia.co.uk</a> to discuss your project. The email preparation form requires JavaScript.</p></noscript>
                     <form id="inquiryForm" class="inquiry-form">
                         <div class="form-group">
                             <label for="cName">Your Name</label>
@@ -724,7 +725,7 @@
                         <div class="form-group">
                             <label for="cPackage">Package / Interest</label>
                             <select id="cPackage" name="package">
-                                <option value="Professional (£2,495)">Professional Package (£2,495) — Most Popular</option>
+                                <option value="Professional (£2,495)">Professional Package (£2,495) — Featured</option>
                                 <option value="Starter (£895)">Starter Package (£895)</option>
                                 <option value="Bespoke (From £4,995)">Bespoke Website (From £4,995)</option>
                                 <option value="Ecommerce (From £3,995)">Ecommerce Platform (From £3,995)</option>
@@ -738,15 +739,16 @@
                             <textarea id="cMessage" name="message" rows="4" required placeholder="What does your business do and what are you looking to launch?"></textarea>
                         </div>
 
+                        <p class="form-note">This form prepares an email in your email app. Review it and press Send there to contact us. Prefer another way? Use WhatsApp or email hello@theomedia.co.uk directly. <a href="privacy.html">How your enquiry is handled</a>.</p>
                         <div class="form-actions">
                             <button type="submit" class="btn-primary form-submit-btn tactile-btn">
-                                Send Project Inquiry &rarr;
+                                Prepare Enquiry Email &rarr;
                             </button>
                             <a href="https://wa.me/353852258004?text=Hi%20TheoMedia%2C%20I%20would%20like%20to%20discuss%20a%20new%20website%20project." target="_blank" rel="noopener" class="form-wa-btn tactile-btn">
                                 Or Chat on WhatsApp
                             </a>
                         </div>
-                        <div id="formFeedback" class="form-feedback"></div>
+                        <div id="formFeedback" class="form-feedback" role="status" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
@@ -793,19 +795,21 @@
                     <h4>Navigation</h4>
                     <ul>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#process">How We Work</a></li>
-                        <li><a href="#pricing">Pricing & Packages</a></li>
+                        <li><a href="/website-design">Website Design</a></li>
+                        <li><a href="/ecommerce-development">Ecommerce Development</a></li>
+                        <li><a href="#pricing">Pricing &amp; Packages</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="privacy.html">Privacy &amp; enquiries</a></li>
                     </ul>
                 </div>
                 <div class="footer-nav-col">
                     <h4>Capabilities</h4>
                     <ul>
-                        <li><span>Custom Websites</span></li>
-                        <li><span>Web Applications</span></li>
-                        <li><span>Hospitality POS & PMS</span></li>
-                        <li><span>Workflow Automation</span></li>
+                        <li><a href="/website-design">Bespoke Websites</a></li>
+                        <li><a href="/ecommerce-development">Ecommerce Stores</a></li>
+                        <li><a href="#services">Web Applications</a></li>
+                        <li><a href="#services">Hospitality POS &amp; PMS</a></li>
                     </ul>
                 </div>
             </div>
@@ -838,6 +842,6 @@
     </div>
 
     <!-- SCRIPT -->
-    <script src="script.js?v=3.0"></script>
+    <script src="script.js?v=3.3"></script>
 </body>
 </html>
