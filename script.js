@@ -255,5 +255,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 11. IN-SITE LIVE DEMO MODAL VIEWER
+    const demoModal = document.getElementById('demoModal');
+    const demoIframe = document.getElementById('demoIframe');
+    const demoTitle = document.getElementById('demoModalTitle');
+    const demoBadge = document.getElementById('demoModalBadge');
+    const demoLoader = document.getElementById('demoModalLoader');
+    const demoClose = document.getElementById('demoModalClose');
+    const demoBackdrop = document.querySelector('.demo-modal-backdrop');
+
+    function openDemoModal(url, title, badge) {
+        if (!demoModal || !demoIframe) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+            return;
+        }
+
+        if (demoTitle) demoTitle.textContent = title || 'Live Demo';
+        if (demoBadge) demoBadge.textContent = badge || 'TheoMedia Client Demo';
+        if (demoLoader) demoLoader.style.display = 'flex';
+        
+        demoIframe.style.opacity = '0';
+        demoIframe.src = url;
+
+        demoModal.classList.add('active');
+        document.body.classList.add('demo-modal-open');
+
+        demoIframe.onload = function() {
+            if (demoLoader) demoLoader.style.display = 'none';
+            demoIframe.style.opacity = '1';
+        };
+    }
+
+    function closeDemoModal() {
+        if (!demoModal) return;
+        demoModal.classList.remove('active');
+        document.body.classList.remove('demo-modal-open');
+        if (demoIframe) {
+            demoIframe.src = 'about:blank';
+        }
+    }
+
+    if (demoClose) demoClose.addEventListener('click', closeDemoModal);
+    if (demoBackdrop) demoBackdrop.addEventListener('click', closeDemoModal);
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && demoModal && demoModal.classList.contains('active')) {
+            closeDemoModal();
+        }
+    });
+
+    // Intercept clicks on demo action buttons and preview links with data-demo
+    document.querySelectorAll('[data-demo-url]').forEach(el => {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.getAttribute('data-demo-url');
+            const title = this.getAttribute('data-demo-title');
+            const badge = this.getAttribute('data-demo-badge');
+            openDemoModal(url, title, badge);
+        });
+    });
+
 });
+
 

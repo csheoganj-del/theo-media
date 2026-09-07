@@ -1476,3 +1476,199 @@ button { background: none; border: none; font: inherit; cursor: pointer; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ==========================================================================
+   THEOMEDIA LIVE DEMO MODAL / VIEWER
+   Seamless in-site client preview eliminating third-party brand exposure
+   ========================================================================== */
+.demo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.demo-modal.active {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+.demo-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 17, 14, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.demo-modal-dialog {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #0d0c0a;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+@media (min-width: 900px) {
+    .demo-modal {
+        padding: 1.5rem 2rem;
+    }
+    .demo-modal-dialog {
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+.demo-modal-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    background: #181713;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--ivory);
+    flex-shrink: 0;
+    gap: 1rem;
+}
+.demo-modal-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+}
+.demo-modal-badge {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: #2a2822;
+    color: #e5e0d8;
+    padding: 0.25rem 0.55rem;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+}
+.demo-modal-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.demo-modal-sub {
+    font-size: 0.8rem;
+    color: #a39c90;
+    display: none;
+}
+@media (min-width: 680px) {
+    .demo-modal-sub {
+        display: inline;
+    }
+}
+.demo-modal-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+.demo-modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #f7f5f0;
+    background: #282620;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    padding: 0.45rem 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.demo-modal-btn:hover {
+    background: #38352d;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+.demo-modal-btn.primary {
+    background: #f7f5f0;
+    color: #181713;
+    border-color: #f7f5f0;
+}
+.demo-modal-btn.primary:hover {
+    background: #ffffff;
+}
+.demo-modal-close {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e5e0d8;
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+.demo-modal-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+.demo-modal-viewport {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background: #11100e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.demo-modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    background: #ffffff;
+    transition: opacity 0.25s ease;
+}
+.demo-modal-loader {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: #e5e0d8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.demo-modal-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    border-top-color: #f7f5f0;
+    border-radius: 50%;
+    animation: demoSpin 0.8s linear infinite;
+}
+@keyframes demoSpin {
+    to { transform: rotate(360deg); }
+}
+body.demo-modal-open {
+    overflow: hidden !important;
+}
+
