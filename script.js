@@ -315,6 +315,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Auto-open demo modal if page is loaded with deep-link hash (e.g., #work-garage)
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#work-')) {
+        const targetCard = document.querySelector(hash);
+        if (targetCard) {
+            const actionBtn = targetCard.querySelector('[data-demo-url]');
+            if (actionBtn) {
+                setTimeout(() => {
+                    actionBtn.click();
+                }, 300);
+            }
+        }
+    }
+
 });
 
 

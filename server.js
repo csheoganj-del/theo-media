@@ -26,6 +26,13 @@ const MIME_TYPES = {
 };
 
 const REDIRECTS = [
+    { from: /^\/work\/garage\/?$/, to: '/#work-garage' },
+    { from: /^\/work\/build\/?$/, to: '/#work-build' },
+    { from: /^\/work\/velora\/?$/, to: '/#work-velora' },
+    { from: /^\/work\/table\/?$/, to: '/#work-table' },
+    { from: /^\/work\/clinic\/?$/, to: '/#work-clinic' },
+    { from: /^\/work\/leather\/?$/, to: '/#work-leather' },
+    { from: /^\/work\/?$/, to: '/#work' },
     { from: /^\/blog(\/.*)?$/, to: '/website-design' },
     { from: /^\/website-redesign\/?$/, to: '/website-design' },
     { from: /^\/landing-page-design\/?$/, to: '/website-design' },

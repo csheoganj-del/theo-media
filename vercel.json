@@ -2,6 +2,41 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/work/garage",
+      "destination": "/#work-garage",
+      "permanent": false
+    },
+    {
+      "source": "/work/build",
+      "destination": "/#work-build",
+      "permanent": false
+    },
+    {
+      "source": "/work/velora",
+      "destination": "/#work-velora",
+      "permanent": false
+    },
+    {
+      "source": "/work/table",
+      "destination": "/#work-table",
+      "permanent": false
+    },
+    {
+      "source": "/work/clinic",
+      "destination": "/#work-clinic",
+      "permanent": false
+    },
+    {
+      "source": "/work/leather",
+      "destination": "/#work-leather",
+      "permanent": false
+    },
+    {
+      "source": "/work",
+      "destination": "/#work",
+      "permanent": false
+    },
+    {
       "source": "/blog/whatsapp-business-api-guide",
       "destination": "/ecommerce-development",
       "permanent": true
