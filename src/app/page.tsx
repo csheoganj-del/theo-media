@@ -6,6 +6,7 @@ import ServicesScene from '@/components/home/ServicesScene';
 import OutcomesScene from '@/components/home/OutcomesScene';
 import IndustriesScene from '@/components/home/IndustriesScene';
 import ProcessScene from '@/components/home/ProcessScene';
+import TrustedHospitality from '@/components/home/TrustedHospitality';
 import PricingPreview from '@/components/home/PricingPreview';
 import FinalCTA from '@/components/home/FinalCTA';
 
@@ -36,10 +37,13 @@ export default function HomePage() {
       {/* SCENE 08 — METHOD */}
       <ProcessScene />
 
-      {/* SCENE 09 — COMMERCIAL OFFER */}
+      {/* SCENE 09 — TRUSTED HOSPITALITY */}
+      <TrustedHospitality />
+
+      {/* SCENE 10 — COMMERCIAL OFFER */}
       <PricingPreview />
 
-      {/* SCENE 10 — INVITATION */}
+      {/* SCENE 11 — INVITATION */}
       <FinalCTA />
     </>
   );
