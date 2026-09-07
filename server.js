@@ -26,12 +26,12 @@ const MIME_TYPES = {
 };
 
 const REDIRECTS = [
-    { from: /^\/work\/garage\/?$/, to: '/#work-garage' },
-    { from: /^\/work\/build\/?$/, to: '/#work-build' },
-    { from: /^\/work\/velora\/?$/, to: '/#work-velora' },
-    { from: /^\/work\/table\/?$/, to: '/#work-table' },
-    { from: /^\/work\/clinic\/?$/, to: '/#work-clinic' },
-    { from: /^\/work\/leather\/?$/, to: '/#work-leather' },
+    { from: /^\/work\/garage\/?$/, to: 'https://theo-garage.vercel.app' },
+    { from: /^\/work\/build\/?$/, to: 'https://theo-build.vercel.app' },
+    { from: /^\/work\/velora\/?$/, to: 'https://velora-house-demo.vercel.app' },
+    { from: /^\/work\/table\/?$/, to: 'https://theo-table-gastropub-demo.vercel.app' },
+    { from: /^\/work\/clinic\/?$/, to: 'https://theo-clinic-demo.vercel.app' },
+    { from: /^\/work\/leather\/?$/, to: 'https://theoleather.vercel.app' },
     { from: /^\/work\/?$/, to: '/#work' },
     { from: /^\/blog(\/.*)?$/, to: '/website-design' },
     { from: /^\/website-redesign\/?$/, to: '/website-design' },

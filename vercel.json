@@ -3,32 +3,32 @@
   "redirects": [
     {
       "source": "/work/garage",
-      "destination": "/#work-garage",
+      "destination": "https://theo-garage.vercel.app",
       "permanent": false
     },
     {
       "source": "/work/build",
-      "destination": "/#work-build",
+      "destination": "https://theo-build.vercel.app",
       "permanent": false
     },
     {
       "source": "/work/velora",
-      "destination": "/#work-velora",
+      "destination": "https://velora-house-demo.vercel.app",
       "permanent": false
     },
     {
       "source": "/work/table",
-      "destination": "/#work-table",
+      "destination": "https://theo-table-gastropub-demo.vercel.app",
       "permanent": false
     },
     {
       "source": "/work/clinic",
-      "destination": "/#work-clinic",
+      "destination": "https://theo-clinic-demo.vercel.app",
       "permanent": false
     },
     {
       "source": "/work/leather",
-      "destination": "/#work-leather",
+      "destination": "https://theoleather.vercel.app",
       "permanent": false
     },
     {
