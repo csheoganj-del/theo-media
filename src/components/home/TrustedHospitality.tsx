@@ -122,7 +122,7 @@ function Row({ direction, label, arr }: { direction: 'left' | 'right', label: st
   const animateX = direction === 'left' ? "-50%" : "0%";
   
   const transitionProps = {
-    ease: "linear",
+    ease: "linear" as const,
     duration: 120,
     repeat: Infinity,
   };
