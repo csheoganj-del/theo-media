@@ -232,4 +232,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 10. SAMPLE WORKS CATEGORY FILTER
+    const workFilters = document.querySelectorAll('.work-filter-btn');
+    const workCards = document.querySelectorAll('.work-card');
+
+    if (workFilters.length && workCards.length) {
+        workFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.getAttribute('data-filter');
+                workFilters.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                workCards.forEach(card => {
+                    const cardCats = (card.getAttribute('data-category') || '').split(' ');
+                    if (category === 'all' || cardCats.includes(category)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+
 });
+
