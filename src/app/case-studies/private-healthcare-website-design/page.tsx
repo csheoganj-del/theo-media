@@ -42,8 +42,8 @@ export default function HealthcareCaseStudy() {
             </ul>
             <p>That means a clinic website has an important job.</p>
             <p>It needs to feel professional without feeling cold. It needs to explain services clearly without overwhelming people. And it needs to make the next step easy.</p>
-            <p>That is the thinking behind <strong>Theo Clinic</strong>.</p>
-            <p>Theo Clinic is a working concept website created by TheoMedia to show how we would approach a modern website for a private clinic, dental practice, specialist healthcare business or medical aesthetics provider.</p>
+            <p>That is the thinking behind <strong>Elowen Clinic</strong>.</p>
+            <p>Elowen Clinic is a working concept website created by TheoMedia to show how we would approach a modern website for a private clinic, dental practice, specialist healthcare business or medical aesthetics provider.</p>
             <p>It is not a real clinic and it is not a commissioned client project.</p>
             <p>There are no invented doctors, fake qualifications, made-up reviews or imaginary treatment results.</p>
             <p>The purpose of the project is to demonstrate how a healthcare website can build trust through clarity.</p>
@@ -72,7 +72,7 @@ export default function HealthcareCaseStudy() {
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Theo Clinic Demo" />
+            <ProjectPreview url={demoUrl} title="Elowen Clinic Demo" />
           </div>
         </FadeIn>
       </section>
@@ -83,7 +83,7 @@ export default function HealthcareCaseStudy() {
           <FadeIn className="grid grid-cols-2 md:grid-cols-5 gap-8">
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Project</div>
-              <div className="text-[14px] font-medium text-near-black">Theo Clinic</div>
+              <div className="text-[14px] font-medium text-near-black">Elowen Clinic</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Industry</div>
@@ -381,7 +381,7 @@ export default function HealthcareCaseStudy() {
               <p className="mb-6">Too much technical language can make visitors feel lost. Too much marketing language can make the clinic feel untrustworthy.</p>
               <p className="mb-6">The best tone usually sits somewhere in the middle.</p>
               <p className="font-medium text-near-black text-[20px] mb-8">Professional. Calm. Clear. Respectful.</p>
-              <p className="mb-6">For Theo Clinic, the writing is designed around that balance.</p>
+              <p className="mb-6">For Elowen Clinic, the writing is designed around that balance.</p>
               <p>Instead of trying to make every treatment sound exciting, the website explains what it is and gives the visitor a sensible next step.</p>
             </FadeIn>
 
@@ -550,7 +550,7 @@ export default function HealthcareCaseStudy() {
             {/* Alternating Dark Section */}
             <FadeIn id="focused-on" className="mb-20 bg-near-black text-bone p-8 md:p-12 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] mb-10 leading-tight">
-                What We Focused on With Theo Clinic
+                What We Focused on With Elowen Clinic
               </h2>
               
               <div className="space-y-8">
@@ -593,7 +593,7 @@ export default function HealthcareCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Clinic
               </h2>
-              <p className="mb-10">Theo Clinic is a concept project. A real healthcare website would be built around the services, practitioners and systems of the actual clinic. Depending on the business, we could add:</p>
+              <p className="mb-10">Elowen Clinic is a concept project. A real healthcare website would be built around the services, practitioners and systems of the actual clinic. Depending on the business, we could add:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -701,10 +701,10 @@ export default function HealthcareCaseStudy() {
               <h2 className="font-display text-[40px] md:text-[56px] text-near-black mb-10 leading-[1.1]">
                 Healthcare websites need clarity more than cleverness.
               </h2>
-              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Theo Clinic</h3>
+              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Elowen Clinic</h3>
               <p className="mb-4">Explain what you do. Introduce the people providing the care. Answer the questions patients are likely to have. Be accurate. Do not exaggerate. Make booking or contacting the clinic straightforward.</p>
               <p className="mb-4">And remember that the person visiting the website may already feel uncertain.</p>
-              <p className="font-medium text-near-black">The design should reduce that uncertainty, not add to it. That is the foundation of Theo Clinic.</p>
+              <p className="font-medium text-near-black">The design should reduce that uncertainty, not add to it. That is the foundation of Elowen Clinic.</p>
             </FadeIn>
 
           </article>
@@ -719,11 +719,11 @@ export default function HealthcareCaseStudy() {
               Explore the Working Clinic Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Theo Clinic is a concept project created by TheoMedia to demonstrate how we would approach website design for a private clinic, dental practice or healthcare business. It is a working demonstration rather than a real clinic.
+              Elowen Clinic is a concept project created by TheoMedia to demonstrate how we would approach website design for a private clinic, dental practice or healthcare business. It is a working demonstration rather than a real clinic.
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Theo Clinic Demo" />
+              <ProjectPreview url={demoUrl} title="Elowen Clinic Demo" />
             </div>
 
             <Link 

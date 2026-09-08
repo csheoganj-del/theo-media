@@ -43,8 +43,8 @@ export default function BuilderCaseStudy() {
               <li>“What happens if something goes wrong?”</li>
               <li>“How do I know they are genuine?”</li>
             </ul>
-            <p>That is the thinking behind <strong>Theo Build</strong>.</p>
-            <p>Theo Build is a working concept website created by TheoMedia to show how we would approach a modern website for a builder, roofer or independent trades business.</p>
+            <p>That is the thinking behind <strong>Alder & Rowe</strong>.</p>
+            <p>Alder & Rowe is a working concept website created by TheoMedia to show how we would approach a modern website for a builder, roofer or independent trades business.</p>
             <p>It is not a commissioned client project. There are no invented customers, fake reviews or made-up results.</p>
             <p>Instead, the website is built around the questions real homeowners usually have before asking for a quote.</p>
           </div>
@@ -72,7 +72,7 @@ export default function BuilderCaseStudy() {
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Theo Build Demo" />
+            <ProjectPreview url={demoUrl} title="Alder & Rowe Demo" />
           </div>
         </FadeIn>
       </section>
@@ -83,7 +83,7 @@ export default function BuilderCaseStudy() {
           <FadeIn className="grid grid-cols-2 md:grid-cols-5 gap-8">
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Project</div>
-              <div className="text-[14px] font-medium text-near-black">Theo Build</div>
+              <div className="text-[14px] font-medium text-near-black">Alder & Rowe</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Industry</div>
@@ -129,7 +129,7 @@ export default function BuilderCaseStudy() {
                 <a href="#local-search" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Local Search Is Important</a>
                 <a href="#project-case-studies" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Project Case Studies</a>
                 <a href="#mobile-matters" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Mobile Matters More Than It Looks</a>
-                <a href="#focused-on" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Focused on With Theo Build</a>
+                <a href="#focused-on" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Focused on With Alder & Rowe</a>
                 <a href="#what-we-would-add" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Would Add for a Real Builder</a>
                 <a href="#questions" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Common Questions</a>
                 <a href="#main-lesson" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">The Main Lesson</a>
@@ -185,7 +185,7 @@ export default function BuilderCaseStudy() {
               </h2>
               <p className="mb-6">For builders, roofers and trades businesses, completed work is one of the strongest things a website can show.</p>
               <p className="mb-6">A paragraph saying: <strong>“We provide high-quality workmanship.”</strong> is fine.</p>
-              <p className="mb-8">But photographs of real completed projects are far more convincing. That is why Theo Build gives strong visual importance to project work.</p>
+              <p className="mb-8">But photographs of real completed projects are far more convincing. That is why Alder & Rowe gives strong visual importance to project work.</p>
               
               <p className="mb-6">A real builder website could include projects such as:</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 list-disc list-inside">
@@ -282,7 +282,7 @@ export default function BuilderCaseStudy() {
                 </span>
               </div>
 
-              <p>Theo Build is designed to feel established and professional without making the company look unnecessarily large or impersonal.</p>
+              <p>Alder & Rowe is designed to feel established and professional without making the company look unnecessarily large or impersonal.</p>
             </FadeIn>
 
             <FadeIn id="explain-the-process" className="mb-20 scroll-mt-32">
@@ -481,13 +481,13 @@ export default function BuilderCaseStudy() {
 
               <p className="mb-6">The photographs should display properly. Text should be comfortable to read. Forms should be easy to complete.</p>
               <p className="mb-6">A beautiful desktop site that becomes frustrating on a phone is not a finished website.</p>
-              <p>Theo Build was designed around that principle.</p>
+              <p>Alder & Rowe was designed around that principle.</p>
             </FadeIn>
 
             {/* Alternating Dark Section */}
             <FadeIn id="focused-on" className="mb-20 bg-near-black text-bone p-8 md:p-12 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] mb-10 leading-tight">
-                What We Focused on With Theo Build
+                What We Focused on With Alder & Rowe
               </h2>
               
               <div className="space-y-8">
@@ -522,7 +522,7 @@ export default function BuilderCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Builder or Roofing Company
               </h2>
-              <p className="mb-10">Theo Build is a concept. For a real business, the website could be built around the company&apos;s actual work. Depending on the business, we could add:</p>
+              <p className="mb-10">Alder & Rowe is a concept. For a real business, the website could be built around the company&apos;s actual work. Depending on the business, we could add:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -638,9 +638,9 @@ export default function BuilderCaseStudy() {
               <h2 className="font-display text-[40px] md:text-[56px] text-near-black mb-10 leading-[1.1]">
                 For a builder, the website does not need to do all the selling. The work should do much of it.
               </h2>
-              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Theo Build</h3>
+              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Alder & Rowe</h3>
               <p className="mb-4">Show people what you build. Explain what you do. Answer the questions that make customers hesitate. Make your business feel real.</p>
-              <p className="font-medium text-near-black">Then make it easy to start a conversation. That is the foundation of Theo Build.</p>
+              <p className="font-medium text-near-black">Then make it easy to start a conversation. That is the foundation of Alder & Rowe.</p>
             </FadeIn>
 
           </article>
@@ -655,11 +655,11 @@ export default function BuilderCaseStudy() {
               Explore the Working Builder & Roofing Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Theo Build is a concept project created by TheoMedia to demonstrate how we would approach a website for a builder, roofer or independent trades company. It is a working demo, so you can explore the site yourself.
+              Alder & Rowe is a concept project created by TheoMedia to demonstrate how we would approach a website for a builder, roofer or independent trades company. It is a working demo, so you can explore the site yourself.
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Theo Build Demo" />
+              <ProjectPreview url={demoUrl} title="Alder & Rowe Demo" />
             </div>
 
             <Link 

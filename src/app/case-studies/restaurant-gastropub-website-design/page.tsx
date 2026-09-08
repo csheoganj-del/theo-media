@@ -45,8 +45,8 @@ export default function RestaurantCaseStudy() {
               <li>Can I book now?</li>
             </ul>
 
-            <p>That is the thinking behind <strong>Theo Table</strong>.</p>
-            <p>Theo Table is a working concept website created by TheoMedia to show how we would approach a modern website for a restaurant, gastropub, pub, bistro or independent dining business.</p>
+            <p>That is the thinking behind <strong>Cinder & Field</strong>.</p>
+            <p>Cinder & Field is a working concept website created by TheoMedia to show how we would approach a modern website for a restaurant, gastropub, pub, bistro or independent dining business.</p>
             <p>It is not a real restaurant and it is not a commissioned client project.</p>
             <p>There are no fake reviews, invented awards, made-up booking numbers or pretend press coverage.</p>
             <p>The purpose of the project is simple.</p>
@@ -76,7 +76,7 @@ export default function RestaurantCaseStudy() {
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Theo Table Demo" />
+            <ProjectPreview url={demoUrl} title="Cinder & Field Demo" />
           </div>
         </FadeIn>
       </section>
@@ -87,7 +87,7 @@ export default function RestaurantCaseStudy() {
           <FadeIn className="grid grid-cols-2 md:grid-cols-5 gap-8">
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Project</div>
-              <div className="text-[14px] font-medium text-near-black">Theo Table</div>
+              <div className="text-[14px] font-medium text-near-black">Cinder & Field</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Industry</div>
@@ -182,7 +182,7 @@ export default function RestaurantCaseStudy() {
               </ul>
               
               <p className="mb-6">The website should help them work that out quickly.</p>
-              <p className="mb-6">For Theo Table, the experience starts with food, atmosphere and clear booking options.</p>
+              <p className="mb-6">For Cinder & Field, the experience starts with food, atmosphere and clear booking options.</p>
               <p>The design is important, but the decision-making process comes first.</p>
             </FadeIn>
 
@@ -245,7 +245,7 @@ export default function RestaurantCaseStudy() {
               </ul>
 
               <p className="mb-6">In many cases, a proper web-based menu is better because it is faster, easier to update and easier to read.</p>
-              <p>Theo Table is designed around that kind of mobile behaviour.</p>
+              <p>Cinder & Field is designed around that kind of mobile behaviour.</p>
             </FadeIn>
 
             <FadeIn id="photography" className="mb-20 scroll-mt-32">
@@ -273,7 +273,7 @@ export default function RestaurantCaseStudy() {
               <p className="mb-6">People do not choose restaurants only by menu. They also choose by mood.</p>
               <p className="mb-6">A gastropub feels different from a fine dining restaurant. A neighbourhood bistro feels different from a cocktail bar. A family restaurant feels different from a romantic dining room.</p>
               <p className="mb-6">The website should reflect that. That means the design, photography, wording and layout should feel like the actual place.</p>
-              <p className="mb-6">Theo Table was designed to feel warm, social and welcoming rather than overly formal.</p>
+              <p className="mb-6">Cinder & Field was designed to feel warm, social and welcoming rather than overly formal.</p>
               <p>A real client project would be shaped around the restaurant&apos;s own character.</p>
             </FadeIn>
 
@@ -334,7 +334,7 @@ export default function RestaurantCaseStudy() {
               </ul>
 
               <p className="mb-6">This also helps customers who search specifically for Sunday lunch rather than the restaurant name.</p>
-              <p>Theo Table gives this kind of occasion more importance instead of treating every visit exactly the same.</p>
+              <p>Cinder & Field gives this kind of occasion more importance instead of treating every visit exactly the same.</p>
             </FadeIn>
 
             <FadeIn id="private-events" className="mb-20 scroll-mt-32">
@@ -535,13 +535,13 @@ export default function RestaurantCaseStudy() {
               <p className="mb-6">That matters especially on mobile.</p>
               <p className="mb-6">Images should be properly sized and compressed. Animations should not delay important information. Menus should load quickly. Booking buttons should work immediately.</p>
               <p className="mb-6">A beautiful site that takes too long to load may lose the customer before they ever see the food.</p>
-              <p>Theo Table aims for visual richness without unnecessary weight.</p>
+              <p>Cinder & Field aims for visual richness without unnecessary weight.</p>
             </FadeIn>
 
             {/* Alternating Dark Section */}
             <FadeIn id="focused-on" className="mb-20 bg-near-black text-bone p-8 md:p-12 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] mb-10 leading-tight">
-                What We Focused on With Theo Table
+                What We Focused on With Cinder & Field
               </h2>
               
               <div className="space-y-8">
@@ -584,7 +584,7 @@ export default function RestaurantCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Restaurant or Gastropub
               </h2>
-              <p className="mb-10">Theo Table is a concept. A real restaurant website would be built around how the venue actually operates. Depending on the business, we could add:</p>
+              <p className="mb-10">Cinder & Field is a concept. A real restaurant website would be built around how the venue actually operates. Depending on the business, we could add:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -685,9 +685,9 @@ export default function RestaurantCaseStudy() {
               <h2 className="font-display text-[40px] md:text-[56px] text-near-black mb-10 leading-[1.1]">
                 Restaurant websites should not overcomplicate a simple decision.
               </h2>
-              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Theo Table</h3>
+              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Cinder & Field</h3>
               <p className="mb-4">Show people the food. Show them the atmosphere. Let them understand the menu. Make opening hours clear. Make booking easy.</p>
-              <p className="font-medium text-near-black">Then give them enough extra information to feel confident choosing you. That is the foundation of Theo Table.</p>
+              <p className="font-medium text-near-black">Then give them enough extra information to feel confident choosing you. That is the foundation of Cinder & Field.</p>
             </FadeIn>
 
           </article>
@@ -702,11 +702,11 @@ export default function RestaurantCaseStudy() {
               Explore the Working Restaurant Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Theo Table is a concept project created by TheoMedia to demonstrate how we would approach website design for a restaurant, gastropub, pub or independent dining business. It is a working demonstration rather than a real restaurant.
+              Cinder & Field is a concept project created by TheoMedia to demonstrate how we would approach website design for a restaurant, gastropub, pub or independent dining business. It is a working demonstration rather than a real restaurant.
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Theo Table Demo" />
+              <ProjectPreview url={demoUrl} title="Cinder & Field Demo" />
             </div>
 
             <Link 

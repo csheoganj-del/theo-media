@@ -37,8 +37,8 @@ export default function GarageCaseStudy() {
             <p>The MOT is due. A warning light has appeared. The brakes do not feel right. The car needs a service. Or they simply need someone reliable to look at a problem.</p>
             <p>That means a garage website has a fairly simple job.</p>
             <p>Help the customer understand whether you can help them, give them a reason to trust you, and make it easy to book or call.</p>
-            <p>That is the thinking behind <strong>Theo Garage</strong>.</p>
-            <p>Theo Garage is a working concept website created by TheoMedia to show how we would approach a modern website for an independent garage, MOT centre or vehicle workshop.</p>
+            <p>That is the thinking behind <strong>Hartwell Motorworks</strong>.</p>
+            <p>Hartwell Motorworks is a working concept website created by TheoMedia to show how we would approach a modern website for an independent garage, MOT centre or vehicle workshop.</p>
             <p>It is not a commissioned client project and we do not use made-up results or statistics. Instead, we built it around the real problems garage customers face when they are looking for help online.</p>
           </div>
 
@@ -65,7 +65,7 @@ export default function GarageCaseStudy() {
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Theo Garage Demo" />
+            <ProjectPreview url={demoUrl} title="Hartwell Motorworks Demo" />
           </div>
         </FadeIn>
       </section>
@@ -76,7 +76,7 @@ export default function GarageCaseStudy() {
           <FadeIn className="grid grid-cols-2 md:grid-cols-5 gap-8">
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Project</div>
-              <div className="text-[14px] font-medium text-near-black">Theo Garage</div>
+              <div className="text-[14px] font-medium text-near-black">Hartwell Motorworks</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Industry</div>
@@ -118,7 +118,7 @@ export default function GarageCaseStudy() {
                 <a href="#local-search" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Local Search Matters</a>
                 <a href="#photos" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Photos Can Make a Huge Difference</a>
                 <a href="#pricing" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Pricing: Show Enough to Remove Uncertainty</a>
-                <a href="#focused-on" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Focused on With Theo Garage</a>
+                <a href="#focused-on" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Focused on With Hartwell Motorworks</a>
                 <a href="#what-we-would-add" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Would Add for a Real Garage</a>
                 <a href="#what-should-include" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What Should a Good Garage Website Include?</a>
                 <a href="#questions" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Common Questions</a>
@@ -165,7 +165,7 @@ export default function GarageCaseStudy() {
                 </ul>
               </div>
               <p>If a website makes those answers difficult to find, the customer can simply return to Google and try another garage.</p>
-              <p className="mt-6">So with Theo Garage, we started with those questions rather than starting with design.</p>
+              <p className="mt-6">So with Hartwell Motorworks, we started with those questions rather than starting with design.</p>
             </FadeIn>
 
             <FadeIn id="customer-needs" className="mb-20 scroll-mt-32">
@@ -202,7 +202,7 @@ export default function GarageCaseStudy() {
               
               <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">Make Booking Obvious</h3>
               <p className="mb-6">If you want customers to book, the booking option should not be buried inside a menu.</p>
-              <p className="mb-6">For Theo Garage, booking is treated as one of the main parts of the website.</p>
+              <p className="mb-6">For Hartwell Motorworks, booking is treated as one of the main parts of the website.</p>
               <p className="mb-6">A visitor should be able to arrive, understand the service and quickly move towards making an appointment.</p>
               <p className="mb-6">On mobile, calling should be just as easy.</p>
               <p className="mb-6">Some customers prefer forms. Others want to speak to someone. Others may want to send a WhatsApp message.</p>
@@ -291,7 +291,7 @@ export default function GarageCaseStudy() {
               <p className="mb-6">Imagine the customer. They have just noticed a warning light. They are sitting in the car. They search Google. They open your website.</p>
               <p className="mb-6">Everything now needs to work on a small screen.</p>
               <p className="mb-6">The telephone number should be easy to tap. The booking button should be easy to find. The text should be readable. Services should not require endless scrolling through unnecessary information. Buttons should be large enough to use comfortably. Important information should not disappear behind complicated animations.</p>
-              <p className="mb-6">Theo Garage was designed with that situation in mind.</p>
+              <p className="mb-6">Hartwell Motorworks was designed with that situation in mind.</p>
               <p>A website can still look premium without making the customer work for the information.</p>
             </FadeIn>
 
@@ -376,7 +376,7 @@ export default function GarageCaseStudy() {
             {/* Alternating Dark Section */}
             <FadeIn id="focused-on" className="mb-20 bg-near-black text-bone p-8 md:p-12 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] mb-10 leading-tight">
-                What We Focused on With Theo Garage
+                What We Focused on With Hartwell Motorworks
               </h2>
               <p className="mb-10 text-bone/80">For this concept, we concentrated on a few things that matter most.</p>
               
@@ -412,7 +412,7 @@ export default function GarageCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Garage
               </h2>
-              <p className="mb-10">Theo Garage is a demonstration, so a real client project would go considerably further. Depending on the business, we could add:</p>
+              <p className="mb-10">Hartwell Motorworks is a demonstration, so a real client project would go considerably further. Depending on the business, we could add:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -537,7 +537,7 @@ export default function GarageCaseStudy() {
               <h2 className="font-display text-[40px] md:text-[56px] text-near-black mb-10 leading-[1.1]">
                 Design around the reason the customer came to the website.
               </h2>
-              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Theo Garage</h3>
+              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Hartwell Motorworks</h3>
               <p className="mb-4">The biggest lesson from this project is simple.</p>
               <p className="mb-4">For a garage, that person usually has a job that needs doing. Do not make them fight through the website to get there.</p>
               <p className="mb-4">Tell them what you do. Give them reasons to trust you. Answer the obvious questions.</p>
@@ -556,11 +556,11 @@ export default function GarageCaseStudy() {
               Explore the Working Garage Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Theo Garage is a concept project created by TheoMedia to demonstrate how we would approach website design for an independent garage, MOT centre or automotive workshop. You can open the working website and explore it yourself.
+              Hartwell Motorworks is a concept project created by TheoMedia to demonstrate how we would approach website design for an independent garage, MOT centre or automotive workshop. You can open the working website and explore it yourself.
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Theo Garage Demo" />
+              <ProjectPreview url={demoUrl} title="Hartwell Motorworks Demo" />
             </div>
 
             <Link 

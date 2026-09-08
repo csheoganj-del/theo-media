@@ -6,9 +6,9 @@ import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
 
-const ROW1 = ["BALLYFIN DEMESNE", "BORGO SANTO PIETRO", "RESCHIO", "TWIN FARMS", "THE PITCHER INN", "LANDHAUS AM STEIN", "SAN CANZIAN", "MENEGHETTI", "BALLYNAHINCH CASTLE", "INVERLOCHY CASTLE"];
-const ROW2 = ["GORA KADAN", "NISHIMURAYA HONKAN", "BENIYA MUKAYU", "RYOKAN KURASHIKI", "ZABORIN", "THE HANOK HERITAGE", "NAMSUHEON HANOK HOTEL", "THE SIAM", "THE DATAI LANGKAWI", "SHINTA MANI WILD", "CAPE WELIGAMA"];
-const ROW3 = ["SABI SABI", "LONDOLOZI", "ANGAMA", "COTTAR'S 1920s CAMP", "ROYAL MALEWANE", "AWASI PATAGONIA", "TIERRA PATAGONIA", "INKATERRA LA CASONA", "EXPLORA"];
+const ROW1 = ["ANGLE PARK", "HIKARU TERADA", "CARDINAL", "CATALYST", "NAMELESS", "ATELIER SNALLIS", "LINTU"];
+const ROW2 = ["OMNIUS", "AVENUE JUNO", "POLLINATION", "XQ AUTOMOTIVE", "OKAFFE", "PRIVATE STUDIO", "DENTALIS"];
+const ROW3 = ["MAISON LA GRIFFE", "COLUMN", "RESTAURANT O", "VOLKWERKE", "SANKAKKEI", "NEMO"];
 
 export default function TrustedHospitality() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,30 +19,30 @@ export default function TrustedHospitality() {
         <FadeIn>
           <SectionLabel className="text-stone">TRUSTED BY</SectionLabel>
           <h2 className="font-display text-[44px] md:text-[64px] lg:text-[80px] leading-[1.05] mb-8 text-bone mt-6">
-            HOSPITALITY BRANDS<br />WE&apos;VE WORKED WITH.
+            BRANDS<br />WE&apos;VE WORKED WITH.
           </h2>
           <p className="font-sans text-[17px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            From independent estates and boutique hotels to ryokans, safari lodges and wilderness retreats, our work spans hospitality businesses across Europe, the USA, Asia, Africa and South America.
+            From independent studios and creative agencies to automotive, healthcare and premium lifestyle businesses, our work spans ambitious brands globally.
           </p>
         </FadeIn>
       </div>
 
       <div className="relative py-12 md:py-24 border-y border-bone/5 select-none flex flex-col gap-12 md:gap-20">
-        <Row direction="left" label="EUROPE / USA" arr={ROW1} />
-        <Row direction="right" label="JAPAN / KOREA / ASIA" arr={ROW2} />
-        <Row direction="left" label="AFRICA / SOUTH AMERICA" arr={ROW3} />
+        <Row direction="left" arr={ROW1} />
+        <Row direction="right" arr={ROW2} />
+        <Row direction="left" arr={ROW3} />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 mt-20 md:mt-32">
         <FadeIn className="flex flex-col items-start gap-8">
           <p className="font-sans text-[15px] md:text-[18px] text-stone max-w-xl">
-            Selected hospitality brands and properties we&apos;ve had the opportunity to work with.
+            Selected brands and businesses we&apos;ve had the opportunity to work with.
           </p>
           <Link 
-            href="/case-studies/boutique-hotel-website-design"
+            href="/work"
             className="text-[12px] font-sans font-medium tracking-[0.15em] uppercase text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors inline-flex items-center"
           >
-            VIEW HOSPITALITY WORK →
+            VIEW ALL WORK →
           </Link>
         </FadeIn>
       </div>
@@ -51,11 +51,9 @@ export default function TrustedHospitality() {
 }
 
 function BrandItem({ text, isForeground }: { text: string, isForeground: boolean }) {
-  // Center 50% of the screen is the trigger zone
   const viewportConfig = { margin: "0px -25% 0px -25%", amount: "some" as const };
   
   if (!isForeground) {
-    // The background (ghost) layer fades completely to 0 in the center to prevent overlapping letters
     return (
       <motion.span
         initial={{ opacity: 1 }}
@@ -69,9 +67,6 @@ function BrandItem({ text, isForeground }: { text: string, isForeground: boolean
     );
   }
 
-  // The foreground layer scales and glows, becoming the single crisp layer
-  // NOTE: letter-spacing animation is intentionally removed. Changing letter-spacing dynamically
-  // alters layout width, causing the infinite marquee to rubber-band and desync.
   return (
     <motion.span
       initial={{ 
@@ -107,15 +102,15 @@ function BrandSeparator({ isForeground }: { isForeground: boolean }) {
         transition={{ duration: 0.8, ease: "easeInOut" }}
         className="inline-block mx-6 md:mx-10 text-stone/40"
       >
-        ·
+        —
       </motion.span>
     );
   }
   
-  return <span className="inline-block mx-6 md:mx-10 text-stone/40">·</span>;
+  return <span className="inline-block mx-6 md:mx-10 text-stone/40">—</span>;
 }
 
-function Row({ direction, label, arr }: { direction: 'left' | 'right', label: string, arr: string[] }) {
+function Row({ direction, arr }: { direction: 'left' | 'right', arr: string[] }) {
   const shouldReduceMotion = useReducedMotion();
   
   const initialX = direction === 'left' ? "0%" : "-50%";
@@ -140,15 +135,10 @@ function Row({ direction, label, arr }: { direction: 'left' | 'right', label: st
     </div>
   );
 
-  // Wider center focus area for the mask so long words remain readable
   const maskGradient = 'linear-gradient(to right, transparent 0%, transparent 10%, black 25%, black 75%, transparent 90%, transparent 100%)';
 
   return (
     <div className="relative w-full">
-      <div className="absolute -top-8 left-5 md:left-12 text-[9px] md:text-[10px] tracking-[0.2em] font-sans text-stone uppercase z-10">
-        {label}
-      </div>
-      
       <div className="relative w-full overflow-hidden flex items-center h-[60px] md:h-[100px]">
         {/* Background Ghost Text */}
         <motion.div 

@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     slug: 'theo-garage',
     caseStudySlug: 'garage-website-design',
-    title: 'Theo Garage',
+    title: 'Hartwell Motorworks',
     sector: 'Automotive',
     category: 'trades',
     status: 'CONCEPT / DEMONSTRATION',
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     slug: 'theo-build',
     caseStudySlug: 'builder-roofing-website-design',
-    title: 'Theo Build',
+    title: 'Alder & Rowe',
     sector: 'Trades & Construction',
     category: 'trades',
     status: 'CONCEPT / DEMONSTRATION',
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     slug: 'theo-table',
     caseStudySlug: 'restaurant-gastropub-website-design',
-    title: 'Theo Table',
+    title: 'Cinder & Field',
     sector: 'Restaurant & Gastropub',
     category: 'hospitality',
     status: 'CONCEPT / DEMONSTRATION',
@@ -88,7 +88,7 @@ export const projects: Project[] = [
   {
     slug: 'theo-clinic',
     caseStudySlug: 'clinic-website-design',
-    title: 'Theo Clinic',
+    title: 'Elowen Clinic',
     sector: 'Private Healthcare',
     category: 'healthcare',
     status: 'CONCEPT / DEMONSTRATION',
@@ -105,7 +105,7 @@ export const projects: Project[] = [
   {
     slug: 'theo-leather',
     caseStudySlug: 'ecommerce-website-design',
-    title: 'Theo Leather',
+    title: 'Morrow & Hide',
     sector: 'Premium Ecommerce',
     category: 'ecommerce',
     status: 'CONCEPT / DEMONSTRATION',

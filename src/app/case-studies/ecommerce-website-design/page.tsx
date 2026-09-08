@@ -43,8 +43,8 @@ export default function EcommerceCaseStudy() {
               <li>Confusing delivery information.</li>
               <li>And a checkout that feels much harder than it should on a phone.</li>
             </ul>
-            <p>That is the thinking behind <strong>Theo Leather</strong>.</p>
-            <p>Theo Leather is a working concept website created by TheoMedia to show how we would approach a premium ecommerce website for an independent brand or growing online business.</p>
+            <p>That is the thinking behind <strong>Morrow & Hide</strong>.</p>
+            <p>Morrow & Hide is a working concept website created by TheoMedia to show how we would approach a premium ecommerce website for an independent brand or growing online business.</p>
             <p>It is not a real retailer and it is not a commissioned client project.</p>
             <p>There are no fake sales figures, invented customer reviews, made-up conversion rates or imaginary awards.</p>
             <p>The purpose of the project is simple.</p>
@@ -74,7 +74,7 @@ export default function EcommerceCaseStudy() {
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Theo Leather Demo" />
+            <ProjectPreview url={demoUrl} title="Morrow & Hide Demo" />
           </div>
         </FadeIn>
       </section>
@@ -85,7 +85,7 @@ export default function EcommerceCaseStudy() {
           <FadeIn className="grid grid-cols-2 md:grid-cols-5 gap-8">
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Project</div>
-              <div className="text-[14px] font-medium text-near-black">Theo Leather</div>
+              <div className="text-[14px] font-medium text-near-black">Morrow & Hide</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Industry</div>
@@ -179,7 +179,7 @@ export default function EcommerceCaseStudy() {
               
               <p className="mb-6">That can work against the store. The customer came to look at the product.</p>
               <p className="mb-6">So the product should be the main focus.</p>
-              <p className="mb-6">For Theo Leather, the design is intentionally restrained. Strong imagery. Clear product information. Simple navigation. Easy movement between collection, product and basket.</p>
+              <p className="mb-6">For Morrow & Hide, the design is intentionally restrained. Strong imagery. Clear product information. Simple navigation. Easy movement between collection, product and basket.</p>
               <p>The aim is to make the brand feel considered without making shopping feel complicated.</p>
             </FadeIn>
 
@@ -266,7 +266,7 @@ export default function EcommerceCaseStudy() {
 
               <p className="mb-6">without awkward zooming or tiny buttons.</p>
               <p className="mb-6">Important actions should stay easy to reach. Product images should still feel strong. Pages should load quickly. Checkout should not become a test of patience.</p>
-              <p>Theo Leather is designed around that kind of mobile behaviour.</p>
+              <p>Morrow & Hide is designed around that kind of mobile behaviour.</p>
             </FadeIn>
 
             <FadeIn id="navigation" className="mb-20 scroll-mt-32">
@@ -380,7 +380,7 @@ export default function EcommerceCaseStudy() {
               <p className="text-[20px] font-medium text-near-black italic mb-6">
                 “A customer should notice the product before they notice the website.”
               </p>
-              <p>That is the approach behind Theo Leather.</p>
+              <p>That is the approach behind Morrow & Hide.</p>
             </FadeIn>
 
             <FadeIn id="brand-story" className="mb-20 scroll-mt-32">
@@ -574,7 +574,7 @@ export default function EcommerceCaseStudy() {
               <p className="mb-6">Discounts can increase sales. They can also make a premium brand feel permanently discounted.</p>
               <p className="mb-6">Constant <strong>10% OFF</strong>, <strong>20% OFF</strong>, <strong>LAST CHANCE</strong>, or <strong>SALE ENDS TONIGHT</strong> messaging can train customers to wait for the next offer.</p>
               <p className="mb-6">The right promotional strategy depends on the brand. The website should support promotions when needed without making every visitor feel pressured.</p>
-              <p>For a premium store like the Theo Leather concept, restraint suits the positioning better.</p>
+              <p>For a premium store like the Morrow & Hide concept, restraint suits the positioning better.</p>
             </FadeIn>
 
             <FadeIn id="trust" className="mb-20 scroll-mt-32">
@@ -612,7 +612,7 @@ export default function EcommerceCaseStudy() {
             {/* Alternating Dark Section */}
             <FadeIn id="focused-on" className="mb-20 bg-near-black text-bone p-8 md:p-12 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] mb-10 leading-tight">
-                What We Focused on With Theo Leather
+                What We Focused on With Morrow & Hide
               </h2>
               
               <div className="space-y-8">
@@ -655,7 +655,7 @@ export default function EcommerceCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Ecommerce Business
               </h2>
-              <p className="mb-10">Theo Leather is a concept. A real online store would be designed around the products, customers, fulfilment and business model. Depending on the business, we could add:</p>
+              <p className="mb-10">Morrow & Hide is a concept. A real online store would be designed around the products, customers, fulfilment and business model. Depending on the business, we could add:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -787,9 +787,9 @@ export default function EcommerceCaseStudy() {
               <h2 className="font-display text-[40px] md:text-[56px] text-near-black mb-10 leading-[1.1]">
                 A good ecommerce website should make buying easier, not more impressive.
               </h2>
-              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Theo Leather</h3>
+              <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">The Main Lesson From Morrow & Hide</h3>
               <p className="mb-4">Show the product properly. Explain it clearly. Answer the questions that create hesitation. Make mobile shopping comfortable. Be clear about delivery and returns.</p>
-              <p className="font-medium text-near-black">Then get out of the customer&apos;s way. That is the foundation of Theo Leather.</p>
+              <p className="font-medium text-near-black">Then get out of the customer&apos;s way. That is the foundation of Morrow & Hide.</p>
             </FadeIn>
 
           </article>
@@ -804,11 +804,11 @@ export default function EcommerceCaseStudy() {
               Explore the Working Ecommerce Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Theo Leather is a concept project created by TheoMedia to demonstrate how we would approach an ecommerce website for an independent product brand or growing online business. It is a working demonstration rather than a real retailer.
+              Morrow & Hide is a concept project created by TheoMedia to demonstrate how we would approach an ecommerce website for an independent product brand or growing online business. It is a working demonstration rather than a real retailer.
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Theo Leather Demo" />
+              <ProjectPreview url={demoUrl} title="Morrow & Hide Demo" />
             </div>
 
             <Link 
