@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function HealthcareCaseStudy() {
-  const demoUrl = "https://clinic.theomedia.co.uk";
+  const demoUrl = "https://elowen-clinic.theomedia.co.uk";
 
   return (
     <main className="bg-bone min-h-screen text-near-black selection:bg-near-black selection:text-bone">

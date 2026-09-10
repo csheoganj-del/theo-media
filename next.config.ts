@@ -17,32 +17,62 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/work/garage',
-        destination: 'https://garage.theomedia.co.uk',
+        destination: 'https://hartwell-motorworks.theomedia.co.uk',
+        permanent: false,
+      },
+      {
+        source: '/work/hartwell-motorworks',
+        destination: 'https://hartwell-motorworks.theomedia.co.uk',
         permanent: false,
       },
       {
         source: '/work/build',
-        destination: 'https://build.theomedia.co.uk',
+        destination: 'https://alder-rowe.theomedia.co.uk',
+        permanent: false,
+      },
+      {
+        source: '/work/alder-rowe',
+        destination: 'https://alder-rowe.theomedia.co.uk',
         permanent: false,
       },
       {
         source: '/work/velora',
-        destination: 'https://velora.theomedia.co.uk',
+        destination: 'https://velora-house.theomedia.co.uk',
+        permanent: false,
+      },
+      {
+        source: '/work/velora-house',
+        destination: 'https://velora-house.theomedia.co.uk',
         permanent: false,
       },
       {
         source: '/work/table',
-        destination: 'https://table.theomedia.co.uk',
+        destination: 'https://cinder-field.theomedia.co.uk',
+        permanent: false,
+      },
+      {
+        source: '/work/cinder-field',
+        destination: 'https://cinder-field.theomedia.co.uk',
         permanent: false,
       },
       {
         source: '/work/clinic',
-        destination: 'https://clinic.theomedia.co.uk',
+        destination: 'https://elowen-clinic.theomedia.co.uk',
+        permanent: false,
+      },
+      {
+        source: '/work/elowen-clinic',
+        destination: 'https://elowen-clinic.theomedia.co.uk',
         permanent: false,
       },
       {
         source: '/work/leather',
-        destination: 'https://leather.theomedia.co.uk',
+        destination: 'https://morrow-hide.theomedia.co.uk',
+        permanent: false,
+      },
+      {
+        source: '/work/morrow-hide',
+        destination: 'https://morrow-hide.theomedia.co.uk',
         permanent: false,
       },
     ];

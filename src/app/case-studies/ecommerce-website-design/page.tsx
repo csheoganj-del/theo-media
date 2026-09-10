@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function EcommerceCaseStudy() {
-  const demoUrl = "https://leather.theomedia.co.uk";
+  const demoUrl = "https://morrow-hide.theomedia.co.uk";
 
   return (
     <main className="bg-bone min-h-screen text-near-black selection:bg-near-black selection:text-bone">

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function GarageCaseStudy() {
-  const demoUrl = "https://garage.theomedia.co.uk";
+  const demoUrl = "https://hartwell-motorworks.theomedia.co.uk";
 
   return (
     <main className="bg-bone min-h-screen text-near-black selection:bg-near-black selection:text-bone">
