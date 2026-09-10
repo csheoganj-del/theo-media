@@ -164,7 +164,7 @@ export function Footer() {
       {/* ── Bottom Bar ── */}
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
         <div className="h-px bg-bone/10" />
-        <div className="flex flex-col md:flex-row items-center justify-between py-6 gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between pt-6 pb-24 gap-4">
           <p className="text-[12px] text-bone/30">
             © {SITE.year} TheoMedia. All rights reserved.
           </p>

@@ -3,7 +3,7 @@ import { Inter, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
-import ContactFAB from '@/components/ui/ContactFAB';
+import BottomBar from '@/components/ui/BottomBar';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -162,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        <ContactFAB />
+        <BottomBar />
         <Footer />
       </body>
     </html>
