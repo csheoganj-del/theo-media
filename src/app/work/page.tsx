@@ -7,7 +7,7 @@ import SectionLabel from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = {
   title: 'Work | TheoMedia',
-  description: 'Concept demonstrations and production-grade builds across hospitality, trades, healthcare and ecommerce.',
+  description: 'Bespoke digital experiences and production-grade builds across hospitality, trades, healthcare and ecommerce.',
 };
 
 export default function WorkPage() {
@@ -22,7 +22,7 @@ export default function WorkPage() {
               THE WORK
             </h1>
             <p className="text-[18px] md:text-[20px] text-bone/70 max-w-2xl font-sans leading-relaxed">
-              Concept demonstrations and production-grade builds across hospitality, trades, healthcare and ecommerce.
+              Bespoke digital experiences and production-grade builds across hospitality, trades, healthcare and ecommerce.
             </p>
           </FadeIn>
         </div>

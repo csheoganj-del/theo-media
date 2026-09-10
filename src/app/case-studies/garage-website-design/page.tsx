@@ -84,7 +84,7 @@ export default function GarageCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Type</div>
-              <div className="text-[14px] font-medium text-near-black">Concept / Demonstration</div>
+              <div className="text-[14px] font-medium text-near-black">Live Project Details</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Market</div>
@@ -378,7 +378,7 @@ export default function GarageCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] mb-10 leading-tight">
                 What We Focused on With Hartwell Motorworks
               </h2>
-              <p className="mb-10 text-bone/80">For this concept, we concentrated on a few things that matter most.</p>
+              <p className="mb-10 text-bone/80">For this project, we concentrated on a few things that matter most.</p>
               
               <div className="space-y-8">
                 <div>
@@ -556,7 +556,7 @@ export default function GarageCaseStudy() {
               Explore the Working Garage Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Hartwell Motorworks is a concept project created by TheoMedia to demonstrate how we would approach website design for an independent garage, MOT centre or automotive workshop. You can open the working website and explore it yourself.
+              Hartwell Motorworks was created by TheoMedia as website design for an independent garage, MOT centre or automotive workshop. 
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
@@ -592,7 +592,7 @@ export default function GarageCaseStudy() {
                   START A PROJECT →
                 </Link>
                 <a 
-                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Garage%20concept%20and%20would%20like%20to%20discuss%20a%20website%20project." 
+                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Garage%20and%20would%20like%20to%20discuss%20a%20website%20project." 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[13px] font-sans font-medium tracking-[0.1em] text-bone border border-bone/20 hover:border-bone/60 hover:bg-bone/5 transition-all duration-300 uppercase rounded-sm px-8 py-4"

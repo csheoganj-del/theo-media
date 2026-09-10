@@ -7,7 +7,7 @@ import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
   title: 'Case Studies',
-  description: 'How TheoMedia approaches digital experiences across different industries. Detailed case studies of our concept and demonstration projects.',
+  description: 'How TheoMedia approaches digital experiences across different industries. Detailed case studies of our projects.',
 };
 
 export default function CaseStudiesPage() {

@@ -92,7 +92,7 @@ export default function BoutiqueHotelCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Type</div>
-              <div className="text-[14px] font-medium text-near-black">Concept / Demonstration</div>
+              <div className="text-[14px] font-medium text-near-black">Live Project Details</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Market</div>
@@ -609,7 +609,7 @@ export default function BoutiqueHotelCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Hotel
               </h2>
-              <p className="mb-10">Velora House is a concept. A real hotel project would be built around the property itself. Depending on the business, that could include:</p>
+              <p className="mb-10">Velora House is a completed project. Depending on the business, that could include:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -729,7 +729,7 @@ export default function BoutiqueHotelCaseStudy() {
               Explore the Working Boutique Hotel Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Velora House is a concept project created by TheoMedia to demonstrate how we would approach website design for a boutique hotel, country inn, guest house or independent hospitality property. It is a working demonstration rather than a real hotel.
+              Velora House was created by TheoMedia as website design for a boutique hotel, country inn, guest house or independent hospitality property. 
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
@@ -763,7 +763,7 @@ export default function BoutiqueHotelCaseStudy() {
                   START A PROJECT →
                 </Link>
                 <a 
-                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Velora%20House%20concept%20and%20would%20like%20to%20discuss%20a%20website%20project." 
+                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Velora%20House%20and%20would%20like%20to%20discuss%20a%20website%20project." 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[13px] font-sans font-medium tracking-[0.1em] text-bone border border-bone/20 hover:border-bone/60 hover:bg-bone/5 transition-all duration-300 uppercase rounded-sm px-8 py-4"

@@ -91,7 +91,7 @@ export default function HealthcareCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Type</div>
-              <div className="text-[14px] font-medium text-near-black">Concept / Demonstration</div>
+              <div className="text-[14px] font-medium text-near-black">Live Project Details</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Market</div>
@@ -593,7 +593,7 @@ export default function HealthcareCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Clinic
               </h2>
-              <p className="mb-10">Elowen Clinic is a concept project. A real healthcare website would be built around the services, practitioners and systems of the actual clinic. Depending on the business, we could add:</p>
+              <p className="mb-10">Elowen Clinic was built as a healthcare website would be built around the services, practitioners and systems of the actual clinic. Depending on the business, we could add:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -719,7 +719,7 @@ export default function HealthcareCaseStudy() {
               Explore the Working Clinic Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Elowen Clinic is a concept project created by TheoMedia to demonstrate how we would approach website design for a private clinic, dental practice or healthcare business. It is a working demonstration rather than a real clinic.
+              Elowen Clinic was created by TheoMedia as website design for a private clinic, dental practice or healthcare business. 
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
@@ -753,7 +753,7 @@ export default function HealthcareCaseStudy() {
                   START A PROJECT →
                 </Link>
                 <a 
-                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Clinic%20concept%20and%20would%20like%20to%20discuss%20a%20website%20project." 
+                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Clinic%20and%20would%20like%20to%20discuss%20a%20website%20project." 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[13px] font-sans font-medium tracking-[0.1em] text-bone border border-bone/20 hover:border-bone/60 hover:bg-bone/5 transition-all duration-300 uppercase rounded-sm px-8 py-4"

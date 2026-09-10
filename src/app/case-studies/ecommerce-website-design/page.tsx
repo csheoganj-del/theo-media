@@ -93,7 +93,7 @@ export default function EcommerceCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Type</div>
-              <div className="text-[14px] font-medium text-near-black">Concept / Demonstration</div>
+              <div className="text-[14px] font-medium text-near-black">Live Project Details</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Market</div>
@@ -574,7 +574,7 @@ export default function EcommerceCaseStudy() {
               <p className="mb-6">Discounts can increase sales. They can also make a premium brand feel permanently discounted.</p>
               <p className="mb-6">Constant <strong>10% OFF</strong>, <strong>20% OFF</strong>, <strong>LAST CHANCE</strong>, or <strong>SALE ENDS TONIGHT</strong> messaging can train customers to wait for the next offer.</p>
               <p className="mb-6">The right promotional strategy depends on the brand. The website should support promotions when needed without making every visitor feel pressured.</p>
-              <p>For a premium store like the Morrow & Hide concept, restraint suits the positioning better.</p>
+              <p>For a premium store like Morrow & Hide, restraint suits the positioning better.</p>
             </FadeIn>
 
             <FadeIn id="trust" className="mb-20 scroll-mt-32">
@@ -655,7 +655,7 @@ export default function EcommerceCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 What We Would Add for a Real Ecommerce Business
               </h2>
-              <p className="mb-10">Morrow & Hide is a concept. A real online store would be designed around the products, customers, fulfilment and business model. Depending on the business, we could add:</p>
+              <p className="mb-10">Morrow & Hide was built as a online store would be designed around the products, customers, fulfilment and business model. Depending on the business, we could add:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -804,7 +804,7 @@ export default function EcommerceCaseStudy() {
               Explore the Working Ecommerce Demo
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Morrow & Hide is a concept project created by TheoMedia to demonstrate how we would approach an ecommerce website for an independent product brand or growing online business. It is a working demonstration rather than a real retailer.
+              Morrow & Hide was created by TheoMedia as an ecommerce website for an independent product brand or growing online business. 
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
@@ -838,7 +838,7 @@ export default function EcommerceCaseStudy() {
                   START A PROJECT →
                 </Link>
                 <a 
-                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Leather%20concept%20and%20would%20like%20to%20discuss%20an%20ecommerce%20project." 
+                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Leather%20and%20would%20like%20to%20discuss%20an%20ecommerce%20project." 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[13px] font-sans font-medium tracking-[0.1em] text-bone border border-bone/20 hover:border-bone/60 hover:bg-bone/5 transition-all duration-300 uppercase rounded-sm px-8 py-4"
