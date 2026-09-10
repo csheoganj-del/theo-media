@@ -7,7 +7,7 @@ import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -17,7 +17,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   
   if (!project) {
     return {
@@ -31,8 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function CaseStudyPage({ params }: Props) {
-  const currentIndex = projects.findIndex((p) => p.slug === params.slug);
+export default async function CaseStudyPage({ params }: Props) {
+  const { slug } = await params;
+  const currentIndex = projects.findIndex((p) => p.slug === slug);
   
   if (currentIndex === -1) {
     notFound();
