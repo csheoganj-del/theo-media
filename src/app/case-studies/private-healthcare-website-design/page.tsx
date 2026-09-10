@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function HealthcareCaseStudy() {
-  const demoUrl = "https://theo-clinic-demo.vercel.app";
+  const demoUrl = "https://clinic.theomedia.co.uk";
 
   return (
     <main className="bg-bone min-h-screen text-near-black selection:bg-near-black selection:text-bone">

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function RestaurantCaseStudy() {
-  const demoUrl = "https://theo-table-gastropub-demo.vercel.app";
+  const demoUrl = "https://table.theomedia.co.uk";
 
   return (
     <main className="bg-bone min-h-screen text-near-black selection:bg-near-black selection:text-bone">

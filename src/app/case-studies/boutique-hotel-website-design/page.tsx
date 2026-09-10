@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function BoutiqueHotelCaseStudy() {
-  const demoUrl = "https://velora-house-demo.vercel.app";
+  const demoUrl = "https://velora.theomedia.co.uk";
 
   return (
     <main className="bg-bone min-h-screen text-near-black selection:bg-near-black selection:text-bone">
