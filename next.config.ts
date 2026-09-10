@@ -75,6 +75,11 @@ const nextConfig: NextConfig = {
         destination: 'https://morrow-hide.theomedia.co.uk',
         permanent: false,
       },
+      {
+        source: '/work/nick',
+        destination: 'https://nick.theomedia.co.uk',
+        permanent: false,
+      },
     ];
   },
   async headers() {
