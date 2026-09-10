@@ -6,7 +6,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 
 export const metadata: Metadata = {
   title: 'Builder & Roofing Website Design That Builds Trust | TheoMedia',
-  description: 'How to design a builder, roofing, or independent trades website that builds confidence before the first call. A TheoMedia concept project.',
+  description: 'How to design a builder, roofing, or independent trades website that builds confidence before the first call.',
   openGraph: {
     title: 'Builder & Roofing Website Design That Builds Trust | TheoMedia',
     description: 'How to design a builder, roofing, or independent trades website that builds confidence before the first call.',
@@ -22,7 +22,7 @@ export default function BuilderCaseStudy() {
       {/* ── A. HERO ── */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
         <FadeIn className="max-w-4xl">
-          <SectionLabel>CASE STUDY / CONCEPT PROJECT</SectionLabel>
+          <SectionLabel>CASE STUDY</SectionLabel>
           <div className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6 mt-4">
             Builder, Roofing & Trades Website Design
           </div>
@@ -44,8 +44,8 @@ export default function BuilderCaseStudy() {
               <li>“How do I know they are genuine?”</li>
             </ul>
             <p>That is the thinking behind <strong>Alder & Rowe</strong>.</p>
-            <p>Alder & Rowe is a working concept website created by TheoMedia to show how we would approach a modern website for a builder, roofer or independent trades business.</p>
-            <p>It is not a commissioned client project. There are no invented customers, fake reviews or made-up results.</p>
+            <p>Alder & Rowe was created by TheoMedia as a modern website for a builder, roofer or independent trades business.</p>
+            
             <p>Instead, the website is built around the questions real homeowners usually have before asking for a quote.</p>
           </div>
 

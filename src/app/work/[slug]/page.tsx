@@ -49,9 +49,7 @@ export default function CaseStudyPage({ params }: Props) {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
               <SectionLabel className="text-stone">{project.sector}</SectionLabel>
               <div className="inline-block px-3 py-1.5 border border-stone/30 rounded-full">
-                <span className="text-xs font-bold text-bone tracking-widest uppercase">
-                  CONCEPT / DEMONSTRATION
-                </span>
+                
               </div>
             </div>
             

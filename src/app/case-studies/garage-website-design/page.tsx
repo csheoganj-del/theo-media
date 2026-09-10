@@ -6,7 +6,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 
 export const metadata: Metadata = {
   title: 'Garage Website Design That Makes Booking Simple | TheoMedia Case Study',
-  description: 'How to design an independent garage, MOT centre, or vehicle workshop website that builds trust and makes booking easy. A TheoMedia concept project.',
+  description: 'How to design an independent garage, MOT centre, or vehicle workshop website that builds trust and makes booking easy.',
   openGraph: {
     title: 'Garage Website Design That Makes Booking Simple | TheoMedia',
     description: 'How to design an independent garage, MOT centre, or vehicle workshop website that builds trust and makes booking easy.',
@@ -22,7 +22,7 @@ export default function GarageCaseStudy() {
       {/* ── A. HERO ── */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
         <FadeIn className="max-w-4xl">
-          <SectionLabel>CASE STUDY / CONCEPT PROJECT</SectionLabel>
+          <SectionLabel>CASE STUDY</SectionLabel>
           <div className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6 mt-4">
             Garage & MOT Website Design
           </div>
@@ -38,7 +38,7 @@ export default function GarageCaseStudy() {
             <p>That means a garage website has a fairly simple job.</p>
             <p>Help the customer understand whether you can help them, give them a reason to trust you, and make it easy to book or call.</p>
             <p>That is the thinking behind <strong>Hartwell Motorworks</strong>.</p>
-            <p>Hartwell Motorworks is a working concept website created by TheoMedia to show how we would approach a modern website for an independent garage, MOT centre or vehicle workshop.</p>
+            <p>Hartwell Motorworks was created by TheoMedia as a modern website for an independent garage, MOT centre or vehicle workshop.</p>
             <p>It is not a commissioned client project and we do not use made-up results or statistics. Instead, we built it around the real problems garage customers face when they are looking for help online.</p>
           </div>
 

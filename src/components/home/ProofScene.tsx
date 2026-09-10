@@ -34,8 +34,7 @@ export default function ProofScene() {
                   <div className={`flex flex-col gap-6 ${isFullWidth ? 'max-w-3xl' : 'lg:w-[40%] lg:order-1 lg:pr-12'}`}>
                     <div>
                       <span className="text-[10px] tracking-widest font-sans font-medium uppercase text-stone mb-4 block">
-                        {project.sector} · CONCEPT / DEMONSTRATION
-                      </span>
+                        {project.sector}</span>
                       <h3 className="font-display text-[40px] md:text-[48px] lg:text-[56px] leading-[1.1] text-near-black mb-6">
                         {project.title}
                       </h3>

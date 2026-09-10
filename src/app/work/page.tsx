@@ -44,9 +44,7 @@ export default function WorkPage() {
                 <div className="flex-grow flex flex-col">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-[10px] font-sans font-medium tracking-[0.2em] text-stone uppercase">{project.sector}</span>
-                    <span className="text-[10px] font-medium px-2 py-1 bg-near-black text-bone uppercase tracking-wider">
-                      CONCEPT / DEMONSTRATION
-                    </span>
+                    
                   </div>
                   
                   <Link href={`/work/${project.slug}`}>

@@ -6,7 +6,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 
 export const metadata: Metadata = {
   title: 'Boutique Hotel Website Design That Makes Guests Want to Stay | TheoMedia',
-  description: 'How to design a boutique hotel or country inn website that combines atmosphere, useful information and a clear route to direct booking. A TheoMedia concept project.',
+  description: 'How to design a boutique hotel or country inn website that combines atmosphere, useful information and a clear route to direct booking.',
   openGraph: {
     title: 'Boutique Hotel Website Design That Makes Guests Want to Stay | TheoMedia',
     description: 'How to design a boutique hotel or country inn website that combines atmosphere, useful information and a clear route to direct booking.',
@@ -22,7 +22,7 @@ export default function BoutiqueHotelCaseStudy() {
       {/* ── A. HERO ── */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
         <FadeIn className="max-w-4xl">
-          <SectionLabel>CASE STUDY / CONCEPT PROJECT</SectionLabel>
+          <SectionLabel>CASE STUDY</SectionLabel>
           <div className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6 mt-4">
             Boutique Hotel & Country Inn Website Design
           </div>
@@ -44,9 +44,9 @@ export default function BoutiqueHotelCaseStudy() {
             <p>That is why hotel websites need to do more than list rooms.</p>
             <p>They need to help someone picture being there.</p>
             <p>That is the thinking behind <strong>Velora House</strong>.</p>
-            <p>Velora House is a working concept website created by TheoMedia to show how we would approach a boutique hotel, country inn, guest house or independent hospitality business.</p>
-            <p>It is not a real hotel and it is not a commissioned client project.</p>
-            <p>There are no invented awards, fake reviews, made-up booking numbers or imaginary press coverage.</p>
+            <p>Velora House was created by TheoMedia as a boutique hotel, country inn, guest house or independent hospitality business.</p>
+            
+            
             <p>The project exists to show how a hotel website can combine atmosphere, useful information and a clear route towards direct booking.</p>
           </div>
 

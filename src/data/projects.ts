@@ -4,8 +4,7 @@ export interface Project {
   title: string;
   sector: string;
   category: string;
-  status: 'CONCEPT / DEMONSTRATION' | 'LIVE PROJECT';
-  description: string;
+    description: string;
   shortDescription: string;
   demoUrl: string;
   tags: string[];
@@ -23,8 +22,7 @@ export const projects: Project[] = [
     title: 'Hartwell Motorworks',
     sector: 'Automotive',
     category: 'trades',
-    status: 'CONCEPT / DEMONSTRATION',
-    description: 'A modern automotive website built around credibility, service discovery and effortless bookings.',
+        description: 'A modern automotive website built around credibility, service discovery and effortless bookings.',
     shortDescription: 'Servicing, diagnostics, MOT preparation and specialist repairs — with instant online booking and transparent service menus.',
     demoUrl: 'https://theo-garage.vercel.app',
     tags: ['MOT Preparation', 'Online Booking', 'Diagnostics', 'Fleet Care'],
@@ -40,8 +38,7 @@ export const projects: Project[] = [
     title: 'Alder & Rowe',
     sector: 'Trades & Construction',
     category: 'trades',
-    status: 'CONCEPT / DEMONSTRATION',
-    description: 'A premium contractor experience built around trust, project proof and quote generation.',
+        description: 'A premium contractor experience built around trust, project proof and quote generation.',
     shortDescription: 'Modern contractor and trades platform for architectural extensions, roofing, and renovations — with interactive quote requests and project galleries.',
     demoUrl: 'https://theo-build.vercel.app',
     tags: ['Architectural Build', 'Roofing & Trades', 'Quote Requests', 'Project Gallery'],
@@ -57,8 +54,7 @@ export const projects: Project[] = [
     title: 'Velora House',
     sector: 'Boutique Hotel',
     category: 'hospitality',
-    status: 'CONCEPT / DEMONSTRATION',
-    description: 'A boutique-hotel experience built like a hospitality film.',
+        description: 'A boutique-hotel experience built like a hospitality film.',
     shortDescription: 'Design-led boutique retreat with a frictionless, commission-free direct booking engine, suite photography galleries, and dining reservation flows.',
     demoUrl: 'https://velora-house-demo.vercel.app',
     tags: ['Direct Room Booking', 'Boutique Suites', 'PMS Connected', 'Zero Commission'],
@@ -74,8 +70,7 @@ export const projects: Project[] = [
     title: 'Cinder & Field',
     sector: 'Restaurant & Gastropub',
     category: 'hospitality',
-    status: 'CONCEPT / DEMONSTRATION',
-    description: 'A restaurant experience designed around atmosphere, menus, reservations and private-dining enquiries.',
+        description: 'A restaurant experience designed around atmosphere, menus, reservations and private-dining enquiries.',
     shortDescription: 'Atmospheric gastropub and seasonal kitchen website with interactive dining menus, instant table bookings, and private event packages.',
     demoUrl: 'https://theo-table-gastropub-demo.vercel.app',
     tags: ['Table Reservations', 'Digital Menus', 'Gastropub', 'Private Dining'],
@@ -91,8 +86,7 @@ export const projects: Project[] = [
     title: 'Elowen Clinic',
     sector: 'Private Healthcare',
     category: 'healthcare',
-    status: 'CONCEPT / DEMONSTRATION',
-    description: 'A calm, consultation-led digital experience designed for high-trust treatment businesses.',
+        description: 'A calm, consultation-led digital experience designed for high-trust treatment businesses.',
     shortDescription: 'Private healthcare, dental, and medical aesthetics practice platform built around patient trust, transparent treatment menus, and online consultation scheduling.',
     demoUrl: 'https://theo-clinic-demo.vercel.app',
     tags: ['Doctor Consultations', 'Medical Aesthetics', 'Treatment Menu', 'Patient FAQs'],
@@ -108,8 +102,7 @@ export const projects: Project[] = [
     title: 'Morrow & Hide',
     sector: 'Premium Ecommerce',
     category: 'ecommerce',
-    status: 'CONCEPT / DEMONSTRATION',
-    description: 'An artisan ecommerce experience built around product storytelling and frictionless mobile checkout.',
+        description: 'An artisan ecommerce experience built around product storytelling and frictionless mobile checkout.',
     shortDescription: 'Artisan lifestyle and handcrafted leather goods brand store with sub-second browsing, frictionless Apple Pay checkout, and brand storytelling.',
     demoUrl: 'https://theoleather.vercel.app',
     tags: ['Frictionless Checkout', 'Stripe / Shopify', 'Instant Filtering', 'Mobile Cart'],

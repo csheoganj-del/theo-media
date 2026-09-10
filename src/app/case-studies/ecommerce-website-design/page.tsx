@@ -6,7 +6,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 
 export const metadata: Metadata = {
   title: 'Ecommerce Website Design That Keeps the Product at the Centre | TheoMedia',
-  description: 'How to design a premium ecommerce website for an independent brand that makes shopping simple. A TheoMedia concept project.',
+  description: 'How to design a premium ecommerce website for an independent brand that makes shopping simple.',
   openGraph: {
     title: 'Ecommerce Website Design That Keeps the Product at the Centre | TheoMedia',
     description: 'How to design a premium ecommerce website for an independent brand that makes shopping simple.',
@@ -22,7 +22,7 @@ export default function EcommerceCaseStudy() {
       {/* ── A. HERO ── */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
         <FadeIn className="max-w-4xl">
-          <SectionLabel>CASE STUDY / CONCEPT PROJECT</SectionLabel>
+          <SectionLabel>CASE STUDY</SectionLabel>
           <div className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6 mt-4">
             Ecommerce & Online Store Website Design
           </div>
@@ -44,9 +44,9 @@ export default function EcommerceCaseStudy() {
               <li>And a checkout that feels much harder than it should on a phone.</li>
             </ul>
             <p>That is the thinking behind <strong>Morrow & Hide</strong>.</p>
-            <p>Morrow & Hide is a working concept website created by TheoMedia to show how we would approach a premium ecommerce website for an independent brand or growing online business.</p>
-            <p>It is not a real retailer and it is not a commissioned client project.</p>
-            <p>There are no fake sales figures, invented customer reviews, made-up conversion rates or imaginary awards.</p>
+            <p>Morrow & Hide was created by TheoMedia as a premium ecommerce website for an independent brand or growing online business.</p>
+            
+            
             <p>The purpose of the project is simple.</p>
             <p>Show how an online store can feel premium without getting in the way of the customer.</p>
           </div>

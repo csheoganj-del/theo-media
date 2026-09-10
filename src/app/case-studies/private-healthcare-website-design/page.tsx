@@ -6,7 +6,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 
 export const metadata: Metadata = {
   title: 'Private Clinic Website Design That Helps Patients Feel Informed | TheoMedia',
-  description: 'How to design a modern website for a private clinic, dental practice or specialist healthcare business that builds trust through clarity. A TheoMedia concept project.',
+  description: 'How to design a modern website for a private clinic, dental practice or specialist healthcare business that builds trust through clarity.',
   openGraph: {
     title: 'Private Clinic Website Design That Helps Patients Feel Informed | TheoMedia',
     description: 'How to design a modern website for a private clinic, dental practice or specialist healthcare business that builds trust through clarity.',
@@ -22,7 +22,7 @@ export default function HealthcareCaseStudy() {
       {/* ── A. HERO ── */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
         <FadeIn className="max-w-4xl">
-          <SectionLabel>CASE STUDY / CONCEPT PROJECT</SectionLabel>
+          <SectionLabel>CASE STUDY</SectionLabel>
           <div className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6 mt-4">
             Private Clinic, Dental & Healthcare Website Design
           </div>
@@ -43,9 +43,9 @@ export default function HealthcareCaseStudy() {
             <p>That means a clinic website has an important job.</p>
             <p>It needs to feel professional without feeling cold. It needs to explain services clearly without overwhelming people. And it needs to make the next step easy.</p>
             <p>That is the thinking behind <strong>Elowen Clinic</strong>.</p>
-            <p>Elowen Clinic is a working concept website created by TheoMedia to show how we would approach a modern website for a private clinic, dental practice, specialist healthcare business or medical aesthetics provider.</p>
-            <p>It is not a real clinic and it is not a commissioned client project.</p>
-            <p>There are no invented doctors, fake qualifications, made-up reviews or imaginary treatment results.</p>
+            <p>Elowen Clinic was created by TheoMedia as a modern website for a private clinic, dental practice, specialist healthcare business or medical aesthetics provider.</p>
+            
+            
             <p>The purpose of the project is to demonstrate how a healthcare website can build trust through clarity.</p>
           </div>
 

@@ -63,9 +63,7 @@ export default function WorkScene() {
                   <div className="flex flex-col gap-6">
                     <div className="flex justify-between items-start">
                       <div>
-                        <span className="text-[10px] tracking-widest font-sans font-medium uppercase text-warm-accent mb-3 block">
-                          CONCEPT / DEMONSTRATION
-                        </span>
+                        
                         <h4 className="font-display text-4xl">{projects[activeProject].title}</h4>
                       </div>
                       <div className="flex flex-col items-end gap-3">
@@ -110,8 +108,7 @@ export default function WorkScene() {
                 </div>
                 <div className="flex flex-col gap-4">
                   <span className="text-[10px] tracking-widest font-sans font-medium uppercase text-warm-accent">
-                    {project.sector} · CONCEPT / DEMONSTRATION
-                  </span>
+                    {project.sector}</span>
                   <h3 className="font-display text-[32px] md:text-[40px] leading-tight">
                     {project.title}
                   </h3>

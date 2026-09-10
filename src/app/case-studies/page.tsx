@@ -22,7 +22,7 @@ export default function CaseStudiesPage() {
             WEBSITES BUILT AROUND REAL BUSINESS PROBLEMS.
           </h1>
           <p className="font-sans text-[16px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            These are working concept projects showing how TheoMedia approaches different industries, 
+            These are projects showing how TheoMedia approaches different industries, 
             balances design with functionality, and solves real commercial challenges.
           </p>
         </FadeIn>

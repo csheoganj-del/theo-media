@@ -6,7 +6,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 
 export const metadata: Metadata = {
   title: 'Restaurant Website Design That Helps Turn Browsing Into Bookings | TheoMedia',
-  description: 'How to design a restaurant or gastropub website that makes choosing, booking and visiting easier. A TheoMedia concept project.',
+  description: 'How to design a restaurant or gastropub website that makes choosing, booking and visiting easier.',
   openGraph: {
     title: 'Restaurant Website Design That Helps Turn Browsing Into Bookings | TheoMedia',
     description: 'How to design a restaurant or gastropub website that makes choosing, booking and visiting easier.',
@@ -22,7 +22,7 @@ export default function RestaurantCaseStudy() {
       {/* ── A. HERO ── */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
         <FadeIn className="max-w-4xl">
-          <SectionLabel>CASE STUDY / CONCEPT PROJECT</SectionLabel>
+          <SectionLabel>CASE STUDY</SectionLabel>
           <div className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6 mt-4">
             Restaurant, Gastropub & Dining Website Design
           </div>
@@ -46,9 +46,9 @@ export default function RestaurantCaseStudy() {
             </ul>
 
             <p>That is the thinking behind <strong>Cinder & Field</strong>.</p>
-            <p>Cinder & Field is a working concept website created by TheoMedia to show how we would approach a modern website for a restaurant, gastropub, pub, bistro or independent dining business.</p>
-            <p>It is not a real restaurant and it is not a commissioned client project.</p>
-            <p>There are no fake reviews, invented awards, made-up booking numbers or pretend press coverage.</p>
+            <p>Cinder & Field was created by TheoMedia as a modern website for a restaurant, gastropub, pub, bistro or independent dining business.</p>
+            
+            
             <p>The purpose of the project is simple.</p>
             <p>Show how a restaurant website can make choosing, booking and visiting easier.</p>
           </div>
