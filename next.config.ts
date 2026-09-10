@@ -80,6 +80,16 @@ const nextConfig: NextConfig = {
         destination: 'https://nick.theomedia.co.uk',
         permanent: false,
       },
+      {
+        source: '/work/barber',
+        destination: 'https://wren-crown.theomedia.co.uk',
+        permanent: false,
+      },
+      {
+        source: '/work/wren-crown',
+        destination: 'https://wren-crown.theomedia.co.uk',
+        permanent: false,
+      },
     ];
   },
   async headers() {
