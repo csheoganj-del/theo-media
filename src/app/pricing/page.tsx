@@ -7,9 +7,22 @@ import Accordion from '@/components/ui/Accordion';
 import Button from '@/components/ui/Button';
 import { SITE } from '@/lib/constants';
 
+import Link from 'next/link';
+
 export const metadata: Metadata = {
-  title: 'Pricing | TheoMedia',
-  description: 'Clear packages. Clear deliverables. No guessing what your website will cost.',
+  title: 'Transparent Web Design Pricing UK & Ireland | Fixed Packages from £895 / €1,050',
+  description:
+    'Transparent web design pricing for UK and Ireland businesses. Clear fixed packages from £895 / €1,050 with 100% source code ownership and zero monthly lock-in.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/pricing',
+  },
+  openGraph: {
+    title: 'Transparent Web Design Pricing UK & Ireland | TheoMedia',
+    description:
+      'Clear fixed packages from £895 / €1,050 with 100% client ownership and zero monthly platform lock-in.',
+    url: 'https://www.theomedia.co.uk/pricing',
+    type: 'website',
+  },
 };
 
 export default function PricingPage() {
@@ -25,9 +38,24 @@ export default function PricingPage() {
             <p className="text-2xl md:text-3xl font-display text-charcoal mb-8">
               Then decide if we&apos;re worth it.
             </p>
-            <p className="text-lg text-stone font-sans max-w-2xl mx-auto">
+            <p className="text-lg text-stone font-sans max-w-2xl mx-auto mb-6">
               Clear packages. Clear deliverables. No guessing what your website will cost.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-6 text-[13px] font-sans">
+              <Link
+                href="/insights/how-much-does-a-website-cost-uk"
+                className="text-stone hover:text-near-black border-b border-stone/40 pb-0.5 transition-colors"
+              >
+                Read our 2026 UK Website Cost Guide →
+              </Link>
+              <span className="text-stone/30">·</span>
+              <Link
+                href="/web-design-ireland"
+                className="text-stone hover:text-near-black border-b border-stone/40 pb-0.5 transition-colors"
+              >
+                Need pricing in Euro (€)? View Ireland Studio →
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>

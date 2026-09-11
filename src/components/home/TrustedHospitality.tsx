@@ -17,12 +17,12 @@ export default function TrustedHospitality() {
     <section ref={containerRef} className="bg-near-black text-bone py-32 md:py-48 overflow-hidden relative border-t border-bone/5">
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 mb-20 md:mb-32">
         <FadeIn>
-          <SectionLabel className="text-stone">TRUSTED BY</SectionLabel>
+          <SectionLabel className="text-stone">SECTORS & EXPERTISE</SectionLabel>
           <h2 className="font-display text-[44px] md:text-[64px] lg:text-[80px] leading-[1.05] mb-8 text-bone mt-6">
-            BRANDS<br />WE&apos;VE WORKED WITH.
+            CRAFTED FOR<br />AMBITIOUS BRANDS.
           </h2>
           <p className="font-sans text-[17px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            From independent studios and creative agencies to automotive, healthcare and premium lifestyle businesses, our work spans ambitious brands globally.
+            From independent hospitality and dining groups to automotive specialists, private healthcare clinics, and artisan retail, our digital engineering serves high-trust businesses across the UK and Ireland.
           </p>
         </FadeIn>
       </div>
@@ -36,13 +36,13 @@ export default function TrustedHospitality() {
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 mt-20 md:mt-32">
         <FadeIn className="flex flex-col items-start gap-8">
           <p className="font-sans text-[15px] md:text-[18px] text-stone max-w-xl">
-            Selected brands and businesses we&apos;ve had the opportunity to work with.
+            Bespoke website architecture, high-conversion customer journeys, and tailored digital systems.
           </p>
           <Link 
             href="/work"
             className="text-[12px] font-sans font-medium tracking-[0.15em] uppercase text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors inline-flex items-center"
           >
-            VIEW ALL WORK →
+            EXPLORE SELECTED WORK →
           </Link>
         </FadeIn>
       </div>

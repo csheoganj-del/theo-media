@@ -5,7 +5,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/api/'],
     },
     sitemap: 'https://www.theomedia.co.uk/sitemap.xml',
+    host: 'https://www.theomedia.co.uk',
   };
 }

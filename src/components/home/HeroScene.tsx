@@ -51,21 +51,20 @@ export default function HeroScene() {
         >
           {/* Mobile-first top labels */}
           <div className="flex flex-col items-center text-center space-y-3 mb-6 md:mb-10 lg:mb-12 mt-6 md:mt-10 lg:mt-12">
-            <motion.div variants={itemVariants} className="text-[10px] md:text-xs tracking-[0.3em] text-bone/50 uppercase font-medium">
-              DIGITAL STUDIO · UK & EUROPE
-            </motion.div>
+            <motion.p variants={itemVariants} className="text-[10px] md:text-xs tracking-[0.3em] text-bone/60 uppercase font-medium">
+              INDEPENDENT WEB DESIGN & DIGITAL PRODUCT STUDIO · UK & IRELAND
+            </motion.p>
           </div>
 
           <div className="w-full flex-grow flex flex-col justify-center items-center text-center pb-8 lg:pb-12">
             
-            {/* THEOMEDIA with shining light scroll effect */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-[16vw] md:text-[14vw] lg:text-[180px] xl:text-[220px] leading-[0.85] tracking-[-0.02em] mb-8 uppercase"
-            >
+            {/* THEOMEDIA with shining light scroll effect — Semantic H1 */}
+            <h1 className="font-display text-[16vw] md:text-[14vw] lg:text-[180px] xl:text-[220px] leading-[0.85] tracking-[-0.02em] mb-8 uppercase m-0 p-0">
               <motion.span
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="inline-block"
                 style={{
                   backgroundImage: 'linear-gradient(110deg, #F5F0E8 0%, #F5F0E8 40%, #FFFFFF 50%, #F5F0E8 60%, #F5F0E8 100%)',
                   backgroundSize: '200% auto',
@@ -77,20 +76,20 @@ export default function HeroScene() {
               >
                 THEOMEDIA
               </motion.span>
-            </motion.div>
+            </h1>
             
             <motion.h2 
               variants={itemVariants}
               className="font-sans text-[18px] sm:text-[22px] lg:text-[28px] text-bone/90 max-w-3xl mx-auto leading-snug mb-4 font-medium"
             >
-              We build digital experiences people remember.
+              We build bespoke websites & digital experiences people remember.
             </motion.h2>
 
             <motion.p 
               variants={itemVariants}
-              className="font-sans text-[15px] sm:text-[16px] lg:text-[18px] text-bone/60 max-w-2xl mx-auto leading-relaxed mb-10 md:mb-12 px-4"
+              className="font-sans text-[15px] sm:text-[16px] lg:text-[18px] text-bone/70 max-w-2xl mx-auto leading-relaxed mb-10 md:mb-12 px-4"
             >
-              Distinctive websites, ecommerce platforms and digital systems for ambitious businesses across the UK, Ireland and Europe.
+              Distinctive website design, custom ecommerce, and bespoke digital products engineered for ambitious businesses across the United Kingdom and Ireland.
             </motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full px-2">
@@ -118,8 +117,8 @@ export default function HeroScene() {
               className="w-full h-full bg-bone/60 absolute top-[-100%]"
             />
           </div>
-          <p className="text-[10px] md:text-[11px] lg:text-xs tracking-widest text-bone/40 uppercase font-sans text-center">
-            Founder-led · Custom-built · 100% client-owned
+          <p className="text-[10px] md:text-[11px] lg:text-xs tracking-widest text-bone/50 uppercase font-sans text-center">
+            Founder-led · Custom-built · UK & Ireland · 100% Client Ownership
           </p>
         </motion.div>
       </motion.div>
