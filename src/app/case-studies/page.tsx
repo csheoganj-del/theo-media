@@ -6,7 +6,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
-  title: 'Case Studies',
+  title: 'Client Case Studies & Digital Product Work | TheoMedia',
   description: 'How TheoMedia approaches digital experiences across different industries. Detailed case studies of our projects.',
 };
 

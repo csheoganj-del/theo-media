@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/ui/FadeIn';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = {
-  title: 'Ecommerce Development',
+  title: 'Ecommerce Website Design & Development | TheoMedia',
   description:
     'Premium ecommerce experiences built around product presentation and frictionless conversion. Stripe, Shopify and custom store development by TheoMedia.',
 };

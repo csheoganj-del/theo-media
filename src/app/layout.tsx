@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.theomedia.co.uk'),
   title: {
     default: 'Web Design & Digital Product Studio UK & Ireland | TheoMedia',
-    template: '%s | TheoMedia',
+    template: '%s',
   },
   description:
     'TheoMedia is an independent web design and digital product studio. We engineer bespoke websites, custom website development, and business software across the UK and Ireland.',

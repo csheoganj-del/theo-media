@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/ui/FadeIn';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = {
-  title: 'Website Design',
+  title: 'Bespoke Website Design | TheoMedia',
   description:
     'Brand-led commercial websites designed to create attention, trust and enquiries. Custom-built by TheoMedia for businesses across the UK and Ireland.',
 };
