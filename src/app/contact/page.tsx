@@ -327,9 +327,9 @@ ${formData.message}
                   <div className="pt-8 border-t border-stone/20">
                     <h3 className="font-sans font-bold text-near-black text-sm uppercase tracking-widest mb-3">Regions</h3>
                     <p className="font-sans text-stone leading-relaxed">
-                      Based in the UK.<br />
+                      Independent studio.<br />
                       Working with clients across:<br />
-                      London, Manchester, Dublin, Europe.
+                      London, Manchester, Edinburgh, Dublin &amp; Nationwide UK &amp; Ireland.
                     </p>
                   </div>
                 </div>

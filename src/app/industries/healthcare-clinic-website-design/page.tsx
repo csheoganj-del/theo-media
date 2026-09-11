@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -7,7 +7,7 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Private Healthcare & Clinic Website Design UK & Ireland',
   description:
-    'Bespoke website design for private medical practices, dental clinics, and aesthetic practitioners. GDPR-compliant consultation booking, patient trust architecture and treatment menus.',
+    'Bespoke website design for private medical practices, dental clinics, and aesthetic practitioners. Confidential consultation booking, patient trust architecture and treatment menus.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/industries/healthcare-clinic-website-design',
   },
@@ -42,7 +42,7 @@ export default function HealthcareClinicWebsiteDesignPage() {
               { '@type': 'Country', name: 'Ireland' },
             ],
             description:
-              'Bespoke website design for private medical clinics, dental practices and aesthetic doctors. Transparent pricing, practitioner credentials, and GDPR-compliant consultation booking.',
+              'Bespoke website design for private medical clinics, dental practices and aesthetic doctors. Transparent pricing, practitioner credentials, and confidential consultation booking.',
           }),
         }}
       />
@@ -124,7 +124,7 @@ export default function HealthcareClinicWebsiteDesignPage() {
             </p>
           </div>
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col">
-            <h3 className="font-display text-[22px] text-near-black mb-3">GDPR Consultation Workflows</h3>
+            <h3 className="font-display text-[22px] text-near-black mb-3">Confidential Consultation Workflows</h3>
             <p className="font-sans text-stone text-[15px] leading-relaxed">
               Secure consultation enquiry forms and appointment booking integrations (Semble, Pabau, Cliniko) respecting patient privacy.
             </p>

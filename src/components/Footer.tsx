@@ -2,10 +2,8 @@ import Link from 'next/link';
 import { SITE, NAV_LINKS } from '@/lib/constants';
 
 const capabilities = [
-  { label: 'Custom Websites', href: '/services/websites' },
-  { label: 'Ecommerce Development', href: '/services/ecommerce' },
-  { label: 'Web Applications', href: '/services/web-applications' },
-  { label: 'Business Software', href: '/services/business-software' },
+  { label: 'Bespoke Web Design', href: '/web-design' },
+  { label: 'Business Software', href: '/business-software' },
   { label: 'All Capabilities →', href: '/services' },
 ];
 
@@ -14,16 +12,13 @@ const industries = [
   { label: 'Hotels & Boutique Stays', href: '/industries/hotel-website-design' },
   { label: 'Trades & Construction', href: '/industries/trades-construction-website-design' },
   { label: 'Healthcare & Clinics', href: '/industries/healthcare-clinic-website-design' },
-  { label: 'Luxury DTC Ecommerce', href: '/industries/ecommerce-website-design' },
-  { label: 'Small Business Web Design', href: '/industries/small-business-website-design' },
   { label: 'All Sector Solutions →', href: '/industries' },
 ];
 
-const insights = [
-  { label: 'UK Website Cost Guide 2026', href: '/insights/how-much-does-a-website-cost-uk' },
-  { label: 'Squarespace vs Custom Next.js', href: '/insights/squarespace-vs-custom-website' },
-  { label: 'Restaurant Web Economics', href: '/insights/restaurant-website-cost-uk' },
-  { label: 'All Insights & Comparisons →', href: '/insights' },
+const journalGuides = [
+  { label: 'UK Website Cost Guide 2026', href: '/journal/how-much-does-a-website-cost-uk' },
+  { label: 'Squarespace vs Custom Web Design', href: '/journal/squarespace-vs-custom-website' },
+  { label: 'All Articles & Analysis →', href: '/journal' },
 ];
 
 export function Footer() {
@@ -104,10 +99,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Capabilities */}
+          {/* Capabilities & Studio Navigation */}
           <div>
             <h4 className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-bone/30 mb-5">
-              Capabilities
+              Services
             </h4>
             <ul className="space-y-3">
               {capabilities.map((cap) => (
@@ -122,7 +117,7 @@ export function Footer() {
               ))}
             </ul>
             <h4 className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-bone/30 mb-5 mt-8">
-              Quick Navigation
+              Navigation
             </h4>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
@@ -149,7 +144,7 @@ export function Footer() {
           {/* Industries */}
           <div>
             <h4 className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-bone/30 mb-5">
-              Sectors &amp; Industries
+              Specialised Sectors
             </h4>
             <ul className="space-y-3">
               {industries.map((ind) => (
@@ -165,13 +160,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Insights & Guides */}
+          {/* The Journal & Enquiries */}
           <div>
             <h4 className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-bone/30 mb-5">
-              Insights &amp; Guides
+              The Journal
             </h4>
             <ul className="space-y-3 mb-8">
-              {insights.map((item) => (
+              {journalGuides.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -184,7 +179,7 @@ export function Footer() {
             </ul>
 
             <h4 className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-bone/30 mb-4">
-              Direct Inquiries
+              Direct Contact
             </h4>
             <div className="space-y-3">
               <div>
@@ -194,13 +189,13 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-[14px] text-bone/60 hover:text-bone transition-colors duration-200 inline-flex items-center gap-2"
                 >
-                  <span>Chat on WhatsApp</span>
+                  <span>WhatsApp Us</span>
                   <span>↗</span>
                 </a>
               </div>
               <div>
                 <span className="text-[11px] font-mono tracking-widest text-bone/40 uppercase block">
-                  Geographic Coverage:
+                  Markets Served:
                 </span>
                 <span className="text-[13px] text-bone/70">
                   {SITE.regions}
@@ -223,7 +218,7 @@ export function Footer() {
               href="/privacy"
               className="text-[12px] text-bone/30 hover:text-bone/60 transition-colors duration-200"
             >
-              Privacy
+              Privacy &amp; Terms
             </Link>
             <Link
               href="/sitemap.xml"

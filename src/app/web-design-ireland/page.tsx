@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -31,7 +31,7 @@ const irishSectors = [
     title: 'Hospitality & Boutique Retreats',
     focus: 'Direct bookings along the Wild Atlantic Way & Dublin',
     description:
-      'Irish hotels and guesthouses surrender 15–25% commission to OTAs. We engineer custom booking engines and cinematic room showcases that convert direct visitors at guaranteed best rates.',
+      'Irish hotels and guesthouses surrender 15–25% commission to OTAs. We engineer custom booking engines and cinematic room showcases that convert direct visitors at direct best rates.',
     slug: '/case-studies/boutique-hotel-website-design',
   },
   {
@@ -55,7 +55,7 @@ const irishSectors = [
     title: 'Private Healthcare & Clinics',
     focus: 'Consultation scheduling and patient trust',
     description:
-      'GDPR-compliant consultation scheduling, practitioner credentials, and transparent treatment pricing for private practices in Dublin, Cork, and Galway.',
+      'Confidential consultation scheduling, practitioner credentials, and transparent treatment pricing for private practices in Dublin, Cork, and Galway.',
     slug: '/case-studies/private-healthcare-website-design',
   },
 ];

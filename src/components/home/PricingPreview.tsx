@@ -70,7 +70,7 @@ export default function PricingPreview() {
             </div>
             <div className="mt-4">
               <Link
-                href="/insights/how-much-does-a-website-cost-uk"
+                href="/journal/how-much-does-a-website-cost-uk"
                 className="text-[13px] font-sans font-medium text-stone hover:text-near-black border-b border-near-black/20 pb-0.5 hover:border-near-black transition-colors"
               >
                 Planning your investment? Read our 2026 UK Website Cost Guide →

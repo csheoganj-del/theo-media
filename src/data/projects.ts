@@ -90,11 +90,11 @@ export const projects: Project[] = [
     shortDescription: 'Private healthcare, dental, and medical aesthetics practice platform built around patient trust, transparent treatment menus, and online consultation scheduling.',
     demoUrl: 'https://elowen-clinic.theomedia.co.uk',
     tags: ['Doctor Consultations', 'Medical Aesthetics', 'Treatment Menu', 'Patient FAQs'],
-    features: ['Treatment menu with pricing', 'Online consultation booking', 'Doctor and practitioner profiles', 'Patient FAQ and aftercare', 'Before/after gallery', 'GDPR-compliant contact forms'],
+    features: ['Treatment menu with pricing', 'Online consultation booking', 'Doctor and practitioner profiles', 'Patient FAQ and aftercare', 'Before/after gallery', 'Privacy-focused consultation forms'],
     challenge: 'Patients choosing private healthcare need exceptional trust signals. A premium clinical experience must feel safe, professional and transparent.',
     creativeDirection: 'Clean, calm, clinical design that builds confidence. Generous white space, soft tones and precise typography create a sense of medical authority.',
     customerJourney: 'Patient researches treatment → reviews practitioner credentials → understands pricing → books consultation.',
-    technology: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Booking System', 'GDPR Compliant'],
+    technology: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Booking System', 'Privacy-First Architecture'],
   },
   {
     slug: 'theo-leather',

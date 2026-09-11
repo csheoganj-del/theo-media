@@ -217,7 +217,7 @@ export default function RestaurantWebsiteDesignPage() {
                 When is Squarespace enough for a small cafe, and when do mobile menu friction and booking lock-in demand a bespoke build?
               </p>
             </div>
-            <Link href="/insights/squarespace-vs-custom-restaurant-website" className="text-[12px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black/30 pb-1 self-start hover:border-near-black">
+            <Link href="/journal/squarespace-vs-custom-restaurant-website" className="text-[12px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black/30 pb-1 self-start hover:border-near-black">
               Read Analysis →
             </Link>
           </div>
@@ -232,7 +232,7 @@ export default function RestaurantWebsiteDesignPage() {
                 Understanding the difference between an all-in-one ERP back-office and a high-conversion, consumer-facing digital dining experience.
               </p>
             </div>
-            <Link href="/insights/odoo-alternative-restaurants" className="text-[12px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black/30 pb-1 self-start hover:border-near-black">
+            <Link href="/journal/odoo-alternative-restaurants" className="text-[12px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black/30 pb-1 self-start hover:border-near-black">
               Read Breakdown →
             </Link>
           </div>
@@ -247,7 +247,7 @@ export default function RestaurantWebsiteDesignPage() {
                 A transparent breakdown of upfront costs, booking system commissions, ongoing hosting, and return on investment.
               </p>
             </div>
-            <Link href="/insights/restaurant-website-cost-uk" className="text-[12px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black/30 pb-1 self-start hover:border-near-black">
+            <Link href="/journal/restaurant-website-cost-uk" className="text-[12px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black/30 pb-1 self-start hover:border-near-black">
               Read Cost Guide →
             </Link>
           </div>

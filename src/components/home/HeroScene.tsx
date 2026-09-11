@@ -58,8 +58,8 @@ export default function HeroScene() {
 
           <div className="w-full flex-grow flex flex-col justify-center items-center text-center pb-8 lg:pb-12">
             
-            {/* THEOMEDIA with shining light scroll effect — Semantic H1 */}
-            <h1 className="font-display text-[16vw] md:text-[14vw] lg:text-[180px] xl:text-[220px] leading-[0.85] tracking-[-0.02em] mb-8 uppercase m-0 p-0">
+            {/* THEOMEDIA with shining light scroll effect — Brand Display */}
+            <div className="font-display text-[16vw] md:text-[14vw] lg:text-[180px] xl:text-[220px] leading-[0.85] tracking-[-0.02em] mb-6 uppercase m-0 p-0 select-none" aria-hidden="true">
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -76,20 +76,21 @@ export default function HeroScene() {
               >
                 THEOMEDIA
               </motion.span>
-            </h1>
+            </div>
             
-            <motion.h2 
+            {/* Semantic H1 — Requested Primary Headline */}
+            <motion.h1 
               variants={itemVariants}
-              className="font-sans text-[18px] sm:text-[22px] lg:text-[28px] text-bone/90 max-w-3xl mx-auto leading-snug mb-4 font-medium"
+              className="font-display text-[26px] sm:text-[34px] md:text-[42px] lg:text-[50px] text-bone max-w-4xl mx-auto leading-[1.1] mb-5 tracking-tight font-normal"
             >
-              We build bespoke websites & digital experiences people remember.
-            </motion.h2>
+              Websites and business software, built like products.
+            </motion.h1>
 
             <motion.p 
               variants={itemVariants}
               className="font-sans text-[15px] sm:text-[16px] lg:text-[18px] text-bone/70 max-w-2xl mx-auto leading-relaxed mb-10 md:mb-12 px-4"
             >
-              Distinctive website design, custom ecommerce, and bespoke digital products engineered for ambitious businesses across the United Kingdom and Ireland.
+              Distinctive website design, custom web applications, and digital products engineered for ambitious businesses across the UK and Ireland. 100% client-owned with zero platform lock-in.
             </motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full px-2">

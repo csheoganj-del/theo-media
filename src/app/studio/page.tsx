@@ -30,8 +30,8 @@ const PRINCIPLES = [
     description: 'Your code, your domain, your assets. Zero lock-in.'
   },
   {
-    title: 'UK, IRELAND & EUROPE',
-    description: 'We work with ambitious businesses across the UK, Ireland and Europe.'
+    title: 'UK & IRELAND FOCUS',
+    description: 'We work with ambitious businesses across the United Kingdom and Ireland.'
   }
 ];
 

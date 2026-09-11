@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import HeroScene from '@/components/home/HeroScene';
 import ProofScene from '@/components/home/ProofScene';
 import TrustedHospitality from '@/components/home/TrustedHospitality';
@@ -9,6 +10,22 @@ import ServicesScene from '@/components/home/ServicesScene';
 import IndustriesScene from '@/components/home/IndustriesScene';
 import ProcessScene from '@/components/home/ProcessScene';
 import FinalCTA from '@/components/home/FinalCTA';
+
+export const metadata: Metadata = {
+  title: 'Web Design & Digital Product Studio UK & Ireland | TheoMedia',
+  description:
+    'TheoMedia is an independent web design and digital product studio. We engineer bespoke websites, custom website development, and business software across the UK and Ireland.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk',
+  },
+  openGraph: {
+    title: 'Web Design & Digital Product Studio UK & Ireland | TheoMedia',
+    description:
+      'TheoMedia is an independent web design and digital product studio. We engineer bespoke websites, custom website development, and business software across the UK and Ireland.',
+    url: 'https://www.theomedia.co.uk',
+    type: 'website',
+  },
+};
 
 export default function HomePage() {
   return (

@@ -22,7 +22,7 @@ export const industries: Industry[] = [
   },
   {
     name: 'Private Healthcare & Clinics',
-    priorities: ['Medical Authority', 'Treatment Menus', 'GDPR Consultations'],
+    priorities: ['Medical Authority', 'Treatment Menus', 'Confidential Booking'],
     href: '/industries/healthcare-clinic-website-design',
   },
   {

@@ -43,7 +43,7 @@ export default function PricingPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 text-[13px] font-sans">
               <Link
-                href="/insights/how-much-does-a-website-cost-uk"
+                href="/journal/how-much-does-a-website-cost-uk"
                 className="text-stone hover:text-near-black border-b border-stone/40 pb-0.5 transition-colors"
               >
                 Read our 2026 UK Website Cost Guide →

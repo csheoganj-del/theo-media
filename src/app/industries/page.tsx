@@ -44,7 +44,7 @@ const industries = [
   {
     title: 'Private Healthcare & Clinics',
     href: '/industries/healthcare-clinic-website-design',
-    tagline: 'Medical practitioner authority, transparent pricing, and GDPR consultation workflows.',
+    tagline: 'Medical practitioner authority, transparent pricing, and confidential consultation workflows.',
     demoTitle: 'Elowen Clinic Demo Live ↗',
     demoUrl: 'https://elowen-clinic.theomedia.co.uk',
   },

@@ -6,7 +6,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 export const metadata: Metadata = {
   title: 'Web Applications',
   description:
-    'Custom web applications, client portals, booking systems and dashboards built around real business workflows. Developed by TheoMedia for UK, Ireland and Europe.',
+    'Custom web applications, client portals, booking systems and dashboards built around real business workflows. Developed by TheoMedia for UK and Ireland.',
 };
 
 const features = [

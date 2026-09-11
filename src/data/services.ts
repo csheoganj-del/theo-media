@@ -3,50 +3,49 @@ export interface Service {
   title: string;
   description: string;
   slug: string;
+  href?: string;
   features: string[];
 }
 
 export const services: Service[] = [
   {
     number: '01',
-    title: 'Websites',
-    description: 'Brand-led commercial websites designed to create attention, trust and enquiries.',
+    title: 'Bespoke Websites',
+    description: 'Brand-led commercial websites designed to create attention, trust and enquiries. 100% client-owned with zero lock-in.',
     slug: 'websites',
-    features: ['Custom Design', 'Mobile-First', 'SEO Foundations', 'Conversion Architecture', 'CMS Integration', 'Performance Tuning'],
+    href: '/web-design',
+    features: ['Custom Next.js Build', 'Mobile-First Design', 'SEO Foundations', 'Conversion Architecture', 'CMS Integration', 'Zero Lock-in'],
   },
   {
     number: '02',
-    title: 'Ecommerce',
-    description: 'Premium shopping experiences built around product presentation and frictionless conversion.',
+    title: 'Luxury Ecommerce',
+    description: 'Premium shopping experiences built around editorial product presentation and sub-second mobile checkout.',
     slug: 'ecommerce',
-    features: ['Product Storytelling', 'Stripe & Shopify', 'Mobile Checkout', 'Inventory Sync', 'Currency Support', 'Analytics'],
+    href: '/industries/ecommerce-website-design',
+    features: ['Product Storytelling', 'Native Apple Pay', 'Sub-Second Checkout', 'Inventory Sync', 'Currency Support', 'Zero App Bloat'],
   },
   {
     number: '03',
-    title: 'Booking & Enquiry',
-    description: 'Restaurant reservations, hotel enquiries, consultations, quotations and custom customer journeys.',
+    title: 'Booking & Enquiry Engines',
+    description: 'Direct table reservations, boutique stay booking, consultation scheduling and custom quote workflows without third-party fees.',
     slug: 'web-applications',
-    features: ['Table Reservations', 'Room Booking', 'Consultation Scheduling', 'Quote Generators', 'Payment Collection', 'Confirmation Flows'],
+    href: '/business-software',
+    features: ['Direct Reservations', 'Room Booking', 'Consultation Scheduling', 'Quote Generators', 'Stripe Integration', 'Confirmation Flows'],
   },
   {
     number: '04',
     title: 'Web Applications',
-    description: 'Portals, dashboards and business tools designed around real workflows.',
+    description: 'Client portals, operational dashboards and internal business tools designed around real workflows.',
     slug: 'web-applications',
+    href: '/business-software',
     features: ['Client Portals', 'Staff Dashboards', 'Real-time Data', 'Secure Authentication', 'Role Management', 'API Integration'],
   },
   {
     number: '05',
-    title: 'Business Systems',
-    description: 'POS, hospitality, clinic and operational software.',
+    title: 'Business Systems & ERPs',
+    description: 'Operational software and decoupled frontends for hospitality, clinics, and trade enterprises.',
     slug: 'business-software',
-    features: ['Point of Sale', 'Property Management', 'Clinic Management', 'Inventory Control', 'Reporting', 'Offline Resilience'],
-  },
-  {
-    number: '06',
-    title: 'Integrations',
-    description: 'Payments, booking providers, CRM, WhatsApp, analytics and APIs.',
-    slug: 'business-software',
-    features: ['Stripe & PayPal', 'OpenTable & Calendly', 'WhatsApp Business', 'Google Analytics', 'CRM Systems', 'Custom APIs'],
+    href: '/business-software',
+    features: ['Decoupled Architecture', 'ERP Synchronization', 'Inventory Control', 'Reporting', 'Custom Webhooks', '100% IP Ownership'],
   },
 ];

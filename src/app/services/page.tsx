@@ -42,7 +42,7 @@ export default function ServicesPage() {
                         {(index + 1).toString().padStart(2, '0')}
                       </span>
                       <h2 className="font-display text-[28px] md:text-[36px] text-near-black leading-tight group-hover:text-warm-accent transition-colors">
-                        <Link href={`/services/${service.slug}`}>
+                        <Link href={service.href || `/services/${service.slug}`}>
                           {service.title}
                         </Link>
                       </h2>
@@ -53,7 +53,7 @@ export default function ServicesPage() {
                         {service.description}
                       </p>
                       <Link 
-                        href={`/services/${service.slug}`}
+                        href={service.href || `/services/${service.slug}`}
                         className="inline-flex items-center text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-near-black/30 pb-1 mb-8 hover:border-near-black transition-colors"
                       >
                         Explore {service.title} Architecture →

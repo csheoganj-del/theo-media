@@ -147,7 +147,7 @@ export default function EcommerceWebsiteDesignPage() {
               TheoMedia stores run on edge infrastructure, delivering instantaneous page transitions, automated next-gen image compression, and rock-solid SEO indexability.
             </p>
             <Link
-              href="/insights/how-much-does-a-website-cost-uk"
+              href="/journal/how-much-does-a-website-cost-uk"
               className="text-[13px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black pb-1 hover:text-stone transition-colors"
             >
               Read Our Guide on Ecommerce Investment Costs →

@@ -29,19 +29,19 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.theomedia.co.uk'),
   title: {
-    default: 'Web Design Studio UK & Ireland | Bespoke Websites | TheoMedia',
+    default: 'Web Design & Digital Product Studio UK & Ireland | TheoMedia',
     template: '%s | TheoMedia',
   },
   description:
-    'TheoMedia is an independent web design and digital product studio engineering distinctive bespoke websites, ecommerce platforms and custom systems across the UK and Ireland.',
+    'TheoMedia is an independent web design and digital product studio. We engineer bespoke websites, custom website development, and business software across the UK and Ireland.',
   keywords: [
     'web design UK',
     'web design studio UK',
-    'web design Ireland',
-    'bespoke website design UK',
     'custom website development UK',
-    'independent web design studio',
-    'ecommerce web design UK',
+    'digital product studio',
+    'bespoke website design UK',
+    'web design Ireland',
+    'independent web design studio UK',
     'restaurant website design UK',
     'hotel website design UK',
     'small business website design UK',

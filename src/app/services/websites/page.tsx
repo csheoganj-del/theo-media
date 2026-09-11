@@ -6,7 +6,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 export const metadata: Metadata = {
   title: 'Website Design',
   description:
-    'Brand-led commercial websites designed to create attention, trust and enquiries. Custom-built by TheoMedia for businesses across the UK, Ireland and Europe.',
+    'Brand-led commercial websites designed to create attention, trust and enquiries. Custom-built by TheoMedia for businesses across the UK and Ireland.',
 };
 
 const features = [

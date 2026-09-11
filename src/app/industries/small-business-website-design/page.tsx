@@ -69,7 +69,7 @@ export default function SmallBusinessWebsiteDesignPage() {
                 Request Fixed-Price Quote →
               </Link>
               <Link
-                href="/insights/how-much-does-a-website-cost-uk"
+                href="/journal/how-much-does-a-website-cost-uk"
                 className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-bone/80 hover:text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors"
               >
                 Read UK Cost Breakdown Guide ↗
@@ -250,7 +250,7 @@ export default function SmallBusinessWebsiteDesignPage() {
             className="p-6 bg-ivory border border-near-black/10 hover:border-near-black transition-colors block"
           >
             <div className="font-display text-[18px] text-near-black mb-1">Healthcare &amp; Clinics →</div>
-            <p className="font-sans text-[13px] text-stone">Private clinics, medical trust, GDPR consultation bookings.</p>
+            <p className="font-sans text-[13px] text-stone">Private clinics, medical trust, confidential consultation bookings.</p>
           </Link>
         </div>
       </section>

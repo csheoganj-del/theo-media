@@ -21,7 +21,7 @@ export default function IndustriesScene() {
                 WE DON&apos;T DESIGN EVERY BUSINESS THE SAME WAY.
               </h2>
               <p className="font-sans text-bone/60 text-[16px] md:text-[18px] mt-4 max-w-2xl leading-relaxed">
-                Hospitality requires atmospheric allure and direct reservation modals. Healthcare demands medical credibility and GDPR booking. Explore how we tailor digital architecture by sector.
+                Hospitality requires atmospheric allure and direct reservation modals. Healthcare demands medical credibility and confidential booking. Explore how we tailor digital architecture by sector.
               </p>
             </FadeIn>
           </div>

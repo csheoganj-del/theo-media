@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -124,7 +124,7 @@ export default function HotelWebsiteDesignPage() {
             </p>
           </div>
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col">
-            <h3 className="font-display text-[22px] text-near-black mb-3">Guaranteed Best Rate Logic</h3>
+            <h3 className="font-display text-[22px] text-near-black mb-3">Direct Best Rate Incentives</h3>
             <p className="font-sans text-stone text-[15px] leading-relaxed">
               Highlight direct booking perks (complimentary breakfast, flexible cancellation, early check-in) directly in the reservation journey.
             </p>

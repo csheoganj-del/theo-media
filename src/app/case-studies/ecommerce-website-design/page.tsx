@@ -97,7 +97,7 @@ export default function EcommerceCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Market</div>
-              <div className="text-[14px] font-medium text-near-black">UK · Ireland · Europe</div>
+              <div className="text-[14px] font-medium text-near-black">UK · Ireland</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Status</div>

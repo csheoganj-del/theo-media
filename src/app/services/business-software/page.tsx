@@ -6,7 +6,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 export const metadata: Metadata = {
   title: 'Business Software',
   description:
-    'Custom business software including POS, hospitality systems, clinic management and operational tools. Built by TheoMedia for UK, Ireland and Europe.',
+    'Custom business software including POS, hospitality systems, clinic management and operational tools. Built by TheoMedia for UK and Ireland.',
 };
 
 const features = [
