@@ -5,7 +5,7 @@ import { projects } from '@/data/projects';
 import { ProjectPreview } from '@/components/ui/ProjectPreview';
 
 export default function ProofScene() {
-  const featuredProjects = projects.slice(0, 4);
+  const featuredProjects = projects;
 
   return (
     <section className="bg-bone text-near-black py-24 md:py-32 lg:py-40 px-5 md:px-8 lg:px-12">

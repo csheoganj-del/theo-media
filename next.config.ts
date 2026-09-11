@@ -183,6 +183,46 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/work/nick-gaven',
+        destination: 'https://nick.theomedia.co.uk',
+        permanent: true,
+      },
+      {
+        source: '/work/falakstudio',
+        destination: 'https://falakstudio.theomedia.co.uk',
+        permanent: true,
+      },
+      {
+        source: '/work/falak-studio',
+        destination: 'https://falakstudio.theomedia.co.uk',
+        permanent: true,
+      },
+      {
+        source: '/work/nick2',
+        destination: 'https://falakstudio.theomedia.co.uk',
+        permanent: true,
+      },
+      {
+        source: '/work/theomedianick2',
+        destination: 'https://falakstudio.theomedia.co.uk',
+        permanent: true,
+      },
+      {
+        source: '/work/nick-gaven-v2',
+        destination: 'https://falakstudio.theomedia.co.uk',
+        permanent: true,
+      },
+      {
+        source: '/work/rose-and-ivy',
+        destination: 'https://rose-and-ivy.theomedia.co.uk',
+        permanent: true,
+      },
+      {
+        source: '/work/rose-and-ivy-hair',
+        destination: 'https://rose-and-ivy.theomedia.co.uk',
+        permanent: true,
+      },
+      {
         source: '/work/barber',
         destination: 'https://wren-crown.theomedia.co.uk',
         permanent: true,
@@ -191,6 +231,36 @@ const nextConfig: NextConfig = {
         source: '/work/wren-crown',
         destination: 'https://wren-crown.theomedia.co.uk',
         permanent: true,
+      },
+      {
+        source: '/case-studies/clinic-website-design',
+        destination: '/case-studies/private-healthcare-website-design',
+        permanent: true,
+      },
+      {
+        source: '/case-studies/luxury-salon-website-design',
+        destination: '/work/rose-and-ivy',
+        permanent: false,
+      },
+      {
+        source: '/case-studies/cinematography-website-design',
+        destination: '/work/nick-gaven',
+        permanent: false,
+      },
+      {
+        source: '/case-studies/falak-studio-website-design',
+        destination: '/work/falakstudio',
+        permanent: false,
+      },
+      {
+        source: '/case-studies/filmmaker-dop-website-design',
+        destination: '/work/falakstudio',
+        permanent: false,
+      },
+      {
+        source: '/case-studies/barber-grooming-website-design',
+        destination: '/work/wren-crown',
+        permanent: false,
       },
     ];
   },

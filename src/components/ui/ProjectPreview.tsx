@@ -8,9 +8,19 @@ interface ProjectPreviewProps {
   desktop?: boolean;
 }
 
+const PREVIEW_FALLBACKS: Record<string, string> = {
+  'https://rose-and-ivy.theomedia.co.uk': 'https://rose-and-ivy-hair.vercel.app',
+  'https://rose-and-ivy-hair.theomedia.co.uk': 'https://rose-and-ivy-hair.vercel.app',
+  'https://falakstudio.theomedia.co.uk': 'https://theomedianick2.vercel.app',
+  'https://falak-studio.theomedia.co.uk': 'https://theomedianick2.vercel.app',
+  'https://nick2.theomedia.co.uk': 'https://theomedianick2.vercel.app',
+  'https://theomedianick2.theomedia.co.uk': 'https://theomedianick2.vercel.app',
+};
+
 export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
+  const previewUrl = PREVIEW_FALLBACKS[url] || url;
 
   useEffect(() => {
     if (!desktop) return;
@@ -44,7 +54,7 @@ export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewPro
           style={{ transform: `scale(${scale})` }}
         >
           <iframe
-            src={url}
+            src={previewUrl}
             title={`${title} Preview`}
             className="w-full h-full border-none pointer-events-none select-none"
             loading="lazy"
@@ -54,7 +64,7 @@ export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewPro
         </div>
       ) : (
         <iframe
-          src={url}
+          src={previewUrl}
           title={`${title} Preview`}
           className="absolute inset-0 w-full h-full border-none pointer-events-none select-none z-10"
           loading="lazy"
