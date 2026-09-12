@@ -158,7 +158,7 @@ export default function EcommerceWebsiteDesignPage() {
             <ul className="space-y-4 font-sans text-[15px] text-bone/80">
               <li className="flex items-start gap-3">
                 <span className="text-gold font-bold">✓</span>
-                <span>Core Web Vitals rated in top 95th percentile</span>
+                <span>Sub-second mobile speed with green Core Web Vitals &amp; 95+ Lighthouse score</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-gold font-bold">✓</span>

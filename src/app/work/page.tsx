@@ -12,24 +12,20 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <main className="bg-bone min-h-screen pt-24 pb-32">
-      {/* Hero Section */}
-      <section className="bg-near-black py-24 md:py-32 mb-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-          <FadeIn>
-            <SectionLabel className="text-bone/50 mb-6">Portfolio</SectionLabel>
-            <h1 className="text-editorial-xl text-bone mb-8 max-w-4xl uppercase">
-              THE WORK
-            </h1>
-            <p className="text-[18px] md:text-[20px] text-bone/70 max-w-2xl font-sans leading-relaxed">
-              Bespoke digital experiences and production-grade builds across hospitality, trades, healthcare and ecommerce.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+    <div className="bg-bone text-near-black pt-32 md:pt-48 pb-24 md:pb-40">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
+        {/* Hero Section */}
+        <FadeIn className="max-w-4xl mb-20 md:mb-32">
+          <SectionLabel>PORTFOLIO &amp; PROTOTYPES</SectionLabel>
+          <h1 className="font-display text-[48px] sm:text-[64px] md:text-[80px] lg:text-[100px] leading-[1.05] mt-8 mb-8 uppercase text-near-black">
+            WEBSITES PEOPLE REMEMBER.
+          </h1>
+          <p className="font-sans text-[16px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
+            Bespoke digital experiences, live production prototypes, and custom engineering systems across hospitality, trades, healthcare, and ecommerce.
+          </p>
+        </FadeIn>
 
-      {/* Projects Grid */}
-      <section className="container mx-auto px-4 md:px-8 max-w-7xl">
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-20">
           {projects.map((project, index) => (
             <FadeIn key={project.slug} delay={index * 0.1}>
@@ -42,9 +38,11 @@ export default function WorkPage() {
                 </Link>
                 
                 <div className="flex-grow flex flex-col">
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between gap-3 mb-3">
                     <span className="text-[10px] font-sans font-medium tracking-[0.2em] text-stone uppercase">{project.sector}</span>
-                    
+                    <span className="text-[9px] font-sans font-semibold tracking-widest uppercase px-2.5 py-0.5 border border-near-black/15 text-charcoal/80 bg-bone">
+                      {project.badge}
+                    </span>
                   </div>
                   
                   <Link href={`/work/${project.slug}`}>
@@ -66,18 +64,33 @@ export default function WorkPage() {
                   </div>
                   
                   <div className="mt-auto pt-6 border-t border-near-black/10 flex flex-col sm:flex-row gap-4 sm:gap-8">
-                    <Link 
-                      href={`/case-studies/${project.caseStudySlug}`}
-                      className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-stone transition-colors inline-flex items-center"
-                    >
-                      READ CASE STUDY →
-                    </Link>
-                    <Link 
-                      href={`/work/${project.slug}`}
-                      className="text-[11px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black transition-colors inline-flex items-center"
-                    >
-                      VIEW EXPERIENCE ↗
-                    </Link>
+                    {project.hasCaseStudy ? (
+                      <>
+                        <Link 
+                          href={`/case-studies/${project.caseStudySlug}`}
+                          className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-stone transition-colors inline-flex items-center"
+                        >
+                          READ CASE STUDY →
+                        </Link>
+                        <Link 
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black transition-colors inline-flex items-center"
+                        >
+                          VIEW EXPERIENCE ↗
+                        </Link>
+                      </>
+                    ) : (
+                      <Link 
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-warm-accent transition-colors inline-flex items-center"
+                      >
+                        VIEW LIVE EXPERIENCE ↗
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -94,7 +107,7 @@ export default function WorkPage() {
             VIEW ALL CASE STUDIES →
           </Link>
         </FadeIn>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }

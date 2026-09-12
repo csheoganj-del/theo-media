@@ -63,24 +63,39 @@ export default function WorkScene() {
                   <div className="flex flex-col gap-6">
                     <div className="flex justify-between items-start">
                       <div>
-                        
+                        <span className="text-[10px] tracking-widest font-sans uppercase border border-bone/20 px-2.5 py-0.5 text-warm-accent mb-2.5 inline-block">
+                          {projects[activeProject].badge}
+                        </span>
                         <h4 className="font-display text-4xl">{projects[activeProject].title}</h4>
                       </div>
                       <div className="flex flex-col items-end gap-3">
-                        <Link 
-                          href={`/case-studies/${projects[activeProject].caseStudySlug}`}
-                          className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone"
-                        >
-                          READ CASE STUDY →
-                        </Link>
-                        <Link 
-                          href={projects[activeProject].demoUrl} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone/60 hover:text-bone"
-                        >
-                          VIEW EXPERIENCE ↗
-                        </Link>
+                        {projects[activeProject].hasCaseStudy ? (
+                          <>
+                            <Link 
+                              href={`/case-studies/${projects[activeProject].caseStudySlug}`}
+                              className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone"
+                            >
+                              READ CASE STUDY →
+                            </Link>
+                            <Link 
+                              href={projects[activeProject].demoUrl} 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone/60 hover:text-bone"
+                            >
+                              VIEW EXPERIENCE ↗
+                            </Link>
+                          </>
+                        ) : (
+                          <Link 
+                            href={projects[activeProject].demoUrl} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] tracking-widest font-sans uppercase border-b border-warm-accent pb-1 hover:border-bone transition-colors text-bone font-medium"
+                          >
+                            VIEW LIVE EXPERIENCE ↗
+                          </Link>
+                        )}
                       </div>
                     </div>
                     <p className="font-sans text-bone/60 max-w-xl text-[15px] leading-relaxed">
@@ -107,8 +122,14 @@ export default function WorkScene() {
                   <ProjectPreview url={project.demoUrl} title={project.title} />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <span className="text-[10px] tracking-widest font-sans font-medium uppercase text-warm-accent">
-                    {project.sector}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[10px] tracking-widest font-sans font-medium uppercase text-warm-accent">
+                      {project.sector}
+                    </span>
+                    <span className="text-[9px] tracking-widest font-sans uppercase border border-bone/20 px-2 py-0.5 text-bone/60">
+                      {project.badge}
+                    </span>
+                  </div>
                   <h3 className="font-display text-[32px] md:text-[40px] leading-tight">
                     {project.title}
                   </h3>
@@ -116,20 +137,33 @@ export default function WorkScene() {
                     {project.description}
                   </p>
                   <div className="flex flex-col gap-4 self-start mt-2">
-                    <Link 
-                      href={`/case-studies/${project.caseStudySlug}`}
-                      className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone inline-flex items-center"
-                    >
-                      READ CASE STUDY →
-                    </Link>
-                    <Link 
-                      href={project.demoUrl} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone/60 inline-flex items-center"
-                    >
-                      VIEW EXPERIENCE ↗
-                    </Link>
+                    {project.hasCaseStudy ? (
+                      <>
+                        <Link 
+                          href={`/case-studies/${project.caseStudySlug}`}
+                          className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone inline-flex items-center"
+                        >
+                          READ CASE STUDY →
+                        </Link>
+                        <Link 
+                          href={project.demoUrl} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone/60 inline-flex items-center"
+                        >
+                          VIEW EXPERIENCE ↗
+                        </Link>
+                      </>
+                    ) : (
+                      <Link 
+                        href={project.demoUrl} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] tracking-widest font-sans uppercase border-b border-warm-accent pb-1 hover:border-bone transition-colors text-bone inline-flex items-center font-medium"
+                      >
+                        VIEW LIVE EXPERIENCE ↗
+                      </Link>
+                    )}
                   </div>
                 </div>
               </FadeIn>

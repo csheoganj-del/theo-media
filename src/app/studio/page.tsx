@@ -46,7 +46,7 @@ const PROCESS_STEPS = [
 
 export default function StudioPage() {
   return (
-    <main className="bg-bone min-h-screen pt-24">
+    <div className="bg-bone min-h-screen pt-24">
       <section className="dark-section pt-24 pb-32 md:pt-32 md:pb-40">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <FadeIn>
@@ -58,6 +58,70 @@ export default function StudioPage() {
               TheoMedia combines creative direction and engineering under one roof, so the idea does not disappear somewhere between design and development.
             </p>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Founder & Engineering Standards */}
+      <section className="py-24 md:py-32 bg-bone border-b border-stone/15">
+        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-5">
+              <FadeIn>
+                <SectionLabel className="text-stone mb-6">Engineering Craft</SectionLabel>
+                <h2 className="font-display text-[36px] md:text-[44px] leading-tight text-near-black mb-6">
+                  ENGINEER-LED. ZERO LAYERS. COMPLETE ACCOUNTABILITY.
+                </h2>
+                <p className="font-sans text-[16px] text-charcoal/80 leading-relaxed mb-6">
+                  TheoMedia is the dedicated UK &amp; Ireland boutique web design and digital engineering studio within our engineering group (founded alongside CodeArc). We deliver high-touch creative direction and bespoke code directly to ambitious businesses without corporate agency overhead.
+                </p>
+                <p className="font-sans text-[15px] text-stone leading-relaxed">
+                  When you partner with TheoMedia, you do not speak with account handlers, juniors, or outsourced intermediaries. You collaborate directly with senior designers and engineers who shape your architecture and write every single line of production code.
+                </p>
+              </FadeIn>
+            </div>
+
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <FadeIn delay={0.1}>
+                <div className="p-6 bg-ivory border border-stone/20 h-full">
+                  <span className="font-mono text-[12px] text-warm-accent uppercase tracking-widest block mb-3">01 · Direct Access</span>
+                  <h3 className="font-display text-[20px] text-near-black mb-2">Founder-Level Execution</h3>
+                  <p className="font-sans text-[14px] text-charcoal/75 leading-relaxed">
+                    Direct access to the studio founder and principal engineer throughout discovery, design, development, and post-launch tuning.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.2}>
+                <div className="p-6 bg-ivory border border-stone/20 h-full">
+                  <span className="font-mono text-[12px] text-warm-accent uppercase tracking-widest block mb-3">02 · Full Equity</span>
+                  <h3 className="font-display text-[20px] text-near-black mb-2">100% Client Ownership</h3>
+                  <p className="font-sans text-[14px] text-charcoal/75 leading-relaxed">
+                    Full intellectual property, complete GitHub repository source code, and total infrastructure control transferred to you upon launch.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.3}>
+                <div className="p-6 bg-ivory border border-stone/20 h-full">
+                  <span className="font-mono text-[12px] text-warm-accent uppercase tracking-widest block mb-3">03 · Modern Edge</span>
+                  <h3 className="font-display text-[20px] text-near-black mb-2">Next.js &amp; Edge Delivery</h3>
+                  <p className="font-sans text-[14px] text-charcoal/75 leading-relaxed">
+                    Zero bloated CMS plugins. We build with static generation and global edge CDN caching for sub-second page loads worldwide.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.4}>
+                <div className="p-6 bg-ivory border border-stone/20 h-full">
+                  <span className="font-mono text-[12px] text-warm-accent uppercase tracking-widest block mb-3">04 · UK &amp; IE Focus</span>
+                  <h3 className="font-display text-[20px] text-near-black mb-2">Local Market Alignment</h3>
+                  <p className="font-sans text-[14px] text-charcoal/75 leading-relaxed">
+                    Dual currency pricing (£ / €), UK &amp; Irish business compliance, local SEO schema, and phone support tailored to your timezone.
+                  </p>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -121,6 +185,6 @@ export default function StudioPage() {
           </FadeIn>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

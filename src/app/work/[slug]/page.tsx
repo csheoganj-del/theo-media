@@ -44,14 +44,16 @@ export default async function CaseStudyPage({ params }: Props) {
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <main className="bg-bone min-h-screen pt-24">
+    <div className="bg-bone min-h-screen pt-24">
       <section className="dark-section pt-24 pb-32 md:pt-32 md:pb-40">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <FadeIn>
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
               <SectionLabel className="text-stone">{project.sector}</SectionLabel>
               <div className="inline-block px-3 py-1.5 border border-stone/30 rounded-full">
-                
+                <span className="text-[10px] font-sans font-medium uppercase tracking-widest text-stone">
+                  {project.badge}
+                </span>
               </div>
             </div>
             
@@ -170,6 +172,6 @@ export default async function CaseStudyPage({ params }: Props) {
           </div>
         </Link>
       </section>
-    </main>
+    </div>
   );
 }

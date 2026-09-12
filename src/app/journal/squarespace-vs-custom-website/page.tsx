@@ -168,7 +168,7 @@ export default function SquarespaceVsCustomWebsitePage() {
                   <tr>
                     <td className="p-4 font-semibold text-near-black">Upfront Investment</td>
                     <td className="p-4 text-stone">Very low (£0 – £30/mo DIY)</td>
-                    <td className="p-4 text-near-black">Fixed investment (£895 – £4,850+)</td>
+                    <td className="p-4 text-near-black">Fixed investment (£895 – £4,995+)</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold text-near-black">3-Year Ongoing Cost</td>

@@ -8,19 +8,10 @@ interface ProjectPreviewProps {
   desktop?: boolean;
 }
 
-const PREVIEW_FALLBACKS: Record<string, string> = {
-  'https://rose-and-ivy.theomedia.co.uk': 'https://rose-and-ivy-hair.vercel.app',
-  'https://rose-and-ivy-hair.theomedia.co.uk': 'https://rose-and-ivy-hair.vercel.app',
-  'https://falakstudio.theomedia.co.uk': 'https://theomedianick2.vercel.app',
-  'https://falak-studio.theomedia.co.uk': 'https://theomedianick2.vercel.app',
-  'https://nick2.theomedia.co.uk': 'https://theomedianick2.vercel.app',
-  'https://theomedianick2.theomedia.co.uk': 'https://theomedianick2.vercel.app',
-};
-
 export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
-  const previewUrl = PREVIEW_FALLBACKS[url] || url;
+  const previewUrl = url;
 
   useEffect(() => {
     if (!desktop) return;

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="bg-bone min-h-screen pt-24">
+    <div className="bg-bone min-h-screen pt-24">
       {/* Hero */}
       <section className="pt-24 pb-20 md:pt-32 md:pb-24">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl text-center">
@@ -69,19 +69,19 @@ export default function PricingPage() {
               
               return (
                 <FadeIn key={tier.id} delay={idx * 0.1} className="flex h-full">
-                  <div className={`flex flex-col w-full bg-ivory rounded-sm p-8 md:p-10 border-2 ${isFeatured ? 'border-warm-accent shadow-xl relative' : 'border-stone/20'}`}>
+                    <div className={`flex flex-col w-full bg-ivory p-8 md:p-10 border ${isFeatured ? 'border-2 border-near-black relative shadow-lg' : 'border-near-black/10'}`}>
                     {isFeatured && (
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-warm-accent text-bone px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">
-                        Featured
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-near-black text-bone px-4 py-1 text-[10px] font-sans font-semibold tracking-widest uppercase">
+                        Featured Tier
                       </div>
                     )}
                     
                     <h3 className="font-display text-3xl text-near-black mb-2">{tier.name}</h3>
                     <p className="font-sans text-stone mb-8 min-h-[96px] lg:min-h-[120px] text-[15px] leading-relaxed">{tier.description}</p>
                     
-                    <div className="mb-8 pb-8 border-b border-stone/20">
+                    <div className="mb-8 pb-8 border-b border-near-black/10">
                       <div className="flex items-end gap-2 mb-2">
-                        <span className="font-sans font-bold text-4xl text-near-black">{tier.price}</span>
+                        <span className="font-display text-4xl text-near-black">{tier.price}</span>
                       </div>
                       <p className="font-sans text-sm text-stone">{""}</p>
                     </div>
@@ -90,26 +90,26 @@ export default function PricingPage() {
                       <ul className="space-y-4">
                         {tier.includes.map((item: string, i: number) => (
                           <li key={i} className="flex items-start gap-3">
-                            <span className="text-warm-accent mt-0.5">✓</span>
+                            <span className="text-near-black/50 text-[11px] mt-1">✦</span>
                             <span className="font-sans text-charcoal text-sm">{item}</span>
                           </li>
                         ))}
                         {tier.expandedIncludes?.map((item: string, i: number) => (
                           <li key={`exp-${i}`} className="flex items-start gap-3 opacity-80">
-                            <span className="text-warm-accent mt-0.5">✓</span>
+                            <span className="text-near-black/50 text-[11px] mt-1">✦</span>
                             <span className="font-sans text-charcoal text-sm">{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
                     
-                    <div className="mt-auto pt-6 flex flex-col gap-4">
+                    <div className="mt-auto pt-6 border-t border-near-black/10 flex flex-col gap-4">
                       <Button 
                         href={`/contact?package=${tier.id}`} 
                         variant={isFeatured ? 'primary' : 'secondary'}
-                        className="w-full justify-center"
+                        className="w-full justify-center text-[12px] font-sans font-semibold tracking-widest uppercase"
                       >
-                        Enquire Now
+                        Enquire Now →
                       </Button>
                       <a 
                         href={`https://wa.me/${SITE.whatsappUrl.replace(/[^0-9]/g, '')}`} 
@@ -117,7 +117,7 @@ export default function PricingPage() {
                         rel="noopener noreferrer"
                         className="text-center font-sans text-sm text-stone hover:text-near-black transition-colors"
                       >
-                        Or message on WhatsApp
+                        Or message on WhatsApp ↗
                       </a>
                     </div>
                   </div>
@@ -129,33 +129,33 @@ export default function PricingPage() {
       </section>
 
       {/* Specialist & Shared Inclusions */}
-      <section className="py-24 bg-charcoal-section text-bone">
+      <section className="py-24 bg-near-black text-bone">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <FadeIn>
-              <SectionLabel className="text-stone mb-8">Bespoke</SectionLabel>
+              <SectionLabel className="text-stone mb-8">Bespoke Architecture</SectionLabel>
               <h3 className="font-display text-3xl mb-8">Specialist Projects</h3>
               <ul className="space-y-6">
                 {specialistProjects.map((project, i) => (
-                  <li key={i} className="border-t border-stone/20 pt-6">
+                  <li key={i} className="border-t border-bone/10 pt-6">
                     <h4 className="font-sans font-bold text-bone mb-2">{project.name}</h4>
-                    <p className="font-sans text-sm text-stone">{project.description}</p>
+                    <p className="font-sans text-sm text-bone/70">{project.description}</p>
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-6 border-t border-stone/20">
-                <p className="font-sans text-bone">From £10,000+ / Custom Quoted</p>
+              <div className="mt-8 pt-6 border-t border-bone/10">
+                <p className="font-sans text-bone font-medium">From £10,000+ / Custom Quoted</p>
               </div>
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <SectionLabel className="text-stone mb-8">Standard</SectionLabel>
+              <SectionLabel className="text-stone mb-8">Engineering Standard</SectionLabel>
               <h3 className="font-display text-3xl mb-8">Every Project Includes</h3>
               <ul className="space-y-4">
                 {sharedInclusions.map((inclusion, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-warm-accent mt-2 flex-shrink-0" />
-                    <span className="font-sans text-stone">{inclusion}</span>
+                    <span className="text-warm-accent text-[11px] mt-1">✦</span>
+                    <span className="font-sans text-bone/80 text-[14px]">{inclusion}</span>
                   </li>
                 ))}
               </ul>
@@ -177,6 +177,6 @@ export default function PricingPage() {
           </FadeIn>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

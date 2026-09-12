@@ -6,7 +6,7 @@ import SectionLabel from '@/components/ui/SectionLabel';
 export const metadata: Metadata = {
   title: 'How Much Does a Website Cost in the UK? (2026 Honest Pricing Guide)',
   description:
-    'A realistic, transparent breakdown of web design pricing across the UK in 2026. Compare DIY builders, freelancers, boutique studios (£895–£4,850+), and traditional agencies (£10k+).',
+    'A realistic, transparent breakdown of web design pricing across the UK in 2026. Compare DIY builders, freelancers, boutique studios (£895–£4,995+), and traditional agencies (£10k+).',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/journal/how-much-does-a-website-cost-uk',
   },
@@ -45,7 +45,7 @@ export default function HowMuchDoesAWebsiteCostUKPage() {
         name: 'Why do web design quotes vary so widely between providers?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Price variation comes down to code ownership and overhead. A £300 freelancer often installs a £40 off-the-shelf WordPress theme. A £15,000 agency has city-centre offices, account managers, and sales overheads. A boutique studio like TheoMedia (£895–£4,850) delivers bespoke custom code and direct founder collaboration without corporate agency markups.',
+          text: 'Price variation comes down to code ownership and overhead. A £300 freelancer often installs a £40 off-the-shelf WordPress theme. A £15,000 agency has city-centre offices, account managers, and sales overheads. A boutique studio like TheoMedia (£895–£4,995) delivers bespoke custom code and direct founder collaboration without corporate agency markups.',
         },
       },
     ],
@@ -137,13 +137,13 @@ export default function HowMuchDoesAWebsiteCostUKPage() {
               <div className="p-8 bg-ivory border-2 border-near-black">
                 <div className="flex justify-between items-baseline mb-2">
                   <h3 className="font-display text-[22px] text-near-black">Tier 3: Boutique Independent Studio (TheoMedia)</h3>
-                  <span className="font-mono text-[14px] text-near-black font-semibold">£895 – £4,850 one-off</span>
+                  <span className="font-mono text-[14px] text-near-black font-semibold">£895 – £4,995 one-off</span>
                 </div>
                 <p className="text-stone text-[15px] mb-4">
                   <strong>Best for:</strong> High-ticket services, restaurants, healthcare clinics, trades, and ambitious brands wanting custom digital equity.
                 </p>
                 <p className="text-stone text-[15px]">
-                  <strong>The Reality:</strong> Direct collaboration with a founder-level designer and engineer. Websites are custom-built in modern stacks (Next.js, Tailwind), passing Google Core Web Vitals with 95+ scores. Full source code ownership, zero monthly platform lock-in, and conversion-engineered layouts.
+                  <strong>The Reality:</strong> Direct collaboration with a founder-level designer and engineer. Websites are custom-built in modern stacks (Next.js, Tailwind), achieving 95+ Google Lighthouse performance scores and green Core Web Vitals. Full source code ownership, zero monthly platform lock-in, and conversion-engineered layouts.
                 </p>
               </div>
 

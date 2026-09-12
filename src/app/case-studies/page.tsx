@@ -17,12 +17,12 @@ export default function CaseStudiesPage() {
         
         {/* Header */}
         <FadeIn className="max-w-4xl mb-24 md:mb-40">
-          <SectionLabel>CASE STUDIES / HOW WE THINK</SectionLabel>
+          <SectionLabel>CASE STUDIES & PROTOTYPES / HOW WE THINK</SectionLabel>
           <h1 className="font-display text-[48px] sm:text-[64px] md:text-[80px] lg:text-[100px] leading-[1.05] mt-8 mb-8 uppercase text-near-black">
             WEBSITES BUILT AROUND REAL BUSINESS PROBLEMS.
           </h1>
           <p className="font-sans text-[16px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            These are projects showing how TheoMedia approaches different industries, 
+            Detailed architectural case studies and live production prototypes showing how TheoMedia approaches different industries, 
             balances design with functionality, and solves real commercial challenges.
           </p>
         </FadeIn>
@@ -47,8 +47,13 @@ export default function CaseStudiesPage() {
 
                 {/* Content */}
                 <div className="w-full lg:w-[40%] flex flex-col justify-center">
-                  <div className="text-[10px] md:text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6">
-                    {number} — {project.sector}
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-[10px] md:text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone">
+                      {number} — {project.sector}
+                    </span>
+                    <span className="text-[9px] font-sans font-semibold tracking-widest uppercase px-2.5 py-0.5 border border-near-black/15 text-charcoal/80 bg-bone">
+                      {project.badge}
+                    </span>
                   </div>
                   <h2 className="font-display text-[40px] md:text-[56px] leading-[1.1] mb-6 text-near-black">
                     {project.title}
@@ -58,20 +63,33 @@ export default function CaseStudiesPage() {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
-                    <Link 
-                      href={`/case-studies/${project.caseStudySlug}`}
-                      className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors"
-                    >
-                      READ CASE STUDY →
-                    </Link>
-                    <Link 
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[12px] font-sans font-medium tracking-[0.15em] uppercase text-stone border-b border-stone/30 pb-1 hover:text-near-black hover:border-near-black transition-colors"
-                    >
-                      VIEW LIVE DEMO ↗
-                    </Link>
+                    {project.hasCaseStudy ? (
+                      <>
+                        <Link 
+                          href={`/case-studies/${project.caseStudySlug}`}
+                          className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors"
+                        >
+                          READ CASE STUDY →
+                        </Link>
+                        <Link 
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[12px] font-sans font-medium tracking-[0.15em] uppercase text-stone border-b border-stone/30 pb-1 hover:text-near-black hover:border-near-black transition-colors"
+                        >
+                          VIEW LIVE DEMO ↗
+                        </Link>
+                      </>
+                    ) : (
+                      <Link 
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-warm-accent pb-1 hover:border-near-black transition-colors"
+                      >
+                        VIEW LIVE EXPERIENCE ↗
+                      </Link>
+                    )}
                   </div>
                 </div>
 

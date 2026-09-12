@@ -129,7 +129,7 @@ export default function SmallBusinessWebsiteDesignPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-gold font-bold">✓</span>
-                <span>Sub-second mobile speed with 95+ Core Web Vitals performance</span>
+                <span>Sub-second mobile speed with 95+ Google Lighthouse score and green Core Web Vitals</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-gold font-bold">✓</span>
@@ -202,7 +202,7 @@ export default function SmallBusinessWebsiteDesignPage() {
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col justify-between">
             <div>
               <div className="text-[12px] font-mono tracking-wider text-stone uppercase mb-2">Tier 03 · Bespoke</div>
-              <div className="font-display text-[32px] text-near-black mb-1">£4,850+ / €5,850+</div>
+              <div className="font-display text-[32px] text-near-black mb-1">£4,995+ / €5,995+</div>
               <div className="text-[13px] text-stone mb-6">Full Digital Platform</div>
               <p className="font-sans text-[14px] text-stone leading-relaxed mb-6">
                 Engineered for complex workflows: customer portals, headless ecommerce, multi-location directories, and high-velocity booking.

@@ -28,7 +28,7 @@ const capabilities = [
   {
     title: 'Sub-Second Edge Performance',
     description:
-      'Built with Next.js and Tailwind CSS deployed on global edge CDNs. Pages render in under 1 second, passing Google Core Web Vitals with 95+ scores on mobile.',
+      'Built with Next.js and Tailwind CSS deployed on global edge CDNs. Pages render in under 1 second, achieving 95+ Google Lighthouse performance scores and green Core Web Vitals (sub-second LCP, minimal CLS, instant INP).',
   },
   {
     title: '100% Code & Asset Ownership',

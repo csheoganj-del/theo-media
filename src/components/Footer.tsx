@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { SITE, NAV_LINKS } from '@/lib/constants';
 
 const capabilities = [
@@ -22,40 +25,47 @@ const journalGuides = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+  const isHomepageOrContact = pathname === '/' || pathname === '/contact';
+
   return (
     <footer className="bg-near-black text-bone">
-      {/* ── Final CTA Section ── */}
-      <section className="px-5 md:px-8 lg:px-12 pt-24 md:pt-32 lg:pt-40 pb-20 md:pb-24">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="max-w-[900px]">
-            <p className="text-[13px] md:text-[15px] font-sans text-bone/40 leading-relaxed mb-6 tracking-wide">
-              YOUR NEXT CUSTOMER<br />
-              WILL SEE YOUR WEBSITE<br />
-              BEFORE THEY MEET YOU.
-            </p>
-            <h2 className="text-editorial-lg text-bone mb-10">
-              Make the{' '}
-              <em className="font-display italic">first impression</em>
-              <br />
-              count.
-            </h2>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 text-[14px] md:text-[16px] font-sans font-medium tracking-[0.1em] uppercase text-bone border-b border-bone/30 pb-2 hover:border-bone transition-colors duration-300 group"
-            >
-              Start a Project
-              <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                ↗
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* ── Final CTA Section (Displayed only on subpages where no dedicated page CTA exists) ── */}
+      {!isHomepageOrContact && (
+        <>
+          <section className="px-5 md:px-8 lg:px-12 pt-24 md:pt-32 lg:pt-40 pb-20 md:pb-24">
+            <div className="max-w-[1440px] mx-auto">
+              <div className="max-w-[900px]">
+                <p className="text-[13px] md:text-[15px] font-sans text-bone/40 leading-relaxed mb-6 tracking-wide">
+                  YOUR NEXT CUSTOMER<br />
+                  WILL SEE YOUR WEBSITE<br />
+                  BEFORE THEY MEET YOU.
+                </p>
+                <h2 className="text-editorial-lg text-bone mb-10">
+                  Make the{' '}
+                  <em className="font-display italic">first impression</em>
+                  <br />
+                  count.
+                </h2>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 text-[14px] md:text-[16px] font-sans font-medium tracking-[0.1em] uppercase text-bone border-b border-bone/30 pb-2 hover:border-bone transition-colors duration-300 group"
+                >
+                  Start a Project
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </section>
 
-      {/* ── Divider ── */}
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="h-px bg-bone/10" />
-      </div>
+          {/* ── Divider ── */}
+          <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
+            <div className="h-px bg-bone/10" />
+          </div>
+        </>
+      )}
 
       {/* ── Footer Grid ── */}
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-20">
