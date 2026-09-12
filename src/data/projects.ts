@@ -182,7 +182,7 @@ export const projects: Project[] = [
     hasCaseStudy: false,
     description: 'An editorial, high-contrast visual portfolio designed for directors, commercial agencies, and film productions.',
     shortDescription: 'Modern editorial portfolio showcasing commercial cinematography, specialist factual filming, and aerial drone reels with high-contrast typography.',
-    demoUrl: 'https://falakstudio.theomedia.co.uk',
+    demoUrl: 'https://theomedianick2.vercel.app',
     tags: ['Director of Photography', 'Selected Work Grid', 'Equipment Specs', 'Commercial Filming'],
     features: ['Full-viewport hero visuals', 'Curated selected work grid across 6 production categories', 'Dedicated showreel presentation modal', 'Comprehensive camera, lens, and drone kit lists', 'Instant production contact triggers', 'Clean Swiss-inspired typography layout'],
     challenge: 'Translating rich motion picture work into a clean, minimalist editorial layout that loads in milliseconds on any mobile device or production tablet.',

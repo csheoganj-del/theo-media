@@ -189,28 +189,28 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/work/falakstudio',
-        destination: 'https://falakstudio.theomedia.co.uk',
-        permanent: true,
+        destination: 'https://theomedianick2.vercel.app',
+        permanent: false,
       },
       {
         source: '/work/falak-studio',
-        destination: 'https://falakstudio.theomedia.co.uk',
-        permanent: true,
+        destination: 'https://theomedianick2.vercel.app',
+        permanent: false,
       },
       {
         source: '/work/nick2',
-        destination: 'https://falakstudio.theomedia.co.uk',
-        permanent: true,
+        destination: 'https://theomedianick2.vercel.app',
+        permanent: false,
       },
       {
         source: '/work/theomedianick2',
-        destination: 'https://falakstudio.theomedia.co.uk',
-        permanent: true,
+        destination: 'https://theomedianick2.vercel.app',
+        permanent: false,
       },
       {
         source: '/work/nick-gaven-v2',
-        destination: 'https://falakstudio.theomedia.co.uk',
-        permanent: true,
+        destination: 'https://theomedianick2.vercel.app',
+        permanent: false,
       },
       {
         source: '/work/rose-and-ivy',
