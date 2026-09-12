@@ -131,13 +131,13 @@ export default function JournalIndexPage() {
         </div>
       </section>
 
-      {/* Cross link to industry prototypes */}
+      {/* Cross link to industry solutions */}
       <section className="bg-ivory border-t border-b border-near-black/10 py-20 px-5 md:px-8 lg:px-12">
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
             <SectionLabel>OUR WORK</SectionLabel>
             <h2 className="font-display text-[32px] text-near-black mt-2">
-              Explore our production prototypes and case studies.
+              Explore our live projects and case studies.
             </h2>
             <p className="font-sans text-stone text-[16px] mt-2">
               See how our digital architecture works across hospitality, trades, healthcare, and ecommerce.

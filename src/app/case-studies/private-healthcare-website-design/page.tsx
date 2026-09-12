@@ -43,7 +43,7 @@ export default function HealthcareCaseStudy() {
             <p>That means a clinic website has an important job.</p>
             <p>It needs to feel professional without feeling cold. It needs to explain services clearly without overwhelming people. And it needs to make the next step easy.</p>
             <p>That is the thinking behind <strong>Elowen Clinic</strong>.</p>
-            <p>Elowen Clinic was created by TheoMedia as a modern website for a private clinic, dental practice, specialist healthcare business or medical aesthetics provider.</p>
+            <p>Elowen Clinic was designed and engineered by TheoMedia as a complete digital platform for a private clinic, medical practice, and specialist healthcare provider.</p>
             
             
             <p>The purpose of the project is to demonstrate how a healthcare website can build trust through clarity.</p>
@@ -56,7 +56,7 @@ export default function HealthcareCaseStudy() {
               rel="noopener noreferrer"
               className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors inline-flex items-center"
             >
-              VIEW LIVE EXPERIENCE ↗
+              VIEW LIVE WEBSITE ↗
             </Link>
             <Link 
               href="/contact?project=theo-clinic"
@@ -72,7 +72,7 @@ export default function HealthcareCaseStudy() {
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Elowen Clinic Demo" />
+            <ProjectPreview url={demoUrl} title="Elowen Clinic" />
           </div>
         </FadeIn>
       </section>
@@ -91,7 +91,7 @@ export default function HealthcareCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Type</div>
-              <div className="text-[14px] font-medium text-near-black">Live Project Details</div>
+              <div className="text-[14px] font-medium text-near-black">Website Project</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Market</div>
@@ -99,7 +99,7 @@ export default function HealthcareCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Status</div>
-              <div className="text-[14px] font-medium text-near-black">Live Experience</div>
+              <div className="text-[14px] font-medium text-near-black">Live Website</div>
             </div>
           </FadeIn>
         </div>
@@ -136,7 +136,7 @@ export default function HealthcareCaseStudy() {
                 <a href="#search-visibility" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Search Visibility Starts With Services</a>
                 <a href="#content-care" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Healthcare Content Needs Extra Care</a>
                 <a href="#focused-on" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Focused on</a>
-                <a href="#what-we-would-add" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Would Add</a>
+                <a href="#what-we-would-add" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Bespoke Practice Integrations</a>
                 <a href="#questions" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Common Questions</a>
                 <a href="#main-lesson" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">The Main Lesson</a>
               </nav>
@@ -584,16 +584,16 @@ export default function HealthcareCaseStudy() {
                 </div>
                 <div>
                   <h3 className="font-bold text-[18px] mb-2 uppercase tracking-wide">Space for Real Evidence</h3>
-                  <p className="text-bone/70">A real clinic can add genuine reviews, professional registrations, qualifications and treatment information.</p>
+                  <p className="text-bone/70">Clinics can add verified reviews, professional registrations, qualifications and treatment information.</p>
                 </div>
               </div>
             </FadeIn>
 
             <FadeIn id="what-we-would-add" className="mb-20 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
-                What We Would Add for a Real Clinic
+                Bespoke Practice Integrations
               </h2>
-              <p className="mb-10">Elowen Clinic was built as a healthcare website would be built around the services, practitioners and systems of the actual clinic. Depending on the business, we could add:</p>
+              <p className="mb-10">Depending on clinical specialisms and administrative workflow, our healthcare platforms integrate tailored practice systems, including:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -716,14 +716,14 @@ export default function HealthcareCaseStudy() {
         <div className="max-w-[1440px] mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-[32px] md:text-[48px] mb-6">
-              Explore the Working Clinic Demo
+              Explore the Elowen Clinic Website
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Elowen Clinic was created by TheoMedia as website design for a private clinic, dental practice or healthcare business. 
+              Elowen Clinic was designed and engineered by TheoMedia as a complete digital platform for a private clinic, medical practice, or specialist healthcare provider. 
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Elowen Clinic Demo" />
+              <ProjectPreview url={demoUrl} title="Elowen Clinic" />
             </div>
 
             <Link 
@@ -732,7 +732,7 @@ export default function HealthcareCaseStudy() {
               rel="noopener noreferrer"
               className="text-[13px] font-sans font-medium tracking-[0.15em] uppercase text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors inline-block mb-32"
             >
-              VIEW THEO CLINIC LIVE ↗
+              VIEW LIVE WEBSITE ↗
             </Link>
 
             <div className="max-w-2xl mx-auto border-t border-bone/10 pt-20 mb-20">
@@ -753,7 +753,7 @@ export default function HealthcareCaseStudy() {
                   START A PROJECT →
                 </Link>
                 <a 
-                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Clinic%20and%20would%20like%20to%20discuss%20a%20website%20project." 
+                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20Elowen%20Clinic%20and%20would%20like%20to%20discuss%20a%20website%20project." 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[13px] font-sans font-medium tracking-[0.1em] text-bone border border-bone/20 hover:border-bone/60 hover:bg-bone/5 transition-all duration-300 uppercase rounded-sm px-8 py-4"

@@ -83,7 +83,7 @@ export default function WorkScene() {
                               rel="noopener noreferrer"
                               className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone/60 hover:text-bone"
                             >
-                              VIEW EXPERIENCE ↗
+                              VIEW LIVE WEBSITE ↗
                             </Link>
                           </>
                         ) : (
@@ -93,7 +93,7 @@ export default function WorkScene() {
                             rel="noopener noreferrer"
                             className="text-[11px] tracking-widest font-sans uppercase border-b border-warm-accent pb-1 hover:border-bone transition-colors text-bone font-medium"
                           >
-                            VIEW LIVE EXPERIENCE ↗
+                            VIEW LIVE WEBSITE ↗
                           </Link>
                         )}
                       </div>
@@ -151,7 +151,7 @@ export default function WorkScene() {
                           rel="noopener noreferrer"
                           className="text-[11px] tracking-widest font-sans uppercase border-b border-bone/30 pb-1 hover:border-bone transition-colors text-bone/60 inline-flex items-center"
                         >
-                          VIEW EXPERIENCE ↗
+                          VIEW LIVE WEBSITE ↗
                         </Link>
                       </>
                     ) : (
@@ -161,7 +161,7 @@ export default function WorkScene() {
                         rel="noopener noreferrer"
                         className="text-[11px] tracking-widest font-sans uppercase border-b border-warm-accent pb-1 hover:border-bone transition-colors text-bone inline-flex items-center font-medium"
                       >
-                        VIEW LIVE EXPERIENCE ↗
+                        VIEW LIVE WEBSITE ↗
                       </Link>
                     )}
                   </div>

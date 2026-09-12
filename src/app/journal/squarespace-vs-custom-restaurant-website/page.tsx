@@ -62,7 +62,7 @@ export default function SquarespaceVsCustomRestaurantWebsitePage() {
           <div className="border-t border-b border-near-black/10 py-6 mb-12 flex flex-wrap gap-8 text-[13px] font-sans text-stone">
             <div><strong>Sector:</strong> Hospitality &amp; Dining</div>
             <div><strong>Reading Time:</strong> 6 minutes</div>
-            <div><strong>Featured Prototype:</strong> Cinder &amp; Field Restaurant</div>
+            <div><strong>Featured Project:</strong> Cinder &amp; Field Restaurant</div>
           </div>
         </FadeIn>
 
@@ -107,14 +107,14 @@ export default function SquarespaceVsCustomRestaurantWebsitePage() {
             </p>
           </section>
 
-          {/* Prototype Callout */}
+          {/* Project Callout */}
           <div className="p-8 bg-ivory border border-near-black/10 my-10">
-            <SectionLabel>LIVE PROTOTYPE BENCHMARK</SectionLabel>
+            <SectionLabel>LIVE PROJECT BENCHMARK</SectionLabel>
             <h3 className="font-display text-[24px] text-near-black mt-2 mb-3">
               Experience the Difference: Cinder &amp; Field
             </h3>
             <p className="text-stone text-[15px] mb-6">
-              Explore our live restaurant prototype featuring instant mobile menus, tactile wine pairings, and a seamless direct reservation workflow.
+              Explore our live restaurant project featuring instant mobile menus, tactile wine pairings, and a seamless direct reservation workflow.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -123,7 +123,7 @@ export default function SquarespaceVsCustomRestaurantWebsitePage() {
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-near-black text-bone text-[12px] font-semibold tracking-wider uppercase hover:bg-stone transition-colors"
               >
-                View Live Prototype ↗
+                View Live Website ↗
               </Link>
               <Link
                 href="/industries/restaurant-website-design"

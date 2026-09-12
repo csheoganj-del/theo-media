@@ -46,7 +46,7 @@ export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewPro
         >
           <iframe
             src={previewUrl}
-            title={`${title} Preview`}
+            title={title}
             className="w-full h-full border-none pointer-events-none select-none"
             loading="lazy"
             tabIndex={-1}
@@ -56,7 +56,7 @@ export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewPro
       ) : (
         <iframe
           src={previewUrl}
-          title={`${title} Preview`}
+          title={title}
           className="absolute inset-0 w-full h-full border-none pointer-events-none select-none z-10"
           loading="lazy"
           tabIndex={-1}

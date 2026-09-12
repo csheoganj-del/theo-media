@@ -17,12 +17,12 @@ export default function CaseStudiesPage() {
         
         {/* Header */}
         <FadeIn className="max-w-4xl mb-24 md:mb-40">
-          <SectionLabel>CASE STUDIES & PROTOTYPES / HOW WE THINK</SectionLabel>
+          <SectionLabel>CASE STUDIES / HOW WE THINK</SectionLabel>
           <h1 className="font-display text-[48px] sm:text-[64px] md:text-[80px] lg:text-[100px] leading-[1.05] mt-8 mb-8 uppercase text-near-black">
             WEBSITES BUILT AROUND REAL BUSINESS PROBLEMS.
           </h1>
           <p className="font-sans text-[16px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            Detailed architectural case studies and live production prototypes showing how TheoMedia approaches different industries, 
+            Detailed architectural case studies and live projects showing how TheoMedia approaches different industries, 
             balances design with functionality, and solves real commercial challenges.
           </p>
         </FadeIn>
@@ -77,7 +77,7 @@ export default function CaseStudiesPage() {
                           rel="noopener noreferrer"
                           className="text-[12px] font-sans font-medium tracking-[0.15em] uppercase text-stone border-b border-stone/30 pb-1 hover:text-near-black hover:border-near-black transition-colors"
                         >
-                          VIEW LIVE DEMO ↗
+                          VIEW LIVE WEBSITE ↗
                         </Link>
                       </>
                     ) : (
@@ -87,7 +87,7 @@ export default function CaseStudiesPage() {
                         rel="noopener noreferrer"
                         className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-warm-accent pb-1 hover:border-near-black transition-colors"
                       >
-                        VIEW LIVE EXPERIENCE ↗
+                        VIEW LIVE WEBSITE ↗
                       </Link>
                     )}
                   </div>

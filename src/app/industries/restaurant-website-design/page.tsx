@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -120,17 +120,17 @@ export default function RestaurantWebsiteDesignPage() {
                 rel="noopener noreferrer"
                 className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-bone/80 hover:text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors"
               >
-                Experience Live Demo (Cinder &amp; Field) ↗
+                View Live Website (Cinder &amp; Field) ↗
               </Link>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Live Demonstration Showcase */}
+      {/* Live Project Showcase */}
       <section className="py-20 md:py-28 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
         <div className="max-w-4xl mb-12">
-          <SectionLabel>PROVEN PROTOTYPE</SectionLabel>
+          <SectionLabel>FEATURED PROJECT</SectionLabel>
           <h2 className="text-editorial-md text-near-black mt-4">
             Interactive Experience: Cinder &amp; Field Gastropub
           </h2>
@@ -139,7 +139,7 @@ export default function RestaurantWebsiteDesignPage() {
           </p>
         </div>
         <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/10">
-          <ProjectPreview url={demoUrl} title="Cinder & Field Restaurant Demo" />
+          <ProjectPreview url={demoUrl} title="Cinder & Field" />
           <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30 pointer-events-none" />
         </div>
         <div className="mt-6 flex justify-between items-center text-[12px] font-sans text-stone uppercase tracking-wider">
@@ -262,7 +262,7 @@ export default function RestaurantWebsiteDesignPage() {
             Upgrade your restaurant&apos;s digital presence.
           </h2>
           <p className="font-sans text-bone/70 text-[17px] leading-relaxed mb-10">
-            Tell us about your restaurant, bar or dining group. We provide a bespoke concept review, fixed timeline, and transparent pricing.
+            Tell us about your restaurant, bar or dining group. We provide a bespoke project review, fixed timeline, and transparent pricing.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link

@@ -72,7 +72,7 @@ export default function StudioPage() {
                   ENGINEER-LED. ZERO LAYERS. COMPLETE ACCOUNTABILITY.
                 </h2>
                 <p className="font-sans text-[16px] text-charcoal/80 leading-relaxed mb-6">
-                  TheoMedia is the dedicated UK &amp; Ireland boutique web design and digital engineering studio within our engineering group (founded alongside CodeArc). We deliver high-touch creative direction and bespoke code directly to ambitious businesses without corporate agency overhead.
+                  TheoMedia is an independent UK &amp; Ireland boutique web design and digital engineering studio. We deliver high-touch creative direction and bespoke code directly to ambitious businesses without corporate agency overhead.
                 </p>
                 <p className="font-sans text-[15px] text-stone leading-relaxed">
                   When you partner with TheoMedia, you do not speak with account handlers, juniors, or outsourced intermediaries. You collaborate directly with senior designers and engineers who shape your architecture and write every single line of production code.

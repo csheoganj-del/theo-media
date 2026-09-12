@@ -16,12 +16,12 @@ export default function WorkPage() {
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
         {/* Hero Section */}
         <FadeIn className="max-w-4xl mb-20 md:mb-32">
-          <SectionLabel>PORTFOLIO &amp; PROTOTYPES</SectionLabel>
+          <SectionLabel>PORTFOLIO &amp; WORK</SectionLabel>
           <h1 className="font-display text-[48px] sm:text-[64px] md:text-[80px] lg:text-[100px] leading-[1.05] mt-8 mb-8 uppercase text-near-black">
             WEBSITES PEOPLE REMEMBER.
           </h1>
           <p className="font-sans text-[16px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            Bespoke digital experiences, live production prototypes, and custom engineering systems across hospitality, trades, healthcare, and ecommerce.
+            Bespoke digital experiences, live client projects, and custom engineering systems across hospitality, trades, healthcare, and ecommerce.
           </p>
         </FadeIn>
 
@@ -78,7 +78,7 @@ export default function WorkPage() {
                           rel="noopener noreferrer"
                           className="text-[11px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black transition-colors inline-flex items-center"
                         >
-                          VIEW EXPERIENCE ↗
+                          VIEW LIVE WEBSITE ↗
                         </Link>
                       </>
                     ) : (
@@ -88,7 +88,7 @@ export default function WorkPage() {
                         rel="noopener noreferrer"
                         className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-warm-accent transition-colors inline-flex items-center"
                       >
-                        VIEW LIVE EXPERIENCE ↗
+                        VIEW LIVE WEBSITE ↗
                       </Link>
                     )}
                   </div>

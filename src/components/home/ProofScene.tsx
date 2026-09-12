@@ -50,7 +50,7 @@ export default function ProofScene() {
                         rel="noopener noreferrer"
                         className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors duration-300 inline-flex items-center gap-2 group"
                       >
-                        VIEW EXPERIENCE
+                        VIEW LIVE WEBSITE
                         <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
                       </Link>
                     </div>

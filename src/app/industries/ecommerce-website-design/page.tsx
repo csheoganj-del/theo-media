@@ -71,17 +71,17 @@ export default function EcommerceWebsiteDesignPage() {
                 rel="noopener noreferrer"
                 className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-bone/80 hover:text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors"
               >
-                Experience Live Demo (Morrow &amp; Hide) ↗
+                View Live Website (Morrow &amp; Hide) ↗
               </Link>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Demonstration Showcase */}
+      {/* Live Project Showcase */}
       <section className="py-20 md:py-28 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
         <div className="max-w-4xl mb-12">
-          <SectionLabel>PRODUCTION PROTOTYPE</SectionLabel>
+          <SectionLabel>FEATURED PROJECT</SectionLabel>
           <h2 className="text-editorial-md text-near-black mt-4">
             Interactive Experience: Morrow &amp; Hide Leathercraft
           </h2>
@@ -90,7 +90,7 @@ export default function EcommerceWebsiteDesignPage() {
           </p>
         </div>
         <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/10">
-          <ProjectPreview url={demoUrl} title="Morrow & Hide Ecommerce Demo" />
+          <ProjectPreview url={demoUrl} title="Morrow & Hide" />
           <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30 pointer-events-none" />
         </div>
         <div className="mt-6 flex justify-between items-center text-[12px] font-sans text-stone uppercase tracking-wider">

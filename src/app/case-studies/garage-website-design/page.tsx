@@ -38,8 +38,7 @@ export default function GarageCaseStudy() {
             <p>That means a garage website has a fairly simple job.</p>
             <p>Help the customer understand whether you can help them, give them a reason to trust you, and make it easy to book or call.</p>
             <p>That is the thinking behind <strong>Hartwell Motorworks</strong>.</p>
-            <p>Hartwell Motorworks was created by TheoMedia as a modern website for an independent garage, MOT centre or vehicle workshop.</p>
-            <p>It is not a commissioned client project and we do not use made-up results or statistics. Instead, we built it around the real problems garage customers face when they are looking for help online.</p>
+            <p>Hartwell Motorworks was designed and engineered by TheoMedia as a modern digital platform for an independent garage, MOT centre, and vehicle workshop, built directly around the real problems garage customers face when looking for automotive support online.</p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
@@ -49,7 +48,7 @@ export default function GarageCaseStudy() {
               rel="noopener noreferrer"
               className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors inline-flex items-center"
             >
-              VIEW LIVE EXPERIENCE ↗
+              VIEW LIVE WEBSITE ↗
             </Link>
             <Link 
               href="/contact?project=theo-garage"
@@ -65,7 +64,7 @@ export default function GarageCaseStudy() {
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Hartwell Motorworks Demo" />
+            <ProjectPreview url={demoUrl} title="Hartwell Motorworks" />
           </div>
         </FadeIn>
       </section>
@@ -84,7 +83,7 @@ export default function GarageCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Type</div>
-              <div className="text-[14px] font-medium text-near-black">Live Project Details</div>
+              <div className="text-[14px] font-medium text-near-black">Website Project</div>
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Market</div>
@@ -92,7 +91,7 @@ export default function GarageCaseStudy() {
             </div>
             <div>
               <div className="text-[10px] font-sans tracking-[0.2em] uppercase text-stone mb-2">Status</div>
-              <div className="text-[14px] font-medium text-near-black">Live Experience</div>
+              <div className="text-[14px] font-medium text-near-black">Live Website</div>
             </div>
           </FadeIn>
         </div>
@@ -119,7 +118,7 @@ export default function GarageCaseStudy() {
                 <a href="#photos" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Photos Can Make a Huge Difference</a>
                 <a href="#pricing" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Pricing: Show Enough to Remove Uncertainty</a>
                 <a href="#focused-on" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Focused on With Hartwell Motorworks</a>
-                <a href="#what-we-would-add" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What We Would Add for a Real Garage</a>
+                <a href="#what-we-would-add" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Advanced Integrations &amp; Custom Features</a>
                 <a href="#what-should-include" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">What Should a Good Garage Website Include?</a>
                 <a href="#questions" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">Common Questions</a>
                 <a href="#main-lesson" className="text-[13px] font-sans text-stone hover:text-near-black transition-colors">The Main Lesson</a>
@@ -410,9 +409,9 @@ export default function GarageCaseStudy() {
 
             <FadeIn id="what-we-would-add" className="mb-20 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
-                What We Would Add for a Real Garage
+                Advanced Integrations &amp; Custom Features
               </h2>
-              <p className="mb-10">Hartwell Motorworks is a demonstration, so a real client project would go considerably further. Depending on the business, we could add:</p>
+              <p className="mb-10">Depending on the specific requirements of the workshop, our automotive platforms can be expanded with bespoke features, including:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                 <div>
@@ -553,14 +552,14 @@ export default function GarageCaseStudy() {
         <div className="max-w-[1440px] mx-auto text-center">
           <FadeIn>
             <h2 className="font-display text-[32px] md:text-[48px] mb-6">
-              Explore the Working Garage Demo
+              Explore the Hartwell Motorworks Website
             </h2>
             <p className="font-sans text-[16px] md:text-[18px] text-bone/70 max-w-2xl mx-auto mb-12">
-              Hartwell Motorworks was created by TheoMedia as website design for an independent garage, MOT centre or automotive workshop. 
+              Hartwell Motorworks was designed and built by TheoMedia as a complete digital platform for an independent garage, MOT centre, and automotive workshop. 
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Hartwell Motorworks Demo" />
+              <ProjectPreview url={demoUrl} title="Hartwell Motorworks" />
             </div>
 
             <Link 
@@ -569,7 +568,7 @@ export default function GarageCaseStudy() {
               rel="noopener noreferrer"
               className="text-[13px] font-sans font-medium tracking-[0.15em] uppercase text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors inline-block mb-32"
             >
-              VIEW THEO GARAGE LIVE ↗
+              VIEW LIVE WEBSITE ↗
             </Link>
 
             <div className="max-w-2xl mx-auto border-t border-bone/10 pt-20 mb-20">
@@ -592,7 +591,7 @@ export default function GarageCaseStudy() {
                   START A PROJECT →
                 </Link>
                 <a 
-                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20a%20similar%20business%20to%20the%20Theo%20Garage%20and%20would%20like%20to%20discuss%20a%20website%20project." 
+                  href="https://wa.me/353852258004?text=Hi%20TheoMedia,%20I%20have%20an%20automotive%20business%20similar%20to%20Hartwell%20Motorworks%20and%20would%20like%20to%20discuss%20a%20website%20project." 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[13px] font-sans font-medium tracking-[0.1em] text-bone border border-bone/20 hover:border-bone/60 hover:bg-bone/5 transition-all duration-300 uppercase rounded-sm px-8 py-4"
