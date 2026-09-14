@@ -103,7 +103,7 @@ export default async function CaseStudyPage({ params }: Props) {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <FadeIn delay={0.2}>
             <div className="w-full aspect-[16/10] bg-charcoal rounded-sm shadow-2xl relative overflow-hidden border border-near-black/10">
-              <ProjectPreview url={project.demoUrl} title={project.title} />
+              <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
             </div>
           </FadeIn>
         </div>

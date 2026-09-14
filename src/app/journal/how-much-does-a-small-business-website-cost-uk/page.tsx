@@ -253,7 +253,7 @@ export default function SmallBusinessWebsiteCostPage() {
                 <p>
                   At around £500, most commercial providers use off-the-shelf templates or highly
                   standardised assembly-line processes. They install a standard theme, insert your
-                  text into pre-existing demo boxes, and provide little to no strategic attention to
+                  text into pre-existing template placeholders, and provide little to no strategic attention to
                   how customers actually navigate your services.
                 </p>
                 <p>

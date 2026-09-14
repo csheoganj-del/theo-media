@@ -73,11 +73,11 @@ export default function EcommerceCaseStudy() {
         </FadeIn>
       </section>
 
-      {/* Demo Visual Hero */}
+      {/* Website Preview Hero */}
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Morrow & Hide" />
+            <ProjectPreview url={demoUrl} title="Morrow & Hide Ecommerce Preview" />
           </div>
         </FadeIn>
       </section>
@@ -204,7 +204,7 @@ export default function EcommerceCaseStudy() {
                 <p>What makes it worth the price?</p>
               </div>
               
-              <p className="mb-6">A strong product page should answer the questions that normally create hesitation. For a real ecommerce site, that could include:</p>
+              <p className="mb-6">A strong product page should answer the questions that normally create hesitation. For an established ecommerce flagship, that can include:</p>
               
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8 list-disc list-inside">
                 <li>multiple product photographs</li>
@@ -811,7 +811,7 @@ export default function EcommerceCaseStudy() {
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Morrow & Hide" />
+              <ProjectPreview url={demoUrl} title="Morrow & Hide Ecommerce Preview" />
             </div>
 
             <Link 

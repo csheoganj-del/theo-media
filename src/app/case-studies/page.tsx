@@ -51,7 +51,7 @@ export default function CaseStudiesPage() {
                 {/* Visual */}
                 <div className="w-full lg:w-[60%]">
                   <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/5">
-                    <ProjectPreview url={project.demoUrl} title={project.title} />
+                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
                     <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 pointer-events-none" />
                   </div>
                 </div>

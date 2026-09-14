@@ -8,7 +8,7 @@ import SectionLabel from '@/components/ui/SectionLabel';
 export const metadata: Metadata = {
   title: 'Web Design Portfolio & Case Studies UK | TheoMedia',
   description:
-    'Selected web design work from TheoMedia: restaurants, hotels, trades, clinics, salons and ecommerce. Live prototypes and production sites for UK and Ireland brands.',
+    'Selected web design work from TheoMedia: restaurants, hotels, trades, clinics, salons and ecommerce. Live websites and production flagships for UK and Ireland brands.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/work',
   },
@@ -32,7 +32,7 @@ export default function WorkPage() {
             WEBSITES PEOPLE REMEMBER.
           </h1>
           <p className="font-sans text-[16px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            Bespoke digital experiences, live client projects, and custom engineering systems across hospitality, trades, healthcare, and ecommerce.
+            Bespoke digital experiences, live websites, and custom engineering systems across hospitality, trades, healthcare, and ecommerce.
           </p>
         </FadeIn>
 
@@ -43,7 +43,7 @@ export default function WorkPage() {
               <div className="group flex flex-col h-full border border-near-black/10 p-4 md:p-6 bg-ivory hover:border-near-black/30 transition-colors duration-300">
                 <Link href={`/work/${project.slug}`} className="block relative aspect-[16/10] bg-charcoal w-full mb-6 overflow-hidden">
                   <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 ease-out border border-near-black/10">
-                    <ProjectPreview url={project.demoUrl} title={project.title} />
+                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
                     <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30" />
                   </div>
                 </Link>

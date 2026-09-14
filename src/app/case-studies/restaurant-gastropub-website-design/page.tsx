@@ -71,11 +71,11 @@ export default function RestaurantCaseStudy() {
         </FadeIn>
       </section>
 
-      {/* Demo Visual Hero */}
+      {/* Website Preview Hero */}
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Cinder & Field" />
+            <ProjectPreview url={demoUrl} title="Cinder & Field Restaurant Preview" />
           </div>
         </FadeIn>
       </section>
@@ -273,7 +273,7 @@ export default function RestaurantCaseStudy() {
               <p className="mb-6">A gastropub feels different from a fine dining restaurant. A neighbourhood bistro feels different from a cocktail bar. A family restaurant feels different from a romantic dining room.</p>
               <p className="mb-6">The website should reflect that. That means the design, photography, wording and layout should feel like the actual place.</p>
               <p className="mb-6">Cinder & Field was designed to feel warm, social and welcoming rather than overly formal.</p>
-              <p>A real client project would be shaped around the restaurant&apos;s own character.</p>
+              <p>Every project is shaped around the venue&apos;s own character.</p>
             </FadeIn>
 
             <FadeIn id="booking-obvious" className="mb-20 scroll-mt-32">
@@ -388,7 +388,7 @@ export default function RestaurantCaseStudy() {
                 <p>What time does the kitchen close?</p>
               </div>
 
-              <p className="mb-8">A good contact section can answer these questions simply. For a real restaurant, that might include:</p>
+              <p className="mb-8">A good contact section can answer these questions simply. Depending on the venue, that can include:</p>
 
               <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-8 list-disc list-inside">
                 <li>address</li>
@@ -705,7 +705,7 @@ export default function RestaurantCaseStudy() {
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Cinder & Field" />
+              <ProjectPreview url={demoUrl} title="Cinder & Field Restaurant Preview" />
             </div>
 
             <Link 

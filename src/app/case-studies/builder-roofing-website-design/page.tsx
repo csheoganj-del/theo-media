@@ -69,11 +69,11 @@ export default function BuilderCaseStudy() {
         </FadeIn>
       </section>
 
-      {/* Demo Visual Hero */}
+      {/* Website Preview Hero */}
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Alder & Rowe" />
+            <ProjectPreview url={demoUrl} title="Alder & Rowe Website Preview" />
           </div>
         </FadeIn>
       </section>
@@ -442,7 +442,7 @@ export default function BuilderCaseStudy() {
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
                 Project Case Studies Can Help Search and Trust
               </h2>
-              <p className="mb-6">For a real building company, the strongest website content may not be traditional blog posts.</p>
+              <p className="mb-6">For an established building company, the strongest website content may not be traditional blog posts.</p>
               <p className="mb-8">Completed projects can become excellent case studies. For example:</p>
               
               <div className="bg-ivory border border-near-black/5 p-8 md:p-10 my-10">
@@ -596,7 +596,7 @@ export default function BuilderCaseStudy() {
               <div className="mb-12 pt-8 border-t border-near-black/10">
                 <h3 className="font-sans font-bold text-[20px] text-near-black mb-4">Does a Builder Need a Portfolio?</h3>
                 <p className="mb-4">In most cases, yes. If you have good work, show it. People often choose builders visually before they ever speak to them.</p>
-                <p className="mb-4">A project portfolio can demonstrate:</p>
+                <p className="mb-4">A project portfolio can showcase:</p>
                 <ul className="space-y-1 list-disc list-inside mb-4">
                   <li>the scale of work</li>
                   <li>quality of finish</li>
@@ -660,7 +660,7 @@ export default function BuilderCaseStudy() {
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Alder &amp; Rowe" />
+              <ProjectPreview url={demoUrl} title="Alder &amp; Rowe Website Preview" />
             </div>
 
             <Link 

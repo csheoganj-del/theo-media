@@ -64,7 +64,7 @@ export default function HowToChooseWebDesignerPage() {
           <section>
             <h2 className="font-display text-[28px] text-near-black mb-4">1. Look at live websites, not Dribbble shots</h2>
             <p>
-              Ask for production URLs. Open them on your phone. If they are slow, use a PDF menu, or look like a ThemeForest template, that is the quality you will receive. TheoMedia publishes live prototypes and case studies for exactly this reason — see{' '}
+              Ask for production URLs. Open them on your phone. If they are slow, use a PDF menu, or look like a ThemeForest template, that is the quality you will receive. TheoMedia publishes live websites and case studies for exactly this reason — see{' '}
               <Link href="/work" className="underline">selected work</Link>.
             </p>
           </section>

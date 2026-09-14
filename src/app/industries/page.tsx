@@ -24,71 +24,71 @@ const industries = [
     title: 'Restaurants & Hospitality',
     href: '/industries/restaurant-website-design',
     tagline: 'Direct table reservations, live seasonal menus, and zero third-party commissions.',
-    demoTitle: 'View Cinder & Field Live ↗',
-    demoUrl: 'https://cinder-field.theomedia.co.uk',
+    linkTitle: 'View Cinder & Field Live ↗',
+    liveUrl: 'https://cinder-field.theomedia.co.uk',
   },
   {
     title: 'Hotels & Boutique Stays',
     href: '/industries/hotel-website-design',
     tagline: 'Direct room bookings, visual atmosphere storytelling, and OTA commission reduction.',
-    demoTitle: 'View Velora House Live ↗',
-    demoUrl: 'https://velora-house.theomedia.co.uk',
+    linkTitle: 'View Velora House Live ↗',
+    liveUrl: 'https://velora-house.theomedia.co.uk',
   },
   {
     title: 'Trades & Construction',
     href: '/industries/trades-construction-website-design',
     tagline: 'High-ticket residential and commercial quotes, WhatsApp lead capture, and portfolio galleries.',
-    demoTitle: 'View Alder & Rowe Live ↗',
-    demoUrl: 'https://alder-rowe.theomedia.co.uk',
+    linkTitle: 'View Alder & Rowe Live ↗',
+    liveUrl: 'https://alder-rowe.theomedia.co.uk',
   },
   {
     title: 'Private Healthcare & Clinics',
     href: '/industries/healthcare-clinic-website-design',
     tagline: 'Medical practitioner authority, transparent pricing, and confidential consultation workflows.',
-    demoTitle: 'View Elowen Clinic Live ↗',
-    demoUrl: 'https://elowen-clinic.theomedia.co.uk',
+    linkTitle: 'View Elowen Clinic Live ↗',
+    liveUrl: 'https://elowen-clinic.theomedia.co.uk',
   },
   {
     title: 'Luxury & DTC Ecommerce',
     href: '/industries/ecommerce-website-design',
     tagline: 'Sub-second mobile checkout, Apple Pay integration, and zero recurring plugin bloat.',
-    demoTitle: 'View Morrow & Hide Live ↗',
-    demoUrl: 'https://morrow-hide.theomedia.co.uk',
+    linkTitle: 'View Morrow & Hide Live ↗',
+    liveUrl: 'https://morrow-hide.theomedia.co.uk',
   },
   {
     title: 'Photographers & Visual Artists',
     href: '/industries/photographer-website-design',
     tagline: 'Full-bleed responsive imagery, fast portfolio rendering, and editorial client presentation.',
-    demoTitle: 'Read Photography Guide →',
-    demoUrl: '/industries/photographer-website-design',
+    linkTitle: 'Read Photography Guide →',
+    liveUrl: '/industries/photographer-website-design',
   },
   {
     title: 'Small & Independent Businesses',
     href: '/industries/small-business-website-design',
     tagline: 'Fixed-price launch packages from £895 / €1,050 with 100% source code ownership and zero lock-in.',
-    demoTitle: 'View Package Options →',
-    demoUrl: '/industries/small-business-website-design',
+    linkTitle: 'View Package Options →',
+    liveUrl: '/industries/small-business-website-design',
   },
   {
     title: 'Hair Salons',
     href: '/industries/salon-website-design',
     tagline: 'Editorial salon sites with treatment menus and appointment booking that keeps the brand intact.',
-    demoTitle: 'View Rose & Ivy →',
-    demoUrl: '/work/rose-and-ivy',
+    linkTitle: 'View Rose & Ivy →',
+    liveUrl: '/work/rose-and-ivy',
   },
   {
     title: 'Garages & Workshops',
     href: '/industries/garage-website-design',
     tagline: 'Service menus, MOT booking and tappable contact for independent UK garages.',
-    demoTitle: 'View Hartwell Motorworks →',
-    demoUrl: '/work/theo-garage',
+    linkTitle: 'View Hartwell Motorworks →',
+    liveUrl: '/work/theo-garage',
   },
   {
     title: 'Barbers & Grooming',
     href: '/industries/barber-website-design',
     tagline: 'Cut menus, barber profiles and chair booking without a marketplace-looking widget.',
-    demoTitle: 'View Wren & Crown →',
-    demoUrl: '/work/wren-crown',
+    linkTitle: 'View Wren & Crown →',
+    liveUrl: '/work/wren-crown',
   },
 ];
 
@@ -138,14 +138,14 @@ export default function IndustriesIndexPage() {
                   <span>Explore Sector Architecture</span>
                   <span>→</span>
                 </Link>
-                {ind.demoUrl.startsWith('http') && (
+                {ind.liveUrl.startsWith('http') && (
                   <Link
-                    href={ind.demoUrl}
+                    href={ind.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[12px] font-mono text-stone hover:text-near-black"
                   >
-                    {ind.demoTitle}
+                    {ind.linkTitle}
                   </Link>
                 )}
               </div>

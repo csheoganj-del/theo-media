@@ -116,7 +116,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // ── Live Subdomain Prototype Routing (301 Permanent) ──
+      // ── Live Subdomain Routing (301 Permanent) ──
       {
         source: '/work/garage',
         destination: 'https://hartwell-motorworks.theomedia.co.uk',

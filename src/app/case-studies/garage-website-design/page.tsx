@@ -63,11 +63,11 @@ export default function GarageCaseStudy() {
         </FadeIn>
       </section>
 
-      {/* Demo Visual Hero */}
+      {/* Website Preview Hero */}
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Hartwell Motorworks" />
+            <ProjectPreview url={demoUrl} title="Hartwell Motorworks Website Preview" />
           </div>
         </FadeIn>
       </section>
@@ -192,7 +192,7 @@ export default function GarageCaseStudy() {
                 <li>Fleet maintenance</li>
               </ul>
               
-              <p className="mb-6">A real garage website could go further by giving the most important services their own pages.</p>
+              <p className="mb-6">An effective garage website can go further by giving the most important services their own pages.</p>
               <p>That gives customers more useful information and also makes it easier for search engines to understand exactly what the garage offers.</p>
             </FadeIn>
 
@@ -227,7 +227,7 @@ export default function GarageCaseStudy() {
               </div>
 
               <p className="mb-6">That does not require exaggerated claims. Real evidence is much stronger.</p>
-              <p className="mb-8">A real garage website could include:</p>
+              <p className="mb-8">Depending on workshop specialisms, key trust signals include:</p>
               
               <ul className="space-y-3 mb-10 list-disc list-inside">
                 <li>genuine customer reviews</li>
@@ -315,7 +315,7 @@ export default function GarageCaseStudy() {
 
               <p className="mb-6">A website alone cannot guarantee that a garage appears first for these searches. No honest web designer should promise that.</p>
               <p className="mb-6">But the website can give the business a much stronger foundation.</p>
-              <p className="mb-6">For a real garage, we would normally want to make sure the website clearly explains:</p>
+              <p className="mb-6">Depending on a garage&apos;s operational requirements, we make sure the website clearly explains:</p>
               
               <ul className="space-y-2 mb-8 list-disc list-inside">
                 <li>where the garage is located</li>
@@ -347,7 +347,7 @@ export default function GarageCaseStudy() {
               </ul>
 
               <p className="mb-6">Professional photography helps, but authenticity matters more than making everything look like a car advertisement.</p>
-              <p>A customer wants to know they are dealing with a real business.</p>
+              <p>A customer wants to know they are dealing with an authentic, reputable business.</p>
             </FadeIn>
 
             <FadeIn id="pricing" className="mb-20 scroll-mt-32">
@@ -401,7 +401,7 @@ export default function GarageCaseStudy() {
                 </div>
                 <div>
                   <h3 className="font-bold text-[18px] mb-2 uppercase tracking-wide">Space for trust</h3>
-                  <p className="text-bone/70">The structure allows a real business to add reviews, team information, workshop photography and genuine credentials.</p>
+                  <p className="text-bone/70">The structure allows the business to feature verified reviews, team information, workshop photography and genuine credentials.</p>
                 </div>
                 <div>
                   <h3 className="font-bold text-[18px] mb-2 uppercase tracking-wide">Useful content</h3>
@@ -412,7 +412,7 @@ export default function GarageCaseStudy() {
 
             <FadeIn id="what-we-would-add" className="mb-20 scroll-mt-32">
               <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-6 leading-tight">
-                Advanced Integrations &amp; Custom Features
+                Additional Garage Capabilities
               </h2>
               <p className="mb-10">Depending on the specific requirements of the workshop, our automotive platforms can be expanded with bespoke features, including:</p>
               
@@ -562,7 +562,7 @@ export default function GarageCaseStudy() {
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Hartwell Motorworks" />
+              <ProjectPreview url={demoUrl} title="Hartwell Motorworks Website Preview" />
             </div>
 
             <Link 

@@ -49,7 +49,7 @@ export default function HealthcareCaseStudy() {
             <p>Elowen Clinic was designed and engineered by TheoMedia as a complete digital platform for a private clinic, medical practice, and specialist healthcare provider.</p>
             
             
-            <p>The purpose of the project is to demonstrate how a healthcare website can build trust through clarity.</p>
+            <p>Elowen Clinic is built around a clear principle: healthcare websites should build trust through clarity.</p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
@@ -71,11 +71,11 @@ export default function HealthcareCaseStudy() {
         </FadeIn>
       </section>
 
-      {/* Demo Visual Hero */}
+      {/* Website Preview Hero */}
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Elowen Clinic" />
+            <ProjectPreview url={demoUrl} title="Elowen Clinic Healthcare Preview" />
           </div>
         </FadeIn>
       </section>
@@ -726,7 +726,7 @@ export default function HealthcareCaseStudy() {
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Elowen Clinic" />
+              <ProjectPreview url={demoUrl} title="Elowen Clinic Healthcare Preview" />
             </div>
 
             <Link 

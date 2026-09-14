@@ -71,7 +71,7 @@ export default function TradesConstructionWebsiteDesignPage() {
                 rel="noopener noreferrer"
                 className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-bone/80 hover:text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors"
               >
-                View Live Website (Alder &amp; Rowe) ↗
+                View Alder &amp; Rowe ↗
               </Link>
             </div>
           </FadeIn>
@@ -81,7 +81,7 @@ export default function TradesConstructionWebsiteDesignPage() {
       {/* Live Project Showcase */}
       <section className="py-20 md:py-28 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
         <div className="max-w-4xl mb-12">
-          <SectionLabel>FEATURED PROJECT</SectionLabel>
+          <SectionLabel>SELECTED WORK</SectionLabel>
           <h2 className="text-editorial-md text-near-black mt-4">
             Interactive Experience: Alder &amp; Rowe Architectural Builders
           </h2>
@@ -90,7 +90,7 @@ export default function TradesConstructionWebsiteDesignPage() {
           </p>
         </div>
         <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/10">
-          <ProjectPreview url={demoUrl} title="Alder & Rowe" />
+          <ProjectPreview url={demoUrl} title="Alder & Rowe Website Preview" />
           <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30 pointer-events-none" />
         </div>
         <div className="mt-6 flex justify-between items-center text-[12px] font-sans text-stone uppercase tracking-wider">
@@ -120,7 +120,7 @@ export default function TradesConstructionWebsiteDesignPage() {
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col">
             <h3 className="font-display text-[22px] text-near-black mb-3">Before &amp; After Proof Galleries</h3>
             <p className="font-sans text-stone text-[15px] leading-relaxed">
-              Side-by-side transformation sliders and high-resolution build galleries that demonstrate flawless finish quality.
+              Side-by-side transformation sliders and high-resolution build galleries that showcase flawless finish quality.
             </p>
           </div>
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col">

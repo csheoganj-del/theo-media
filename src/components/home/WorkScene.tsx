@@ -106,7 +106,7 @@ export default function WorkScene() {
                     className="flex flex-col gap-6 bg-near-black/50 p-6 xl:p-8 rounded-sm border border-bone/10 shadow-2xl backdrop-blur-sm"
                   >
                     <div className="w-full aspect-[16/10] bg-near-black relative overflow-hidden rounded-sm border border-bone/10 shadow-xl">
-                      <ProjectPreview url={activeProject.demoUrl} title={activeProject.title} />
+                      <ProjectPreview url={activeProject.demoUrl} title={`${activeProject.title} Website Preview`} />
                     </div>
 
                     <div className="flex flex-col gap-5 pt-2">
@@ -170,7 +170,7 @@ export default function WorkScene() {
             {filteredProjects.map((project) => (
               <FadeIn key={project.slug} className="flex flex-col gap-6 bg-near-black/40 p-5 rounded-sm border border-bone/10">
                 <div className="w-full aspect-[16/10] bg-near-black relative overflow-hidden rounded-sm border border-bone/10">
-                  <ProjectPreview url={project.demoUrl} title={project.title} />
+                  <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
                 </div>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-2">

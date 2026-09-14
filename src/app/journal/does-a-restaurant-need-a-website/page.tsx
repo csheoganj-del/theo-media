@@ -101,7 +101,7 @@ export default function DoesRestaurantNeedWebsitePage() {
             A restaurant site built for menus and bookings.
           </h3>
           <p className="font-sans text-bone/70 text-[15px] leading-relaxed mb-6">
-            Explore the Cinder &amp; Field prototype, then start a hospitality project.
+            Explore the Cinder &amp; Field project, then start a hospitality project.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="/industries/restaurant-website-design" className="px-6 py-3 bg-bone text-near-black text-[12px] font-semibold tracking-wider uppercase hover:bg-ivory transition-colors">

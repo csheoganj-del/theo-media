@@ -234,8 +234,7 @@ export const communityBuildFaqs: FaqItem[] = [
 ];
 
 /**
- * Genuine TheoMedia client projects for proof.
- * Strictly using real client work only.
+ * Selected TheoMedia projects for proof.
  */
 export const communityBuildProofProjects = [
   {

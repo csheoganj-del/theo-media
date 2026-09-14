@@ -69,11 +69,11 @@ export default function BoutiqueHotelCaseStudy() {
         </FadeIn>
       </section>
 
-      {/* Demo Visual Hero */}
+      {/* Website Preview Hero */}
       <section className="px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto mb-20 md:mb-32">
         <FadeIn delay={0.2}>
           <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden shadow-2xl border border-near-black/5">
-            <ProjectPreview url={demoUrl} title="Velora House" />
+            <ProjectPreview url={demoUrl} title="Velora House Website Preview" />
           </div>
         </FadeIn>
       </section>
@@ -226,7 +226,7 @@ export default function BoutiqueHotelCaseStudy() {
               </h2>
               <p className="mb-6">Guests compare rooms carefully. Especially when one room costs more than another.</p>
               <p className="mb-6">A useful room page should help them understand why.</p>
-              <p className="mb-8">For a real boutique hotel, each room could include:</p>
+              <p className="mb-8">Across a tailored boutique hotel platform, each room presentation should include:</p>
               
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8 list-disc list-inside">
                 <li>room name</li>
@@ -368,7 +368,7 @@ export default function BoutiqueHotelCaseStudy() {
                 <p>What is nearby?</p>
               </div>
 
-              <p className="mb-8">For a real property, a location section could include:</p>
+              <p className="mb-8">Depending on the property&apos;s location and guest profile, a location section can include:</p>
 
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8 list-disc list-inside">
                 <li>map</li>
@@ -447,8 +447,8 @@ export default function BoutiqueHotelCaseStudy() {
                 <p>Perhaps the hotel exists because someone fell in love with the property.</p>
               </div>
 
-              <p className="mb-6">Those stories can matter. Not because every visitor will read every word. But because they make the hotel feel like a real place rather than another accommodation listing.</p>
-              <p className="mb-6">For a real hotel, we would look for the genuine story behind the property.</p>
+              <p className="mb-6">Those stories can matter. Not because every visitor will read every word. But because they make the hotel feel like an authentic destination rather than another accommodation listing.</p>
+              <p className="mb-6">For an independent boutique stay, we look for the genuine story behind the property.</p>
               <p>Then tell it simply.</p>
             </FadeIn>
 
@@ -733,7 +733,7 @@ export default function BoutiqueHotelCaseStudy() {
             </p>
             
             <div className="w-full max-w-5xl mx-auto aspect-[16/10] bg-near-black relative overflow-hidden shadow-2xl mb-12 border border-bone/10">
-              <ProjectPreview url={demoUrl} title="Velora House" />
+              <ProjectPreview url={demoUrl} title="Velora House Website Preview" />
             </div>
 
             <Link 

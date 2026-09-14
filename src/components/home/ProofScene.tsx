@@ -27,7 +27,7 @@ export default function ProofScene() {
                 <FadeIn key={project.slug} className={`flex flex-col gap-6 md:gap-10 ${isFullWidth ? '' : 'lg:flex-row lg:items-center'}`}>
                   
                   <div className={`w-full aspect-[16/10] bg-charcoal relative overflow-hidden group ${isFullWidth ? '' : 'lg:w-[60%] lg:order-2'}`}>
-                    <ProjectPreview url={project.demoUrl} title={project.title} />
+                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
                     <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30" />
                   </div>
                   
