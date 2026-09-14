@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/case-studies`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/journal`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/community-build`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/studio`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
@@ -48,6 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Journal, Buyer Guides & Comparisons
   const journalPages: MetadataRoute.Sitemap = [
+    '/journal/how-much-does-a-small-business-website-cost-uk',
     '/journal/how-much-does-a-website-cost-uk',
     '/journal/squarespace-vs-custom-website',
     '/journal/squarespace-alternative-uk',

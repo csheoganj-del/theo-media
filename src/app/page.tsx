@@ -9,6 +9,8 @@ import IndustriesScene from '@/components/home/IndustriesScene';
 import PricingPreview from '@/components/home/PricingPreview';
 import ProcessScene from '@/components/home/ProcessScene';
 import HomeFaq from '@/components/home/HomeFaq';
+import CommunityBuildSection from '@/components/home/CommunityBuildSection';
+import CommunityBuildNotice from '@/components/home/CommunityBuildNotice';
 import FinalCTA from '@/components/home/FinalCTA';
 import JsonLd from '@/components/seo/JsonLd';
 import { faqJsonLd } from '@/lib/seo';
@@ -69,8 +71,14 @@ export default function HomePage() {
       {/* SCENE 10 — FAQ */}
       <HomeFaq />
 
+      {/* SCENE 10.5 — COMMUNITY BUILD PROGRAMME */}
+      <CommunityBuildSection />
+
       {/* SCENE 11 — INVITATION */}
       <FinalCTA />
+
+      {/* FLOATING ANNOUNCEMENT */}
+      <CommunityBuildNotice />
     </>
   );
 }

@@ -6,6 +6,7 @@ import { SITE, NAV_LINKS } from '@/lib/constants';
 
 const capabilities = [
   { label: 'Bespoke Web Design', href: '/web-design' },
+  { label: 'Community Build (£495)', href: '/community-build' },
   { label: 'Business Software', href: '/business-software' },
   { label: 'All Capabilities →', href: '/services' },
 ];
@@ -20,6 +21,7 @@ const industries = [
 ];
 
 const journalGuides = [
+  { label: 'Small Business Web Costs 2026', href: '/journal/how-much-does-a-small-business-website-cost-uk' },
   { label: 'UK Website Cost Guide 2026', href: '/journal/how-much-does-a-website-cost-uk' },
   { label: 'Squarespace vs Custom Web Design', href: '/journal/squarespace-vs-custom-website' },
   { label: 'WordPress vs Custom Website', href: '/journal/wordpress-vs-custom-website' },

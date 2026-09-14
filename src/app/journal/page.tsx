@@ -22,6 +22,14 @@ export const metadata: Metadata = {
 const articles = [
   {
     category: 'Commercial Analysis',
+    title: 'How Much Does a Small Business Website Cost in the UK in 2026?',
+    slug: 'how-much-does-a-small-business-website-cost-uk',
+    description:
+      'A candid, factual examination of small business website design costs in the UK: evaluating DIY platforms, freelancers, boutique studios, and what £500 realistically buys.',
+    readTime: '8 min read',
+  },
+  {
+    category: 'Commercial Analysis',
     title: 'How Much Does a Website Cost in the UK? (2026 Honest Guide)',
     slug: 'how-much-does-a-website-cost-uk',
     description:
