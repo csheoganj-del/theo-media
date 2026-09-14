@@ -32,6 +32,7 @@ const INITIAL_DATA: FormData = {
 export default function ContactPage() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(INITIAL_DATA);
+  const [copied, setCopied] = useState(false);
   const totalSteps = 7;
 
   const handleNext = () => setStep((prev) => Math.min(prev + 1, totalSteps));
@@ -46,12 +47,9 @@ export default function ContactPage() {
     }));
   };
 
-  const generateMailto = () => {
-    const subject = encodeURIComponent(`New Project Enquiry: ${formData.business}`);
-    const body = encodeURIComponent(`
-Name: ${formData.name}
-Business: ${formData.business}
-Email: ${formData.email}
+  const getSummaryText = () => `Name: ${formData.name || 'N/A'}
+Business: ${formData.business || 'N/A'}
+Email: ${formData.email || 'N/A'}
 Phone: ${formData.phone || 'N/A'}
 
 -- PROJECT DETAILS --
@@ -61,11 +59,25 @@ Goals: ${formData.goals.join(', ') || 'None selected'}
 Stage: ${formData.stage || 'None selected'}
 
 -- MESSAGE --
-${formData.message}
-    `);
-    
-    return `mailto:hello@theomedia.co.uk?subject=${subject}&body=${body}`;
+${formData.message || 'No additional notes'}`;
+
+  const generateMailto = () => {
+    const subject = encodeURIComponent(`New Project Enquiry: ${formData.business || 'Client'}`);
+    const body = encodeURIComponent(getSummaryText());
+    return `mailto:${SITE.email}?subject=${subject}&body=${body}`;
   };
+
+  const generateWhatsAppUrl = () => {
+    const text = encodeURIComponent(`Hi TheoMedia, I'd like to discuss a project:\n\n${getSummaryText()}`);
+    return `${SITE.whatsappUrl}?text=${text}`;
+  };
+
+  const handleCopySummary = () => {
+    navigator.clipboard.writeText(getSummaryText());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
 
   return (
     <main className="bg-bone min-h-screen">
@@ -260,12 +272,32 @@ ${formData.message}
                         </div>
                       </div>
                       
-                      <a 
-                        href={generateMailto()}
-                        className="w-full inline-flex items-center justify-center px-8 py-4 bg-near-black text-bone font-sans font-bold tracking-widest uppercase text-sm hover:bg-warm-accent transition-colors rounded-sm"
-                      >
-                        Send Project Enquiry
-                      </a>
+                      <div className="flex flex-col gap-3">
+                        <a 
+                          href={generateWhatsAppUrl()}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 text-white font-sans font-bold tracking-widest uppercase text-sm hover:bg-emerald-600 transition-colors rounded-sm shadow-sm"
+                        >
+                          <span>Send via WhatsApp</span>
+                          <span>↗</span>
+                        </a>
+
+                        <a 
+                          href={generateMailto()}
+                          className="w-full inline-flex items-center justify-center px-8 py-4 bg-near-black text-bone font-sans font-bold tracking-widest uppercase text-sm hover:bg-charcoal transition-colors rounded-sm"
+                        >
+                          Send via Email Client
+                        </a>
+
+                        <button
+                          type="button"
+                          onClick={handleCopySummary}
+                          className="w-full inline-flex items-center justify-center px-8 py-3 border border-stone/30 text-charcoal font-sans font-semibold tracking-wider uppercase text-xs hover:border-near-black transition-colors rounded-sm"
+                        >
+                          {copied ? '✓ Copied to Clipboard!' : 'Copy Enquiry Summary'}
+                        </button>
+                      </div>
                     </FadeIn>
                   )}
                 </div>
@@ -294,12 +326,12 @@ ${formData.message}
               
               <div className="mt-8 text-center">
                 <a 
-                  href={`https://wa.me/${SITE.whatsappUrl.replace(/[^0-9]/g, '')}`} 
+                  href={SITE.whatsappUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-stone hover:text-warm-accent transition-colors"
                 >
-                  Prefer WhatsApp? Message us directly →
+                  Prefer direct WhatsApp? Message our studio directly →
                 </a>
               </div>
             </div>
@@ -312,16 +344,17 @@ ${formData.message}
                 <div className="space-y-10">
                   <div>
                     <h3 className="font-sans font-bold text-near-black text-sm uppercase tracking-widest mb-3">Email</h3>
-                    <a href={`mailto:hello@theomedia.co.uk`} className="font-display text-2xl text-charcoal hover:text-warm-accent transition-colors">
-                      hello@theomedia.co.uk
+                    <a href={`mailto:${SITE.email}`} className="font-display text-2xl text-charcoal hover:text-warm-accent transition-colors">
+                      {SITE.email}
                     </a>
                   </div>
                   
                   <div>
                     <h3 className="font-sans font-bold text-near-black text-sm uppercase tracking-widest mb-3">WhatsApp</h3>
-                    <a href={`https://wa.me/${SITE.whatsappUrl.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="font-display text-2xl text-charcoal hover:text-warm-accent transition-colors">
-                      {SITE.whatsappUrl}
+                    <a href={SITE.whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-display text-2xl text-charcoal hover:text-warm-accent transition-colors block">
+                      {SITE.phone}
                     </a>
+                    <span className="text-xs text-stone font-mono uppercase tracking-widest mt-1 block">Direct Studio Chat ↗</span>
                   </div>
 
                   <div className="pt-8 border-t border-stone/20">

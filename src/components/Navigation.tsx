@@ -171,10 +171,19 @@ export function Navigation() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.4 }}
               >
-                <div className="flex items-center justify-between text-[11px] font-sans tracking-[0.15em] uppercase text-stone">
+                <div className="flex items-center justify-between text-[11px] font-sans tracking-[0.15em] uppercase text-stone mb-2">
                   <span>{SITE.regions}</span>
                   <a href={`mailto:${SITE.email}`} className="hover:text-near-black transition-colors">
                     {SITE.email}
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-[11px] font-sans tracking-[0.15em] uppercase text-stone">
+                  <a href="https://instagram.com/theomedia.co.uk" target="_blank" rel="noopener noreferrer" className="hover:text-near-black transition-colors">
+                    Instagram ↗
+                  </a>
+                  <span>·</span>
+                  <a href="https://www.facebook.com/profile.php?id=61594428231748&sk=about" target="_blank" rel="noopener noreferrer" className="hover:text-near-black transition-colors">
+                    Facebook ↗
                   </a>
                 </div>
               </motion.div>
