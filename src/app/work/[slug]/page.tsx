@@ -103,7 +103,7 @@ export default async function CaseStudyPage({ params }: Props) {
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <FadeIn delay={0.2}>
             <div className="w-full aspect-[16/10] bg-charcoal rounded-sm shadow-2xl relative overflow-hidden border border-near-black/10">
-              <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
+              <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} previewUrl={project.previewUrl} />
             </div>
           </FadeIn>
         </div>
@@ -176,7 +176,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
             {project.demoUrl && (
               <a 
-                href={project.demoUrl} 
+                href={project.previewUrl || project.demoUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-near-black text-bone font-sans font-medium tracking-widest uppercase text-sm hover:bg-warm-accent transition-colors rounded-sm"

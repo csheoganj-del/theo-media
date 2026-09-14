@@ -27,7 +27,7 @@ export default function ProofScene() {
                 <FadeIn key={project.slug} className={`flex flex-col gap-6 md:gap-10 ${isFullWidth ? '' : 'lg:flex-row lg:items-center'}`}>
                   
                   <div className={`w-full aspect-[16/10] bg-charcoal relative overflow-hidden group ${isFullWidth ? '' : 'lg:w-[60%] lg:order-2'}`}>
-                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
+                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} previewUrl={project.previewUrl} />
                     <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30" />
                   </div>
                   
@@ -45,7 +45,7 @@ export default function ProofScene() {
                     
                     <div className="pt-4">
                       <Link 
-                        href={project.demoUrl}
+                        href={project.previewUrl || project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors duration-300 inline-flex items-center gap-2 group"

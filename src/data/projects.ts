@@ -10,6 +10,7 @@ export interface Project {
   description: string;
   shortDescription: string;
   demoUrl: string;
+  previewUrl?: string;
   tags: string[];
   features: string[];
   challenge: string;
@@ -208,6 +209,33 @@ export const projects: Project[] = [
     creativeDirection: 'Heritage aesthetics meet contemporary London edge. Warm dark timber tones, classic typography, and authentic shopfloor photography.',
     customerJourney: 'Client lands → browses cut & grooming services → picks barber and timeslot → books appointment in seconds.',
     technology: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Booking Flow', 'SEO Optimised'],
+  },
+  {
+    slug: 'amble',
+    caseStudySlug: 'artisan-knitwear-ceramics-website-design',
+    title: 'Amble',
+    sector: 'Artisanal Knitwear & Ceramics',
+    category: 'ecommerce',
+    type: 'client',
+    badge: 'Live Project',
+    hasCaseStudy: false,
+    description: 'A slow-commerce digital experience engineered for an independent Somerset workshop, pairing contemplative product storytelling with small-batch releases.',
+    shortDescription: 'Frome artisanal workshop platform featuring undyed knitwear, studio ceramics, bench notes, and lifetime repair stewardship.',
+    demoUrl: 'https://amble.theomedia.co.uk',
+    previewUrl: 'https://amble-two.vercel.app',
+    tags: ['Slow Commerce', 'Artisanal Knitwear', 'Studio Ceramics', 'Lifetime Repairs'],
+    features: [
+      'Contemplative slow-retail shopping architecture',
+      'Small-batch drop & seasonal collection management',
+      'Workshop provenance & converted dairy studio storytelling',
+      'Editorial bench notes & craft journal integration',
+      'Physical stockist discovery across independent UK shops',
+      'Responsive interaction flows with zero third-party framework bloat',
+    ],
+    challenge: 'Fast-fashion ecommerce designs push impulse purchases and high returns. An artisanal workshop producing small batches in an old dairy needs a digital presence reflecting patience, tactile craft, and enduring quality.',
+    creativeDirection: 'Muted earth tones of dove and soft ink paired with Newsreader serif typography. Generous negative space and unhurried pacing that mirror the quiet rhythm of the Frome workshop.',
+    customerJourney: 'Visitor lands → explores workshop ethos and small-batch collection → reads notes from the bench → selects pieces with quiet confidence.',
+    technology: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Responsive Design', 'Fast Loading'],
   },
 ];
 

@@ -6,9 +6,10 @@ interface ProjectPreviewProps {
   url: string;
   title: string;
   desktop?: boolean;
+  previewUrl?: string;
 }
 
-export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewProps) {
+export function ProjectPreview({ url, title, desktop = true, previewUrl }: ProjectPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   const [isInView, setIsInView] = useState(false);
@@ -94,7 +95,7 @@ export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewPro
               style={{ transform: `scale(${scale})` }}
             >
               <iframe
-                src={url}
+                src={previewUrl || url}
                 title={title}
                 className="w-full h-full border-none pointer-events-none select-none bg-near-black"
                 loading="lazy"
@@ -105,7 +106,7 @@ export function ProjectPreview({ url, title, desktop = true }: ProjectPreviewPro
             </div>
           ) : (
             <iframe
-              src={url}
+              src={previewUrl || url}
               title={title}
               className={`absolute inset-0 w-full h-full border-none pointer-events-none select-none z-10 bg-near-black transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
               loading="lazy"

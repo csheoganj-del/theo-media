@@ -43,7 +43,7 @@ export default function WorkPage() {
               <div className="group flex flex-col h-full border border-near-black/10 p-4 md:p-6 bg-ivory hover:border-near-black/30 transition-colors duration-300">
                 <Link href={`/work/${project.slug}`} className="block relative aspect-[16/10] bg-charcoal w-full mb-6 overflow-hidden">
                   <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 ease-out border border-near-black/10">
-                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} />
+                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} previewUrl={project.previewUrl} />
                     <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30" />
                   </div>
                 </Link>
@@ -84,7 +84,7 @@ export default function WorkPage() {
                           READ CASE STUDY →
                         </Link>
                         <Link 
-                          href={project.demoUrl}
+                          href={project.previewUrl || project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-[11px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black transition-colors inline-flex items-center"
@@ -94,7 +94,7 @@ export default function WorkPage() {
                       </>
                     ) : (
                       <Link 
-                        href={project.demoUrl}
+                        href={project.previewUrl || project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-warm-accent transition-colors inline-flex items-center"
