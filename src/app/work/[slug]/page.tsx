@@ -5,6 +5,9 @@ import Link from 'next/link';
 import { projects } from '@/data/projects';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
+import JsonLd from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd } from '@/lib/seo';
+import { SITE } from '@/lib/constants';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -27,8 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${project.title} | TheoMedia Work`,
+    title: `${project.title} | ${project.sector} Website Design | TheoMedia`,
     description: project.description,
+    alternates: {
+      canonical: `https://www.theomedia.co.uk/work/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} | ${project.sector} Website Design | TheoMedia`,
+      description: project.description,
+      url: `https://www.theomedia.co.uk/work/${project.slug}`,
+      type: 'article',
+    },
   };
 }
 
@@ -45,6 +57,25 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <div className="bg-bone min-h-screen pt-24">
+      <JsonLd
+        data={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'CreativeWork',
+            name: project.title,
+            description: project.description,
+            url: `${SITE.url}/work/${project.slug}`,
+            creator: { '@id': `${SITE.url}/#organization` },
+            about: project.sector,
+            keywords: project.tags.join(', '),
+          },
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Work', path: '/work' },
+            { name: project.title, path: `/work/${project.slug}` },
+          ]),
+        ]}
+      />
       <section className="dark-section pt-24 pb-32 md:pt-32 md:pb-40">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           <FadeIn>

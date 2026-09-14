@@ -6,8 +6,19 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
-  title: 'Client Case Studies & Digital Product Work | TheoMedia',
-  description: 'How TheoMedia approaches digital experiences across different industries. Detailed case studies of our projects.',
+  title: 'Website Design Case Studies | Hospitality, Trades, Healthcare | TheoMedia',
+  description:
+    'Detailed website design case studies for restaurants, hotels, trades, clinics and ecommerce. How TheoMedia solves real commercial problems.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/case-studies',
+  },
+  openGraph: {
+    title: 'Website Design Case Studies | TheoMedia',
+    description:
+      'Architectural case studies across hospitality, trades, healthcare and ecommerce.',
+    url: 'https://www.theomedia.co.uk/case-studies',
+    type: 'website',
+  },
 };
 
 export default function CaseStudiesPage() {

@@ -4,8 +4,19 @@ import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = {
-  title: 'Studio & Approach | TheoMedia',
-  description: 'TheoMedia combines creative direction and engineering under one roof. Small enough to care about the details.',
+  title: 'Independent Web Design Studio UK & Ireland | About TheoMedia',
+  description:
+    'TheoMedia is a founder-led web design studio for UK and Ireland businesses. Direct collaboration, custom Next.js engineering, 100% client-owned code.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/studio',
+  },
+  openGraph: {
+    title: 'Independent Web Design Studio UK & Ireland | About TheoMedia',
+    description:
+      'Founder-led web design studio. Creative direction and engineering under one roof. UK and Ireland.',
+    url: 'https://www.theomedia.co.uk/studio',
+    type: 'website',
+  },
 };
 
 const PRINCIPLES = [

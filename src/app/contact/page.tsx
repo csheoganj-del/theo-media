@@ -85,10 +85,10 @@ ${formData.message || 'No additional notes'}`;
         <div className="container mx-auto px-4 md:px-8 max-w-6xl">
           <FadeIn>
             <h1 className="text-editorial-xl text-bone mb-6 uppercase">
-              Let&apos;s build something great.
+              Start a web design project.
             </h1>
             <p className="text-lg font-sans text-stone max-w-xl">
-              Fill out the enquiry form to get started, or reach out directly if you prefer.
+              Tell us about your UK or Ireland business. We reply within one working day with a clear next step — or WhatsApp and call if you prefer.
             </p>
           </FadeIn>
         </div>

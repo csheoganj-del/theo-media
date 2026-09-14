@@ -176,6 +176,37 @@ export default function WebDesignPage() {
         </div>
       </section>
 
+      {/* Cities */}
+      <section className="py-24 md:py-32 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
+        <div className="max-w-3xl mb-12">
+          <SectionLabel>UK &amp; IRELAND</SectionLabel>
+          <h2 className="text-editorial-lg text-near-black mt-6">
+            Web design for London, Manchester, Birmingham, Edinburgh and Dublin.
+          </h2>
+          <p className="font-sans text-stone text-[16px] md:text-[18px] mt-4">
+            Independent, founder-led delivery — not a local franchise. Dedicated pages for the cities our clients search most.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-4">
+          {[
+            ['London', '/web-design-london'],
+            ['Manchester', '/web-design-manchester'],
+            ['Birmingham', '/web-design-birmingham'],
+            ['Edinburgh', '/web-design-edinburgh'],
+            ['Dublin', '/web-design-dublin'],
+            ['Ireland', '/web-design-ireland'],
+          ].map(([label, href]) => (
+            <Link
+              key={href}
+              href={href}
+              className="px-5 py-3 border border-near-black/15 text-[13px] uppercase tracking-wider hover:border-near-black transition-colors"
+            >
+              Web Design {label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Comparison guide callout */}
       <section className="bg-ivory border-b border-near-black/10 py-20 px-5 md:px-8 lg:px-12">
         <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">

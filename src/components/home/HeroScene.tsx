@@ -83,7 +83,7 @@ export default function HeroScene() {
               variants={itemVariants}
               className="font-display text-[26px] sm:text-[34px] md:text-[42px] lg:text-[50px] text-bone max-w-4xl mx-auto leading-[1.1] mb-5 tracking-tight font-normal"
             >
-              Websites and business software, built like products.
+              Bespoke web design and custom software for the UK and Ireland.
             </motion.h1>
 
             <motion.p 

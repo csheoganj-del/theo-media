@@ -76,6 +76,38 @@ const articles = [
       'From budget setups to bespoke hospitality flagships: design costs, professional food photography budgets, reservation software comparisons, and payback math.',
     readTime: '6 min read',
   },
+  {
+    category: 'Platform Comparison',
+    title: 'WordPress vs Custom Website UK (2026): Cost, Speed, SEO & Ownership',
+    slug: 'wordpress-vs-custom-website',
+    description:
+      'When WordPress is still the right call, and when a custom Next.js site is cheaper over three years, faster on mobile, and fully owned.',
+    readTime: '8 min read',
+  },
+  {
+    category: 'Buyer Checklist',
+    title: 'How to Choose a Web Designer in the UK (2026 Checklist)',
+    slug: 'how-to-choose-a-web-designer-uk',
+    description:
+      'Portfolio, ownership, pricing, SEO and the questions that separate a studio from a template reseller.',
+    readTime: '6 min read',
+  },
+  {
+    category: 'Hospitality Strategy',
+    title: 'Does a Restaurant Need a Website If It Has Instagram?',
+    slug: 'does-a-restaurant-need-a-website',
+    description:
+      'Why UK and Irish restaurants still need a fast owned site for menus, table bookings and Google search.',
+    readTime: '5 min read',
+  },
+  {
+    category: 'Technical SEO',
+    title: 'Website SEO for Small Business UK: A Practical 2026 Checklist',
+    slug: 'website-seo-for-small-business-uk',
+    description:
+      'Titles, H1s, Google Business Profile, schema, speed and the pages that actually generate enquiries.',
+    readTime: '7 min read',
+  },
 ];
 
 export default function JournalIndexPage() {

@@ -7,6 +7,9 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Private Clinic Website Design That Helps Patients Feel Informed | TheoMedia',
   description: 'How to design a modern website for a private clinic, dental practice or specialist healthcare business that builds trust through clarity.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/case-studies/private-healthcare-website-design',
+  },
   openGraph: {
     title: 'Private Clinic Website Design That Helps Patients Feel Informed | TheoMedia',
     description: 'How to design a modern website for a private clinic, dental practice or specialist healthcare business that builds trust through clarity.',

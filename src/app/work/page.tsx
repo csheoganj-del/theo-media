@@ -6,8 +6,19 @@ import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = {
-  title: 'Work | TheoMedia',
-  description: 'Bespoke digital experiences and production-grade builds across hospitality, trades, healthcare and ecommerce.',
+  title: 'Web Design Portfolio & Case Studies UK | TheoMedia',
+  description:
+    'Selected web design work from TheoMedia: restaurants, hotels, trades, clinics, salons and ecommerce. Live prototypes and production sites for UK and Ireland brands.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/work',
+  },
+  openGraph: {
+    title: 'Web Design Portfolio & Case Studies UK | TheoMedia',
+    description:
+      'Selected web design work across hospitality, trades, healthcare, salons and ecommerce.',
+    url: 'https://www.theomedia.co.uk/work',
+    type: 'website',
+  },
 };
 
 export default function WorkPage() {

@@ -15,13 +15,25 @@ const industries = [
   { label: 'Hotels & Boutique Stays', href: '/industries/hotel-website-design' },
   { label: 'Trades & Construction', href: '/industries/trades-construction-website-design' },
   { label: 'Healthcare & Clinics', href: '/industries/healthcare-clinic-website-design' },
+  { label: 'Salons & Barbers', href: '/industries/salon-website-design' },
   { label: 'All Sector Solutions →', href: '/industries' },
 ];
 
 const journalGuides = [
   { label: 'UK Website Cost Guide 2026', href: '/journal/how-much-does-a-website-cost-uk' },
   { label: 'Squarespace vs Custom Web Design', href: '/journal/squarespace-vs-custom-website' },
+  { label: 'WordPress vs Custom Website', href: '/journal/wordpress-vs-custom-website' },
+  { label: 'How to Choose a Web Designer', href: '/journal/how-to-choose-a-web-designer-uk' },
   { label: 'All Articles & Analysis →', href: '/journal' },
+];
+
+const cities = [
+  { label: 'Web Design London', href: '/web-design-london' },
+  { label: 'Web Design Manchester', href: '/web-design-manchester' },
+  { label: 'Web Design Birmingham', href: '/web-design-birmingham' },
+  { label: 'Web Design Edinburgh', href: '/web-design-edinburgh' },
+  { label: 'Web Design Dublin', href: '/web-design-dublin' },
+  { label: 'Web Design Ireland →', href: '/web-design-ireland' },
 ];
 
 export function Footer() {
@@ -203,6 +215,22 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 mb-8">
               {journalGuides.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-[14px] text-bone/60 hover:text-bone transition-colors duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-bone/30 mb-5">
+              Locations
+            </h4>
+            <ul className="space-y-3 mb-8">
+              {cities.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}

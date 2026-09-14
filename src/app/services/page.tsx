@@ -7,8 +7,19 @@ import SectionLabel from '@/components/ui/SectionLabel';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Services & Capabilities | TheoMedia',
-  description: 'Websites, ecommerce, booking experiences, web applications, business systems and integrations.',
+  title: 'Web Design, Ecommerce & Custom Software Services | TheoMedia',
+  description:
+    'Bespoke websites, luxury ecommerce, booking engines, web applications and business software for UK and Ireland companies. Fixed packages from £895.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/services',
+  },
+  openGraph: {
+    title: 'Web Design, Ecommerce & Custom Software Services | TheoMedia',
+    description:
+      'Websites, ecommerce, booking experiences, web applications and business systems. UK and Ireland.',
+    url: 'https://www.theomedia.co.uk/services',
+    type: 'website',
+  },
 };
 
 export default function ServicesPage() {

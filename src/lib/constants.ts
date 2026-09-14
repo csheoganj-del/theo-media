@@ -11,6 +11,8 @@ export const SITE = {
   priceRange: '£895 – £9,500+ (€1,050 – €11,000+)',
   currencies: 'GBP, EUR',
   year: new Date().getFullYear(),
+  instagram: 'https://instagram.com/theomedia.co.uk',
+  facebook: 'https://www.facebook.com/profile.php?id=61594428231748',
 } as const;
 
 export const NAV_LINKS = [

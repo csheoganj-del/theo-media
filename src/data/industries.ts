@@ -43,6 +43,16 @@ export const industries: Industry[] = [
   {
     name: 'Automotive & Performance',
     priorities: ['Engineering Trust', 'Service Menus', 'Booking Enquiries'],
-    href: '/industries',
+    href: '/industries/garage-website-design',
+  },
+  {
+    name: 'Hair Salons',
+    priorities: ['Treatment Menus', 'Appointments', 'Editorial Atmosphere'],
+    href: '/industries/salon-website-design',
+  },
+  {
+    name: 'Barbers & Grooming',
+    priorities: ['Chair Booking', 'Cut Menus', 'Local Discovery'],
+    href: '/industries/barber-website-design',
   },
 ];

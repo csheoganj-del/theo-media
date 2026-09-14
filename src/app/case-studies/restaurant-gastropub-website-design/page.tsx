@@ -7,6 +7,9 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Restaurant Website Design That Helps Turn Browsing Into Bookings | TheoMedia',
   description: 'How to design a restaurant or gastropub website that makes choosing, booking and visiting easier.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/case-studies/restaurant-gastropub-website-design',
+  },
   openGraph: {
     title: 'Restaurant Website Design That Helps Turn Browsing Into Bookings | TheoMedia',
     description: 'How to design a restaurant or gastropub website that makes choosing, booking and visiting easier.',

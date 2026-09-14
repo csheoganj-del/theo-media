@@ -69,6 +69,27 @@ const industries = [
     demoTitle: 'View Package Options →',
     demoUrl: '/industries/small-business-website-design',
   },
+  {
+    title: 'Hair Salons',
+    href: '/industries/salon-website-design',
+    tagline: 'Editorial salon sites with treatment menus and appointment booking that keeps the brand intact.',
+    demoTitle: 'View Rose & Ivy →',
+    demoUrl: '/work/rose-and-ivy',
+  },
+  {
+    title: 'Garages & Workshops',
+    href: '/industries/garage-website-design',
+    tagline: 'Service menus, MOT booking and tappable contact for independent UK garages.',
+    demoTitle: 'View Hartwell Motorworks →',
+    demoUrl: '/work/theo-garage',
+  },
+  {
+    title: 'Barbers & Grooming',
+    href: '/industries/barber-website-design',
+    tagline: 'Cut menus, barber profiles and chair booking without a marketplace-looking widget.',
+    demoTitle: 'View Wren & Crown →',
+    demoUrl: '/work/wren-crown',
+  },
 ];
 
 export default function IndustriesIndexPage() {
@@ -97,7 +118,7 @@ export default function IndustriesIndexPage() {
             >
               <div>
                 <span className="text-[11px] font-mono tracking-widest text-stone uppercase block mb-3">
-                  Sector 0{idx + 1}
+                  Sector {(idx + 1).toString().padStart(2, '0')}
                 </span>
                 <h2 className="font-display text-[26px] text-near-black mb-3">
                   <Link href={ind.href} className="hover:text-stone transition-colors">

@@ -7,6 +7,9 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Garage Website Design That Makes Booking Simple | TheoMedia Case Study',
   description: 'How to design an independent garage, MOT centre, or vehicle workshop website that builds trust and makes booking easy.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/case-studies/garage-website-design',
+  },
   openGraph: {
     title: 'Garage Website Design That Makes Booking Simple | TheoMedia',
     description: 'How to design an independent garage, MOT centre, or vehicle workshop website that builds trust and makes booking easy.',

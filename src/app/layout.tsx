@@ -29,22 +29,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.theomedia.co.uk'),
   title: {
-    default: 'Web Design & Digital Product Studio UK & Ireland | TheoMedia',
+    default: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
     template: '%s',
   },
   description:
-    'TheoMedia is an independent web design and digital product studio. We engineer bespoke websites, custom website development, and business software across the UK and Ireland.',
+    'Independent web design studio for UK and Ireland businesses. Custom websites, booking engines and ecommerce from £895 / €1,050. 100% client-owned. No templates, no lock-in.',
   keywords: [
     'web design UK',
     'web design studio UK',
     'custom website development UK',
-    'digital product studio',
     'bespoke website design UK',
     'web design Ireland',
-    'independent web design studio UK',
+    'web design London',
+    'web design Dublin',
     'restaurant website design UK',
     'hotel website design UK',
     'small business website design UK',
+    'Squarespace alternative UK',
   ],
   authors: [{ name: 'TheoMedia' }],
   creator: 'TheoMedia',
@@ -66,9 +67,9 @@ export const metadata: Metadata = {
     alternateLocale: ['en_IE'],
     url: 'https://www.theomedia.co.uk',
     siteName: 'TheoMedia',
-    title: 'TheoMedia — Independent Web Design & Digital Product Studio · UK & Ireland',
+    title: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
     description:
-      'Distinctive websites, ecommerce experiences and custom systems engineered for ambitious businesses across the UK and Ireland.',
+      'Independent web design studio. Custom websites, booking engines and ecommerce for ambitious businesses across the UK and Ireland. From £895 / €1,050.',
     images: [
       {
         url: '/og-image.jpg',
@@ -80,13 +81,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TheoMedia — Independent Web Design & Digital Product Studio · UK & Ireland',
+    title: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
     description:
-      'We design and engineer websites people remember. Bespoke design from £895 / €1,050. Founder-led, custom-built, 100% client-owned.',
+      'Custom websites and business software from £895 / €1,050. Founder-led, 100% client-owned, zero platform lock-in.',
     images: ['/og-image.jpg'],
-  },
-  alternates: {
-    canonical: 'https://www.theomedia.co.uk',
   },
   icons: {
     icon: [
@@ -101,7 +99,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${inter.variable} ${instrumentSerif.variable} antialiased`}
     >
       <head>
@@ -116,7 +114,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   '@id': 'https://www.theomedia.co.uk/#website',
                   url: 'https://www.theomedia.co.uk/',
                   name: 'TheoMedia',
-                  alternateName: 'TheoMedia Independent Web Design Studio',
+                  alternateName: [
+                    'TheoMedia Independent Web Design Studio',
+                    'TheoMedia Web Design UK',
+                  ],
                   description:
                     'Independent web design and digital product studio engineering bespoke websites, ecommerce platforms and custom systems across the UK and Ireland.',
                   inLanguage: 'en-GB',
@@ -128,19 +129,57 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   '@type': ['Organization', 'ProfessionalService'],
                   '@id': 'https://www.theomedia.co.uk/#organization',
                   name: 'TheoMedia',
+                  legalName: 'TheoMedia',
                   url: 'https://www.theomedia.co.uk/',
-                  logo: 'https://www.theomedia.co.uk/og-image.jpg',
+                  logo: {
+                    '@type': 'ImageObject',
+                    url: 'https://www.theomedia.co.uk/og-image.jpg',
+                    width: 1200,
+                    height: 630,
+                  },
                   image: 'https://www.theomedia.co.uk/og-image.jpg',
                   description:
                     'Independent web design and digital product studio engineering distinctive bespoke websites, ecommerce platforms and custom digital systems across the UK and Ireland.',
                   email: 'hello@theomedia.co.uk',
                   telephone: '+353852258004',
+                  slogan: 'Websites and business software, built like products.',
                   priceRange: '£895 – £9,500+ (€1,050 – €11,000+)',
                   currenciesAccepted: 'GBP, EUR',
                   paymentAccepted: 'Bank Transfer, Credit Card, Stripe, Apple Pay',
+                  foundingLocation: {
+                    '@type': 'Country',
+                    name: 'Ireland',
+                  },
+                  contactPoint: [
+                    {
+                      '@type': 'ContactPoint',
+                      telephone: '+353852258004',
+                      contactType: 'sales',
+                      email: 'hello@theomedia.co.uk',
+                      areaServed: ['GB', 'IE'],
+                      availableLanguage: ['English'],
+                    },
+                  ],
+                  sameAs: [
+                    'https://instagram.com/theomedia.co.uk',
+                    'https://www.facebook.com/profile.php?id=61594428231748',
+                  ],
                   areaServed: [
                     { '@type': 'Country', name: 'United Kingdom' },
                     { '@type': 'Country', name: 'Ireland' },
+                    { '@type': 'City', name: 'London' },
+                    { '@type': 'City', name: 'Manchester' },
+                    { '@type': 'City', name: 'Birmingham' },
+                    { '@type': 'City', name: 'Edinburgh' },
+                    { '@type': 'City', name: 'Dublin' },
+                  ],
+                  serviceType: [
+                    'Web Design',
+                    'Custom Website Development',
+                    'Ecommerce Website Design',
+                    'Restaurant Website Design',
+                    'Hotel Website Design',
+                    'Business Software Development',
                   ],
                   knowsAbout: [
                     'Web Design',
@@ -152,7 +191,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     'Restaurant Website Design',
                     'Hotel & Hospitality Booking Engines',
                     'Conversion Optimization',
+                    'Technical SEO',
+                    'Next.js Web Development',
                   ],
+                  hasOfferCatalog: {
+                    '@type': 'OfferCatalog',
+                    name: 'Web Design Packages',
+                    itemListElement: [
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Starter Website Design',
+                        },
+                        price: '895',
+                        priceCurrency: 'GBP',
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Professional Website Design',
+                        },
+                        price: '2495',
+                        priceCurrency: 'GBP',
+                      },
+                    ],
+                  },
                 },
               ],
             }),

@@ -7,6 +7,9 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Boutique Hotel Website Design That Makes Guests Want to Stay | TheoMedia',
   description: 'How to design a boutique hotel or country inn website that combines atmosphere, useful information and a clear route to direct booking.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/case-studies/boutique-hotel-website-design',
+  },
   openGraph: {
     title: 'Boutique Hotel Website Design That Makes Guests Want to Stay | TheoMedia',
     description: 'How to design a boutique hotel or country inn website that combines atmosphere, useful information and a clear route to direct booking.',

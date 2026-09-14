@@ -8,6 +8,8 @@ import Button from '@/components/ui/Button';
 import { SITE } from '@/lib/constants';
 
 import Link from 'next/link';
+import JsonLd from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd, faqJsonLd, offerCatalogJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Transparent Web Design Pricing UK & Ireland | Fixed Packages from £895 / €1,050',
@@ -28,6 +30,16 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <div className="bg-bone min-h-screen pt-24">
+      <JsonLd
+        data={[
+          offerCatalogJsonLd(),
+          faqJsonLd(faqItems),
+          breadcrumbJsonLd([
+            { name: 'Home', path: '/' },
+            { name: 'Pricing', path: '/pricing' },
+          ]),
+        ]}
+      />
       {/* Hero */}
       <section className="pt-24 pb-20 md:pt-32 md:pb-24">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl text-center">

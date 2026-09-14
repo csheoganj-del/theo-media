@@ -7,6 +7,9 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Ecommerce Website Design That Keeps the Product at the Centre | TheoMedia',
   description: 'How to design a premium ecommerce website for an independent brand that makes shopping simple.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/case-studies/ecommerce-website-design',
+  },
   openGraph: {
     title: 'Ecommerce Website Design That Keeps the Product at the Centre | TheoMedia',
     description: 'How to design a premium ecommerce website for an independent brand that makes shopping simple.',

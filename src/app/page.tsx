@@ -8,19 +8,28 @@ import OutcomesScene from '@/components/home/OutcomesScene';
 import IndustriesScene from '@/components/home/IndustriesScene';
 import PricingPreview from '@/components/home/PricingPreview';
 import ProcessScene from '@/components/home/ProcessScene';
+import HomeFaq from '@/components/home/HomeFaq';
 import FinalCTA from '@/components/home/FinalCTA';
+import JsonLd from '@/components/seo/JsonLd';
+import { faqJsonLd } from '@/lib/seo';
+import { homepageFaq } from '@/data/faq';
 
 export const metadata: Metadata = {
-  title: 'Web Design & Digital Product Studio UK & Ireland | TheoMedia',
+  title: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
   description:
-    'TheoMedia is an independent web design and digital product studio. We engineer bespoke websites, custom website development, and business software across the UK and Ireland.',
+    'Independent web design studio for UK and Ireland businesses. Custom websites, booking engines and ecommerce from £895 / €1,050. 100% client-owned. No templates, no lock-in.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk',
+    languages: {
+      'en-GB': 'https://www.theomedia.co.uk',
+      'en-IE': 'https://www.theomedia.co.uk/web-design-ireland',
+      'x-default': 'https://www.theomedia.co.uk',
+    },
   },
   openGraph: {
-    title: 'Web Design & Digital Product Studio UK & Ireland | TheoMedia',
+    title: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
     description:
-      'TheoMedia is an independent web design and digital product studio. We engineer bespoke websites, custom website development, and business software across the UK and Ireland.',
+      'Independent web design studio. Custom websites, booking engines and ecommerce for ambitious businesses across the UK and Ireland.',
     url: 'https://www.theomedia.co.uk',
     type: 'website',
   },
@@ -29,6 +38,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={faqJsonLd(homepageFaq)} />
       {/* SCENE 01 — INTRODUCTION */}
       <HeroScene />
 
@@ -56,7 +66,10 @@ export default function HomePage() {
       {/* SCENE 09 — METHOD */}
       <ProcessScene />
 
-      {/* SCENE 10 — INVITATION */}
+      {/* SCENE 10 — FAQ */}
+      <HomeFaq />
+
+      {/* SCENE 11 — INVITATION */}
       <FinalCTA />
     </>
   );

@@ -7,6 +7,9 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Builder & Roofing Website Design That Builds Trust | TheoMedia',
   description: 'How to design a builder, roofing, or independent trades website that builds confidence before the first call.',
+  alternates: {
+    canonical: 'https://www.theomedia.co.uk/case-studies/builder-roofing-website-design',
+  },
   openGraph: {
     title: 'Builder & Roofing Website Design That Builds Trust | TheoMedia',
     description: 'How to design a builder, roofing, or independent trades website that builds confidence before the first call.',

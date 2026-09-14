@@ -143,8 +143,38 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/work/velora-house',
-        destination: 'https://velora-house.theomedia.co.uk',
+        source: '/web-design-uk',
+        destination: '/web-design',
+        permanent: true,
+      },
+      {
+        source: '/website-design-uk',
+        destination: '/web-design',
+        permanent: true,
+      },
+      {
+        source: '/web-designer',
+        destination: '/web-design',
+        permanent: true,
+      },
+      {
+        source: '/web-design-agency',
+        destination: '/web-design',
+        permanent: true,
+      },
+      {
+        source: '/ireland',
+        destination: '/web-design-ireland',
+        permanent: true,
+      },
+      {
+        source: '/dublin',
+        destination: '/web-design-dublin',
+        permanent: true,
+      },
+      {
+        source: '/london',
+        destination: '/web-design-london',
         permanent: true,
       },
       {
@@ -182,16 +212,8 @@ const nextConfig: NextConfig = {
         destination: 'https://nick.theomedia.co.uk',
         permanent: true,
       },
-      {
-        source: '/work/nick-gaven',
-        destination: 'https://nick.theomedia.co.uk',
-        permanent: true,
-      },
-      {
-        source: '/work/falakstudio',
-        destination: 'https://theomedianick2.vercel.app',
-        permanent: false,
-      },
+
+
       {
         source: '/work/falak-studio',
         destination: 'https://theomedianick2.vercel.app',
@@ -212,11 +234,7 @@ const nextConfig: NextConfig = {
         destination: 'https://theomedianick2.vercel.app',
         permanent: false,
       },
-      {
-        source: '/work/rose-and-ivy',
-        destination: 'https://rose-and-ivy.theomedia.co.uk',
-        permanent: true,
-      },
+
       {
         source: '/work/rose-and-ivy-hair',
         destination: 'https://rose-and-ivy.theomedia.co.uk',
@@ -227,11 +245,7 @@ const nextConfig: NextConfig = {
         destination: 'https://wren-crown.theomedia.co.uk',
         permanent: true,
       },
-      {
-        source: '/work/wren-crown',
-        destination: 'https://wren-crown.theomedia.co.uk',
-        permanent: true,
-      },
+
       {
         source: '/case-studies/clinic-website-design',
         destination: '/case-studies/private-healthcare-website-design',
