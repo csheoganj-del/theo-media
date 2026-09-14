@@ -1,4 +1,5 @@
 import { ProjectPreview } from "@/components/ui/ProjectPreview";
+import { MobilePreview } from "@/components/ui/MobilePreview";
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -133,9 +134,11 @@ export default async function CaseStudyPage({ params }: Props) {
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
             <div className="w-full lg:w-1/3">
               <FadeIn>
-                <div className="w-full max-w-[320px] mx-auto aspect-[9/16] bg-near-black rounded-[2rem] border-8 border-stone/20 shadow-2xl flex items-center justify-center">
-                  <span className="font-display text-8xl text-stone/10 select-none">M</span>
-                </div>
+                <MobilePreview 
+                  url={project.demoUrl} 
+                  title={project.title} 
+                  previewUrl={project.previewUrl} 
+                />
               </FadeIn>
             </div>
             
