@@ -221,7 +221,8 @@ export const projects: Project[] = [
     hasCaseStudy: false,
     description: 'A slow-commerce digital experience engineered for an independent Somerset workshop, pairing contemplative product storytelling with small-batch releases.',
     shortDescription: 'Frome artisanal workshop platform featuring undyed knitwear, studio ceramics, bench notes, and lifetime repair stewardship.',
-    demoUrl: 'https://amble-two.vercel.app',
+    demoUrl: 'https://amble.theomedia.co.uk',
+    previewUrl: 'https://amble-two.vercel.app',
     tags: ['Slow Commerce', 'Artisanal Knitwear', 'Studio Ceramics', 'Lifetime Repairs'],
     features: [
       'Contemplative slow-retail shopping architecture',

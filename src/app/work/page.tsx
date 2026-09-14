@@ -84,7 +84,7 @@ export default function WorkPage() {
                           READ CASE STUDY →
                         </Link>
                         <Link 
-                          href={project.previewUrl || project.demoUrl}
+                          href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-[11px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black transition-colors inline-flex items-center"
@@ -94,7 +94,7 @@ export default function WorkPage() {
                       </>
                     ) : (
                       <Link 
-                        href={project.previewUrl || project.demoUrl}
+                        href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-warm-accent transition-colors inline-flex items-center"

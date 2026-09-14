@@ -176,7 +176,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
             {project.demoUrl && (
               <a 
-                href={project.previewUrl || project.demoUrl} 
+                href={project.demoUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 bg-near-black text-bone font-sans font-medium tracking-widest uppercase text-sm hover:bg-warm-accent transition-colors rounded-sm"

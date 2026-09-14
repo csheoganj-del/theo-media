@@ -133,7 +133,7 @@ export default function WorkScene() {
                             </Link>
                           )}
                           <Link
-                            href={activeProject.previewUrl || activeProject.demoUrl}
+                            href={activeProject.demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-[11px] tracking-widest font-sans uppercase bg-bone text-near-black px-4 py-2 font-medium hover:bg-ivory transition-colors rounded-sm inline-flex items-center gap-1.5"
@@ -197,7 +197,7 @@ export default function WorkScene() {
                       </Link>
                     )}
                     <Link
-                      href={project.previewUrl || project.demoUrl}
+                      href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[11px] tracking-widest font-sans uppercase bg-bone text-near-black px-4 py-2 font-medium hover:bg-ivory transition-colors rounded-sm inline-flex items-center gap-1.5 ml-auto"
