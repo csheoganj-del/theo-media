@@ -144,7 +144,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/work/amble-workshop',
-        destination: 'https://amble.theomedia.co.uk',
+        destination: 'https://amble-two.vercel.app',
         permanent: true,
       },
       {
