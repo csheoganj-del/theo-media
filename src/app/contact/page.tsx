@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
 import { SITE } from '@/lib/constants';
@@ -29,7 +30,16 @@ const INITIAL_DATA: FormData = {
   message: '',
 };
 
-export default function ContactPage() {
+function ContactFormInner() {
+  const searchParams = useSearchParams();
+  const careParam = searchParams.get('care');
+  const validCarePlan =
+    careParam === 'essential'
+      ? 'Essential Care'
+      : careParam === 'growth'
+      ? 'Growth Care'
+      : null;
+
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(INITIAL_DATA);
   const [copied, setCopied] = useState(false);
@@ -53,7 +63,7 @@ Email: ${formData.email || 'N/A'}
 Phone: ${formData.phone || 'N/A'}
 
 -- PROJECT DETAILS --
-Type: ${formData.projectType.join(', ') || 'None selected'}
+${validCarePlan ? `Selected Care Plan: ${validCarePlan} (£${validCarePlan === 'Essential Care' ? '45' : '95'}/month)\n` : ''}Type: ${formData.projectType.join(', ') || 'None selected'}
 Business Sector: ${formData.businessType || 'None selected'}
 Goals: ${formData.goals.join(', ') || 'None selected'}
 Stage: ${formData.stage || 'None selected'}
@@ -62,13 +72,20 @@ Stage: ${formData.stage || 'None selected'}
 ${formData.message || 'No additional notes'}`;
 
   const generateMailto = () => {
-    const subject = encodeURIComponent(`New Project Enquiry: ${formData.business || 'Client'}`);
+    const subject = encodeURIComponent(
+      validCarePlan
+        ? `Care Plan Enquiry (${validCarePlan}): ${formData.business || 'Client'}`
+        : `New Project Enquiry: ${formData.business || 'Client'}`
+    );
     const body = encodeURIComponent(getSummaryText());
     return `mailto:${SITE.email}?subject=${subject}&body=${body}`;
   };
 
   const generateWhatsAppUrl = () => {
-    const text = encodeURIComponent(`Hi TheoMedia, I'd like to discuss a project:\n\n${getSummaryText()}`);
+    const introText = validCarePlan
+      ? `Hi TheoMedia, I'd like to discuss the ${validCarePlan} plan (£${validCarePlan === 'Essential Care' ? '45' : '95'}/mo)`
+      : `Hi TheoMedia, I'd like to discuss a project`;
+    const text = encodeURIComponent(`${introText}:\n\n${getSummaryText()}`);
     return `${SITE.whatsappUrl}?text=${text}`;
   };
 
@@ -77,7 +94,6 @@ ${formData.message || 'No additional notes'}`;
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
-
 
   return (
     <main className="bg-bone min-h-screen">
@@ -101,6 +117,24 @@ ${formData.message || 'No additional notes'}`;
             {/* Form Column */}
             <div className="w-full lg:w-2/3">
               <div className="bg-ivory border border-stone/20 p-6 md:p-12 rounded-sm shadow-sm relative">
+                {/* Contextual Care Plan Label */}
+                {validCarePlan && (
+                  <div className="mb-8 p-4 bg-bone border border-stone/25 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-2 h-2 rounded-full bg-warm-accent shrink-0" />
+                      <span className="font-sans font-bold text-xs uppercase tracking-wider text-near-black">
+                        Enquiry: {validCarePlan}
+                      </span>
+                      <span className="text-stone text-xs font-sans">
+                        (£{validCarePlan === 'Essential Care' ? '45' : '95'}/month · Optional Care Plan)
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-sans font-medium text-stone tracking-wider uppercase">
+                      No Lock-in
+                    </span>
+                  </div>
+                )}
+
                 {/* Progress */}
                 <div className="mb-10 flex items-center gap-4">
                   <span className="font-sans font-bold text-sm text-near-black">Step {step} of {totalSteps}</span>
@@ -116,7 +150,16 @@ ${formData.message || 'No additional notes'}`;
                 <div className="min-h-[300px]">
                   {step === 1 && (
                     <FadeIn key="step1">
-                      <h2 className="font-display text-3xl text-near-black mb-8 uppercase">What are we building?</h2>
+                      <h2 className="font-display text-3xl text-near-black mb-2 uppercase">What are we building?</h2>
+                      {validCarePlan ? (
+                        <p className="font-sans text-sm text-stone mb-6">
+                          You&apos;re enquiring about our <strong className="text-near-black font-semibold">{validCarePlan}</strong>. Select the type of website or system we will be caring for:
+                        </p>
+                      ) : (
+                        <p className="font-sans text-sm text-stone mb-6">
+                          Select any that apply to your project.
+                        </p>
+                      )}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {['Website', 'Ecommerce', 'Booking Experience', 'Web Application', 'Business Software', 'Not Sure'].map(opt => (
                           <label key={opt} className="flex items-center gap-3 p-4 border border-stone/20 rounded-sm cursor-pointer hover:border-warm-accent transition-colors">
@@ -261,6 +304,12 @@ ${formData.message || 'No additional notes'}`;
                     <FadeIn key="step7">
                       <h2 className="font-display text-3xl text-near-black mb-8 uppercase">Review & Send</h2>
                       <div className="bg-bone p-6 rounded-sm space-y-4 mb-8">
+                        {validCarePlan && (
+                          <div className="pb-3 border-b border-stone/15">
+                            <span className="text-xs font-bold uppercase tracking-widest text-stone block mb-1">Care Plan</span>
+                            <p className="font-sans text-near-black font-medium">{validCarePlan} (£{validCarePlan === 'Essential Care' ? '45' : '95'}/mo)</p>
+                          </div>
+                        )}
                         <div>
                           <span className="text-xs font-bold uppercase tracking-widest text-stone block mb-1">Contact</span>
                           <p className="font-sans text-near-black">{formData.name || 'Not provided'} ({formData.business || 'Not provided'})</p>
@@ -373,5 +422,13 @@ ${formData.message || 'No additional notes'}`;
         </div>
       </section>
     </main>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={<div className="bg-bone min-h-screen pt-32 text-center font-sans text-stone">Loading form...</div>}>
+      <ContactFormInner />
+    </Suspense>
   );
 }

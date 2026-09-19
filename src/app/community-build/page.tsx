@@ -252,6 +252,18 @@ export default function CommunityBuildPage() {
                     <p className="font-sans text-[14px] md:text-[15px] text-stone leading-relaxed">
                       {item.description}
                     </p>
+                    {item.title.startsWith('12 months technical support') && (
+                      <p className="font-sans text-[13px] text-stone/85 leading-relaxed mt-3 pt-3 border-t border-near-black/10">
+                        After the included 12 months, ongoing support is optional. TheoMedia{' '}
+                        <Link
+                          href="/pricing#care-plans"
+                          className="text-near-black underline underline-offset-2 hover:text-warm-accent transition-colors"
+                        >
+                          Care Plans
+                        </Link>{' '}
+                        are available if you&apos;d like us to continue looking after the website.
+                      </p>
+                    )}
                   </div>
                 </div>
               </FadeIn>

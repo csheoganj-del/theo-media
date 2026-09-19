@@ -51,7 +51,15 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: 'Are there any hidden monthly costs?',
-    answer: 'Your project quote covers the agreed design and build. Domain, hosting, paid software, and payment-provider fees are separate where applicable. Costs depend on your chosen services and usage; we agree the scope and ongoing costs before work begins.',
+    answer: 'No. There are no compulsory TheoMedia monthly fees. Your project price and agreed costs are clear before work begins. Hosting, domain renewals and any paid third-party services are separate where applicable. After your included launch support ends, you can manage the site yourself or choose an optional TheoMedia Care Plan, priced openly on this page.',
+  },
+  {
+    question: 'What happens after my launch support ends?',
+    answer: 'Your website remains live and it remains yours. There is no requirement to continue paying TheoMedia. You can manage it yourself, ask us to quote for work when you need it, or choose an optional Care Plan if you want us to continue monitoring and maintaining it.',
+  },
+  {
+    question: 'Do I need a Care Plan to keep my website?',
+    answer: 'No. A Care Plan is completely optional. It does not determine whether you own the website or whether the website is allowed to stay online. It simply gives you ongoing TheoMedia maintenance and support after the included launch-support period.',
   },
   {
     question: 'What if I need custom booking, payments, or third-party integrations?',
