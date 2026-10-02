@@ -5,16 +5,16 @@ import { projects } from '@/data/projects';
 import FadeIn from '@/components/ui/FadeIn';
 
 export const metadata: Metadata = {
-  title: 'Selected Work & Flagship Portfolio | TheoMedia',
+  title: 'Selected Work & Digital Studies | TheoMedia',
   description:
-    'Selected web design and digital systems from TheoMedia: hospitality, automotive, healthcare, artisanal commerce, cinematography and salons. Live websites and verified studio concepts.',
+    'Independent digital experiences developed around real commercial problems across hospitality, automotive, healthcare, commerce and creative industries.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/work',
   },
   openGraph: {
-    title: 'Selected Work & Flagship Portfolio | TheoMedia',
+    title: 'Selected Work & Digital Studies | TheoMedia',
     description:
-      'Selected web design and digital systems across hospitality, automotive, healthcare, artisanal commerce and media.',
+      'Independent digital experiences developed around real commercial problems across hospitality, automotive, healthcare, commerce and creative industries.',
     url: 'https://www.theomedia.co.uk/work',
     type: 'website',
   },
@@ -36,7 +36,7 @@ export default function WorkPage() {
             SELECTED WORK.
           </h1>
           <p className="font-sans text-[17px] md:text-[20px] leading-relaxed text-secondary-text max-w-2xl font-normal">
-            Commissioned client platforms and self-initiated studio concepts. Engineered with architectural restraint, high-speed modern performance, and zero platform lock-in.
+            Independent digital experiences developed around real commercial problems across hospitality, automotive, healthcare, commerce and creative industries.
           </p>
         </FadeIn>
 
@@ -69,8 +69,8 @@ export default function WorkPage() {
                         <span className="text-border-rule">/</span>
                         <span className="text-secondary-text">{project.sector}</span>
                       </div>
-                      <span className="text-[10px] text-oxidised-bronze border border-oxidised-bronze/30 px-2 py-0.5 rounded-[1px] bg-subtle-accent-bg/40">
-                        {project.classification}
+                      <span className="text-[11px] font-mono tracking-[0.14em] uppercase text-oxidised-bronze">
+                        {project.classificationLabel}
                       </span>
                     </div>
 
@@ -110,7 +110,7 @@ export default function WorkPage() {
                           href={`/case-studies/${project.caseStudySlug}`}
                           className="editorial-underline text-[11px] font-mono tracking-[0.14em] uppercase text-secondary-text hover:text-primary-ink"
                         >
-                          <span>Read Case Study</span>
+                          <span>Sector Study</span>
                           <span className="text-oxidised-bronze">→</span>
                         </Link>
                       )}
@@ -124,12 +124,12 @@ export default function WorkPage() {
 
         {/* Case Studies Link Strip */}
         <FadeIn className="pt-24 mt-28 border-t border-border-rule flex flex-col sm:flex-row items-center justify-between gap-6 text-[12px] font-mono tracking-[0.14em] uppercase text-muted-text">
-          <span>COMPLETE ARCHIVE OF 11 PROVEN PLATFORMS</span>
+          <span>11 INTERACTIVE STUDIES</span>
           <Link
             href="/case-studies"
             className="editorial-underline text-primary-ink hover:text-oxidised-bronze font-medium"
           >
-            <span>Read In-Depth Case Studies</span>
+            <span>Explore Sector Studies</span>
             <span>→</span>
           </Link>
         </FadeIn>

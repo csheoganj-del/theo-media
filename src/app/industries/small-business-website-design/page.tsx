@@ -236,7 +236,7 @@ export default function SmallBusinessWebsiteDesignPage() {
             className="p-6 bg-ivory border border-near-black/10 hover:border-near-black transition-colors block"
           >
             <div className="font-display text-[18px] text-near-black mb-1">Restaurants &amp; Hospitality →</div>
-            <p className="font-sans text-[13px] text-stone">Direct reservations, live menus, zero commissions.</p>
+            <p className="font-sans text-[13px] text-stone">Direct reservations, live menus, frictionless table booking.</p>
           </Link>
           <Link
             href="/industries/trades-construction-website-design"

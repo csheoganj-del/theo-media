@@ -9,7 +9,7 @@ export default function ServicesScene() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-border-rule mb-16 md:mb-24">
           <FadeIn>
             <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
-              06 / CAPABILITIES
+              03 / CAPABILITIES
             </span>
             <h2 className="font-display text-[clamp(2.6rem,5vw,5rem)] leading-[1.02] text-primary-ink uppercase font-normal">
               STRATEGY. DESIGN. ENGINEERING.
@@ -17,7 +17,7 @@ export default function ServicesScene() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="font-sans text-secondary-text text-[15px] md:text-[17px] max-w-md leading-relaxed">
-              We do not separate visual art direction from technical execution. Every platform is built by the people who design it.
+              We combine creative direction with digital engineering. Work directly with the founder responsible for strategy, design and technical delivery.
             </p>
           </FadeIn>
         </div>

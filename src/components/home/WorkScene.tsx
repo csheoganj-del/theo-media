@@ -24,15 +24,15 @@ export default function WorkScene() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-12 md:pb-16 border-b border-[#262420] mb-16 md:mb-20">
           <FadeIn>
             <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-[#A98864] font-medium block mb-3">
-              03 / SELECTED WORK
+              01 / SELECTED WORK
             </span>
             <h2 className="font-display text-[clamp(2.8rem,5.5vw,5.5rem)] leading-[0.98] text-[#F2EEE6] uppercase font-normal">
-              PORTFOLIO PROOF.
+              SELECTED WORK.
             </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="font-sans text-[#AAA49A] text-[15px] md:text-[17px] max-w-md leading-relaxed">
-              Every build is founder-engineered. High-contrast art direction, performance-tuned engineering, and custom commercial flows with zero proprietary platform lock-in.
+              Independent digital experiences developed around real commercial problems across hospitality, automotive, healthcare, commerce and creative industries.
             </p>
           </FadeIn>
         </div>
@@ -74,8 +74,8 @@ export default function WorkScene() {
                       <span className="text-[#AAA49A]">/</span>
                       <span className="text-[#AAA49A]">{project.sector}</span>
                     </div>
-                    <span className="px-2.5 py-0.5 rounded-[1px] text-[10px] tracking-[0.14em] uppercase border border-[#A98864]/30 text-[#A98864] bg-[#A98864]/5">
-                      {project.classification}
+                    <span className="text-[11px] font-mono tracking-[0.14em] uppercase text-[#A98864]">
+                      {project.classificationLabel}
                     </span>
                   </div>
 
@@ -116,7 +116,7 @@ export default function WorkScene() {
                             href={`/case-studies/${project.caseStudySlug}`}
                             className="editorial-underline text-[11px] font-mono tracking-[0.14em] uppercase text-[#AAA49A] hover:text-[#F2EEE6]"
                           >
-                            <span>Read Case Study</span>
+                            <span>Read Sector Study</span>
                             <span className="text-[#A98864]">→</span>
                           </Link>
                         )}
@@ -137,8 +137,8 @@ export default function WorkScene() {
                   <div className={`lg:col-span-7 ${isEven ? 'lg:col-start-6' : ''}`}>
                     <div className="flex items-center justify-between border-b border-[#262420] pb-3 mb-4 text-[11px] font-mono tracking-[0.14em] uppercase lg:hidden">
                       <span className="text-[#A98864] font-medium">{project.indexNumber} / {project.sector}</span>
-                      <span className="text-[10px] text-[#A98864] border border-[#A98864]/30 px-2 py-0.5 rounded-[1px]">
-                        {project.classification}
+                      <span className="text-[11px] font-mono tracking-[0.14em] uppercase text-[#A98864]">
+                        {project.classificationLabel}
                       </span>
                     </div>
 
@@ -159,8 +159,8 @@ export default function WorkScene() {
                         <span className="text-[#AAA49A]">/</span>
                         <span className="text-[#AAA49A]">{project.sector}</span>
                       </div>
-                      <span className="text-[10px] text-[#A98864] border border-[#A98864]/30 px-2 py-0.5 rounded-[1px] bg-[#A98864]/5">
-                        {project.classification}
+                      <span className="text-[11px] font-mono tracking-[0.14em] uppercase text-[#A98864]">
+                        {project.classificationLabel}
                       </span>
                     </div>
 
@@ -198,7 +198,7 @@ export default function WorkScene() {
                           href={`/case-studies/${project.caseStudySlug}`}
                           className="editorial-underline text-[11px] font-mono tracking-[0.14em] uppercase text-[#AAA49A] hover:text-[#F2EEE6]"
                         >
-                          <span>Case Study</span>
+                          <span>Sector Study</span>
                           <span className="text-[#A98864]">→</span>
                         </Link>
                       )}
@@ -213,7 +213,7 @@ export default function WorkScene() {
         {/* Archive Footer Strip */}
         <FadeIn className="pt-16 md:pt-24 mt-20 md:mt-28 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-[#262420]">
           <span className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#AAA49A]">
-            SHOWING {filteredProjects.length} OF {projects.length} ARCHIVAL BUILDS
+            11 INTERACTIVE STUDIES
           </span>
           <Link
             href="/work"

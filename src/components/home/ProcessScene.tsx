@@ -19,7 +19,7 @@ const steps = [
   {
     num: '04',
     name: 'FULL-STACK BUILD',
-    description: 'Modern Next.js & TypeScript engineering optimised for performance and Core Web Vitals.',
+    description: 'Modern Next.js & TypeScript engineering optimised for rapid, reliable performance across all devices.',
   },
   {
     num: '05',
@@ -41,7 +41,7 @@ export default function ProcessScene() {
           <div className="lg:col-span-5">
             <FadeIn>
               <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
-                10 / STUDIO METHOD
+                07 / STUDIO METHOD
               </span>
               <h2 className="font-display text-[clamp(2.6rem,4.8vw,4.8rem)] leading-[1.02] text-primary-ink uppercase font-normal">
                 NO ACCOUNT MANAGERS. DIRECT ARCHITECTURE.
@@ -51,7 +51,7 @@ export default function ProcessScene() {
           <div className="lg:col-span-7 flex flex-col justify-end pt-2">
             <FadeIn delay={0.1}>
               <p className="font-sans text-[17px] md:text-[19px] text-secondary-text leading-relaxed max-w-xl">
-                The people discussing your commercial objectives are the exact designers and engineers building your website. No lost translations, no agency bureaucracy.
+                Work directly with the founder responsible for strategy, design and technical delivery. Specialist collaborators are brought in only where a project requires them. No account-management layers, no lost translations.
               </p>
             </FadeIn>
           </div>

@@ -81,7 +81,7 @@ export default function WordPressVsCustomPage() {
           <section>
             <h2 className="font-display text-[28px] text-near-black mb-4">Speed and Core Web Vitals</h2>
             <p className="mb-4">
-              Google uses mobile page experience as a ranking and user-experience signal. A typical WordPress stack (theme + page builder + SEO plugin + form plugin + slider) often ships hundreds of kilobytes of unused CSS and JavaScript. Custom Next.js sites ship only what the page needs and can hit sub-second LCP on UK mobile networks.
+              Google uses mobile page experience as a ranking and user-experience signal. A typical WordPress stack (theme + page builder + SEO plugin + form plugin + slider) often ships hundreds of kilobytes of unused CSS and JavaScript. Custom Next.js sites ship only what the page needs and achieve rapid LCP performance on UK mobile networks.
             </p>
             <p>
               If your WordPress site scores 40–60 on Lighthouse mobile, you are not “a bit slow”. You are leaking rankings and bookings to faster competitors.

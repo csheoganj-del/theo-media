@@ -7,7 +7,7 @@ import { SITE } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Web Design Ireland | Bespoke Web Design & Development Studio',
   description:
-    'Independent web design and digital product studio for Irish businesses. Custom websites, direct booking engines and high-conversion ecommerce across Dublin, Cork, Galway and nationwide.',
+    'Independent web design and digital product studio for Irish businesses. Custom websites, direct booking engines and bespoke ecommerce across Dublin, Cork, Galway and nationwide.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/web-design-ireland',
     languages: {
@@ -47,7 +47,7 @@ const irishSectors = [
     title: 'Artisan & Premium Ecommerce',
     focus: 'Direct-to-consumer Irish brands, crafts & distillers',
     description:
-      'Sub-second browsing with native Apple Pay and Stripe checkout in Euros (€). Engineered for Irish makers who need product storytelling rather than generic template catalogues.',
+      'High-speed browsing with native Apple Pay and Stripe checkout in Euros (€). Engineered for Irish makers who need product storytelling rather than generic template catalogues.',
     slug: '/case-studies/ecommerce-website-design',
   },
   {
@@ -153,13 +153,13 @@ export default function WebDesignIrelandPage() {
               Many growing Irish businesses are sold off-the-shelf templates or slow DIY builders that feel generic from day one. In competitive sectors like Irish hospitality, artisan food, and private healthcare, a template signals a commodity.
             </p>
             <p>
-              At TheoMedia, every website is engineered from scratch. We combine tactile editorial art direction with sub-second performance, structured technical SEO, and dedicated conversion journeys tailored to how people actually browse and buy in Ireland.
+              At TheoMedia, every website is engineered from scratch. We combine tactile editorial art direction with high-speed performance, structured technical SEO, and dedicated conversion journeys tailored to how people actually browse and buy in Ireland.
             </p>
             <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-[14px] text-near-black font-medium">
               <div className="p-5 bg-ivory border border-near-black/10">
                 <div className="text-stone text-[11px] uppercase tracking-widest mb-1">Direct ROI</div>
-                <div className="text-[16px] font-display">Zero Commission Leakage</div>
-                <p className="text-stone text-[13px] font-normal mt-1">Direct booking and enquiry flows keep your revenue inside your business.</p>
+                <div className="text-[16px] font-display">Direct Booking Revenue</div>
+                <p className="text-stone text-[13px] font-normal mt-1">Direct booking and enquiry journeys designed to reduce intermediary fees.</p>
               </div>
               <div className="p-5 bg-ivory border border-near-black/10">
                 <div className="text-stone text-[11px] uppercase tracking-widest mb-1">Independence</div>
@@ -195,7 +195,7 @@ export default function WebDesignIrelandPage() {
                     href={sector.slug}
                     className="text-[12px] font-sans font-semibold tracking-widest uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors self-start"
                   >
-                    View Relevant Case Study →
+                    View Sector Study →
                   </Link>
                 </div>
               </FadeIn>
@@ -258,7 +258,7 @@ export default function WebDesignIrelandPage() {
               Let&apos;s build something memorable for your business in Ireland.
             </h2>
             <p className="font-sans text-bone/70 text-[17px] leading-relaxed mb-10">
-              Speak directly with our studio team. We respond within 24 hours with honest recommendations, clear timelines, and fixed pricing.
+              Speak directly with the founder. We respond within 24 hours with honest recommendations, clear timelines, and fixed pricing.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
               <Link

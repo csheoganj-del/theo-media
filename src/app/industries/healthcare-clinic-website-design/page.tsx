@@ -78,15 +78,15 @@ export default function HealthcareClinicWebsiteDesignPage() {
         </div>
       </section>
 
-      {/* Live Project Showcase */}
+      {/* Featured Studio Study */}
       <section className="py-20 md:py-28 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
         <div className="max-w-4xl mb-12">
-          <SectionLabel>SELECTED WORK</SectionLabel>
+          <SectionLabel>STUDIO STUDY</SectionLabel>
           <h2 className="text-editorial-md text-near-black mt-4">
-            Interactive Experience: Elowen Private Clinic
+            Interactive Study: Elowen Private Clinic
           </h2>
           <p className="font-sans text-stone text-[16px] mt-2">
-            Explore our clinical showcase engineered for patient trust, transparent treatment menus, and online consultation scheduling.
+            Explore our clinical study engineered for patient trust, transparent treatment menus, and online consultation scheduling.
           </p>
         </div>
         <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/10">
@@ -94,9 +94,9 @@ export default function HealthcareClinicWebsiteDesignPage() {
           <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30 pointer-events-none" />
         </div>
         <div className="mt-6 flex justify-between items-center text-[12px] font-sans text-stone uppercase tracking-wider">
-          <span>Private Medical &amp; Aesthetic Practice</span>
+          <span>Private Medical &amp; Aesthetic Study</span>
           <Link href="/case-studies/private-healthcare-website-design" className="text-near-black border-b border-near-black pb-0.5 hover:text-stone">
-            Read Complete Healthcare Case Study →
+            Read Studio Healthcare Study →
           </Link>
         </div>
       </section>

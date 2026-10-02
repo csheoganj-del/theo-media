@@ -9,7 +9,7 @@ export default function PricingPreview() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-border-rule mb-16 md:mb-20">
           <FadeIn>
             <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
-              09 / COMMERCIAL TRANSPARENCY
+              06 / STUDIO INVESTMENT
             </span>
             <h2 className="font-display text-[clamp(2.6rem,4.8vw,4.8rem)] leading-[1.02] text-primary-ink uppercase font-normal">
               CLEAR INVESTMENT. FIXED SCOPES.

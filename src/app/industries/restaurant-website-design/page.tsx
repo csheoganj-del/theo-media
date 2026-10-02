@@ -8,14 +8,14 @@ import { SITE } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Restaurant Website Design UK & Ireland | Table Bookings & Digital Menus',
   description:
-    'Bespoke restaurant, gastropub and dining website design. Fast interactive menus, zero-commission table reservation integrations, private dining workflows and local SEO.',
+    'Bespoke restaurant, gastropub and dining website design. Fast interactive menus, direct table reservation integrations, private dining workflows and local SEO.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/industries/restaurant-website-design',
   },
   openGraph: {
     title: 'Restaurant Website Design UK & Ireland | Table Bookings & Digital Menus | TheoMedia',
     description:
-      'Bespoke restaurant, gastropub and dining website design. Zero-commission table booking integrations, fast digital menus, private dining enquiries and local SEO.',
+      'Bespoke restaurant, gastropub and dining website design. Direct table booking integrations, fast digital menus, private dining enquiries and local SEO.',
     url: 'https://www.theomedia.co.uk/industries/restaurant-website-design',
     type: 'website',
   },
@@ -43,10 +43,10 @@ const restaurantProblems = [
 const builtFeatures = [
   {
     title: 'Frictionless Digital Menus',
-    description: 'Fast-loading, searchable HTML menus with dietary filter tags (GF, VG, V, DF) that load in under 500ms and look immaculate on mobile screens.',
+    description: 'Fast-loading, searchable HTML menus with dietary filter tags (GF, VG, V, DF) that load rapidly and look immaculate on mobile screens.',
   },
   {
-    title: 'Zero-Commission Reservation Workflows',
+    title: 'Direct Reservation Workflows',
     description: 'Direct booking integrations with OpenTable, Resy, SevenRooms, DesignMyNight, ResDiary, or custom booking forms with automated email & SMS confirmations.',
   },
   {
@@ -90,7 +90,7 @@ export default function RestaurantWebsiteDesignPage() {
               { '@type': 'Country', name: 'Ireland' },
             ],
             description:
-              'Bespoke restaurant, gastropub and dining website design. Fast interactive menus, zero-commission table reservations, private hire workflows, and local SEO.',
+              'Bespoke restaurant, gastropub and dining website design. Fast interactive menus, direct table reservations, private hire workflows, and local SEO.',
           }),
         }}
       />
@@ -127,15 +127,15 @@ export default function RestaurantWebsiteDesignPage() {
         </div>
       </section>
 
-      {/* Live Project Showcase */}
+      {/* Featured Studio Study */}
       <section className="py-20 md:py-28 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
         <div className="max-w-4xl mb-12">
-          <SectionLabel>SELECTED WORK</SectionLabel>
+          <SectionLabel>STUDIO STUDY</SectionLabel>
           <h2 className="text-editorial-md text-near-black mt-4">
-            Interactive Experience: Cinder &amp; Field Gastropub
+            Interactive Study: Cinder &amp; Field Gastropub
           </h2>
           <p className="font-sans text-stone text-[16px] mt-2">
-            Explore our dining showcase engineered specifically for seasonal menus and table reservations.
+            Explore our dining study engineered specifically for seasonal menus and table reservations.
           </p>
         </div>
         <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/10">
@@ -143,9 +143,9 @@ export default function RestaurantWebsiteDesignPage() {
           <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30 pointer-events-none" />
         </div>
         <div className="mt-6 flex justify-between items-center text-[12px] font-sans text-stone uppercase tracking-wider">
-          <span>Atmospheric Gastropub &amp; Kitchen</span>
+          <span>Atmospheric Gastropub &amp; Dining Study</span>
           <Link href="/case-studies/restaurant-gastropub-website-design" className="text-near-black border-b border-near-black pb-0.5 hover:text-stone">
-            Read Complete Design Case Study →
+            Read Studio Case Study →
           </Link>
         </div>
       </section>
@@ -229,7 +229,7 @@ export default function RestaurantWebsiteDesignPage() {
                 Odoo Alternative for Restaurants
               </h3>
               <p className="font-sans text-stone text-[14px] leading-relaxed mb-6">
-                Understanding the difference between an all-in-one ERP back-office and a high-conversion, consumer-facing digital dining experience.
+                Understanding the difference between an all-in-one ERP back-office and a conversion-focused, consumer-facing digital dining experience.
               </p>
             </div>
             <Link href="/journal/odoo-alternative-restaurants" className="text-[12px] font-sans font-semibold tracking-wider uppercase text-near-black border-b border-near-black/30 pb-1 self-start hover:border-near-black">

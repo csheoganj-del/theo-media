@@ -8,7 +8,7 @@ export default function BeliefScene() {
           <div className="lg:col-span-5">
             <FadeIn>
               <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
-                04 / STUDIO PROPOSITION
+                02 / STUDIO PROPOSITION
               </span>
               <h2 className="font-display text-[clamp(2.4rem,4.5vw,4.5rem)] leading-[1.02] tracking-[-0.015em] text-primary-ink uppercase font-normal">
                 BUILT FOR BUSINESSES THAT HAVE OUTGROWN ORDINARY WEB DESIGN.
@@ -19,7 +19,7 @@ export default function BeliefScene() {
           <div className="lg:col-span-7 flex flex-col justify-end pt-2">
             <FadeIn delay={0.1}>
               <p className="font-sans text-[17px] md:text-[20px] text-secondary-text leading-[1.6] max-w-2xl mb-6">
-                Before a client reserves a room, books a table or requests an architectural quote, they evaluate your stature in seconds. Generic templates signal ordinary service. We build digital flagships that establish immediate commercial authority.
+                Before a client reserves a room, books a table or requests a project proposal, they evaluate your standard in seconds. Generic templates dilute credibility. We build digital flagships that reflect the calibre of your actual business.
               </p>
               <div className="text-[11px] font-mono tracking-[0.14em] uppercase text-muted-text">
                 STRATEGY · ART DIRECTION · BESPOKE ENGINEERING
@@ -39,7 +39,7 @@ export default function BeliefScene() {
                 Commercial Problem First
               </h3>
               <p className="font-sans text-[15px] text-secondary-text leading-relaxed">
-                Clear positioning, refined buyer journeys and conversion architecture before a single line of code is written.
+                Clear positioning, refined buyer journeys and conversion architecture before development begins.
               </p>
             </div>
           </FadeIn>
@@ -53,7 +53,7 @@ export default function BeliefScene() {
                 Editorial Restraint
               </h3>
               <p className="font-sans text-[15px] text-secondary-text leading-relaxed">
-                European editorial composition, deliberate negative space and high-contrast typography that command respect.
+                European editorial composition, deliberate negative space and refined typography that create lasting credibility.
               </p>
             </div>
           </FadeIn>

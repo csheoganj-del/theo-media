@@ -1,7 +1,7 @@
 import FadeIn from '@/components/ui/FadeIn';
 
 const outcomes = [
-  { label: 'LOOK ESTABLISHED', desc: 'Instant credibility before a client speaks to you.' },
+  { label: 'LOOK ESTABLISHED', desc: 'Stronger first-impression credibility before a client speaks to you.' },
   { label: 'MAKE THE OFFER CLEAR', desc: 'Eliminate confusion around pricing, process and services.' },
   { label: 'GENERATE QUALIFIED ENQUIRIES', desc: 'Attract higher-value clients who respect your expertise.' },
   { label: 'STREAMLINE DIRECT BOOKINGS', desc: 'Frictionless room, table and appointment reservations.' },
@@ -17,7 +17,7 @@ export default function OutcomesScene() {
           <div className="lg:col-span-5">
             <FadeIn>
               <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
-                07 / COMMERCIAL OUTCOMES
+                04 / COMMERCIAL OUTCOMES
               </span>
               <h2 className="font-display text-[clamp(2.6rem,4.8vw,4.8rem)] leading-[1.02] text-primary-ink uppercase font-normal mb-6">
                 A BEAUTIFUL WEBSITE IS NEVER THE END GOAL.

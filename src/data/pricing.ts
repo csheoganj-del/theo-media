@@ -128,7 +128,7 @@ export const specialistProjects: SpecialistProject[] = [
     name: 'Ecommerce Platforms',
     price: 'From £4,500',
     priceValue: 4500,
-    description: 'High-conversion online stores with bespoke catalog navigation, Stripe & Shopify integration, inventory syncing, and frictionless mobile checkouts.',
+    description: 'Conversion-focused online stores with bespoke catalog navigation, Stripe & Shopify integration, inventory syncing, and frictionless mobile checkouts.',
     whatsappText: "Hi TheoMedia, I'd like to get a quote for an Ecommerce Platform (from £4,500).",
   },
   {
@@ -137,7 +137,7 @@ export const specialistProjects: SpecialistProject[] = [
     name: 'Hotels & Hospitality',
     price: 'From £6,500',
     priceValue: 6500,
-    description: 'Direct commission-free room booking engines, PMS connectivity, table reservations, digital dining menus, and guest experience portals.',
+    description: 'Direct room booking engines, PMS connectivity, table reservations, digital dining menus, and guest experience portals.',
     whatsappText: "Hi TheoMedia, I'd like to get a quote for a Hotel or Hospitality System (from £6,500).",
   },
   {

@@ -7,14 +7,14 @@ import { ProjectPreview } from '@/components/ui/ProjectPreview';
 export const metadata: Metadata = {
   title: 'Luxury & DTC Ecommerce Website Design UK & Ireland',
   description:
-    'High-conversion, bespoke ecommerce website design for luxury brands, artisans, and direct-to-consumer labels across the UK and Ireland. Sub-second checkout, headless architecture, and zero app bloat.',
+    'Bespoke ecommerce website design for luxury brands, artisans, and direct-to-consumer labels across the UK and Ireland. Performance-focused checkout, headless architecture, and zero app bloat.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/industries/ecommerce-website-design',
   },
   openGraph: {
     title: 'Luxury & DTC Ecommerce Website Design UK & Ireland | TheoMedia',
     description:
-      'High-conversion, bespoke ecommerce web design for luxury brands and direct-to-consumer labels. Fast headless checkouts, editorial product storytelling, and zero app bloat.',
+      'Bespoke ecommerce web design for luxury brands and direct-to-consumer labels. Fast headless checkouts, editorial product storytelling, and zero app bloat.',
     url: 'https://www.theomedia.co.uk/industries/ecommerce-website-design',
     type: 'website',
   },
@@ -78,15 +78,15 @@ export default function EcommerceWebsiteDesignPage() {
         </div>
       </section>
 
-      {/* Live Project Showcase */}
+      {/* Featured Studio Study */}
       <section className="py-20 md:py-28 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
         <div className="max-w-4xl mb-12">
-          <SectionLabel>SELECTED WORK</SectionLabel>
+          <SectionLabel>STUDIO STUDY</SectionLabel>
           <h2 className="text-editorial-md text-near-black mt-4">
-            Interactive Experience: Morrow &amp; Hide Leathercraft
+            Interactive Study: Morrow &amp; Hide Leathercraft
           </h2>
           <p className="font-sans text-stone text-[16px] mt-2">
-            Explore our artisanal ecommerce flagship showcase featuring fluid micro-interactions, responsive sizing guides, and a sub-second mobile checkout architecture.
+            Explore our artisanal ecommerce study featuring fluid micro-interactions, responsive sizing guides, and a performance-focused mobile checkout architecture.
           </p>
         </div>
         <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/10">
@@ -94,7 +94,7 @@ export default function EcommerceWebsiteDesignPage() {
           <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30 pointer-events-none" />
         </div>
         <div className="mt-6 flex justify-between items-center text-[12px] font-sans text-stone uppercase tracking-wider">
-          <span>Artisanal Goods &amp; Direct-to-Consumer Flagship</span>
+          <span>Artisanal Goods &amp; Direct-to-Consumer Study</span>
           <Link href="/services/ecommerce-development" className="text-near-black border-b border-near-black pb-0.5 hover:text-stone">
             Explore Ecommerce Engineering Services →
           </Link>
@@ -112,9 +112,9 @@ export default function EcommerceWebsiteDesignPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col">
-            <h3 className="font-display text-[22px] text-near-black mb-3">Sub-Second Mobile Checkout</h3>
+            <h3 className="font-display text-[22px] text-near-black mb-3">Performance-Focused Mobile Checkout</h3>
             <p className="font-sans text-stone text-[15px] leading-relaxed">
-              Native Apple Pay, Google Pay, and Stripe Elements integration eliminating multi-step friction. When buying takes 15 seconds, conversion rates soar.
+              Native Apple Pay, Google Pay, and Stripe Elements integration eliminating multi-step friction. When buying is frictionless and fast, mobile drop-off decreases significantly.
             </p>
           </div>
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col">
@@ -144,7 +144,7 @@ export default function EcommerceWebsiteDesignPage() {
               Every additional 100ms of latency on mobile ecommerce reduces conversion by up to 7%. Standard templates laden with tracking scripts and unoptimised images create high bounce rates.
             </p>
             <p className="font-sans text-stone text-[16px] leading-relaxed mb-8">
-              TheoMedia stores run on edge infrastructure, delivering instantaneous page transitions, automated next-gen image compression, and rock-solid SEO indexability.
+              TheoMedia stores run on edge infrastructure, delivering fast page transitions, automated next-gen image compression, and rock-solid SEO indexability.
             </p>
             <Link
               href="/journal/how-much-does-a-website-cost-uk"
@@ -158,7 +158,7 @@ export default function EcommerceWebsiteDesignPage() {
             <ul className="space-y-4 font-sans text-[15px] text-bone/80">
               <li className="flex items-start gap-3">
                 <span className="text-gold font-bold">✓</span>
-                <span>Sub-second mobile speed with green Core Web Vitals &amp; 95+ Lighthouse score</span>
+                <span>Rapid mobile performance with green Core Web Vitals compliance</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-gold font-bold">✓</span>

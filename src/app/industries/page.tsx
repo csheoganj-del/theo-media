@@ -23,36 +23,36 @@ const industries = [
   {
     title: 'Restaurants & Hospitality',
     href: '/industries/restaurant-website-design',
-    tagline: 'Direct table reservations, live seasonal menus, and zero third-party commissions.',
-    linkTitle: 'View Cinder & Field Live ↗',
+    tagline: 'Direct table reservations, live seasonal menus, and reduced third-party booking fees.',
+    linkTitle: 'View Cinder & Field Study ↗',
     liveUrl: 'https://cinder-field.theomedia.co.uk',
   },
   {
     title: 'Hotels & Boutique Stays',
     href: '/industries/hotel-website-design',
     tagline: 'Direct room bookings, visual atmosphere storytelling, and OTA commission reduction.',
-    linkTitle: 'View Velora House Live ↗',
+    linkTitle: 'View Velora House Study ↗',
     liveUrl: 'https://velora-house.theomedia.co.uk',
   },
   {
     title: 'Trades & Construction',
     href: '/industries/trades-construction-website-design',
     tagline: 'High-ticket residential and commercial quotes, WhatsApp lead capture, and portfolio galleries.',
-    linkTitle: 'View Alder & Rowe Live ↗',
+    linkTitle: 'View Alder & Rowe Study ↗',
     liveUrl: 'https://alder-rowe.theomedia.co.uk',
   },
   {
     title: 'Private Healthcare & Clinics',
     href: '/industries/healthcare-clinic-website-design',
     tagline: 'Medical practitioner authority, transparent pricing, and confidential consultation workflows.',
-    linkTitle: 'View Elowen Clinic Live ↗',
+    linkTitle: 'View Elowen Clinic Study ↗',
     liveUrl: 'https://elowen-clinic.theomedia.co.uk',
   },
   {
     title: 'Luxury & DTC Ecommerce',
     href: '/industries/ecommerce-website-design',
-    tagline: 'Sub-second mobile checkout, Apple Pay integration, and zero recurring plugin bloat.',
-    linkTitle: 'View Morrow & Hide Live ↗',
+    tagline: 'Performance-focused mobile checkout, Apple Pay integration, and zero recurring plugin bloat.',
+    linkTitle: 'View Morrow & Hide Study ↗',
     liveUrl: 'https://morrow-hide.theomedia.co.uk',
   },
   {
@@ -103,7 +103,7 @@ export default function IndustriesIndexPage() {
               SPECIALISED SECTOR ARCHITECTURE.
             </h1>
             <p className="font-sans text-[17px] md:text-[20px] text-bone/70 max-w-3xl leading-relaxed mb-12">
-              Every industry has distinct commercial mechanics. A restaurant needs immediate table bookings without OpenTable fees. A clinic needs calm medical authority. We build tailored digital systems purpose-crafted for your sector.
+              Every industry has distinct commercial mechanics. A restaurant needs immediate direct table bookings. A clinic needs calm medical authority. We build tailored digital systems purpose-crafted for your sector.
             </p>
           </FadeIn>
         </div>

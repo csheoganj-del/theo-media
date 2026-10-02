@@ -1,13 +1,43 @@
 export const SITE = {
   name: 'TheoMedia',
+  legalName: 'TheoMedia',
   url: 'https://www.theomedia.co.uk',
   email: 'hello@theomedia.co.uk',
   phone: '+353 85 225 8004',
   phoneTel: 'tel:+353852258004',
   whatsappUrl: 'https://wa.me/353852258004',
-  whatsappDefaultMessage: "Hi TheoMedia, I've been looking through your work and I'd like to discuss a website or digital project for my business.",
-  regions: 'UK & Ireland · Selected International',
-  tagline: 'Independent Digital Studio · UK, Ireland & International',
+  whatsappDefaultMessage: "Hi TheoMedia, I've been looking through your work and I'd like to discuss a project.",
+  
+  // Canonical studio positioning
+  tagline: 'Independent digital studio combining strategy, creative direction and engineering.',
+  primaryHeadline: 'LOOK ESTABLISHED. GET CHOSEN.',
+  supportingProposition: 'High-end websites and digital systems for businesses that have outgrown ordinary web design.',
+  geographicPositioning: 'UK & Ireland · Working internationally',
+  regions: 'UK & Ireland · Working internationally',
+  founderPositioning: 'Work directly with the founder responsible for strategy, design and technical delivery. Specialist collaborators are brought in only where a project requires them.',
+  portfolioSubheadline: 'Independent digital experiences developed around real commercial problems across hospitality, automotive, healthcare, commerce and creative industries.',
+
+  // Commercial investment framework
+  pricing: {
+    digitalFlagship: {
+      gbp: '£2,500',
+      eur: '€3,000',
+      usd: '$3,500',
+      gbpNumeric: 2500,
+    },
+    commercialPlatform: {
+      gbp: '£5,000',
+      eur: '€6,000',
+      usd: '$6,500',
+      gbpNumeric: 5000,
+    },
+    digitalSystems: {
+      gbp: '£8,000',
+      eur: '€9,500',
+      usd: '$10,000',
+      gbpNumeric: 8000,
+    },
+  },
   priceRange: '£2,500 – £15,000+ (€3,000 – €18,000+ / US$3,500 – US$20,000+)',
   currencies: 'GBP, EUR, USD',
   year: new Date().getFullYear(),

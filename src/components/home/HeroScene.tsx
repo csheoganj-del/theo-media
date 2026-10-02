@@ -47,7 +47,7 @@ export default function HeroScene() {
             <span className="hidden sm:inline">INDEPENDENT PRACTICE</span>
           </div>
           <div className="flex items-center gap-4 text-right">
-            <span className="hidden md:inline">UK · IRELAND · SELECTED INTERNATIONAL</span>
+            <span className="hidden md:inline">UK &amp; IRELAND · WORKING INTERNATIONALLY</span>
             <span className="text-oxidised-bronze">EST. 2024</span>
           </div>
         </motion.div>
@@ -80,7 +80,7 @@ export default function HeroScene() {
             variants={itemVariants}
             className="font-sans text-[17px] md:text-[20px] lg:text-[21px] text-secondary-text max-w-2xl leading-[1.55] mb-10 md:mb-12 font-normal"
           >
-            Digital work built around real commercial problems. Bespoke websites, digital architecture and booking systems for businesses that have outgrown ordinary templates.
+            High-end websites and digital systems for businesses that have outgrown ordinary web design.
           </motion.p>
 
           {/* Controlled action buttons */}

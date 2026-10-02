@@ -26,7 +26,7 @@ const PRINCIPLES = [
   },
   {
     title: 'DIRECT COMMUNICATION',
-    description: 'No account managers, no layers. You talk to the team doing the work.'
+    description: 'No account managers, no layers. You talk directly to the person building your platform.'
   },
   {
     title: 'CUSTOM DESIGN',
@@ -80,13 +80,13 @@ export default function StudioPage() {
               <FadeIn>
                 <SectionLabel className="text-stone mb-6">Engineering Craft</SectionLabel>
                 <h2 className="font-display text-[36px] md:text-[44px] leading-tight text-near-black mb-6">
-                  ENGINEER-LED. ZERO LAYERS. COMPLETE ACCOUNTABILITY.
+                  FOUNDER-LED. DIRECT COLLABORATION. COMPLETE ACCOUNTABILITY.
                 </h2>
                 <p className="font-sans text-[16px] text-charcoal/80 leading-relaxed mb-6">
-                  TheoMedia is an independent UK &amp; Ireland boutique web design and digital engineering studio. We deliver high-touch creative direction and bespoke code directly to ambitious businesses without corporate agency overhead.
+                  TheoMedia is an independent UK &amp; Ireland digital studio combining strategy, creative direction, web design and digital engineering. We deliver high-touch creative direction and bespoke code directly to ambitious businesses.
                 </p>
                 <p className="font-sans text-[15px] text-stone leading-relaxed">
-                  When you partner with TheoMedia, you do not speak with account handlers, juniors, or outsourced intermediaries. You collaborate directly with senior designers and engineers who shape your architecture and write every single line of production code.
+                  Work directly with the founder responsible for strategy, design and technical delivery. Specialist collaborators are brought in only where a project requires them. No account-management layers, no handoffs, and full accountability.
                 </p>
               </FadeIn>
             </div>
@@ -117,7 +117,7 @@ export default function StudioPage() {
                   <span className="font-mono text-[12px] text-warm-accent uppercase tracking-widest block mb-3">03 · Modern Edge</span>
                   <h3 className="font-display text-[20px] text-near-black mb-2">Next.js &amp; Edge Delivery</h3>
                   <p className="font-sans text-[14px] text-charcoal/75 leading-relaxed">
-                    Zero bloated CMS plugins. We build with static generation and global edge CDN caching for sub-second page loads worldwide.
+                    Zero bloated CMS plugins. We build with static generation and global edge CDN caching for rapid, reliable page performance worldwide.
                   </p>
                 </div>
               </FadeIn>

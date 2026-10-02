@@ -78,15 +78,15 @@ export default function HotelWebsiteDesignPage() {
         </div>
       </section>
 
-      {/* Live Project Showcase */}
+      {/* Featured Studio Study */}
       <section className="py-20 md:py-28 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-b border-near-black/10">
         <div className="max-w-4xl mb-12">
-          <SectionLabel>SELECTED WORK</SectionLabel>
+          <SectionLabel>STUDIO STUDY</SectionLabel>
           <h2 className="text-editorial-md text-near-black mt-4">
-            Interactive Experience: Velora House Luxury Retreat
+            Interactive Study: Velora House Luxury Retreat
           </h2>
           <p className="font-sans text-stone text-[16px] mt-2">
-            Explore our boutique hotel showcase featuring seamless room selection, dining integration, and mobile booking flows.
+            Explore our boutique hotel study featuring seamless room selection, dining integration, and mobile booking flows.
           </p>
         </div>
         <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group shadow-2xl border border-near-black/10">
@@ -94,9 +94,9 @@ export default function HotelWebsiteDesignPage() {
           <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30 pointer-events-none" />
         </div>
         <div className="mt-6 flex justify-between items-center text-[12px] font-sans text-stone uppercase tracking-wider">
-          <span>Luxury Boutique Hotel &amp; Spa</span>
+          <span>Luxury Boutique Hotel &amp; Spa Study</span>
           <Link href="/case-studies/boutique-hotel-website-design" className="text-near-black border-b border-near-black pb-0.5 hover:text-stone">
-            Read Complete Hotel Case Study →
+            Read Studio Hotel Study →
           </Link>
         </div>
       </section>

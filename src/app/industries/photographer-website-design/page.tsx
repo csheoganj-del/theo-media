@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -87,7 +87,7 @@ export default function PhotographerWebsiteDesignPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 bg-ivory border border-near-black/10 flex flex-col">
-            <h3 className="font-display text-[22px] text-near-black mb-3">Sub-Second Image Delivery</h3>
+            <h3 className="font-display text-[22px] text-near-black mb-3">High-Speed Image Architecture</h3>
             <p className="font-sans text-stone text-[15px] leading-relaxed">
               Automated multi-resolution responsive sets deliver crisp detail on Retina displays while keeping total payload minimal for mobile cellular networks.
             </p>

@@ -12,7 +12,7 @@ export const industries: Industry[] = [
   },
   {
     name: 'Restaurants & Gastropubs',
-    priorities: ['Live Menus', 'Reservations', 'Zero Commissions'],
+    priorities: ['Live Menus', 'Reservations', 'Direct Booking'],
     href: '/industries/restaurant-website-design',
   },
   {

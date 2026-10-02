@@ -8,7 +8,6 @@ const capabilities = [
   { label: 'Bespoke Web Design', href: '/web-design' },
   { label: 'Studio Investment', href: '/pricing' },
   { label: 'Business Software', href: '/business-software' },
-  { label: 'Original Software', href: '/software' },
   { label: 'All Capabilities →', href: '/services' },
 ];
 
@@ -41,8 +40,7 @@ const cities = [
 
 export function Footer() {
   const pathname = usePathname();
-  const isSoftware = pathname === '/software' || pathname.startsWith('/software/');
-  const isHomepageOrContact = pathname === '/' || pathname === '/contact' || isSoftware;
+  const isHomepageOrContact = pathname === '/' || pathname === '/contact';
 
   return (
     <footer className="cinematic-dark bg-[#11110F] text-[#F2EEE6] border-t border-[#262420]">
@@ -89,15 +87,13 @@ export function Footer() {
           {/* Brand & Direct Contact */}
           <div className="lg:col-span-1">
             <Link
-              href={isSoftware ? '/software' : '/'}
+              href="/"
               className="text-[20px] md:text-[24px] font-sans font-bold tracking-[0.15em] uppercase text-bone block mb-4"
             >
-              {isSoftware ? 'GURJAR' : 'THEOMEDIA'}
+              THEOMEDIA
             </Link>
             <p className="text-[14px] text-bone/50 leading-relaxed max-w-[280px] mb-6">
-              {isSoftware
-                ? 'Original local-first software. Traffic, Face, Space and Speed. Home and licenses at mansinghgurjar.in.'
-                : 'Independent digital studio combining strategy, creative direction, web design and digital engineering for ambitious businesses across the UK, Ireland, and selected international clients.'}
+              Independent digital studio combining strategy, creative direction, web design and digital engineering. UK &amp; Ireland · Working internationally.
             </p>
             <div className="space-y-2 text-[13px]">
               <div>

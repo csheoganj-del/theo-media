@@ -148,7 +148,7 @@ export default function WebDesignPage() {
               Restaurants &amp; Hospitality →
             </h3>
             <p className="font-sans text-[14px] text-stone">
-              Live seasonal menus, direct reservation modals, and zero third-party commission leakage.
+              Live seasonal menus, direct reservation modals, and reduced third-party booking fees.
             </p>
           </Link>
           <Link

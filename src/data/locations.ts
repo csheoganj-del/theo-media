@@ -33,7 +33,7 @@ export const locations: LocationPageData[] = [
     intro:
       'London is the most competitive commercial web market in the UK. Buyers compare you against Soho agencies, Shoreditch studios and every template restaurant site in a two-mile radius. TheoMedia builds founder-led, custom websites for independent London operators who need speed, distinctive design and direct enquiries — without a £20,000 agency retainer.',
     market:
-      'A London restaurant competing with Deliveroo and OpenTable, a Marylebone clinic competing with Harley Street directories, or a Hackney maker competing with Shopify themes all share the same problem: generic websites disappear in this city. Custom architecture, local SEO and sub-second mobile pages are how independent brands win attention from people already in the borough, searching on their phones.',
+      'A London restaurant competing with Deliveroo and OpenTable, a Marylebone clinic competing with Harley Street directories, or a Hackney maker competing with Shopify themes all share the same problem: generic websites disappear in this city. Custom architecture, local SEO and high-speed mobile pages are how independent brands win attention from people already in the borough, searching on their phones.',
     neighbourhoods: [
       'Shoreditch & Hackney',
       'Soho & Covent Garden',

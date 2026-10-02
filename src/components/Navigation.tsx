@@ -2,22 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS, SITE } from '@/lib/constants';
-import { SOFTWARE_NAV } from '@/data/software';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const pathname = usePathname();
-  const isSoftware = pathname === '/software' || pathname.startsWith('/software/');
-  const links = isSoftware ? SOFTWARE_NAV : NAV_LINKS;
-
-  // Pages with intentional dark hero tops (e.g. software)
-  const isDarkTop =
-    (pathname === '/software' || pathname.startsWith('/software/')) &&
-    !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
@@ -37,13 +27,10 @@ export function Navigation() {
 
   const closeMenu = () => setIsMobileOpen(false);
 
-  // Dynamic styling based on scroll and dark tops
-  const textColor = isDarkTop ? 'text-[#F2EEE6]' : 'text-primary-ink';
-  const textMuted = isDarkTop ? 'text-[#AAA49A]' : 'text-secondary-text';
-  const buttonBg = isDarkTop
-    ? 'bg-[#F2EEE6] text-[#11110F] hover:bg-white'
-    : 'bg-primary-ink text-warm-ivory hover:bg-dark-accent';
-  const hamburgerLine = isDarkTop ? 'bg-[#F2EEE6]' : 'bg-primary-ink';
+  const textColor = 'text-primary-ink';
+  const textMuted = 'text-secondary-text';
+  const buttonBg = 'bg-primary-ink text-warm-ivory hover:bg-dark-accent';
+  const hamburgerLine = 'bg-primary-ink';
 
   return (
     <>
@@ -51,8 +38,6 @@ export function Navigation() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isScrolled
             ? 'bg-warm-ivory/95 backdrop-blur-md border-b border-border-rule shadow-sm'
-            : isDarkTop
-            ? 'bg-transparent'
             : 'bg-transparent'
         }`}
         aria-label="Main Navigation"
@@ -60,16 +45,16 @@ export function Navigation() {
         <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 flex items-center justify-between h-16 md:h-20">
           {/* Logo / Typographic Wordmark */}
           <Link
-            href={isSoftware ? '/software' : '/'}
+            href="/"
             className={`text-[15px] md:text-[16px] font-sans font-semibold tracking-[0.18em] uppercase transition-colors duration-200 ${textColor} hover:text-oxidised-bronze`}
-            aria-label={isSoftware ? 'Gurjar software' : 'TheoMedia Home'}
+            aria-label="TheoMedia Home"
           >
-            {isSoftware ? 'GURJAR' : 'THEOMEDIA'}
+            THEOMEDIA
           </Link>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-8">
-            {links.map((link) => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -79,10 +64,10 @@ export function Navigation() {
               </Link>
             ))}
             <Link
-              href={isSoftware ? '/software/traffic-ledger#buy' : '/contact'}
+              href="/contact"
               className={`ml-2 px-5 py-2.5 text-[11px] font-mono font-medium tracking-[0.14em] uppercase transition-colors duration-200 rounded-[1px] ${buttonBg}`}
             >
-              {isSoftware ? 'Buy a license' : 'Start a Project'}
+              Start a Project
             </Link>
           </div>
 
@@ -131,7 +116,7 @@ export function Navigation() {
           >
             <div className="flex-1 flex flex-col justify-center px-8 pt-20">
               <nav className="space-y-3">
-                {links.map((link, i) => (
+                {NAV_LINKS.map((link, i) => (
                   <motion.div
                     key={link.href}
                     initial={{ opacity: 0, y: 15 }}
@@ -156,11 +141,11 @@ export function Navigation() {
                 transition={{ delay: 0.3, duration: 0.35 }}
               >
                 <Link
-                  href={isSoftware ? '/software/traffic-ledger#buy' : '/contact'}
+                  href="/contact"
                   className="block w-full text-center px-6 py-4 bg-primary-ink text-warm-ivory text-[12px] font-mono tracking-[0.14em] uppercase rounded-[1px]"
                   onClick={closeMenu}
                 >
-                  {isSoftware ? 'Buy a license →' : 'Start a Project →'}
+                  Start a Project →
                 </Link>
                 <a
                   href={`${SITE.whatsappUrl}?text=${encodeURIComponent(SITE.whatsappDefaultMessage)}`}

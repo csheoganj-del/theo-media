@@ -177,7 +177,7 @@ export default function JournalIndexPage() {
           <div>
             <SectionLabel>OUR WORK</SectionLabel>
             <h2 className="font-display text-[32px] text-near-black mt-2">
-              Explore our live projects and case studies.
+              Explore our interactive studies and sector architecture.
             </h2>
             <p className="font-sans text-stone text-[16px] mt-2">
               See how our digital architecture works across hospitality, trades, healthcare, and ecommerce.
