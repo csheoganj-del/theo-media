@@ -8,7 +8,7 @@ import { breadcrumbJsonLd, pageMeta, serviceJsonLd } from '@/lib/seo';
 export const metadata: Metadata = pageMeta({
   title: 'Barber Website Design UK | Grooming Studios & Chair Booking',
   description:
-    'Bespoke barber and grooming website design. Cut menus, barber profiles and instant chair booking for UK and Irish barbershops. Custom-built from £895.',
+    'Bespoke barber and grooming website design. Cut menus, barber profiles and instant chair booking for UK and Irish barbershops. Studio builds from £2,500.',
   path: '/industries/barber-website-design',
 });
 
@@ -68,7 +68,7 @@ export default function BarberWebsiteDesignPage() {
       <section className="bg-near-black text-bone py-24 px-5 text-center">
         <h2 className="text-editorial-lg mb-8">A barbershop site with some spine.</h2>
         <Link href="/contact" className="inline-block px-8 py-4 bg-bone text-near-black text-[13px] font-semibold tracking-widest uppercase">
-          Start Consultation →
+          Discuss a Project →
         </Link>
       </section>
     </div>

@@ -11,11 +11,30 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '*.vercel.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'mansinghgurjar.in',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.mansinghgurjar.in',
+      },
     ],
+  },
+  async rewrites() {
+    const license = process.env.LICENSE_ORIGIN || 'http://127.0.0.1:8788';
+    return [
+      { source: '/v1/:path*', destination: `${license}/v1/:path*` },
+    ];
   },
   async redirects() {
     return [
       // ── Canonical Service & Architecture Migrations (301 Permanent) ──
+      {
+        source: '/community-build',
+        destination: '/pricing',
+        permanent: true,
+      },
       {
         source: '/services/websites',
         destination: '/web-design',

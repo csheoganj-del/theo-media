@@ -56,7 +56,7 @@ export default function LocationLanding({ location }: { location: LocationPageDa
                 href="/pricing"
                 className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-bone/80 hover:text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors"
               >
-                Packages from {location.starterPrice} ↗
+                Engagements from {location.starterPrice} ↗
               </Link>
             </div>
           </FadeIn>
@@ -176,7 +176,7 @@ export default function LocationLanding({ location }: { location: LocationPageDa
             Build a {location.city} website you actually own.
           </h2>
           <p className="font-sans text-bone/70 text-[17px] leading-relaxed mb-10">
-            Fixed packages from {location.starterPrice}. Founder-led. Reply within one working day.
+            Engagements typically begin at {location.starterPrice}. Founder-led. Reply within one working day.
           </p>
           <Link
             href="/contact"

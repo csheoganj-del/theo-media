@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
-import SectionLabel from '@/components/ui/SectionLabel';
 import { trackEvent } from '@/lib/analytics';
 
 export default function CommunityBuildSection() {
@@ -37,78 +36,75 @@ export default function CommunityBuildSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-ivory text-near-black py-24 md:py-32 lg:py-36 px-5 md:px-8 lg:px-12 border-t border-near-black/10"
+      className="bg-soft-paper text-primary-ink py-28 md:py-36 lg:py-40 px-5 md:px-8 lg:px-12 border-b border-border-rule"
       aria-labelledby="cb-home-heading"
     >
       <div className="max-w-[1440px] mx-auto">
         <div className="max-w-4xl mb-14 md:mb-20">
           <FadeIn>
-            <SectionLabel>COMMUNITY BUILD PROGRAMME</SectionLabel>
+            <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
+              PROGRAMME INITIATIVE
+            </span>
             <h2
               id="cb-home-heading"
-              className="font-display text-[36px] sm:text-[48px] md:text-[60px] lg:text-[68px] leading-[1.08] text-near-black mt-6 uppercase"
+              className="font-display text-[clamp(2.5rem,5vw,5rem)] leading-[1.02] text-primary-ink uppercase font-normal"
             >
-              Three independent businesses.
-              <br />
-              Three focused builds each month.
+              THREE INDEPENDENT BUSINESSES.<br />
+              THREE DIRECT BUILDS EACH MONTH.
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="mt-8 space-y-4 max-w-2xl font-sans text-[16px] md:text-[18px] text-charcoal/80 leading-relaxed">
+            <div className="mt-8 space-y-4 max-w-2xl font-sans text-[16px] md:text-[18px] text-secondary-text leading-relaxed">
               <p>
-                For our Autumn 2026 pilot, TheoMedia is selecting up to three independent
-                businesses each month for a complete website project at a fixed £495 programme
-                rate.
+                TheoMedia selects up to three independent businesses each month for a focused website build at a subsidized £495 programme rate.
               </p>
-              <p className="text-stone">
-                It is designed for businesses where we believe a stronger digital presence can make
-                a meaningful difference — while keeping the number of projects deliberately small
-                enough for us to give each one proper attention.
+              <p className="text-muted-text text-[15px]">
+                Engineered for founders and artisans where high-calibre digital architecture makes an immediate commercial difference.
               </p>
             </div>
           </FadeIn>
         </div>
 
-        {/* Programme Info Cards */}
-        <FadeIn delay={0.2}>
+        {/* Programme Metric Cards */}
+        <FadeIn delay={0.15}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            <div className="p-6 md:p-8 bg-bone border border-near-black/10 rounded-sm">
-              <span className="font-display text-3xl md:text-4xl text-near-black block mb-2">
+            <div className="p-8 bg-light-surface border border-border-rule rounded-[1px]">
+              <span className="font-display text-4xl text-primary-ink block mb-2 font-normal">
                 £495
               </span>
-              <p className="text-[12px] font-sans font-medium uppercase tracking-[0.18em] text-stone">
-                Fixed programme rate
+              <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-text">
+                Subsidized Programme Rate
               </p>
             </div>
 
-            <div className="p-6 md:p-8 bg-bone border border-near-black/10 rounded-sm">
-              <span className="font-display text-3xl md:text-4xl text-near-black block mb-2">
-                3
+            <div className="p-8 bg-light-surface border border-border-rule rounded-[1px]">
+              <span className="font-display text-4xl text-primary-ink block mb-2 font-normal">
+                03
               </span>
-              <p className="text-[12px] font-sans font-medium uppercase tracking-[0.18em] text-stone">
-                Maximum accepted projects each month
+              <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-text">
+                Maximum Selected Projects / Month
               </p>
             </div>
 
-            <div className="p-6 md:p-8 bg-bone border border-near-black/10 rounded-sm">
-              <span className="font-display text-3xl md:text-4xl text-near-black block mb-2">
+            <div className="p-8 bg-light-surface border border-border-rule rounded-[1px]">
+              <span className="font-display text-4xl text-primary-ink block mb-2 font-normal">
                 £200
               </span>
-              <p className="text-[12px] font-sans font-medium uppercase tracking-[0.18em] text-stone">
-                Reserves an accepted place
+              <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted-text">
+                Commitment Reservation
               </p>
             </div>
           </div>
         </FadeIn>
 
-        {/* Pilot Indicator & CTAs */}
-        <FadeIn delay={0.3}>
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-12 border-b border-near-black/10">
+        {/* Actions Strip */}
+        <FadeIn delay={0.25}>
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-10 border-b border-border-rule">
             <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-              <div className="text-[12px] font-mono uppercase tracking-widest text-stone">
-                PILOT: <span className="text-near-black font-sans font-medium">September · October · November 2026</span>
+              <span className="w-2 h-2 rounded-full bg-oxidised-bronze" />
+              <div className="text-[12px] font-mono uppercase tracking-[0.14em] text-secondary-text">
+                ACTIVE COHORT: <span className="text-primary-ink font-medium">Applications Open</span>
               </div>
             </div>
 
@@ -116,34 +112,19 @@ export default function CommunityBuildSection() {
               <Link
                 href="/community-build#apply"
                 onClick={() => handleCtaClick('apply_primary')}
-                className="inline-flex items-center justify-center px-7 py-4 bg-near-black text-bone hover:bg-charcoal text-[12px] font-sans font-semibold tracking-[0.15em] uppercase transition-colors rounded-sm"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-primary-ink text-warm-ivory text-[11px] font-mono tracking-[0.14em] uppercase hover:bg-dark-accent transition-colors rounded-[1px]"
               >
-                Apply for a Community Build
+                Apply for a Community Build →
               </Link>
               <Link
                 href="/community-build#whats-included"
                 onClick={() => handleCtaClick('whats_included_secondary')}
-                className="inline-flex items-center gap-2 text-[12px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black transition-colors"
+                className="editorial-underline text-[11px] font-mono tracking-[0.14em] uppercase text-secondary-text hover:text-primary-ink"
               >
-                <span>See what the £495 programme includes</span>
-                <span>→</span>
+                <span>Programme Inclusions</span>
+                <span className="text-oxidised-bronze">→</span>
               </Link>
             </div>
-          </div>
-        </FadeIn>
-
-        {/* Small Print */}
-        <FadeIn delay={0.4}>
-          <div className="mt-8 max-w-3xl space-y-2 text-[12px] font-sans text-stone/80 leading-relaxed">
-            <p>Applications are reviewed for suitability and scope.</p>
-            <p>
-              A place is confirmed only after acceptance and receipt of the £200 reservation
-              payment.
-            </p>
-            <p>
-              Larger websites, ecommerce, complex booking systems, custom software and advanced
-              integrations are quoted separately.
-            </p>
           </div>
         </FadeIn>
       </div>

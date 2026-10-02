@@ -1,20 +1,40 @@
 @import "tailwindcss";
 
-/* ── TheoMedia Design System ── */
+/* ── TheoMedia Design System — Premium Editorial Studio ── */
 
 @theme inline {
-  /* Palette */
+  /* Restrained Neutral Palette */
+  --color-warm-ivory: #F5F0E8;
+  --color-soft-paper: #ECE6DC;
+  --color-light-surface: #FBF9F5;
+  --color-primary-ink: #121210;
+  --color-secondary-text: #5C5851;
+  --color-muted-text: #898278;
+  --color-border-rule: #D8D0C4;
+  --color-oxidised-bronze: #806348;
+  --color-dark-accent: #594431;
+  --color-subtle-accent-bg: #E4D9CC;
+
+  /* Aliases for seamless component compatibility */
   --color-bone: #F5F0E8;
-  --color-ivory: #FAF8F4;
-  --color-near-black: #141210;
-  --color-charcoal: #2A2724;
-  --color-stone: #9B9590;
-  --color-warm-accent: #B8A68E;
+  --color-ivory: #FBF9F5;
+  --color-near-black: #121210;
+  --color-charcoal: #191816;
+  --color-stone: #5C5851;
+  --color-warm-accent: #806348;
   --color-white: #FFFFFF;
 
-  /* Fonts */
+  /* Cinematic Dark Moments (Strategic Portfolio switch) */
+  --color-dark-bg: #11110F;
+  --color-dark-text-primary: #F2EEE6;
+  --color-dark-text-secondary: #AAA49A;
+  --color-dark-accent: #A98864;
+  --color-dark-border: rgba(242, 238, 230, 0.12);
+
+  /* Typography */
   --font-display: var(--font-instrument-serif);
   --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
 
   /* Easings */
   --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
@@ -29,6 +49,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: var(--color-warm-ivory);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -44,30 +65,31 @@ html {
 }
 
 body {
-  background-color: var(--color-bone);
-  color: var(--color-near-black);
+  background-color: var(--color-warm-ivory);
+  color: var(--color-primary-ink);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
-/* ── Selection ── */
+/* ── Custom Selection Colour ── */
 
 ::selection {
-  background-color: var(--color-near-black);
-  color: var(--color-bone);
+  background-color: #121210;
+  color: #F5F0E8;
 }
 
-.dark-section ::selection {
-  background-color: var(--color-bone);
-  color: var(--color-near-black);
+.dark-section ::selection,
+.cinematic-dark ::selection {
+  background-color: #F2EEE6;
+  color: #11110F;
 }
 
-/* ── Focus ── */
+/* ── Precise Focus States ── */
 
 :focus-visible {
-  outline: 2px solid var(--color-warm-accent);
-  outline-offset: 4px;
-  border-radius: 2px;
+  outline: 1.5px solid var(--color-oxidised-bronze);
+  outline-offset: 3px;
+  border-radius: 1px;
 }
 
 /* ── Skip Link ── */
@@ -77,12 +99,12 @@ body {
   left: -9999px;
   top: 0;
   z-index: 9999;
-  padding: 1rem 2rem;
-  background: var(--color-near-black);
-  color: var(--color-bone);
-  font-size: 14px;
+  padding: 0.85rem 1.75rem;
+  background: var(--color-primary-ink);
+  color: var(--color-warm-ivory);
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -91,50 +113,151 @@ body {
   left: 0;
 }
 
-/* ── Editorial Typography ── */
+/* ── Editorial Typography Scale ── */
 
 .font-display {
   font-family: var(--font-display), 'Georgia', serif;
 }
 
+/* Desktop hero H1: clamp(4.5rem, 9vw, 9rem) */
+.text-hero-h1 {
+  font-family: var(--font-display), 'Georgia', serif;
+  font-size: clamp(4.5rem, 9vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+}
+
+/* Major section heading: clamp(3rem, 6vw, 6rem) */
+.text-section-heading {
+  font-family: var(--font-display), 'Georgia', serif;
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+/* Project title: clamp(2.2rem, 4vw, 4.5rem) */
+.text-project-title {
+  font-family: var(--font-display), 'Georgia', serif;
+  font-size: clamp(2.2rem, 4vw, 4.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
+
+/* Backward-compatible aliases for existing components */
 .text-editorial-xl {
   font-family: var(--font-display), 'Georgia', serif;
-  font-size: clamp(2.5rem, 6vw + 1rem, 7.5rem);
-  line-height: 1.05;
+  font-size: clamp(3.5rem, 7vw, 7.5rem);
+  line-height: 0.98;
   letter-spacing: -0.02em;
   font-weight: 400;
 }
 
 .text-editorial-lg {
   font-family: var(--font-display), 'Georgia', serif;
-  font-size: clamp(2rem, 4vw + 0.5rem, 4.5rem);
-  line-height: 1.1;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
   font-weight: 400;
 }
 
 .text-editorial-md {
   font-family: var(--font-display), 'Georgia', serif;
-  font-size: clamp(1.5rem, 3vw + 0.25rem, 3rem);
-  line-height: 1.15;
+  font-size: clamp(1.8rem, 3.5vw, 3.25rem);
+  line-height: 1.12;
   letter-spacing: -0.01em;
   font-weight: 400;
 }
 
-/* ── Label Style ── */
+/* Body Large: 18–21px */
+.text-body-lg {
+  font-size: clamp(1.125rem, 1.25vw, 1.3125rem);
+  line-height: 1.6;
+}
 
+/* Body Normal: 16–18px */
+.text-body-base {
+  font-size: clamp(1rem, 1.05vw, 1.125rem);
+  line-height: 1.65;
+}
+
+/* Editorial Label: 11–13px uppercase 0.08–0.14em letter-spacing */
+.text-editorial-label,
 .text-label {
-  font-size: 11px;
+  font-size: clamp(11px, 0.75vw, 13px);
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-@media (min-width: 768px) {
-  .text-label {
-    font-size: 12px;
-  }
+/* Monospaced Micro-type (metadata, numbers, technical labels) */
+.font-mono-micro {
+  font-family: var(--font-mono);
+  font-size: clamp(10px, 0.7vw, 12px);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Elegant Hover Underline ── */
+
+.editorial-underline {
+  position: relative;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.25s ease;
+}
+
+.editorial-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.35;
+  transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: left;
+}
+
+.editorial-underline:hover::after {
+  opacity: 1;
+}
+
+/* ── Cinematic Dark Strategic Moments ── */
+
+.dark-section,
+.cinematic-dark {
+  background-color: #11110F;
+  color: #F2EEE6;
+}
+
+.cinematic-dark .text-secondary {
+  color: #AAA49A;
+}
+
+.cinematic-dark .text-accent {
+  color: #A98864;
+}
+
+.charcoal-section {
+  background-color: var(--color-charcoal);
+  color: var(--color-warm-ivory);
+}
+
+/* ── Thin Editorial Rules ── */
+
+.rule-light {
+  border-color: #D8D0C4;
+}
+
+.rule-dark {
+  border-color: rgba(242, 238, 230, 0.12);
 }
 
 /* ── Smooth Image Loading ── */
@@ -156,30 +279,18 @@ img {
 /* ── Scrollbar ── */
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bone);
+  background: var(--color-warm-ivory);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-stone);
-  border-radius: 3px;
+  background: var(--color-border-rule);
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-charcoal);
-}
-
-/* ── Dark section utilities ── */
-
-.dark-section {
-  background-color: var(--color-near-black);
-  color: var(--color-bone);
-}
-
-.charcoal-section {
-  background-color: var(--color-charcoal);
-  color: var(--color-bone);
+  background: var(--color-secondary-text);
 }

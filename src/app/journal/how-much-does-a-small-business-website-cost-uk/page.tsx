@@ -76,7 +76,7 @@ export default function SmallBusinessWebsiteCostPage() {
         name: 'Can you get a good small business website for £500 in the UK?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'At around £500, most providers rely on generic off-the-shelf templates or outsourced offshore assembly. However, focused studio initiatives like TheoMedia’s Community Build Programme offer bespoke, founder-engineered design at £495 by strictly limiting monthly capacity and scoping projects carefully.',
+          text: 'At around £500, most providers rely on generic off-the-shelf templates or outsourced offshore assembly. However, independent studios deliver bespoke, founder-engineered digital flagships starting from £2,500 with complete code ownership, custom typography, and conversion architecture.',
         },
       },
     ],
@@ -213,7 +213,7 @@ export default function SmallBusinessWebsiteCostPage() {
                   3. Boutique Digital Studios
                 </h3>
                 <p className="text-[14px] text-stone mb-2">
-                  <strong>Estimated Cost:</strong> £895 – £4,500
+                  <strong>Estimated Cost:</strong> £2,500 – £10,000+
                 </p>
                 <p className="text-[15px] text-charcoal/80">
                   Focused studios provide direct founder collaboration, high-calibre visual design,
@@ -257,23 +257,21 @@ export default function SmallBusinessWebsiteCostPage() {
                   how customers actually navigate your services.
                 </p>
                 <p>
-                  <strong>TheoMedia’s Community Build Programme</strong> approaches this
-                  differently. Instead of running an assembly line or spending all of our acquisition
-                  budget on advertising, our studio opens a small number of lower-cost projects each
-                  month during a three-month pilot.
+                  <strong>TheoMedia’s Studio Engagements</strong> approach this
+                  differently. Instead of generic templates or assembly lines, our engagements
+                  begin from £2,500 for a focused digital flagship.
                 </p>
                 <p>
-                  By strictly capping capacity at up to three independent businesses per month and
-                  working within a clearly defined scope, we can deliver genuine, bespoke
-                  mobile-first design, clean technical SEO foundations, and 12 months of hosting for a
-                  fixed £495 programme rate.
+                  Every engagement is scoped carefully around the commercial challenge, delivering bespoke
+                  mobile-first design, clean technical SEO foundations, modern Next.js engineering, and
+                  100% full source code ownership.
                 </p>
                 <div className="pt-4">
                   <Link
-                    href="/community-build"
+                    href="/pricing"
                     className="inline-flex items-center gap-2 font-sans text-[13px] font-semibold tracking-wider uppercase text-near-black hover:text-warm-accent underline underline-offset-4 transition-colors"
                   >
-                    <span>Explore TheoMedia’s Community Build Programme</span>
+                    <span>Explore TheoMedia’s Studio Investment &amp; Tiers</span>
                     <span>→</span>
                   </Link>
                 </div>
@@ -332,16 +330,16 @@ export default function SmallBusinessWebsiteCostPage() {
                   Ready to discuss your project?
                 </h3>
                 <p className="text-[14px] text-stone">
-                  Browse our portfolio or apply for the Community Build Programme.
+                  Browse our portfolio or explore studio investment tiers.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="/community-build"
+                  href="/pricing"
                   className="px-6 py-3 bg-near-black text-bone hover:bg-charcoal text-[12px] font-sans font-semibold tracking-wider uppercase transition-colors rounded-sm"
                 >
-                  Community Build (£495)
+                  Studio Investment
                 </Link>
                 <Link
                   href="/work"

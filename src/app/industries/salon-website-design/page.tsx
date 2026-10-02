@@ -8,7 +8,7 @@ import { breadcrumbJsonLd, pageMeta, serviceJsonLd } from '@/lib/seo';
 export const metadata: Metadata = pageMeta({
   title: 'Salon Website Design UK & Ireland | Hair & Beauty Booking Sites',
   description:
-    'Bespoke salon website design for hair, beauty and treatment studios. Editorial design, treatment menus and frictionless appointment booking. From £895 / €1,050.',
+    'Bespoke salon website design for hair, beauty and treatment studios. Editorial design, treatment menus and frictionless appointment booking. Studio builds from £2,500 / €3,000.',
   path: '/industries/salon-website-design',
 });
 
@@ -68,7 +68,7 @@ export default function SalonWebsiteDesignPage() {
       <section className="bg-near-black text-bone py-24 px-5 text-center">
         <h2 className="text-editorial-lg mb-8">Build a salon site as considered as the work.</h2>
         <Link href="/contact" className="inline-block px-8 py-4 bg-bone text-near-black text-[13px] font-semibold tracking-widest uppercase">
-          Start Consultation →
+          Discuss a Project →
         </Link>
       </section>
     </div>

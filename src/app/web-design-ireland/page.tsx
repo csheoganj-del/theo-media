@@ -62,23 +62,23 @@ const irishSectors = [
 
 const irishPricing = [
   {
-    name: 'Starter',
-    euroPrice: '€1,050',
-    description: 'Bespoke high-performance website for emerging businesses and independent practices.',
-    features: ['1–3 custom engineered pages', 'Mobile-first responsive build', 'WhatsApp & phone enquiry integration', 'Basic SEO & Google indexing setup'],
+    name: 'Digital Flagship',
+    euroPrice: '€3,000',
+    description: 'Bespoke high-performance digital presence with editorial art direction, custom interactions, and technical SEO architecture.',
+    features: ['Scope-first bespoke design & art direction', 'Production Next.js / TypeScript build', 'Technical SEO, schema & Core Web Vitals', 'Direct consultation / enquiry flows', '100% source code ownership'],
   },
   {
-    name: 'Professional',
-    euroPrice: '€2,950',
+    name: 'Commercial Platform',
+    euroPrice: '€6,000',
     featured: true,
-    description: 'Comprehensive commercial website with multi-page architecture, CMS and conversion workflows.',
-    features: ['Up to 8 custom pages', 'Interactive CMS for menus or services', 'Direct booking or enquiry flows', 'Technical SEO audit & local discovery'],
+    description: 'Comprehensive commercial website or ecommerce build with multi-page architecture, headless CMS and dynamic workflows.',
+    features: ['Multi-page commercial architecture', 'Structured headless CMS integration', 'Direct booking, reservations or Stripe checkout', 'Conversion architecture & analytics audit', '60 days priority launch warranty'],
   },
   {
-    name: 'Bespoke Systems',
-    euroPrice: '€5,850+',
-    description: 'Custom web applications, commission-free booking engines, and advanced digital platforms.',
-    features: ['Bespoke booking or client portal', 'Custom Stripe/payment integration', 'Automated customer workflows', 'Dedicated launch support'],
+    name: 'Digital Systems & Software',
+    euroPrice: '€9,500+',
+    description: 'Custom web applications, commission-free booking engines, and bespoke operational business software.',
+    features: ['Custom system architecture & database', 'Secure authentication & client portals', 'Custom ERP/PMS or API integrations', 'Zero recurring platform seat licenses', '90 days architectural warranty'],
   },
 ];
 
@@ -96,7 +96,7 @@ export default function WebDesignIrelandPage() {
             url: 'https://www.theomedia.co.uk/web-design-ireland',
             telephone: '+353852258004',
             email: 'hello@theomedia.co.uk',
-            priceRange: '€1,050 - €11,000+',
+            priceRange: '€3,000 - €18,000+',
             currenciesAccepted: 'EUR',
             paymentAccepted: 'Bank Transfer, Credit Card, Stripe, Apple Pay',
             areaServed: {
@@ -209,10 +209,10 @@ export default function WebDesignIrelandPage() {
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
           <SectionLabel>TRANSPARENT INVESTMENT</SectionLabel>
           <h2 className="text-editorial-lg text-near-black mt-6">
-            Fixed Pricing in Euros (€). No Hidden Quotes.
+            Scope-First Investment in Euros (€). No Arbitrary Markups.
           </h2>
           <p className="font-sans text-stone text-[16px] md:text-[18px] mt-4">
-            Clear project milestones and fixed pricing for Irish businesses. All tiers include full client ownership and launch warranty.
+            Clear project milestones and scope-first investment for Irish businesses. All tiers include full client ownership and dedicated launch support.
           </p>
         </div>
 

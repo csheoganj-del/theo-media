@@ -26,14 +26,14 @@ const capabilities = [
       'Every interface is designed from a blank canvas. We do not use WordPress themes, Elementor bloat, or off-the-shelf templates. Your brand world is entirely unique.',
   },
   {
-    title: 'Sub-Second Edge Performance',
+    title: 'High-Speed Edge Architecture',
     description:
-      'Built with Next.js and Tailwind CSS deployed on global edge CDNs. Pages render in under 1 second, achieving 95+ Google Lighthouse performance scores and green Core Web Vitals (sub-second LCP, minimal CLS, instant INP).',
+      'Built with Next.js and Tailwind CSS deployed on global edge CDNs. Pages render rapidly with optimal Core Web Vitals, fast mobile response, and instant interactions.',
   },
   {
     title: '100% Code & Asset Ownership',
     description:
-      'You receive complete source code, GitHub repository access, and full domain control upon project completion. Zero ongoing software lock-in or proprietary agency captivity.',
+      'You receive complete source code, repository access, and full domain control upon project completion. Zero ongoing software lock-in or proprietary platform dependencies.',
   },
   {
     title: 'Foundational Technical SEO',
@@ -72,7 +72,7 @@ export default function WebDesignPage() {
               { '@type': 'Country', name: 'Ireland' },
             ],
             description:
-              'Custom website design and engineering for ambitious businesses across the UK and Ireland. Bespoke Next.js code, sub-second speed, 100% ownership, zero platform lock-in.',
+              'Custom website design and engineering for ambitious businesses across the UK and Ireland. Bespoke Next.js code, high-speed performance, 100% ownership, zero platform lock-in.',
           }),
         }}
       />
@@ -99,7 +99,7 @@ export default function WebDesignPage() {
                 href="/pricing"
                 className="text-[13px] font-sans font-medium tracking-[0.1em] uppercase text-bone/80 hover:text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors"
               >
-                View Fixed-Price Packages (£895+) ↗
+                View Studio Investment (from £2,500) ↗
               </Link>
             </div>
           </FadeIn>
@@ -236,13 +236,13 @@ export default function WebDesignPage() {
             Build a website you actually own.
           </h2>
           <p className="font-sans text-bone/70 text-[17px] leading-relaxed mb-10">
-            Tell us about your brand, requirements, and timeline. We provide a direct, fixed-price proposal within 24 hours.
+            Tell us about your brand, requirements, and timeline. We provide a direct, scope-first proposal within one working day.
           </p>
           <Link
             href="/contact"
             className="inline-block px-8 py-4 bg-bone text-near-black text-[13px] font-sans font-semibold tracking-widest uppercase rounded-sm hover:bg-ivory transition-colors"
           >
-            Start Web Consultation →
+            Discuss a Project →
           </Link>
         </div>
       </section>

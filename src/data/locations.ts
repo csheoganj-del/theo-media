@@ -24,11 +24,11 @@ export const locations: LocationPageData[] = [
     country: 'United Kingdom',
     region: 'Greater London',
     currency: 'GBP',
-    starterPrice: '£895',
-    professionalPrice: '£2,495',
+    starterPrice: '£2,500',
+    professionalPrice: '£5,000',
     title: 'Web Design London | Bespoke Websites for Independent Brands | TheoMedia',
     description:
-      'Independent web design in London for restaurants, hotels, clinics, trades and ecommerce. Custom Next.js websites from £895. 100% client-owned. No templates.',
+      'Independent web design in London for restaurants, hotels, clinics, trades and ecommerce. Custom Next.js websites from £2,500. 100% client-owned. No templates.',
     h1: 'Web design in London for businesses that have outgrown templates.',
     intro:
       'London is the most competitive commercial web market in the UK. Buyers compare you against Soho agencies, Shoreditch studios and every template restaurant site in a two-mile radius. TheoMedia builds founder-led, custom websites for independent London operators who need speed, distinctive design and direct enquiries — without a £20,000 agency retainer.',
@@ -68,7 +68,7 @@ export const locations: LocationPageData[] = [
       {
         question: 'How much does web design in London cost?',
         answer:
-          'London agencies often quote £8,000–£30,000 because of Soho overheads. TheoMedia delivers custom websites for London businesses from £895 (Starter) and £2,495 (Professional), with the same Next.js engineering used on our flagship work. You own the code.',
+          'London agencies often quote £15,000–£50,000 because of Soho overheads. TheoMedia delivers bespoke website engagements from £2,500 for a focused digital flagship, scaling to £5,000–£10,000+ for commercial platforms with CMS and booking integrations. You own 100% of the code.',
       },
       {
         question: 'Do you need a London office to design a London website?',
@@ -93,11 +93,11 @@ export const locations: LocationPageData[] = [
     country: 'United Kingdom',
     region: 'Greater Manchester',
     currency: 'GBP',
-    starterPrice: '£895',
-    professionalPrice: '£2,495',
+    starterPrice: '£2,500',
+    professionalPrice: '£5,000',
     title: 'Web Design Manchester | Custom Websites for Northern Brands | TheoMedia',
     description:
-      'Bespoke web design for Manchester businesses. Custom websites for hospitality, trades, clinics and ecommerce from £895. Fast, founder-led, 100% client-owned.',
+      'Bespoke web design for Manchester businesses. Custom websites for hospitality, trades, clinics and ecommerce from £2,500. Fast, founder-led, 100% client-owned.',
     h1: 'Web design in Manchester that looks as serious as the work you do.',
     intro:
       'Manchester businesses are judged twice: once against London polish, and again against local competitors who still run on WordPress themes from 2019. TheoMedia designs custom websites for Northern Hospitality, independent retailers, contractors and clinics who want a digital presence that converts — not another Wix homepage.',
@@ -130,14 +130,14 @@ export const locations: LocationPageData[] = [
       {
         title: 'Small business sites',
         href: '/industries/small-business-website-design',
-        note: 'Fixed-price launches from £895 for independent Manchester operators.',
+        note: 'Custom studio launches from £2,500 for independent Manchester operators.',
       },
     ],
     faqs: [
       {
         question: 'How much does a Manchester website cost?',
         answer:
-          'A custom TheoMedia website for a Manchester business starts at £895. Professional multi-page builds are £2,495. That is typically a third to a tenth of a traditional Northern agency quote, with full source-code ownership at launch.',
+          'A bespoke TheoMedia website engagement for a Manchester business typically begins from £2,500 for a digital flagship, scaling to £5,000–£10,000+ for commercial platforms with CMS and booking workflows. Full source code ownership at launch.',
       },
       {
         question: 'Do you work with businesses outside the city centre?',
@@ -162,11 +162,11 @@ export const locations: LocationPageData[] = [
     country: 'United Kingdom',
     region: 'Scotland',
     currency: 'GBP',
-    starterPrice: '£895',
-    professionalPrice: '£2,495',
+    starterPrice: '£2,500',
+    professionalPrice: '£5,000',
     title: 'Web Design Edinburgh | Bespoke Websites for Scottish Businesses | TheoMedia',
     description:
-      'Custom web design for Edinburgh and Scotland. Hospitality, clinics, trades and independent brands. Bespoke sites from £895. Fast, owned, no lock-in.',
+      'Custom web design for Edinburgh and Scotland. Hospitality, clinics, trades and independent brands. Bespoke sites from £2,500. Fast, owned, no lock-in.',
     h1: 'Web design in Edinburgh for hospitality, clinics and independent brands.',
     intro:
       'Edinburgh businesses sell atmosphere, trust and craft — then send visitors to a template that looks like every other Old Town listing. TheoMedia builds custom websites for Scottish hotels, restaurants, clinics and studios that need to convert festival traffic, Google Maps searches and direct bookings without OTA leakage.',
@@ -216,7 +216,7 @@ export const locations: LocationPageData[] = [
       {
         question: 'What does web design cost in Edinburgh?',
         answer:
-          'TheoMedia packages start at £895 for a focused custom site and £2,495 for a Professional commercial build. Specialist booking engines are quoted separately.',
+          'TheoMedia engagements start from £2,500 for a focused digital flagship and £5,000 for a comprehensive commercial build. Custom booking systems and web apps are scoped separately.',
       },
     ],
     relatedWork: [
@@ -231,11 +231,11 @@ export const locations: LocationPageData[] = [
     country: 'Ireland',
     region: 'County Dublin',
     currency: 'EUR',
-    starterPrice: '€1,050',
-    professionalPrice: '€2,950',
+    starterPrice: '€3,000',
+    professionalPrice: '€6,000',
     title: 'Web Design Dublin | Bespoke Websites for Irish Businesses | TheoMedia',
     description:
-      'Web design in Dublin for restaurants, hotels, clinics and Irish brands. Custom websites from €1,050. Genuine Irish phone line. 100% ownership. No lock-in.',
+      'Web design in Dublin for restaurants, hotels, clinics and Irish brands. Custom websites from €3,000. Genuine Irish phone line. 100% ownership. No lock-in.',
     h1: 'Web design in Dublin — custom sites for Irish businesses, priced in Euro.',
     intro:
       'Dublin operators do not need a London agency pretending to understand Ireland. TheoMedia is a founder-led studio with a genuine Irish contact line (+353 85 225 8004), Euro pricing, and custom websites for restaurants, hotels, clinics and makers across Dublin city and county.',
@@ -275,7 +275,7 @@ export const locations: LocationPageData[] = [
       {
         question: 'How much does web design in Dublin cost?',
         answer:
-          'TheoMedia Starter websites for Dublin businesses start at €1,050. Professional commercial sites are €2,950. Bespoke booking engines and ecommerce start from €5,850. You own the source code at launch.',
+          'TheoMedia digital flagship engagements for Dublin businesses start at €3,000. Comprehensive commercial platforms are typically €6,000–€10,000+. Bespoke booking engines and custom web software are scoped from €8,000+. You own the source code at launch.',
       },
       {
         question: 'Is this different from your Ireland page?',
@@ -300,11 +300,11 @@ export const locations: LocationPageData[] = [
     country: 'United Kingdom',
     region: 'West Midlands',
     currency: 'GBP',
-    starterPrice: '£895',
-    professionalPrice: '£2,495',
+    starterPrice: '£2,500',
+    professionalPrice: '£5,000',
     title: 'Web Design Birmingham | Custom Websites for West Midlands Businesses | TheoMedia',
     description:
-      'Bespoke web design in Birmingham and the West Midlands. Custom sites for trades, hospitality, clinics and retailers from £895. Fast, owned, no lock-in.',
+      'Bespoke web design in Birmingham and the West Midlands. Custom sites for trades, hospitality, clinics and retailers from £2,500. Fast, owned, no lock-in.',
     h1: 'Web design in Birmingham for trades, hospitality and independent brands.',
     intro:
       'Birmingham is the UK’s second city and still underserved by serious independent web design. Too many West Midlands businesses run on cheap WordPress themes while competing for high-ticket jobs. TheoMedia builds custom, high-performance websites for contractors, restaurants, clinics and retailers who want enquiries, not a digital brochure.',
@@ -337,14 +337,14 @@ export const locations: LocationPageData[] = [
       {
         title: 'Small business',
         href: '/industries/small-business-website-design',
-        note: 'Fixed-price custom sites from £895 for independent West Midlands operators.',
+        note: 'Custom studio sites from £2,500 for independent West Midlands operators.',
       },
     ],
     faqs: [
       {
         question: 'How much does web design cost in Birmingham?',
         answer:
-          'Custom TheoMedia websites start at £895. Professional builds are £2,495. That undercuts most Birmingham and West Midlands agencies while delivering owned Next.js code instead of a rented builder.',
+          'Custom TheoMedia website engagements start from £2,500 for digital flagships, with commercial platforms typically at £5,000–£10,000+. You receive owned Next.js code instead of a rented builder.',
       },
       {
         question: 'Do you work across the West Midlands?',

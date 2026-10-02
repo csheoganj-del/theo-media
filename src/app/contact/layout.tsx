@@ -5,7 +5,7 @@ import JsonLd from '@/components/seo/JsonLd';
 export const metadata: Metadata = pageMeta({
   title: 'Start a Web Design Project | UK & Ireland | TheoMedia',
   description:
-    'Start a custom web design project with TheoMedia. Founder-led studio for UK and Ireland businesses. Fixed packages from £895 / €1,050. Reply within one working day.',
+    'Start a custom web design or digital systems project with TheoMedia. Independent studio for UK, Ireland and international businesses. Engagements from £2,500 / €3,000 / $3,500. Direct founder contact.',
   path: '/contact',
 });
 

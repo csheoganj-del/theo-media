@@ -6,8 +6,9 @@ import { SITE, NAV_LINKS } from '@/lib/constants';
 
 const capabilities = [
   { label: 'Bespoke Web Design', href: '/web-design' },
-  { label: 'Community Build (£495)', href: '/community-build' },
+  { label: 'Studio Investment', href: '/pricing' },
   { label: 'Business Software', href: '/business-software' },
+  { label: 'Original Software', href: '/software' },
   { label: 'All Capabilities →', href: '/services' },
 ];
 
@@ -40,10 +41,11 @@ const cities = [
 
 export function Footer() {
   const pathname = usePathname();
-  const isHomepageOrContact = pathname === '/' || pathname === '/contact';
+  const isSoftware = pathname === '/software' || pathname.startsWith('/software/');
+  const isHomepageOrContact = pathname === '/' || pathname === '/contact' || isSoftware;
 
   return (
-    <footer className="bg-near-black text-bone">
+    <footer className="cinematic-dark bg-[#11110F] text-[#F2EEE6] border-t border-[#262420]">
       {/* ── Final CTA Section (Displayed only on subpages where no dedicated page CTA exists) ── */}
       {!isHomepageOrContact && (
         <>
@@ -87,13 +89,15 @@ export function Footer() {
           {/* Brand & Direct Contact */}
           <div className="lg:col-span-1">
             <Link
-              href="/"
+              href={isSoftware ? '/software' : '/'}
               className="text-[20px] md:text-[24px] font-sans font-bold tracking-[0.15em] uppercase text-bone block mb-4"
             >
-              THEOMEDIA
+              {isSoftware ? 'GURJAR' : 'THEOMEDIA'}
             </Link>
             <p className="text-[14px] text-bone/50 leading-relaxed max-w-[280px] mb-6">
-              Independent Web Design &amp; Digital Product Studio. Crafting distinctive websites and high-conversion digital flagships across the UK and Ireland.
+              {isSoftware
+                ? 'Original local-first software. Traffic, Face, Space and Speed. Home and licenses at mansinghgurjar.in.'
+                : 'Independent digital studio combining strategy, creative direction, web design and digital engineering for ambitious businesses across the UK, Ireland, and selected international clients.'}
             </p>
             <div className="space-y-2 text-[13px]">
               <div>
@@ -115,7 +119,7 @@ export function Footer() {
               <div className="pt-2">
                 <Link
                   href="/web-design-ireland"
-                  className="text-gold/90 hover:text-gold text-[12px] tracking-wide uppercase transition-colors inline-block"
+                  className="text-[#A98864] hover:text-[#F2EEE6] text-[12px] font-mono tracking-wider uppercase transition-colors inline-block"
                 >
                   Ireland Studio Hub →
                 </Link>

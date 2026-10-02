@@ -19,16 +19,16 @@ import JsonLd from '@/components/seo/JsonLd';
 import { breadcrumbJsonLd, faqJsonLd, offerCatalogJsonLd } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Transparent Web Design Pricing UK & Ireland | Fixed Packages from £895 / €1,050',
+  title: 'Investment & Scoping | Independent Digital Studio | TheoMedia',
   description:
-    'Transparent web design pricing for UK and Ireland businesses. Clear fixed packages from £895 / €1,050 with 100% source code ownership and zero monthly lock-in.',
+    'Scope-first investment for bespoke digital flagships, commercial platforms, and custom software systems across the UK, Ireland, and internationally. 100% client-owned.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/pricing',
   },
   openGraph: {
-    title: 'Transparent Web Design Pricing UK & Ireland | TheoMedia',
+    title: 'Investment & Scoping | TheoMedia',
     description:
-      'Clear fixed packages from £895 / €1,050 with 100% client ownership and zero monthly platform lock-in.',
+      'Scope-first investment for bespoke digital flagships, commercial platforms, and custom software. 100% client-owned with zero monthly lock-in.',
     url: 'https://www.theomedia.co.uk/pricing',
     type: 'website',
   },
@@ -43,7 +43,7 @@ export default function PricingPage() {
           faqJsonLd(faqItems),
           breadcrumbJsonLd([
             { name: 'Home', path: '/' },
-            { name: 'Pricing', path: '/pricing' },
+            { name: 'Investment', path: '/pricing' },
           ]),
         ]}
       />
@@ -51,29 +51,29 @@ export default function PricingPage() {
       <section className="pt-24 pb-20 md:pt-32 md:pb-24">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl text-center">
           <FadeIn>
+            <div className="text-[11px] font-mono tracking-widest uppercase text-bronze mb-4">
+              STUDIO ENGAGEMENT &amp; SCOPING
+            </div>
             <h1 className="text-editorial-xl text-near-black mb-6">
-              KNOW THE PRICE.
+              SCOPE FIRST.
             </h1>
             <p className="text-2xl md:text-3xl font-display text-charcoal mb-8">
-              Then decide if we&apos;re worth it.
+              Then the right level of build.
             </p>
             <p className="text-lg text-stone font-sans max-w-2xl mx-auto mb-6">
-              Clear packages. Clear deliverables. No guessing what your website will cost.
+              Built around your commercial problem, not an arbitrary template or page count. Engagements typically begin from £2,500 (€3,000 / $3,500).
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 text-[13px] font-sans">
               <Link
                 href="/journal/how-much-does-a-website-cost-uk"
                 className="text-stone hover:text-near-black border-b border-stone/40 pb-0.5 transition-colors"
               >
-                Read our 2026 UK Website Cost Guide →
+                Read our UK Website Investment Guide →
               </Link>
               <span className="text-stone/30">·</span>
-              <Link
-                href="/web-design-ireland"
-                className="text-stone hover:text-near-black border-b border-stone/40 pb-0.5 transition-colors"
-              >
-                Need pricing in Euro (€)? View Ireland Studio →
-              </Link>
+              <span className="text-stone">
+                Multi-currency billing: GBP (£) · EUR (€) · USD ($)
+              </span>
             </div>
           </FadeIn>
         </div>
@@ -84,17 +84,20 @@ export default function PricingPage() {
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {pricingTiers.map((tier, idx) => {
-              const isFeatured = tier.name === 'Professional';
+              const isFeatured = tier.id === 'commercial';
               
               return (
                 <FadeIn key={tier.id} delay={idx * 0.1} className="flex h-full">
                   <div className={`flex flex-col w-full bg-ivory p-8 md:p-10 border ${isFeatured ? 'border-2 border-near-black relative shadow-lg' : 'border-near-black/10'}`}>
                     {isFeatured && (
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-near-black text-bone px-4 py-1 text-[10px] font-sans font-semibold tracking-widest uppercase">
-                        Featured Tier
+                        Most Requested
                       </div>
                     )}
                     
+                    <div className="text-[11px] font-mono tracking-widest uppercase text-bronze mb-2">
+                      {tier.number} · {tier.name}
+                    </div>
                     <h3 className="font-display text-3xl text-near-black mb-2">{tier.name}</h3>
                     <p className="font-sans text-stone mb-8 min-h-[96px] lg:min-h-[120px] text-[15px] leading-relaxed">{tier.description}</p>
                     
@@ -102,20 +105,20 @@ export default function PricingPage() {
                       <div className="flex items-end gap-2 mb-2">
                         <span className="font-display text-4xl text-near-black">{tier.price}</span>
                       </div>
-                      <p className="font-sans text-sm text-stone">{""}</p>
+                      <p className="font-sans text-xs text-stone">{tier.tagline}</p>
                     </div>
                     
                     <div className="flex-grow mb-10">
                       <ul className="space-y-4">
                         {tier.includes.map((item: string, i: number) => (
                           <li key={i} className="flex items-start gap-3">
-                            <span className="text-near-black/50 text-[11px] mt-1">✦</span>
+                            <span className="text-bronze text-[11px] mt-1">✦</span>
                             <span className="font-sans text-charcoal text-sm">{item}</span>
                           </li>
                         ))}
                         {tier.expandedIncludes?.map((item: string, i: number) => (
                           <li key={`exp-${i}`} className="flex items-start gap-3 opacity-80">
-                            <span className="text-near-black/50 text-[11px] mt-1">✦</span>
+                            <span className="text-bronze text-[11px] mt-1">✦</span>
                             <span className="font-sans text-charcoal text-sm">{item}</span>
                           </li>
                         ))}
@@ -124,11 +127,11 @@ export default function PricingPage() {
                     
                     <div className="mt-auto pt-6 border-t border-near-black/10 flex flex-col gap-4">
                       <Button 
-                        href={`/contact?package=${tier.id}`} 
+                        href={`/contact?engagement=${tier.id}`} 
                         variant={isFeatured ? 'primary' : 'secondary'}
                         className="w-full justify-center text-[12px] font-sans font-semibold tracking-widest uppercase"
                       >
-                        Enquire Now →
+                        {tier.ctaText} →
                       </Button>
                       <a 
                         href={`https://wa.me/${SITE.whatsappUrl.replace(/[^0-9]/g, '')}`} 
@@ -136,7 +139,7 @@ export default function PricingPage() {
                         rel="noopener noreferrer"
                         className="text-center font-sans text-sm text-stone hover:text-near-black transition-colors"
                       >
-                        Or message on WhatsApp ↗
+                        Direct WhatsApp consultation ↗
                       </a>
                     </div>
                   </div>
@@ -170,7 +173,7 @@ export default function PricingPage() {
                 ))}
               </ul>
               <div className="mt-8 pt-6 border-t border-bone/10">
-                <p className="font-sans text-bone font-medium">From £10,000+ / Custom Quoted</p>
+                <p className="font-sans text-bone font-medium">Bespoke architectures scoped from £4,500 – £15,000+</p>
               </div>
             </FadeIn>
             

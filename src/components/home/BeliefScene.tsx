@@ -1,40 +1,74 @@
 import FadeIn from '@/components/ui/FadeIn';
-import SectionLabel from '@/components/ui/SectionLabel';
 
 export default function BeliefScene() {
   return (
-    <section className="bg-ivory text-near-black py-28 md:py-36 lg:py-44 px-5 md:px-8 lg:px-12 border-y border-near-black/5 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
-        <FadeIn className="mb-6">
-          <SectionLabel>OUR CONVICTION</SectionLabel>
-        </FadeIn>
+    <section className="bg-warm-ivory text-primary-ink py-28 md:py-36 lg:py-44 px-5 md:px-8 lg:px-12 border-b border-border-rule relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-20 md:mb-28">
+          <div className="lg:col-span-5">
+            <FadeIn>
+              <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
+                04 / STUDIO PROPOSITION
+              </span>
+              <h2 className="font-display text-[clamp(2.4rem,4.5vw,4.5rem)] leading-[1.02] tracking-[-0.015em] text-primary-ink uppercase font-normal">
+                BUILT FOR BUSINESSES THAT HAVE OUTGROWN ORDINARY WEB DESIGN.
+              </h2>
+            </FadeIn>
+          </div>
 
-        <div className="max-w-[980px] w-full">
-          <h2 className="font-display text-editorial-lg leading-[1.05] tracking-tight mb-8 text-near-black">
-            YOUR WEBSITE <span className="font-display italic">SPEAKS</span> BEFORE YOU DO.
-          </h2>
-          
-          <FadeIn delay={0.2} className="max-w-2xl mx-auto mb-14">
-            <p className="font-sans text-stone text-[17px] md:text-[20px] leading-relaxed">
-              Before a client reserves a room, books a table, or requests a project quote, they form an unshakeable opinion in four seconds. We build digital flagships that convert that moment into enduring trust.
-            </p>
+          <div className="lg:col-span-7 flex flex-col justify-end pt-2">
+            <FadeIn delay={0.1}>
+              <p className="font-sans text-[17px] md:text-[20px] text-secondary-text leading-[1.6] max-w-2xl mb-6">
+                Before a client reserves a room, books a table or requests an architectural quote, they evaluate your stature in seconds. Generic templates signal ordinary service. We build digital flagships that establish immediate commercial authority.
+              </p>
+              <div className="text-[11px] font-mono tracking-[0.14em] uppercase text-muted-text">
+                STRATEGY · ART DIRECTION · BESPOKE ENGINEERING
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+
+        {/* 3 Pillars Architectural Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-12 border-t border-border-rule">
+          <FadeIn delay={0.15}>
+            <div className="flex flex-col gap-3">
+              <span className="font-mono text-[11px] text-oxidised-bronze tracking-[0.16em] uppercase font-medium">
+                01 / STRATEGY
+              </span>
+              <h3 className="font-display text-[26px] md:text-[30px] leading-tight text-primary-ink uppercase font-normal">
+                Commercial Problem First
+              </h3>
+              <p className="font-sans text-[15px] text-secondary-text leading-relaxed">
+                Clear positioning, refined buyer journeys and conversion architecture before a single line of code is written.
+              </p>
+            </div>
           </FadeIn>
 
-          <FadeIn delay={0.3} className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-near-black/10 text-left">
-            <div>
-              <span className="font-mono text-[11px] text-stone tracking-widest uppercase block mb-2">01 / ARCHITECTURE</span>
-              <h3 className="font-display text-[22px] text-near-black mb-2">Bespoke Engineering</h3>
-              <p className="font-sans text-[14px] text-stone leading-relaxed">Clean Next.js & TypeScript codebases with zero bloated template plugins or sluggish page builders.</p>
+          <FadeIn delay={0.25}>
+            <div className="flex flex-col gap-3">
+              <span className="font-mono text-[11px] text-oxidised-bronze tracking-[0.16em] uppercase font-medium">
+                02 / ART DIRECTION
+              </span>
+              <h3 className="font-display text-[26px] md:text-[30px] leading-tight text-primary-ink uppercase font-normal">
+                Editorial Restraint
+              </h3>
+              <p className="font-sans text-[15px] text-secondary-text leading-relaxed">
+                European editorial composition, deliberate negative space and high-contrast typography that command respect.
+              </p>
             </div>
-            <div>
-              <span className="font-mono text-[11px] text-stone tracking-widest uppercase block mb-2">02 / SOVEREIGNTY</span>
-              <h3 className="font-display text-[22px] text-near-black mb-2">100% Client Ownership</h3>
-              <p className="font-sans text-[14px] text-stone leading-relaxed">Zero monthly platform extortion. You own your code, your assets, your hosting, and your customer data forever.</p>
-            </div>
-            <div>
-              <span className="font-mono text-[11px] text-stone tracking-widest uppercase block mb-2">03 / CONVERSION</span>
-              <h3 className="font-display text-[22px] text-near-black mb-2">Frictionless Commercial Flow</h3>
-              <p className="font-sans text-[14px] text-stone leading-relaxed">Direct bookings, tailored enquiry journeys, and sub-second page loads engineered to convert high-value clients.</p>
+          </FadeIn>
+
+          <FadeIn delay={0.35}>
+            <div className="flex flex-col gap-3">
+              <span className="font-mono text-[11px] text-oxidised-bronze tracking-[0.16em] uppercase font-medium">
+                03 / ENGINEERING
+              </span>
+              <h3 className="font-display text-[26px] md:text-[30px] leading-tight text-primary-ink uppercase font-normal">
+                100% Client Ownership
+              </h3>
+              <p className="font-sans text-[15px] text-secondary-text leading-relaxed">
+                Custom Next.js & TypeScript codebases with zero proprietary lock-in. You own your repository, hosting and data entirely.
+              </p>
             </div>
           </FadeIn>
         </div>
@@ -42,4 +76,3 @@ export default function BeliefScene() {
     </section>
   );
 }
-

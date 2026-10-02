@@ -27,7 +27,7 @@ export const industries: Industry[] = [
   },
   {
     name: 'Luxury & DTC Ecommerce',
-    priorities: ['Sub-Second Checkout', 'Apple Pay', 'Zero App Bloat'],
+    priorities: ['Frictionless Checkout', 'Apple Pay', 'Zero App Bloat'],
     href: '/industries/ecommerce-website-design',
   },
   {
@@ -37,7 +37,7 @@ export const industries: Industry[] = [
   },
   {
     name: 'Small & Independent Businesses',
-    priorities: ['Fixed Price £895+', '100% Owned Code', 'Zero Lock-in'],
+    priorities: ['Bespoke Architecture', '100% Client Owned', 'Zero Lock-in'],
     href: '/industries/small-business-website-design',
   },
   {

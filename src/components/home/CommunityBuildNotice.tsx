@@ -10,10 +10,9 @@ const STORAGE_KEY = 'theomedia_cb_notice_dismissed_v2026';
 
 export default function CommunityBuildNotice() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hasDismissed, setHasDismissed] = useState(true); // default true until mounted check
+  const [hasDismissed, setHasDismissed] = useState(true);
 
   useEffect(() => {
-    // Check if dismissed previously in this browser session/storage
     try {
       const dismissed = localStorage.getItem(STORAGE_KEY);
       if (dismissed === 'true') {
@@ -38,17 +37,15 @@ export default function CommunityBuildNotice() {
       cleanup();
     };
 
-    // Trigger after 9 seconds
     timer = setTimeout(() => {
       triggerNotice();
-    }, 9000);
+    }, 12000);
 
-    // Or trigger after scrolling ~35% of the page
     const handleScroll = () => {
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (scrollHeight > 0) {
         const scrollPercent = (window.scrollY / scrollHeight) * 100;
-        if (scrollPercent >= 35) {
+        if (scrollPercent >= 45) {
           triggerNotice();
         }
       }
@@ -60,7 +57,6 @@ export default function CommunityBuildNotice() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-
     return cleanup;
   }, []);
 
@@ -69,9 +65,7 @@ export default function CommunityBuildNotice() {
     setHasDismissed(true);
     try {
       localStorage.setItem(STORAGE_KEY, 'true');
-    } catch {
-      // Storage unavailable or blocked
-    }
+    } catch {}
   };
 
   const handleClick = () => {
@@ -86,56 +80,51 @@ export default function CommunityBuildNotice() {
     <AnimatePresence>
       {isVisible && (
         <motion.aside
-          initial={{ opacity: 0, y: 24, scale: 0.98 }}
+          initial={{ opacity: 0, y: 20, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.98 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           role="region"
           aria-label="Community Build Programme Announcement"
-          className="fixed z-50 bottom-24 md:bottom-6 right-4 left-4 md:left-auto md:max-w-sm pointer-events-auto"
+          className="fixed z-50 bottom-20 md:bottom-6 right-4 left-4 md:left-auto md:max-w-sm pointer-events-auto"
         >
-          <div className="bg-[#141210]/95 text-bone border border-bone/15 p-5 md:p-6 rounded-sm shadow-[0_12px_40px_rgba(0,0,0,0.45)] backdrop-blur-md relative">
-            {/* Close Button */}
+          <div className="bg-[#11110F]/95 text-[#F2EEE6] border border-[#262420] p-5 md:p-6 rounded-[1px] shadow-2xl backdrop-blur-md relative">
             <button
               onClick={handleDismiss}
               aria-label="Dismiss announcement"
-              className="absolute top-3 right-3 text-bone/40 hover:text-bone text-lg p-1.5 leading-none transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-warm-accent rounded-xs"
+              className="absolute top-3 right-3 text-[#AAA49A]/60 hover:text-[#F2EEE6] text-lg p-1 leading-none transition-colors"
             >
               ×
             </button>
 
-            {/* Header / Eyebrow & Status */}
             <div className="flex items-center gap-2 mb-2 pr-6">
-              <span className="text-[10px] font-sans font-semibold tracking-[0.2em] uppercase text-warm-accent">
-                COMMUNITY BUILD · AUTUMN 2026
+              <span className="text-[10px] font-mono tracking-[0.16em] uppercase text-[#A98864] font-medium">
+                COMMUNITY BUILD · 2026
               </span>
             </div>
 
-            {/* Status Pill */}
-            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-bone/10 rounded-xs text-[10px] font-mono text-bone/80 uppercase tracking-wider mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#161513] border border-[#262420] rounded-[1px] text-[10px] font-mono text-[#AAA49A] uppercase tracking-wider mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#A98864]" />
               <span>{currentStatus}</span>
             </div>
 
-            {/* Body */}
-            <p className="font-sans text-[13px] md:text-[14px] text-bone/80 leading-snug mb-4">
-              We’re selecting up to 3 independent businesses each month for a £495 TheoMedia website build.
+            <p className="font-sans text-[13px] md:text-[14px] text-[#AAA49A] leading-snug mb-4">
+              We select up to 3 independent businesses each month for a subsidized £495 TheoMedia website build.
             </p>
 
-            {/* CTA */}
-            <div className="flex items-center justify-between pt-2 border-t border-bone/10">
+            <div className="flex items-center justify-between pt-3 border-t border-[#262420]">
               <Link
                 href="/community-build"
                 onClick={handleClick}
-                className="text-[11px] font-sans font-semibold uppercase tracking-[0.16em] text-bone hover:text-warm-accent transition-colors inline-flex items-center gap-1.5 group"
+                className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#F2EEE6] hover:text-[#A98864] transition-colors inline-flex items-center gap-1.5 group"
               >
-                <span>View the programme</span>
-                <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                <span>Programme Details</span>
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
               </Link>
 
               <button
                 onClick={handleDismiss}
-                className="text-[11px] font-sans text-bone/40 hover:text-bone/70 uppercase tracking-wider transition-colors"
+                className="text-[11px] font-mono text-[#AAA49A]/60 hover:text-[#AAA49A] uppercase tracking-wider transition-colors"
               >
                 Dismiss
               </button>

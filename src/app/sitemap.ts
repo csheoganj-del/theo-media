@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
+import { PRODUCTS_SITE, softwareProducts } from '@/data/software';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.theomedia.co.uk';
@@ -16,13 +17,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/web-design-edinburgh`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${baseUrl}/web-design-dublin`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/business-software`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/software`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${baseUrl}/industries`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/work`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/case-studies`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/journal`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/community-build`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/studio`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
@@ -91,11 +92,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  const softwarePages: MetadataRoute.Sitemap = [
+    {
+      url: `${PRODUCTS_SITE.url}/software`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    ...softwareProducts.map((product) => ({
+      url: `${PRODUCTS_SITE.url}/software/${product.slug}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    })),
+  ];
+
   return [
     ...corePages,
     ...industryPages,
     ...journalPages,
     ...caseStudyPages,
     ...projectPages,
+    ...softwarePages,
   ];
 }

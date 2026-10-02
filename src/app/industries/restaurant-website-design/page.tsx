@@ -262,20 +262,20 @@ export default function RestaurantWebsiteDesignPage() {
             Upgrade your restaurant&apos;s digital presence.
           </h2>
           <p className="font-sans text-bone/70 text-[17px] leading-relaxed mb-10">
-            Tell us about your restaurant, bar or dining group. We provide a bespoke project review, fixed timeline, and transparent pricing.
+            Tell us about your restaurant, bar or dining group. We provide a bespoke project review, defined timeline, and transparent investment scope.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link
               href="/contact"
               className="w-full sm:w-auto px-8 py-4 bg-bone text-near-black text-[13px] font-sans font-semibold tracking-widest uppercase rounded-sm hover:bg-ivory transition-colors"
             >
-              Start Restaurant Enquiry →
+              Discuss a Hospitality Project →
             </Link>
             <Link
               href="/pricing"
               className="w-full sm:w-auto px-8 py-4 border border-bone/30 text-bone text-[13px] font-sans font-semibold tracking-widest uppercase rounded-sm hover:bg-bone/10 transition-colors"
             >
-              View Studio Pricing (£895 – £4,995+)
+              View Studio Investment (from £2,500)
             </Link>
           </div>
         </div>

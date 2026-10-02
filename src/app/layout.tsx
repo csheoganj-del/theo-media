@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Instrument_Serif } from 'next/font/google';
+import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
@@ -18,6 +18,12 @@ const instrumentSerif = Instrument_Serif({
   display: 'swap',
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-mono',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 export const viewport: Viewport = {
   themeColor: '#F5F0E8',
   colorScheme: 'light',
@@ -29,13 +35,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.theomedia.co.uk'),
   title: {
-    default: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
+    default: 'Independent Digital Studio & Web Engineering | TheoMedia',
     template: '%s',
   },
   description:
-    'Independent web design studio for UK and Ireland businesses. Custom websites, booking engines and ecommerce from £895 / €1,050. 100% client-owned. No templates, no lock-in.',
+    'Independent digital studio combining strategy, creative direction, web design and digital engineering for ambitious businesses across the UK, Ireland and selected international clients. Founder-led, 100% client-owned.',
   keywords: [
-    'web design UK',
+    'independent digital studio',
     'web design studio UK',
     'custom website development UK',
     'bespoke website design UK',
@@ -44,8 +50,8 @@ export const metadata: Metadata = {
     'web design Dublin',
     'restaurant website design UK',
     'hotel website design UK',
-    'small business website design UK',
-    'Squarespace alternative UK',
+    'commercial web platform',
+    'custom web application',
   ],
   authors: [{ name: 'TheoMedia' }],
   creator: 'TheoMedia',
@@ -67,23 +73,23 @@ export const metadata: Metadata = {
     alternateLocale: ['en_IE'],
     url: 'https://www.theomedia.co.uk',
     siteName: 'TheoMedia',
-    title: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
+    title: 'Independent Digital Studio & Web Engineering | TheoMedia',
     description:
-      'Independent web design studio. Custom websites, booking engines and ecommerce for ambitious businesses across the UK and Ireland. From £895 / €1,050.',
+      'Independent digital studio engineering high-performance websites, digital flagships, and custom business software for ambitious brands across the UK, Ireland, and selected international clients.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'TheoMedia — Independent Web Design & Digital Product Studio',
+        alt: 'TheoMedia — Independent Digital Studio & Web Engineering',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Web Design Studio UK & Ireland | Bespoke Websites from £895 | TheoMedia',
+    title: 'Independent Digital Studio & Web Engineering | TheoMedia',
     description:
-      'Custom websites and business software from £895 / €1,050. Founder-led, 100% client-owned, zero platform lock-in.',
+      'High-end websites, digital flagships, and custom software. Founder-led, 100% client-owned, zero platform lock-in.',
     images: ['/og-image.jpg'],
   },
   icons: {
@@ -100,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en-GB"
-      className={`${inter.variable} ${instrumentSerif.variable} antialiased`}
+      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <head>
         <script
@@ -139,12 +145,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   },
                   image: 'https://www.theomedia.co.uk/og-image.jpg',
                   description:
-                    'Independent web design and digital product studio engineering distinctive bespoke websites, ecommerce platforms and custom digital systems across the UK and Ireland.',
+                    'Independent digital studio combining strategy, creative direction, web design, and digital engineering for ambitious businesses.',
                   email: 'hello@theomedia.co.uk',
                   telephone: '+353852258004',
-                  slogan: 'Websites and business software, built like products.',
-                  priceRange: '£895 – £9,500+ (€1,050 – €11,000+)',
-                  currenciesAccepted: 'GBP, EUR',
+                  slogan: 'High-end design. Modern engineering. Direct founder collaboration.',
+                  priceRange: '£2,500 – £15,000+ (€3,000 – €18,000+ / $3,500 – $20,000+)',
+                  currenciesAccepted: 'GBP, EUR, USD',
                   paymentAccepted: 'Bank Transfer, Credit Card, Stripe, Apple Pay',
                   foundingLocation: {
                     '@type': 'Country',
@@ -156,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       telephone: '+353852258004',
                       contactType: 'sales',
                       email: 'hello@theomedia.co.uk',
-                      areaServed: ['GB', 'IE'],
+                      areaServed: ['GB', 'IE', 'US'],
                       availableLanguage: ['English'],
                     },
                   ],
@@ -167,6 +173,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   areaServed: [
                     { '@type': 'Country', name: 'United Kingdom' },
                     { '@type': 'Country', name: 'Ireland' },
+                    { '@type': 'Country', name: 'United States' },
                     { '@type': 'City', name: 'London' },
                     { '@type': 'City', name: 'Manchester' },
                     { '@type': 'City', name: 'Birmingham' },
@@ -196,24 +203,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   ],
                   hasOfferCatalog: {
                     '@type': 'OfferCatalog',
-                    name: 'Web Design Packages',
+                    name: 'TheoMedia Studio Engagements',
                     itemListElement: [
                       {
                         '@type': 'Offer',
                         itemOffered: {
                           '@type': 'Service',
-                          name: 'Starter Website Design',
+                          name: 'Digital Flagship',
                         },
-                        price: '895',
+                        price: '2500',
                         priceCurrency: 'GBP',
                       },
                       {
                         '@type': 'Offer',
                         itemOffered: {
                           '@type': 'Service',
-                          name: 'Professional Website Design',
+                          name: 'Commercial Platform',
                         },
-                        price: '2495',
+                        price: '5000',
+                        priceCurrency: 'GBP',
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Digital Systems',
+                        },
+                        price: '8000',
                         priceCurrency: 'GBP',
                       },
                     ],
@@ -224,7 +240,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-bone text-near-black font-sans">
+      <body className="min-h-screen flex flex-col bg-warm-ivory text-primary-ink font-sans selection:bg-primary-ink selection:text-warm-ivory">
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>

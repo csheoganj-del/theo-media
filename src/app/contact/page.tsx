@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import FadeIn from '@/components/ui/FadeIn';
 import SectionLabel from '@/components/ui/SectionLabel';
@@ -8,74 +8,110 @@ import { SITE } from '@/lib/constants';
 
 type FormData = {
   projectType: string[];
-  businessType: string;
-  goals: string[];
-  stage: string;
+  sector: string;
+  websiteUrl: string;
+  projectSummary: string;
+  investment: string;
+  timeline: string;
   name: string;
   business: string;
   email: string;
   phone: string;
-  message: string;
 };
 
 const INITIAL_DATA: FormData = {
   projectType: [],
-  businessType: '',
-  goals: [],
-  stage: '',
+  sector: '',
+  websiteUrl: '',
+  projectSummary: '',
+  investment: '£2,500 – £5,000 (€3,000 – €6,000 / $3,500 – $6,500)',
+  timeline: 'Within 1–2 months',
   name: '',
   business: '',
   email: '',
   phone: '',
-  message: '',
 };
 
 function ContactFormInner() {
   const searchParams = useSearchParams();
   const careParam = searchParams.get('care');
+  const projectParam = searchParams.get('project');
+  const engagementParam = searchParams.get('engagement') || searchParams.get('package');
+
   const validCarePlan =
     careParam === 'essential'
-      ? 'Essential Care'
+      ? 'Essential Care (£45/mo)'
       : careParam === 'growth'
-      ? 'Growth Care'
+      ? 'Growth Care (£95/mo)'
       : null;
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(INITIAL_DATA);
   const [copied, setCopied] = useState(false);
-  const totalSteps = 7;
+  const totalSteps = 4;
+
+  useEffect(() => {
+    if (engagementParam) {
+      if (engagementParam.includes('flagship') || engagementParam === 'starter') {
+        setFormData((prev) => ({
+          ...prev,
+          projectType: ['Digital Flagship'],
+          investment: '£2,500 – £5,000 (€3,000 – €6,000 / $3,500 – $6,500)',
+        }));
+      } else if (engagementParam.includes('commercial') || engagementParam === 'professional') {
+        setFormData((prev) => ({
+          ...prev,
+          projectType: ['Commercial Platform / CMS'],
+          investment: '£5,000 – £10,000 (€6,000 – €12,000 / $6,500 – $13,000)',
+        }));
+      } else if (engagementParam.includes('system') || engagementParam === 'bespoke') {
+        setFormData((prev) => ({
+          ...prev,
+          projectType: ['Digital Systems / Custom Software'],
+          investment: '£10,000 – £20,000 (€12,000 – €24,000 / $13,000 – $26,000)',
+        }));
+      }
+    }
+    if (projectParam) {
+      setFormData((prev) => ({
+        ...prev,
+        projectSummary: `Referencing studio project: ${projectParam}`,
+      }));
+    }
+  }, [engagementParam, projectParam]);
 
   const handleNext = () => setStep((prev) => Math.min(prev + 1, totalSteps));
   const handlePrev = () => setStep((prev) => Math.max(prev - 1, 1));
 
-  const handleCheckbox = (field: 'projectType' | 'goals', value: string) => {
+  const handleCheckbox = (value: string) => {
     setFormData((prev) => ({
       ...prev,
-      [field]: prev[field].includes(value)
-        ? prev[field].filter((item) => item !== value)
-        : [...prev[field], value],
+      projectType: prev.projectType.includes(value)
+        ? prev.projectType.filter((item) => item !== value)
+        : [...prev.projectType, value],
     }));
   };
 
-  const getSummaryText = () => `Name: ${formData.name || 'N/A'}
+  const getSummaryText = () => `Client: ${formData.name || 'N/A'}
 Business: ${formData.business || 'N/A'}
 Email: ${formData.email || 'N/A'}
-Phone: ${formData.phone || 'N/A'}
+Phone / WhatsApp: ${formData.phone || 'N/A'}
 
--- PROJECT DETAILS --
-${validCarePlan ? `Selected Care Plan: ${validCarePlan} (£${validCarePlan === 'Essential Care' ? '45' : '95'}/month)\n` : ''}Type: ${formData.projectType.join(', ') || 'None selected'}
-Business Sector: ${formData.businessType || 'None selected'}
-Goals: ${formData.goals.join(', ') || 'None selected'}
-Stage: ${formData.stage || 'None selected'}
+-- ENGAGEMENT DETAILS --
+${validCarePlan ? `Selected Care Plan: ${validCarePlan}\n` : ''}Disciplines: ${formData.projectType.join(', ') || 'Not specified'}
+Sector: ${formData.sector || 'Not specified'}
+Current Website: ${formData.websiteUrl || 'None / New Venture'}
+Target Investment: ${formData.investment || 'Scoping required'}
+Target Timeline: ${formData.timeline || 'Flexible'}
 
--- MESSAGE --
-${formData.message || 'No additional notes'}`;
+-- PROJECT SCOPE & CONTEXT --
+${formData.projectSummary || 'No additional notes provided'}`;
 
   const generateMailto = () => {
     const subject = encodeURIComponent(
       validCarePlan
         ? `Care Plan Enquiry (${validCarePlan}): ${formData.business || 'Client'}`
-        : `New Project Enquiry: ${formData.business || 'Client'}`
+        : `Studio Project Brief: ${formData.business || formData.name || 'New Client'}`
     );
     const body = encodeURIComponent(getSummaryText());
     return `mailto:${SITE.email}?subject=${subject}&body=${body}`;
@@ -83,8 +119,8 @@ ${formData.message || 'No additional notes'}`;
 
   const generateWhatsAppUrl = () => {
     const introText = validCarePlan
-      ? `Hi TheoMedia, I'd like to discuss the ${validCarePlan} plan (£${validCarePlan === 'Essential Care' ? '45' : '95'}/mo)`
-      : `Hi TheoMedia, I'd like to discuss a project`;
+      ? `Hi TheoMedia, I'd like to discuss the ${validCarePlan}`
+      : `Hi TheoMedia, I'd like to discuss an upcoming project`;
     const text = encodeURIComponent(`${introText}:\n\n${getSummaryText()}`);
     return `${SITE.whatsappUrl}?text=${text}`;
   };
@@ -96,324 +132,389 @@ ${formData.message || 'No additional notes'}`;
   };
 
   return (
-    <main className="bg-bone min-h-screen">
-      <section className="dark-section pt-32 pb-24">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+    <main className="bg-warm-ivory min-h-screen text-primary-ink selection:bg-primary-ink selection:text-warm-ivory">
+      {/* Editorial Header */}
+      <section className="cinematic-dark bg-[#11110F] text-[#F2EEE6] pt-32 md:pt-40 pb-20 border-b border-[#262420]">
+        <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
           <FadeIn>
-            <h1 className="text-editorial-xl text-bone mb-6 uppercase">
-              Start a web design project.
+            <div className="text-[11px] font-mono tracking-[0.16em] uppercase text-[#A98864] font-medium block mb-3">
+              DIRECT ARCHITECTURAL BRIEF
+            </div>
+            <h1 className="font-display text-[clamp(2.8rem,5.5vw,5.5rem)] leading-[0.98] uppercase text-[#F2EEE6] mb-6">
+              START A CONVERSATION.
             </h1>
-            <p className="text-lg font-sans text-stone max-w-xl">
-              Tell us about your UK or Ireland business. We reply within one working day with a clear next step — or WhatsApp and call if you prefer.
+            <p className="font-sans text-[17px] md:text-[20px] text-[#AAA49A] max-w-2xl leading-relaxed">
+              Tell us what you are trying to improve. We will reply personally with the most practical next step.
             </p>
           </FadeIn>
         </div>
       </section>
 
+      {/* Main Interaction Section */}
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+        <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             
             {/* Form Column */}
             <div className="w-full lg:w-2/3">
-              <div className="bg-ivory border border-stone/20 p-6 md:p-12 rounded-sm shadow-sm relative">
-                {/* Contextual Care Plan Label */}
+              <div className="bg-light-surface border border-border-rule p-6 md:p-12 rounded-[1px] shadow-sm">
+                
+                {/* Contextual Banner if Care Plan or Project query was passed */}
                 {validCarePlan && (
-                  <div className="mb-8 p-4 bg-bone border border-stone/25 rounded-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                    <div className="flex items-center gap-2.5">
-                      <span className="w-2 h-2 rounded-full bg-warm-accent shrink-0" />
-                      <span className="font-sans font-bold text-xs uppercase tracking-wider text-near-black">
-                        Enquiry: {validCarePlan}
-                      </span>
-                      <span className="text-stone text-xs font-sans">
-                        (£{validCarePlan === 'Essential Care' ? '45' : '95'}/month · Optional Care Plan)
-                      </span>
-                    </div>
-                    <span className="text-[11px] font-sans font-medium text-stone tracking-wider uppercase">
+                  <div className="mb-8 p-4 bg-soft-paper border border-border-rule rounded-[1px] flex items-center justify-between">
+                    <span className="text-[12px] font-mono uppercase tracking-wider text-primary-ink font-semibold">
+                      Care Plan Selected: {validCarePlan}
+                    </span>
+                    <span className="text-[11px] font-mono uppercase text-muted-text">
                       No Lock-in
                     </span>
                   </div>
                 )}
 
-                {/* Progress */}
-                <div className="mb-10 flex items-center gap-4">
-                  <span className="font-sans font-bold text-sm text-near-black">Step {step} of {totalSteps}</span>
-                  <div className="flex-grow h-1 bg-stone/20 rounded-full overflow-hidden">
+                {/* Progress Bar */}
+                <div className="mb-10 flex items-center justify-between gap-4 pb-4 border-b border-border-rule">
+                  <span className="font-mono text-xs uppercase tracking-widest text-oxidised-bronze font-medium">
+                    Stage {step} of {totalSteps}
+                  </span>
+                  <div className="w-48 h-1 bg-border-rule rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-warm-accent transition-all duration-300 ease-out"
+                      className="h-full bg-oxidised-bronze transition-all duration-300 ease-out"
                       style={{ width: `${(step / totalSteps) * 100}%` }}
                     />
                   </div>
                 </div>
 
                 {/* Form Steps */}
-                <div className="min-h-[300px]">
+                <div className="min-h-[340px]">
+                  
+                  {/* STAGE 1: What are you building? */}
                   {step === 1 && (
                     <FadeIn key="step1">
-                      <h2 className="font-display text-3xl text-near-black mb-2 uppercase">What are we building?</h2>
-                      {validCarePlan ? (
-                        <p className="font-sans text-sm text-stone mb-6">
-                          You&apos;re enquiring about our <strong className="text-near-black font-semibold">{validCarePlan}</strong>. Select the type of website or system we will be caring for:
-                        </p>
-                      ) : (
-                        <p className="font-sans text-sm text-stone mb-6">
-                          Select any that apply to your project.
-                        </p>
-                      )}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {['Website', 'Ecommerce', 'Booking Experience', 'Web Application', 'Business Software', 'Not Sure'].map(opt => (
-                          <label key={opt} className="flex items-center gap-3 p-4 border border-stone/20 rounded-sm cursor-pointer hover:border-warm-accent transition-colors">
+                      <div className="text-[11px] font-mono tracking-widest uppercase text-muted-text mb-2">01 / ENGAGEMENT SCOPE</div>
+                      <h2 className="font-display text-3xl md:text-4xl text-primary-ink mb-3 uppercase">What are you looking to build?</h2>
+                      <p className="font-sans text-sm text-secondary-text mb-8 leading-relaxed">
+                        Select the primary areas of requirement for this project.
+                      </p>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                        {[
+                          'Digital Flagship Website',
+                          'Commercial Platform / CMS',
+                          'Custom Ecommerce Experience',
+                          'Booking / Reservation Engine',
+                          'Web Application / Portal',
+                          'Business Software System',
+                        ].map((opt) => (
+                          <label key={opt} className={`flex items-center gap-3 p-4 border rounded-[1px] cursor-pointer transition-colors ${
+                            formData.projectType.includes(opt)
+                              ? 'border-primary-ink bg-warm-ivory/50 font-medium'
+                              : 'border-border-rule hover:border-oxidised-bronze'
+                          }`}>
                             <input 
                               type="checkbox"
                               checked={formData.projectType.includes(opt)}
-                              onChange={() => handleCheckbox('projectType', opt)}
-                              className="w-5 h-5 text-warm-accent accent-warm-accent"
+                              onChange={() => handleCheckbox(opt)}
+                              className="w-4 h-4 accent-primary-ink"
                             />
-                            <span className="font-sans text-charcoal">{opt}</span>
+                            <span className="font-sans text-sm text-primary-ink">{opt}</span>
                           </label>
                         ))}
+                      </div>
+
+                      <div className="pt-6 border-t border-border-rule">
+                        <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-3">
+                          Business Sector
+                        </label>
+                        <select
+                          value={formData.sector}
+                          onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
+                          className="w-full p-3.5 bg-transparent border border-border-rule rounded-[1px] font-sans text-sm text-primary-ink focus:outline-none focus:border-primary-ink"
+                        >
+                          <option value="">Select your sector...</option>
+                          <option value="Boutique Hospitality & Stays">Boutique Hospitality & Stays</option>
+                          <option value="Restaurants & Gastropubs">Restaurants & Gastropubs</option>
+                          <option value="Architecture & Interior Design">Architecture & Interior Design</option>
+                          <option value="Private Healthcare & Clinics">Private Healthcare & Clinics</option>
+                          <option value="Artisanal Commerce & Retail">Artisanal Commerce & Retail</option>
+                          <option value="Trades & Construction">Trades & Construction</option>
+                          <option value="Creative Agency / Production">Creative Agency / Production</option>
+                          <option value="Professional Services">Professional Services</option>
+                          <option value="B2B Technology / SaaS">B2B Technology / SaaS</option>
+                          <option value="Other">Other</option>
+                        </select>
                       </div>
                     </FadeIn>
                   )}
 
+                  {/* STAGE 2: Tell us about the business & project */}
                   {step === 2 && (
                     <FadeIn key="step2">
-                      <h2 className="font-display text-3xl text-near-black mb-8 uppercase">What kind of business?</h2>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {['Hospitality', 'Restaurant', 'Automotive', 'Trades', 'Healthcare', 'Ecommerce', 'Travel', 'Public Figure / Civic', 'Professional Services', 'Other'].map(opt => (
-                          <label key={opt} className="flex items-center gap-3 p-4 border border-stone/20 rounded-sm cursor-pointer hover:border-warm-accent transition-colors">
-                            <input 
-                              type="radio"
-                              name="businessType"
-                              checked={formData.businessType === opt}
-                              onChange={() => setFormData({...formData, businessType: opt})}
-                              className="w-5 h-5 accent-warm-accent"
-                            />
-                            <span className="font-sans text-charcoal">{opt}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </FadeIn>
-                  )}
+                      <div className="text-[11px] font-mono tracking-widest uppercase text-muted-text mb-2">02 / BUSINESS CONTEXT</div>
+                      <h2 className="font-display text-3xl md:text-4xl text-primary-ink mb-3 uppercase">Tell us about the project</h2>
+                      <p className="font-sans text-sm text-secondary-text mb-8 leading-relaxed">
+                        What are the primary problems you are trying to solve? (e.g. outdated visual presence, poor mobile conversion, high platform fees, or manual admin).
+                      </p>
 
-                  {step === 3 && (
-                    <FadeIn key="step3">
-                      <h2 className="font-display text-3xl text-near-black mb-8 uppercase">What matters most?</h2>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {['Better presentation', 'More enquiries', 'Bookings', 'Selling online', 'Replacing an outdated site', 'Custom functionality', 'Internal workflow', 'Not sure yet'].map(opt => (
-                          <label key={opt} className="flex items-center gap-3 p-4 border border-stone/20 rounded-sm cursor-pointer hover:border-warm-accent transition-colors">
-                            <input 
-                              type="checkbox"
-                              checked={formData.goals.includes(opt)}
-                              onChange={() => handleCheckbox('goals', opt)}
-                              className="w-5 h-5 accent-warm-accent"
-                            />
-                            <span className="font-sans text-charcoal">{opt}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </FadeIn>
-                  )}
-
-                  {step === 4 && (
-                    <FadeIn key="step4">
-                      <h2 className="font-display text-3xl text-near-black mb-8 uppercase">Project stage</h2>
-                      <div className="grid grid-cols-1 gap-4">
-                        {['Exploring', 'Ready to begin', 'Existing site needs redesign', 'Need something custom'].map(opt => (
-                          <label key={opt} className="flex items-center gap-3 p-4 border border-stone/20 rounded-sm cursor-pointer hover:border-warm-accent transition-colors">
-                            <input 
-                              type="radio"
-                              name="stage"
-                              checked={formData.stage === opt}
-                              onChange={() => setFormData({...formData, stage: opt})}
-                              className="w-5 h-5 accent-warm-accent"
-                            />
-                            <span className="font-sans text-charcoal">{opt}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </FadeIn>
-                  )}
-
-                  {step === 5 && (
-                    <FadeIn key="step5">
-                      <h2 className="font-display text-3xl text-near-black mb-8 uppercase">Contact Details</h2>
                       <div className="space-y-6">
                         <div>
-                          <label className="block font-sans text-sm text-charcoal mb-2">Name *</label>
+                          <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-2">
+                            Current Website URL (If applicable)
+                          </label>
                           <input 
-                            type="text" 
-                            required
-                            value={formData.name}
-                            onChange={e => setFormData({...formData, name: e.target.value})}
-                            className="w-full p-4 border border-stone/20 bg-transparent rounded-sm focus:outline-none focus:border-warm-accent" 
+                            type="url"
+                            placeholder="https://example.com"
+                            value={formData.websiteUrl}
+                            onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
+                            className="w-full p-3.5 bg-transparent border border-border-rule rounded-[1px] font-sans text-sm text-primary-ink focus:outline-none focus:border-primary-ink"
                           />
                         </div>
+
                         <div>
-                          <label className="block font-sans text-sm text-charcoal mb-2">Business Name *</label>
-                          <input 
-                            type="text" 
-                            required
-                            value={formData.business}
-                            onChange={e => setFormData({...formData, business: e.target.value})}
-                            className="w-full p-4 border border-stone/20 bg-transparent rounded-sm focus:outline-none focus:border-warm-accent" 
+                          <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-2">
+                            Scope &amp; Primary Commercial Goal
+                          </label>
+                          <textarea 
+                            rows={5}
+                            value={formData.projectSummary}
+                            onChange={(e) => setFormData({ ...formData, projectSummary: e.target.value })}
+                            placeholder="Describe your current situation, target audience, and what success looks like for this build..."
+                            className="w-full p-3.5 bg-transparent border border-border-rule rounded-[1px] font-sans text-sm text-primary-ink focus:outline-none focus:border-primary-ink resize-none leading-relaxed"
                           />
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      </div>
+                    </FadeIn>
+                  )}
+
+                  {/* STAGE 3: Investment Bracket & Timeline */}
+                  {step === 3 && (
+                    <FadeIn key="step3">
+                      <div className="text-[11px] font-mono tracking-widest uppercase text-muted-text mb-2">03 / INVESTMENT &amp; TIMELINE</div>
+                      <h2 className="font-display text-3xl md:text-4xl text-primary-ink mb-3 uppercase">Scope-first investment</h2>
+                      <p className="font-sans text-sm text-secondary-text mb-8 leading-relaxed">
+                        TheoMedia engagements begin from £2,500. Selecting your realistic budget enables us to propose the correct level of architectural scoping.
+                      </p>
+
+                      <div className="space-y-6">
+                        <div>
+                          <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-3">
+                            Target Investment Bracket
+                          </label>
+                          <div className="grid grid-cols-1 gap-3">
+                            {[
+                              '£2,500 – £5,000 (€3,000 – €6,000 / $3,500 – $6,500)',
+                              '£5,000 – £10,000 (€6,000 – €12,000 / $6,500 – $13,000)',
+                              '£10,000 – £20,000 (€12,000 – €24,000 / $13,000 – $26,000)',
+                              '£20,000+ (€24,000+ / $26,000+)',
+                              'Not sure yet / Needs architectural scoping',
+                            ].map((tier) => (
+                              <label key={tier} className={`flex items-center gap-3 p-3.5 border rounded-[1px] cursor-pointer transition-colors ${
+                                formData.investment === tier
+                                  ? 'border-primary-ink bg-warm-ivory/50 font-medium'
+                                  : 'border-border-rule hover:border-oxidised-bronze'
+                              }`}>
+                                <input 
+                                  type="radio"
+                                  name="investment"
+                                  checked={formData.investment === tier}
+                                  onChange={() => setFormData({ ...formData, investment: tier })}
+                                  className="w-4 h-4 accent-primary-ink"
+                                />
+                                <span className="font-sans text-sm text-primary-ink">{tier}</span>
+                              </label>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="pt-4 border-t border-border-rule">
+                          <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-3">
+                            Target Delivery Timeline
+                          </label>
+                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            {['Immediate (2–4 wks)', '1–2 months', '2–4 months', 'Flexible'].map((time) => (
+                              <button
+                                type="button"
+                                key={time}
+                                onClick={() => setFormData({ ...formData, timeline: time })}
+                                className={`p-3 text-xs font-mono uppercase tracking-wider border rounded-[1px] text-center transition-colors ${
+                                  formData.timeline === time
+                                    ? 'bg-primary-ink text-warm-ivory border-primary-ink'
+                                    : 'border-border-rule text-secondary-text hover:border-primary-ink'
+                                }`}
+                              >
+                                {time}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </FadeIn>
+                  )}
+
+                  {/* STAGE 4: Details & Submission */}
+                  {step === 4 && (
+                    <FadeIn key="step4">
+                      <div className="text-[11px] font-mono tracking-widest uppercase text-muted-text mb-2">04 / SUBMISSION</div>
+                      <h2 className="font-display text-3xl md:text-4xl text-primary-ink mb-3 uppercase">Your contact details</h2>
+                      <p className="font-sans text-sm text-secondary-text mb-8 leading-relaxed">
+                        Where should we send our initial architectural response and scoping recommendations?
+                      </p>
+
+                      <div className="space-y-5 mb-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                           <div>
-                            <label className="block font-sans text-sm text-charcoal mb-2">Email *</label>
+                            <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-2">
+                              Your Name *
+                            </label>
+                            <input 
+                              type="text" 
+                              required
+                              value={formData.name}
+                              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                              className="w-full p-3.5 bg-transparent border border-border-rule rounded-[1px] font-sans text-sm text-primary-ink focus:outline-none focus:border-primary-ink"
+                            />
+                          </div>
+                          <div>
+                            <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-2">
+                              Business / Practice Name *
+                            </label>
+                            <input 
+                              type="text" 
+                              required
+                              value={formData.business}
+                              onChange={(e) => setFormData({ ...formData, business: e.target.value })}
+                              className="w-full p-3.5 bg-transparent border border-border-rule rounded-[1px] font-sans text-sm text-primary-ink focus:outline-none focus:border-primary-ink"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                          <div>
+                            <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-2">
+                              Email Address *
+                            </label>
                             <input 
                               type="email" 
                               required
                               value={formData.email}
-                              onChange={e => setFormData({...formData, email: e.target.value})}
-                              className="w-full p-4 border border-stone/20 bg-transparent rounded-sm focus:outline-none focus:border-warm-accent" 
+                              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                              className="w-full p-3.5 bg-transparent border border-border-rule rounded-[1px] font-sans text-sm text-primary-ink focus:outline-none focus:border-primary-ink"
                             />
                           </div>
                           <div>
-                            <label className="block font-sans text-sm text-charcoal mb-2">Phone (Optional)</label>
+                            <label className="block font-mono text-[11px] uppercase tracking-wider text-secondary-text mb-2">
+                              Phone / WhatsApp (Optional)
+                            </label>
                             <input 
                               type="tel" 
                               value={formData.phone}
-                              onChange={e => setFormData({...formData, phone: e.target.value})}
-                              className="w-full p-4 border border-stone/20 bg-transparent rounded-sm focus:outline-none focus:border-warm-accent" 
+                              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                              className="w-full p-3.5 bg-transparent border border-border-rule rounded-[1px] font-sans text-sm text-primary-ink focus:outline-none focus:border-primary-ink"
                             />
                           </div>
                         </div>
                       </div>
-                    </FadeIn>
-                  )}
 
-                  {step === 6 && (
-                    <FadeIn key="step6">
-                      <h2 className="font-display text-3xl text-near-black mb-8 uppercase">Anything else?</h2>
-                      <div>
-                        <label className="block font-sans text-sm text-charcoal mb-2">Tell us briefly about the project</label>
-                        <textarea 
-                          rows={6}
-                          value={formData.message}
-                          onChange={e => setFormData({...formData, message: e.target.value})}
-                          className="w-full p-4 border border-stone/20 bg-transparent rounded-sm focus:outline-none focus:border-warm-accent resize-none"
-                          placeholder="Current challenges, specific requirements, timeline..."
-                        />
-                      </div>
-                    </FadeIn>
-                  )}
+                      {/* Send Actions */}
+                      <div className="pt-6 border-t border-border-rule flex flex-col gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <a 
+                            href={generateWhatsAppUrl()}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary-ink text-warm-ivory text-xs font-mono uppercase tracking-widest hover:bg-dark-accent transition-colors rounded-[1px]"
+                          >
+                            <span>Transmit on WhatsApp</span>
+                            <span>↗</span>
+                          </a>
 
-                  {step === 7 && (
-                    <FadeIn key="step7">
-                      <h2 className="font-display text-3xl text-near-black mb-8 uppercase">Review & Send</h2>
-                      <div className="bg-bone p-6 rounded-sm space-y-4 mb-8">
-                        {validCarePlan && (
-                          <div className="pb-3 border-b border-stone/15">
-                            <span className="text-xs font-bold uppercase tracking-widest text-stone block mb-1">Care Plan</span>
-                            <p className="font-sans text-near-black font-medium">{validCarePlan} (£{validCarePlan === 'Essential Care' ? '45' : '95'}/mo)</p>
-                          </div>
-                        )}
-                        <div>
-                          <span className="text-xs font-bold uppercase tracking-widest text-stone block mb-1">Contact</span>
-                          <p className="font-sans text-near-black">{formData.name || 'Not provided'} ({formData.business || 'Not provided'})</p>
-                          <p className="font-sans text-stone text-sm">{formData.email || 'Not provided'}</p>
+                          <a 
+                            href={generateMailto()}
+                            className="inline-flex items-center justify-center gap-2 px-6 py-4 border border-primary-ink text-primary-ink text-xs font-mono uppercase tracking-widest hover:bg-warm-ivory transition-colors rounded-[1px]"
+                          >
+                            Send via Email Client ↗
+                          </a>
                         </div>
-                        <div>
-                          <span className="text-xs font-bold uppercase tracking-widest text-stone block mb-1">Project</span>
-                          <p className="font-sans text-near-black">{formData.projectType.length > 0 ? formData.projectType.join(', ') : 'Not specified'} - {formData.businessType || 'No industry specified'}</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex flex-col gap-3">
-                        <a 
-                          href={generateWhatsAppUrl()}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-700 text-white font-sans font-bold tracking-widest uppercase text-sm hover:bg-emerald-600 transition-colors rounded-sm shadow-sm"
-                        >
-                          <span>Send via WhatsApp</span>
-                          <span>↗</span>
-                        </a>
-
-                        <a 
-                          href={generateMailto()}
-                          className="w-full inline-flex items-center justify-center px-8 py-4 bg-near-black text-bone font-sans font-bold tracking-widest uppercase text-sm hover:bg-charcoal transition-colors rounded-sm"
-                        >
-                          Send via Email Client
-                        </a>
 
                         <button
                           type="button"
                           onClick={handleCopySummary}
-                          className="w-full inline-flex items-center justify-center px-8 py-3 border border-stone/30 text-charcoal font-sans font-semibold tracking-wider uppercase text-xs hover:border-near-black transition-colors rounded-sm"
+                          className="w-full inline-flex items-center justify-center px-4 py-2.5 text-secondary-text hover:text-primary-ink text-xs font-mono uppercase tracking-wider transition-colors"
                         >
-                          {copied ? '✓ Copied to Clipboard!' : 'Copy Enquiry Summary'}
+                          {copied ? '✓ Brief Summary Copied to Clipboard!' : 'Copy Summary to Clipboard'}
                         </button>
                       </div>
                     </FadeIn>
                   )}
+
                 </div>
 
-                {/* Navigation */}
-                <div className="mt-12 flex items-center justify-between border-t border-stone/20 pt-6">
+                {/* Form Navigation Controls */}
+                <div className="mt-10 flex items-center justify-between border-t border-border-rule pt-6">
                   {step > 1 ? (
                     <button 
+                      type="button"
                       onClick={handlePrev}
-                      className="font-sans text-sm font-bold uppercase tracking-widest text-stone hover:text-near-black transition-colors"
+                      className="font-mono text-xs uppercase tracking-widest text-secondary-text hover:text-primary-ink transition-colors"
                     >
-                      ← Back
+                      ← Previous Stage
                     </button>
-                  ) : <div></div>}
+                  ) : <div />}
                   
                   {step < totalSteps && (
                     <button 
+                      type="button"
                       onClick={handleNext}
-                      className="font-sans text-sm font-bold uppercase tracking-widest text-bone bg-near-black px-6 py-2.5 rounded-sm hover:bg-warm-accent transition-colors"
+                      className="font-mono text-xs uppercase tracking-widest text-warm-ivory bg-primary-ink px-6 py-3 rounded-[1px] hover:bg-dark-accent transition-colors"
                     >
-                      Next Step
+                      Next Stage →
                     </button>
                   )}
                 </div>
-              </div>
-              
-              <div className="mt-8 text-center">
-                <a 
-                  href={SITE.whatsappUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="font-sans text-sm text-stone hover:text-warm-accent transition-colors"
-                >
-                  Prefer direct WhatsApp? Message our studio directly →
-                </a>
+
               </div>
             </div>
 
-            {/* Sidebar */}
+            {/* Sidebar Column */}
             <div className="w-full lg:w-1/3">
-              <FadeIn delay={0.2} className="sticky top-32">
-                <SectionLabel className="text-stone mb-8">Contact</SectionLabel>
-                
-                <div className="space-y-10">
-                  <div>
-                    <h3 className="font-sans font-bold text-near-black text-sm uppercase tracking-widest mb-3">Email</h3>
-                    <a href={`mailto:${SITE.email}`} className="font-display text-2xl text-charcoal hover:text-warm-accent transition-colors">
-                      {SITE.email}
-                    </a>
+              <FadeIn delay={0.15} className="sticky top-32 space-y-10">
+                <div>
+                  <SectionLabel className="mb-4">DIRECT CHANNELS</SectionLabel>
+                  <div className="space-y-6 pt-2">
+                    <div>
+                      <span className="font-mono text-[11px] uppercase tracking-wider text-muted-text block mb-1">
+                        Principal Email
+                      </span>
+                      <a href={`mailto:${SITE.email}`} className="font-sans text-base text-primary-ink hover:text-oxidised-bronze transition-colors font-medium">
+                        {SITE.email}
+                      </a>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[11px] uppercase tracking-wider text-muted-text block mb-1">
+                        Direct Phone / WhatsApp
+                      </span>
+                      <a href={SITE.whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-sans text-base text-primary-ink hover:text-oxidised-bronze transition-colors font-medium">
+                        +353 85 225 8004
+                      </a>
+                    </div>
                   </div>
-                  
-                  <div>
-                    <h3 className="font-sans font-bold text-near-black text-sm uppercase tracking-widest mb-3">WhatsApp</h3>
-                    <a href={SITE.whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-display text-2xl text-charcoal hover:text-warm-accent transition-colors block">
-                      {SITE.phone}
-                    </a>
-                    <span className="text-xs text-stone font-mono uppercase tracking-widest mt-1 block">Direct Studio Chat ↗</span>
-                  </div>
+                </div>
 
-                  <div className="pt-8 border-t border-stone/20">
-                    <h3 className="font-sans font-bold text-near-black text-sm uppercase tracking-widest mb-3">Regions</h3>
-                    <p className="font-sans text-stone leading-relaxed">
-                      Independent studio.<br />
-                      Working with clients across:<br />
-                      London, Manchester, Edinburgh, Dublin &amp; Nationwide UK &amp; Ireland.
-                    </p>
-                  </div>
+                <div className="pt-8 border-t border-border-rule">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-muted-text block mb-2">
+                    Operating Footprint
+                  </span>
+                  <p className="font-sans text-sm text-secondary-text leading-relaxed">
+                    Independent studio founded in Ireland, serving the United Kingdom (London, Manchester, Edinburgh, Birmingham), Ireland (Dublin, Cork, Galway), and selected international projects in North America and Europe.
+                  </p>
+                </div>
+
+                <div className="pt-8 border-t border-border-rule">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-muted-text block mb-2">
+                    Direct Founder Delivery
+                  </span>
+                  <p className="font-sans text-sm text-secondary-text leading-relaxed">
+                    Every project is architected, designed, and engineered directly with the studio founder. No junior handoffs, no middle management overhead.
+                  </p>
                 </div>
               </FadeIn>
             </div>
@@ -427,7 +528,7 @@ ${formData.message || 'No additional notes'}`;
 
 export default function ContactPage() {
   return (
-    <Suspense fallback={<div className="bg-bone min-h-screen pt-32 text-center font-sans text-stone">Loading form...</div>}>
+    <Suspense fallback={<div className="bg-warm-ivory min-h-screen pt-32 text-center font-mono text-xs uppercase tracking-widest text-muted-text">Loading brief interface...</div>}>
       <ContactFormInner />
     </Suspense>
   );

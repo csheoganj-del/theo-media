@@ -22,12 +22,12 @@ const faqs = [
   {
     question: 'Is WordPress cheaper than a custom website?',
     answer:
-      'Upfront, a cheap WordPress theme can look cheaper. Over three years, plugin licences, security retainers, hosting and rebuilds often exceed a fixed-price custom build from £895–£4,995 with no compulsory monthly agency fee.',
+      'Upfront, a cheap WordPress theme can look cheaper. Over three years, plugin licences, security retainers, hosting and rebuilds often exceed a transparent custom build from £2,500–£10,000+ with no compulsory monthly agency fee.',
   },
   {
     question: 'Can I still edit a custom website myself?',
     answer:
-      'Yes. Professional and Bespoke TheoMedia builds include a structured CMS for copy, menus, images and posts. You do not need WordPress to update a restaurant menu or clinic treatment list.',
+      'Yes. Digital Flagship and Commercial Platform TheoMedia builds include a structured CMS for copy, menus, images and posts. You do not need WordPress to update a restaurant menu or clinic treatment list.',
   },
 ];
 
@@ -105,7 +105,7 @@ export default function WordPressVsCustomPage() {
           <section>
             <h2 className="font-display text-[28px] text-near-black mb-4">Total cost over three years</h2>
             <p className="mb-4">
-              A £1,200 WordPress build plus £150/month maintenance is £6,600 over three years — and you still do not own a portable codebase. A TheoMedia Professional site at £2,495 with hosting of £0–£20/month is usually cheaper, faster, and fully owned. Read the{' '}
+              A £1,200 WordPress build plus £150/month maintenance is £6,600 over three years — and you still do not own a portable codebase. A TheoMedia Digital Flagship from £2,500 with edge hosting of £0–£20/month provides far higher performance, zero plugin vulnerability debt, and 100% full client ownership. Read the{' '}
               <Link href="/journal/how-much-does-a-website-cost-uk" className="underline">
                 UK website cost guide
               </Link>{' '}

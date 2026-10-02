@@ -65,8 +65,8 @@ const industries = [
   {
     title: 'Small & Independent Businesses',
     href: '/industries/small-business-website-design',
-    tagline: 'Fixed-price launch packages from £895 / €1,050 with 100% source code ownership and zero lock-in.',
-    linkTitle: 'View Package Options →',
+    tagline: 'Studio flagship builds from £2,500 / €3,000 with 100% source code ownership and zero platform lock-in.',
+    linkTitle: 'View Studio Architecture →',
     liveUrl: '/industries/small-business-website-design',
   },
   {
@@ -167,7 +167,7 @@ export default function IndustriesIndexPage() {
             href="/contact"
             className="inline-block px-8 py-4 bg-bone text-near-black text-[13px] font-sans font-semibold tracking-widest uppercase rounded-sm hover:bg-ivory transition-colors"
           >
-            Schedule a Discovery Call →
+            Discuss a Project →
           </Link>
         </div>
       </section>

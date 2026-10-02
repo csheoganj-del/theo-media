@@ -3,19 +3,18 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
 import FadeIn from '@/components/ui/FadeIn';
-import SectionLabel from '@/components/ui/SectionLabel';
 
 export const metadata: Metadata = {
-  title: 'Web Design Portfolio & Case Studies UK | TheoMedia',
+  title: 'Selected Work & Flagship Portfolio | TheoMedia',
   description:
-    'Selected web design work from TheoMedia: restaurants, hotels, trades, clinics, salons and ecommerce. Live websites and production flagships for UK and Ireland brands.',
+    'Selected web design and digital systems from TheoMedia: hospitality, automotive, healthcare, artisanal commerce, cinematography and salons. Live websites and verified studio concepts.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/work',
   },
   openGraph: {
-    title: 'Web Design Portfolio & Case Studies UK | TheoMedia',
+    title: 'Selected Work & Flagship Portfolio | TheoMedia',
     description:
-      'Selected web design work across hospitality, trades, healthcare, salons and ecommerce.',
+      'Selected web design and digital systems across hospitality, automotive, healthcare, artisanal commerce and media.',
     url: 'https://www.theomedia.co.uk/work',
     type: 'website',
   },
@@ -23,99 +22,115 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="bg-bone text-near-black pt-32 md:pt-48 pb-24 md:pb-40">
+    <div className="bg-warm-ivory text-primary-ink pt-32 md:pt-44 lg:pt-48 pb-28 md:pb-40">
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
-        {/* Hero Section */}
-        <FadeIn className="max-w-4xl mb-20 md:mb-32">
-          <SectionLabel>PORTFOLIO &amp; WORK</SectionLabel>
-          <h1 className="font-display text-[48px] sm:text-[64px] md:text-[80px] lg:text-[100px] leading-[1.05] mt-8 mb-8 uppercase text-near-black">
-            WEBSITES PEOPLE REMEMBER.
+        {/* Editorial Masthead */}
+        <FadeIn className="max-w-4xl mb-20 md:mb-28">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-oxidised-bronze" />
+            <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium">
+              STUDIO ARCHIVE · 2024–2026
+            </span>
+          </div>
+          <h1 className="font-display text-[clamp(3.5rem,7.5vw,7.5rem)] leading-[0.94] tracking-[-0.02em] uppercase text-primary-ink font-normal mb-8 select-none">
+            SELECTED WORK.
           </h1>
-          <p className="font-sans text-[16px] md:text-[20px] leading-relaxed text-stone max-w-2xl">
-            Bespoke digital experiences, live websites, and custom engineering systems across hospitality, trades, healthcare, and ecommerce.
+          <p className="font-sans text-[17px] md:text-[20px] leading-relaxed text-secondary-text max-w-2xl font-normal">
+            Commissioned client platforms and self-initiated studio concepts. Engineered with architectural restraint, high-speed modern performance, and zero platform lock-in.
           </p>
         </FadeIn>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-20">
-          {projects.map((project, index) => (
-            <FadeIn key={project.slug} delay={index * 0.1}>
-              <div className="group flex flex-col h-full border border-near-black/10 p-4 md:p-6 bg-ivory hover:border-near-black/30 transition-colors duration-300">
-                <Link href={`/work/${project.slug}`} className="block relative aspect-[16/10] bg-charcoal w-full mb-6 overflow-hidden">
-                  <div className="w-full aspect-[16/10] bg-charcoal relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500 ease-out border border-near-black/10">
-                    <ProjectPreview url={project.demoUrl} title={`${project.title} Website Preview`} previewUrl={project.previewUrl} />
-                    <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/10 transition-colors duration-500 z-30" />
+        {/* Large Editorial Compositions */}
+        <div className="flex flex-col gap-24 md:gap-36 lg:gap-40">
+          {projects.map((project, index) => {
+            const isEven = index % 2 === 1;
+
+            return (
+              <FadeIn key={project.slug} className="group border-t border-border-rule pt-10 md:pt-14">
+                <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${
+                  isEven ? 'lg:grid-flow-dense' : ''
+                }`}>
+                  {/* Browser Preview Frame */}
+                  <div className={`lg:col-span-7 ${isEven ? 'lg:col-start-6' : ''}`}>
+                    <div className="w-full aspect-[16/10] bg-[#161513] relative overflow-hidden rounded-[1px] border border-border-rule shadow-lg transition-all duration-500 group-hover:border-oxidised-bronze/50">
+                      <ProjectPreview
+                        url={project.demoUrl}
+                        title={`${project.title} Preview`}
+                        previewUrl={project.previewUrl}
+                      />
+                    </div>
                   </div>
-                </Link>
-                
-                <div className="flex-grow flex flex-col">
-                  <div className="flex items-center justify-between gap-3 mb-3">
-                    <span className="text-[10px] font-sans font-medium tracking-[0.2em] text-stone uppercase">{project.sector}</span>
-                    <span className="text-[9px] font-sans font-semibold tracking-widest uppercase px-2.5 py-0.5 border border-near-black/15 text-charcoal/80 bg-bone">
-                      {project.badge}
-                    </span>
-                  </div>
-                  
-                  <Link href={`/work/${project.slug}`}>
-                    <h2 className="font-display text-[32px] md:text-[40px] text-near-black mb-4 group-hover:text-stone transition-colors leading-tight">
-                      {project.title}
-                    </h2>
-                  </Link>
-                  
-                  <p className="font-sans text-[15px] text-stone mb-6 flex-grow leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags?.map((tag: string) => (
-                      <span key={tag} className="text-[10px] font-sans px-3 py-1 border border-stone/30 text-stone uppercase tracking-wider">
-                        {tag}
+
+                  {/* Editorial Narrative */}
+                  <div className={`lg:col-span-5 flex flex-col gap-6 ${isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className="flex items-center justify-between border-b border-border-rule pb-3 text-[11px] font-mono tracking-[0.14em] uppercase">
+                      <div className="flex items-center gap-2">
+                        <span className="text-oxidised-bronze font-medium">{project.indexNumber}</span>
+                        <span className="text-border-rule">/</span>
+                        <span className="text-secondary-text">{project.sector}</span>
+                      </div>
+                      <span className="text-[10px] text-oxidised-bronze border border-oxidised-bronze/30 px-2 py-0.5 rounded-[1px] bg-subtle-accent-bg/40">
+                        {project.classification}
                       </span>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-auto pt-6 border-t border-near-black/10 flex flex-col sm:flex-row gap-4 sm:gap-8">
-                    {project.hasCaseStudy ? (
-                      <>
-                        <Link 
-                          href={`/case-studies/${project.caseStudySlug}`}
-                          className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-stone transition-colors inline-flex items-center"
+                    </div>
+
+                    <Link href={`/work/${project.slug}`}>
+                      <h2 className="font-display text-[clamp(2.2rem,3.6vw,3.6rem)] leading-[1.02] text-primary-ink group-hover:text-dark-accent transition-colors uppercase font-normal">
+                        {project.title}
+                      </h2>
+                    </Link>
+
+                    <p className="font-sans text-secondary-text text-[15px] md:text-[17px] leading-relaxed">
+                      {project.conciseSentence || project.shortDescription}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {project.tags.slice(0, 3).map((tag: string) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] font-mono tracking-wider uppercase text-muted-text px-2.5 py-1 border border-border-rule rounded-[1px]"
                         >
-                          READ CASE STUDY →
-                        </Link>
-                        <Link 
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black transition-colors inline-flex items-center"
-                        >
-                          VIEW LIVE WEBSITE ↗
-                        </Link>
-                      </>
-                    ) : (
-                      <Link 
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-6 pt-5 border-t border-border-rule">
+                      <Link
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[11px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black hover:text-warm-accent transition-colors inline-flex items-center"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-ink text-warm-ivory text-[11px] font-mono tracking-[0.14em] uppercase hover:bg-dark-accent transition-colors duration-200 rounded-[1px]"
                       >
-                        VIEW LIVE WEBSITE ↗
+                        <span>{project.actionLabel}</span>
                       </Link>
-                    )}
+
+                      {project.hasCaseStudy && (
+                        <Link
+                          href={`/case-studies/${project.caseStudySlug}`}
+                          className="editorial-underline text-[11px] font-mono tracking-[0.14em] uppercase text-secondary-text hover:text-primary-ink"
+                        >
+                          <span>Read Case Study</span>
+                          <span className="text-oxidised-bronze">→</span>
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            );
+          })}
         </div>
-        
-        {/* View All Case Studies Restrained Link */}
-        <FadeIn className="flex justify-center border-t border-near-black/10 pt-16">
-          <Link 
+
+        {/* Case Studies Link Strip */}
+        <FadeIn className="pt-24 mt-28 border-t border-border-rule flex flex-col sm:flex-row items-center justify-between gap-6 text-[12px] font-mono tracking-[0.14em] uppercase text-muted-text">
+          <span>COMPLETE ARCHIVE OF 11 PROVEN PLATFORMS</span>
+          <Link
             href="/case-studies"
-            className="text-[13px] font-sans font-medium tracking-[0.15em] uppercase text-stone hover:text-near-black border-b border-stone/30 hover:border-near-black pb-1 transition-all duration-300"
+            className="editorial-underline text-primary-ink hover:text-oxidised-bronze font-medium"
           >
-            VIEW ALL CASE STUDIES →
+            <span>Read In-Depth Case Studies</span>
+            <span>→</span>
           </Link>
         </FadeIn>
       </div>

@@ -63,7 +63,7 @@ export default function CaseStudiesPage() {
                       {number} — {project.sector}
                     </span>
                     <span className="text-[9px] font-sans font-semibold tracking-widest uppercase px-2.5 py-0.5 border border-near-black/15 text-charcoal/80 bg-bone">
-                      {project.badge}
+                      {project.classification || project.badge}
                     </span>
                   </div>
                   <h2 className="font-display text-[40px] md:text-[56px] leading-[1.1] mb-6 text-near-black">
@@ -88,7 +88,7 @@ export default function CaseStudiesPage() {
                           rel="noopener noreferrer"
                           className="text-[12px] font-sans font-medium tracking-[0.15em] uppercase text-stone border-b border-stone/30 pb-1 hover:text-near-black hover:border-near-black transition-colors"
                         >
-                          VIEW LIVE WEBSITE ↗
+                          {project.actionLabel || 'VIEW INTERACTIVE CONCEPT ↗'}
                         </Link>
                       </>
                     ) : (
@@ -98,7 +98,7 @@ export default function CaseStudiesPage() {
                         rel="noopener noreferrer"
                         className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-warm-accent pb-1 hover:border-near-black transition-colors"
                       >
-                        VIEW LIVE WEBSITE ↗
+                        {project.actionLabel || 'VIEW INTERACTIVE CONCEPT ↗'}
                       </Link>
                     )}
                   </div>

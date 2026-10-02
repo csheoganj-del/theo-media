@@ -9,14 +9,14 @@ import Button from '@/components/ui/Button';
 export const metadata: Metadata = {
   title: 'Web Design, Ecommerce & Custom Software Services | TheoMedia',
   description:
-    'Bespoke websites, luxury ecommerce, booking engines, web applications and business software for UK and Ireland companies. Fixed packages from £895.',
+    'Bespoke websites, digital flagships, ecommerce, web applications and custom digital systems for UK, Ireland and international clients. Studio engagements from £2,500.',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/services',
   },
   openGraph: {
     title: 'Web Design, Ecommerce & Custom Software Services | TheoMedia',
     description:
-      'Websites, ecommerce, booking experiences, web applications and business systems. UK and Ireland.',
+      'Websites, ecommerce, booking experiences, web applications and business systems. UK, Ireland and international.',
     url: 'https://www.theomedia.co.uk/services',
     type: 'website',
   },

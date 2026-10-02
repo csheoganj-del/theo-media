@@ -110,7 +110,7 @@ export default function SquarespaceAlternativeUKPage() {
               <div className="p-6 bg-ivory border-2 border-near-black">
                 <h3 className="font-display text-[22px] text-near-black mb-2">Option 3: Independent Studio Custom Build (TheoMedia)</h3>
                 <p className="text-stone text-[15px] mb-3">
-                  <strong>Pros:</strong> Modern edge-rendered Next.js architecture, 100% full source code ownership on handoff, fixed-price delivery from £895 / €1,050, and zero monthly software tax.
+                  <strong>Pros:</strong> Modern edge-rendered Next.js architecture, 100% full source code ownership on handoff, transparent studio delivery from £2,500 / €3,000 / $3,500, and zero monthly platform subscriptions.
                 </p>
                 <p className="text-stone text-[15px]">
                   <strong>Trade-offs:</strong> Higher upfront investment than a DIY monthly plan, and structural layout changes post-launch are managed via code or structured CMS fields rather than casual drag-and-drop.

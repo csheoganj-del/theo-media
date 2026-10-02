@@ -87,7 +87,7 @@ export default function HowToChooseWebDesignerPage() {
               <Link href="/journal/how-much-does-a-website-cost-uk" className="underline">
                 UK website pricing
               </Link>{' '}
-              ranges from DIY subscriptions to £20k agencies. Independent studios quoting £895–£4,995 with no lock-in are usually the honest middle.
+              ranges from DIY subscriptions to £20k agencies. Independent studios quoting £2,500–£10,000+ with no platform lock-in are usually the honest middle.
             </p>
           </section>
           <section>
@@ -114,7 +114,7 @@ export default function HowToChooseWebDesignerPage() {
             A studio that publishes prices and owns the outcome.
           </h3>
           <p className="font-sans text-bone/70 text-[15px] leading-relaxed mb-6">
-            Fixed packages from £895 / €1,050. 100% client-owned. UK and Ireland.
+            Studio engagements from £2,500 / €3,000 / $3,500. 100% client-owned. UK, Ireland & selected international.
           </p>
           <Link href="/contact" className="inline-block px-6 py-3 bg-bone text-near-black text-[12px] font-semibold tracking-wider uppercase hover:bg-ivory transition-colors">
             Start a Project →

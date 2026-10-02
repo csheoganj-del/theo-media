@@ -37,7 +37,7 @@ export default function SquarespaceVsCustomWebsitePage() {
         name: 'How does the total cost of Squarespace compare to a custom website over 3 years?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Squarespace Business plans run approximately £20–£30 per month, plus optional scheduling or plugin add-ons. Over 3 years, an operator invests £700 to £1,500+ in ongoing subscription fees. A custom starter website with TheoMedia starts at £895 fixed, with zero mandatory monthly builder fees and free or low-cost edge hosting.',
+          text: 'Squarespace Business plans run approximately £20–£30 per month, plus optional scheduling or plugin add-ons. Over 3 years, an operator invests £700 to £1,500+ in ongoing subscription fees. A custom digital flagship with TheoMedia starts from £2,500, with zero mandatory monthly builder fees and free or low-cost edge hosting.',
         },
       },
       {
@@ -168,7 +168,7 @@ export default function SquarespaceVsCustomWebsitePage() {
                   <tr>
                     <td className="p-4 font-semibold text-near-black">Upfront Investment</td>
                     <td className="p-4 text-stone">Very low (£0 – £30/mo DIY)</td>
-                    <td className="p-4 text-near-black">Fixed investment (£895 – £4,995+)</td>
+                    <td className="p-4 text-near-black">Studio investment (from £2,500)</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-semibold text-near-black">3-Year Ongoing Cost</td>
@@ -210,20 +210,20 @@ export default function SquarespaceVsCustomWebsitePage() {
             Considering moving beyond a site builder?
           </h3>
           <p className="font-sans text-bone/70 text-[15px] leading-relaxed mb-6">
-            We help ambitious businesses migrate to custom Next.js architectures with seamless SEO continuity and transparent fixed pricing.
+            We help ambitious businesses migrate to custom Next.js architectures with seamless SEO continuity and transparent studio investment.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
               className="px-6 py-3 bg-bone text-near-black text-[12px] font-semibold tracking-wider uppercase hover:bg-ivory transition-colors"
             >
-              Start Consultation →
+              Discuss a Project →
             </Link>
             <Link
               href="/pricing"
               className="px-6 py-3 border border-bone/30 text-bone text-[12px] font-semibold tracking-wider uppercase hover:border-bone transition-colors"
             >
-              View Fixed Pricing (£895+)
+              View Studio Investment (from £2,500)
             </Link>
           </div>
         </div>

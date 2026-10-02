@@ -91,7 +91,7 @@ export default function ShouldIHireAWebDesignerOrUseSquarespacePage() {
           </h1>
 
           <p className="font-sans text-[18px] md:text-[21px] text-stone leading-relaxed mb-12">
-            Every business owner faces this question at some stage. Doing it yourself on Squarespace costs under £30 a month, while hiring a reputable studio or designer costs between £895 and £5,000+. Here is an objective, mathematical way to decide which path makes sense for your business right now.
+            Every business owner faces this question at some stage. Doing it yourself on Squarespace costs under £30 a month, while investing in a reputable studio or digital designer typically ranges from £2,500 to £10,000+. Here is an objective, mathematical way to decide which path makes sense for your business right now.
           </p>
 
           <div className="border-t border-b border-near-black/10 py-6 mb-12 flex flex-wrap gap-8 text-[13px] font-sans text-stone">
@@ -176,20 +176,20 @@ export default function ShouldIHireAWebDesignerOrUseSquarespacePage() {
             Unsure which approach is right for your stage?
           </h3>
           <p className="font-sans text-bone/70 text-[15px] leading-relaxed mb-6">
-            We will tell you honestly if Squarespace is better suited to your current scale, or provide a fixed-price proposal if custom architecture is justified.
+            We will tell you honestly if Squarespace is better suited to your current scale, or provide a transparent scope-first proposal if custom architecture is justified.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
               className="px-6 py-3 bg-bone text-near-black text-[12px] font-semibold tracking-wider uppercase hover:bg-ivory transition-colors"
             >
-              Start Free Consultation →
+              Discuss a Project →
             </Link>
             <Link
               href="/pricing"
               className="px-6 py-3 border border-bone/30 text-bone text-[12px] font-semibold tracking-wider uppercase hover:border-bone transition-colors"
             >
-              View Pricing Tiers (£895+)
+              View Studio Investment (from £2,500)
             </Link>
           </div>
         </div>

@@ -25,7 +25,7 @@ export default function RestaurantCaseStudy() {
       {/* ── A. HERO ── */}
       <section className="pt-32 md:pt-48 pb-16 md:pb-24 px-5 md:px-8 lg:px-12 max-w-[1440px] mx-auto">
         <FadeIn className="max-w-4xl">
-          <SectionLabel>CASE STUDY</SectionLabel>
+          <SectionLabel>STUDIO DESIGN STUDY · HOSPITALITY</SectionLabel>
           <div className="text-[11px] font-sans font-medium tracking-[0.2em] uppercase text-stone mb-6 mt-4">
             Restaurant, Gastropub & Dining Website Design
           </div>
@@ -49,7 +49,7 @@ export default function RestaurantCaseStudy() {
             </ul>
 
             <p>That is the thinking behind <strong>Cinder & Field</strong>.</p>
-            <p>Cinder & Field was designed and engineered by TheoMedia as a modern digital platform for a restaurant, gastropub, and independent dining room, engineered to make menu discovery, atmosphere presentation, and table bookings effortless.</p>
+            <p>Cinder & Field was designed and engineered by TheoMedia as an interactive studio study and digital platform concept for a restaurant, gastropub, and independent dining room, engineered to make menu discovery, atmosphere presentation, and table bookings effortless.</p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
@@ -59,7 +59,7 @@ export default function RestaurantCaseStudy() {
               rel="noopener noreferrer"
               className="text-[12px] font-sans font-semibold tracking-[0.15em] uppercase text-near-black border-b border-near-black/30 pb-1 hover:border-near-black transition-colors inline-flex items-center"
             >
-              VIEW LIVE WEBSITE ↗
+              VIEW INTERACTIVE CONCEPT ↗
             </Link>
             <Link 
               href="/contact?project=theo-table"
@@ -714,7 +714,7 @@ export default function RestaurantCaseStudy() {
               rel="noopener noreferrer"
               className="text-[13px] font-sans font-medium tracking-[0.15em] uppercase text-bone border-b border-bone/30 pb-1 hover:border-bone transition-colors inline-block mb-32"
             >
-              VIEW LIVE WEBSITE ↗
+              VIEW INTERACTIVE CONCEPT ↗
             </Link>
 
             <div className="max-w-2xl mx-auto border-t border-bone/10 pt-20 mb-20">

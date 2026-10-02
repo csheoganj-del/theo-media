@@ -22,7 +22,7 @@ export const services: Service[] = [
     description: 'Premium shopping experiences built around editorial product presentation and sub-second mobile checkout.',
     slug: 'ecommerce',
     href: '/industries/ecommerce-website-design',
-    features: ['Product Storytelling', 'Native Apple Pay', 'Sub-Second Checkout', 'Inventory Sync', 'Currency Support', 'Zero App Bloat'],
+    features: ['Product Storytelling', 'Native Apple Pay', 'Frictionless Mobile Checkout', 'Inventory Sync', 'Currency Support', 'Zero App Bloat'],
   },
   {
     number: '03',

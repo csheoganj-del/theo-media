@@ -8,7 +8,7 @@ import { breadcrumbJsonLd, pageMeta, serviceJsonLd } from '@/lib/seo';
 export const metadata: Metadata = pageMeta({
   title: 'Garage Website Design UK | MOT, Servicing & Workshop Booking Sites',
   description:
-    'Custom garage and workshop website design. Transparent service menus, MOT booking, fleet pages and WhatsApp enquiries. Built for UK independent garages from £895.',
+    'Custom garage and workshop website design. Transparent service menus, MOT booking, fleet pages and WhatsApp enquiries. Built for UK independent garages from £2,500.',
   path: '/industries/garage-website-design',
 });
 
@@ -68,7 +68,7 @@ export default function GarageWebsiteDesignPage() {
       <section className="bg-near-black text-bone py-24 px-5 text-center">
         <h2 className="text-editorial-lg mb-8">A workshop site that looks as tight as the bay.</h2>
         <Link href="/contact" className="inline-block px-8 py-4 bg-bone text-near-black text-[13px] font-semibold tracking-widest uppercase">
-          Start Consultation →
+          Discuss a Project →
         </Link>
       </section>
     </div>

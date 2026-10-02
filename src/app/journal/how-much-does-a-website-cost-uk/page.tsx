@@ -6,7 +6,7 @@ import SectionLabel from '@/components/ui/SectionLabel';
 export const metadata: Metadata = {
   title: 'How Much Does a Website Cost in the UK? (2026 Honest Pricing Guide)',
   description:
-    'A realistic, transparent breakdown of web design pricing across the UK in 2026. Compare DIY builders, freelancers, boutique studios (£895–£4,995+), and traditional agencies (£10k+).',
+    'A realistic, transparent breakdown of web design pricing across the UK in 2026. Compare DIY builders, freelancers, boutique studios (£2,500–£10,000+), and traditional agencies (£10k+).',
   alternates: {
     canonical: 'https://www.theomedia.co.uk/journal/how-much-does-a-website-cost-uk',
   },
@@ -29,7 +29,7 @@ export default function HowMuchDoesAWebsiteCostUKPage() {
         name: 'What is the average cost of a small business website in the UK in 2026?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'In 2026, a professional small business website in the UK typically costs between £895 and £3,500 from an independent boutique studio. DIY website builders cost £15 to £35 per month, while traditional creative agencies quote between £5,000 and £20,000+ for equivalent commercial deliverables.',
+          text: 'In 2026, a professional small business website in the UK typically costs between £2,500 and £8,000 from an independent boutique studio. DIY website builders cost £15 to £35 per month, while traditional creative agencies quote between £10,000 and £30,000+ for equivalent commercial deliverables.',
         },
       },
       {
@@ -45,7 +45,7 @@ export default function HowMuchDoesAWebsiteCostUKPage() {
         name: 'Why do web design quotes vary so widely between providers?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Price variation comes down to code ownership and overhead. A £300 freelancer often installs a £40 off-the-shelf WordPress theme. A £15,000 agency has city-centre offices, account managers, and sales overheads. A boutique studio like TheoMedia (£895–£4,995) delivers bespoke custom code and direct founder collaboration without corporate agency markups.',
+          text: 'Price variation comes down to code ownership and overhead. A £300 freelancer often installs a £40 off-the-shelf WordPress theme. A £15,000 agency has city-centre offices, account managers, and sales overheads. A boutique studio like TheoMedia (£2,500–£10,000+) delivers bespoke custom code and direct founder collaboration without corporate agency markups.',
         },
       },
     ],
@@ -137,13 +137,13 @@ export default function HowMuchDoesAWebsiteCostUKPage() {
               <div className="p-8 bg-ivory border-2 border-near-black">
                 <div className="flex justify-between items-baseline mb-2">
                   <h3 className="font-display text-[22px] text-near-black">Tier 3: Boutique Independent Studio (TheoMedia)</h3>
-                  <span className="font-mono text-[14px] text-near-black font-semibold">£895 – £4,995 one-off</span>
+                  <span className="font-mono text-[14px] text-near-black font-semibold">£2,500 – £10,000+</span>
                 </div>
                 <p className="text-stone text-[15px] mb-4">
                   <strong>Best for:</strong> High-ticket services, restaurants, healthcare clinics, trades, and ambitious brands wanting custom digital equity.
                 </p>
                 <p className="text-stone text-[15px]">
-                  <strong>The Reality:</strong> Direct collaboration with a founder-level designer and engineer. Websites are custom-built in modern stacks (Next.js, Tailwind), achieving 95+ Google Lighthouse performance scores and green Core Web Vitals. Full source code ownership, zero monthly platform lock-in, and conversion-engineered layouts.
+                  <strong>The Reality:</strong> Direct collaboration with a founder-level designer and engineer. Websites are custom-built in modern stacks (Next.js, Tailwind), achieving rapid edge performance and optimal Core Web Vitals. Full source code ownership, zero monthly platform lock-in, and conversion-engineered layouts.
                 </p>
               </div>
 
@@ -194,25 +194,25 @@ export default function HowMuchDoesAWebsiteCostUKPage() {
 
         {/* Pricing link */}
         <div className="mt-16 p-8 md:p-12 bg-charcoal text-bone">
-          <SectionLabel dark>FIXED-PRICE TRANSPARENCY</SectionLabel>
+          <SectionLabel dark>STUDIO INVESTMENT FRAMEWORK</SectionLabel>
           <h3 className="font-display text-[26px] text-bone mt-4 mb-3">
-            Explore our fixed investment packages.
+            Explore our transparent studio investment tiers.
           </h3>
           <p className="font-sans text-bone/70 text-[15px] leading-relaxed mb-6">
-            We publish all our pricing openly. No mystery quotes or post-sale surprises.
+            We publish our investment benchmarks openly. Scope-first, with direct founder collaboration and no hidden agency overheads.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
               href="/pricing"
               className="px-6 py-3 bg-bone text-near-black text-[12px] font-semibold tracking-wider uppercase hover:bg-ivory transition-colors"
             >
-              View Pricing Tiers (£895+) →
+              View Studio Investment (from £2,500) →
             </Link>
             <Link
               href="/contact"
               className="px-6 py-3 border border-bone/30 text-bone text-[12px] font-semibold tracking-wider uppercase hover:border-bone transition-colors"
             >
-              Request a Fixed Proposal
+              Discuss an Engagement
             </Link>
           </div>
         </div>

@@ -1,51 +1,80 @@
 import Link from 'next/link';
 import FadeIn from '@/components/ui/FadeIn';
-import SectionLabel from '@/components/ui/SectionLabel';
 import { pricingTiers } from '@/data/pricing';
 
 export default function PricingPreview() {
   return (
-    <section className="bg-ivory py-24 md:py-32 lg:py-40">
-      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
-        <div className="flex flex-col items-center text-center mb-16 md:mb-24 gap-6">
+    <section className="bg-soft-paper text-primary-ink py-28 md:py-36 lg:py-44 px-5 md:px-8 lg:px-12 border-b border-border-rule">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 pb-10 border-b border-border-rule mb-16 md:mb-20">
           <FadeIn>
-            <SectionLabel>PRICING</SectionLabel>
+            <span className="text-[11px] md:text-[12px] font-mono tracking-[0.16em] uppercase text-oxidised-bronze font-medium block mb-3">
+              09 / COMMERCIAL TRANSPARENCY
+            </span>
+            <h2 className="font-display text-[clamp(2.6rem,4.8vw,4.8rem)] leading-[1.02] text-primary-ink uppercase font-normal">
+              CLEAR INVESTMENT. FIXED SCOPES.
+            </h2>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h2 className="text-editorial-lg font-display text-near-black">
-              CLEAR PRICING. NO MYSTERY QUOTE.
-            </h2>
+            <p className="font-sans text-secondary-text text-[15px] md:text-[17px] max-w-md leading-relaxed">
+              Built around your business problem, not an arbitrary page count. Engagements typically begin at £2,500 (€3,000 / $3,500), with 100% code ownership from launch.
+            </p>
           </FadeIn>
         </div>
 
+        {/* 3 Editorial Tiers */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {pricingTiers.map((tier, index) => {
-            const isProfessional = tier.name.toLowerCase() === 'professional' || tier.id === 'professional' || index === 1;
-            
+            const isFeatured = index === 1;
+
             return (
-              <FadeIn key={tier.name || index} delay={index * 0.1} className="h-full">
-                <div className={`h-full flex flex-col p-8 lg:p-10 bg-white ${isProfessional ? 'border-2 border-near-black' : 'border border-near-black/10'}`}>
-                  <h3 className="text-[20px] font-sans font-semibold mb-2 text-near-black uppercase tracking-wider">{tier.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-[14px] text-stone uppercase tracking-wide">From</span>
-                    <span className="block text-[32px] md:text-[40px] font-display text-near-black mt-1">{tier.price}</span>
+              <FadeIn key={tier.name || index} delay={index * 0.08} className="h-full">
+                <div
+                  className={`h-full flex flex-col p-8 lg:p-10 bg-light-surface rounded-[1px] transition-all duration-300 ${
+                    isFeatured
+                      ? 'border-2 border-primary-ink shadow-md'
+                      : 'border border-border-rule'
+                  }`}
+                >
+                  <div className="flex items-center justify-between text-[11px] font-mono tracking-[0.14em] uppercase text-muted-text pb-4 mb-6 border-b border-border-rule">
+                    <span>0{index + 1} / TIER</span>
+                    {isFeatured && (
+                      <span className="text-oxidised-bronze font-medium">STUDIO STANDARD</span>
+                    )}
                   </div>
-                  <p className="text-stone text-[15px] mb-8 pb-8 border-b border-near-black/10 min-h-[80px]">
+
+                  <h3 className="text-[20px] font-sans font-semibold mb-2 text-primary-ink uppercase tracking-[0.08em]">
+                    {tier.name}
+                  </h3>
+
+                  <div className="mb-6">
+                    <span className="text-[12px] font-mono text-muted-text uppercase tracking-wider block mb-1">
+                      Starting Investment
+                    </span>
+                    <span className="font-display text-[38px] md:text-[46px] leading-none text-primary-ink">
+                      {tier.price}
+                    </span>
+                  </div>
+
+                  <p className="text-secondary-text text-[15px] leading-relaxed mb-8 pb-8 border-b border-border-rule min-h-[72px]">
                     {tier.tagline || tier.description}
                   </p>
-                  <ul className="flex flex-col gap-4 mb-10 flex-grow">
-                    {tier.includes?.slice(0, 3).map((feature: string, fIndex: number) => (
-                      <li key={fIndex} className="flex items-start gap-3 text-[14px] text-near-black">
-                        <span className="mt-1 text-[10px] text-near-black/40">✦</span>
+
+                  <ul className="flex flex-col gap-3.5 mb-10 flex-grow">
+                    {tier.includes?.slice(0, 4).map((feature: string, fIndex: number) => (
+                      <li key={fIndex} className="flex items-start gap-3 text-[13px] md:text-[14px] text-secondary-text">
+                        <span className="text-oxidised-bronze font-mono text-[11px] pt-0.5">—</span>
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  <Link 
+
+                  <Link
                     href="/pricing"
-                    className="inline-block mt-auto text-[13px] font-semibold tracking-widest uppercase border-b border-near-black pb-1 hover:text-stone hover:border-stone transition-colors self-start"
+                    className="editorial-underline mt-auto text-[11px] font-mono font-medium tracking-[0.14em] uppercase text-primary-ink hover:text-oxidised-bronze self-start"
                   >
-                    LEARN MORE →
+                    <span>Full Specifications</span>
+                    <span>→</span>
                   </Link>
                 </div>
               </FadeIn>
@@ -53,29 +82,23 @@ export default function PricingPreview() {
           })}
         </div>
 
-        <FadeIn delay={0.4}>
-          <div className="flex flex-col items-center text-center gap-6">
-            <p className="text-[18px] md:text-[20px] font-display text-near-black">
-              Full pricing details, specialist projects, and everything included.{' '}
-              <Link href="/pricing" className="border-b border-near-black/30 hover:border-near-black transition-colors">
-                View all pricing.
-              </Link>
-            </p>
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-[13px] text-stone uppercase tracking-widest font-semibold mt-4">
-              <span>100% Client Ownership</span>
-              <span className="text-near-black/20">·</span>
-              <span>No lock-in</span>
-              <span className="text-near-black/20">·</span>
-              <span>Fixed pricing</span>
+        {/* Commercial Footnote */}
+        <FadeIn delay={0.25}>
+          <div className="pt-8 border-t border-border-rule flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-[12px] font-mono tracking-[0.12em] uppercase text-muted-text">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <span className="text-primary-ink">100% Client Ownership</span>
+              <span>·</span>
+              <span>Zero Lock-in</span>
+              <span>·</span>
+              <span>Fixed Milestone Billing</span>
             </div>
-            <div className="mt-4">
-              <Link
-                href="/journal/how-much-does-a-website-cost-uk"
-                className="text-[13px] font-sans font-medium text-stone hover:text-near-black border-b border-near-black/20 pb-0.5 hover:border-near-black transition-colors"
-              >
-                Planning your investment? Read our 2026 UK Website Cost Guide →
-              </Link>
-            </div>
+            <Link
+              href="/journal/how-much-does-a-website-cost-uk"
+              className="editorial-underline text-secondary-text hover:text-primary-ink"
+            >
+              <span>Read UK Website Investment Guide</span>
+              <span className="text-oxidised-bronze">→</span>
+            </Link>
           </div>
         </FadeIn>
       </div>
